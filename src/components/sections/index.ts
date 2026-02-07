@@ -1,0 +1,11 @@
+export { HeroSection } from "./hero-section";
+export { MetricsSection } from "./metrics-section";
+export { DifferentiatorsSection } from "./differentiators-section";
+export { SolutionsSection } from "./solutions-section";
+export { ProductShowcaseSection } from "./product-showcase-section";
+export { HowItWorksSection } from "./how-it-works-section";
+export { ROISection } from "./roi-section";
+export { IndustriesSection } from "./industries-section";
+export { DemoCTASection } from "./demo-cta-section";
+export { TeamSection } from "./team-section";
+export { ContactSection } from "./contact-section";

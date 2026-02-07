@@ -1,0 +1,29 @@
+export const COMPANY = {
+  name: "Cognaize Systems",
+  tagline: "AI-Powered Manufacturing Intelligence",
+  email: "info@cognaizesys.com",
+  website: "https://cognaizesys.com",
+  location: "Dubai, UAE",
+  phone: "+971-XX-XXXXXXX",
+};
+
+export const NAV_LINKS = [
+  { label: "About", href: "#about" },
+  { label: "Products", href: "#products" },
+  { label: "How It Works", href: "#how-it-works" },
+  { label: "Team", href: "#team" },
+  { label: "Contact", href: "#contact" },
+] as const;
+
+export const PRODUCT_LINKS = [
+  {
+    label: "Design Intelligence",
+    href: "/products/design-intelligence",
+  },
+  {
+    label: "Manufacturing Intelligence",
+    href: "/products/manufacturing-intelligence",
+  },
+] as const;
+
+export const FORMSPREE_ENDPOINT = "https://formspree.io/f/your-form-id";

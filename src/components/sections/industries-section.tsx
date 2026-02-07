@@ -1,0 +1,103 @@
+"use client";
+
+import { motion } from "framer-motion";
+import { Car, Plane, Factory, Fuel } from "lucide-react";
+import { cn } from "@/lib/utils";
+import type { LucideIcon } from "lucide-react";
+
+interface Industry {
+  name: string;
+  icon: LucideIcon;
+  description: string;
+}
+
+const industries: Industry[] = [
+  {
+    name: "Automotive",
+    icon: Car,
+    description:
+      "Precision parts review and cost estimation for automotive component manufacturers",
+  },
+  {
+    name: "Aerospace & Defense",
+    icon: Plane,
+    description:
+      "High-tolerance drawing analysis for aerospace-grade components",
+  },
+  {
+    name: "General Manufacturing",
+    icon: Factory,
+    description:
+      "End-to-end manufacturing intelligence for CNC, casting, and fabrication shops",
+  },
+  {
+    name: "Oil & Gas",
+    icon: Fuel,
+    description:
+      "Critical equipment drawing review for energy sector components",
+  },
+];
+
+export function IndustriesSection() {
+  return (
+    <section className="bg-white py-20">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Heading */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="text-center"
+        >
+          <p className="text-sm font-semibold uppercase tracking-wide text-[#846fbc]">
+            Industries We Serve
+          </p>
+          <h2 className="mt-3 text-3xl md:text-5xl font-heading font-bold text-gray-900 tracking-tight">
+            Built for Precision Manufacturing
+          </h2>
+        </motion.div>
+
+        {/* Industries Grid */}
+        <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
+          {industries.map((industry, index) => {
+            const IconComponent = industry.icon;
+            return (
+              <motion.div
+                key={industry.name}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: index * 0.15 }}
+                className="group"
+              >
+                <div className="bg-[#f8f8fa] rounded-xl p-6 sm:p-8 text-center hover:shadow-md transition-all duration-300 h-full flex flex-col">
+                  {/* Icon Container */}
+                  <div className="flex items-center justify-center">
+                    <div className="w-16 h-16 rounded-full bg-[#846fbc]/10 flex items-center justify-center group-hover:bg-[#846fbc]/15 transition-colors">
+                      <IconComponent
+                        className="text-[#846fbc]"
+                        size={32}
+                        strokeWidth={1.5}
+                      />
+                    </div>
+                  </div>
+
+                  {/* Name */}
+                  <h3 className="mt-4 text-lg font-heading font-semibold text-gray-900">
+                    {industry.name}
+                  </h3>
+
+                  {/* Description */}
+                  <p className="mt-2 text-sm text-gray-600 leading-relaxed">
+                    {industry.description}
+                  </p>
+                </div>
+              </motion.div>
+            );
+          })}
+        </div>
+      </div>
+    </section>
+  );
+}
