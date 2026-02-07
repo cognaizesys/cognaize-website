@@ -72,11 +72,11 @@ export function MobileNav({ isOpen, onClose }: MobileNavProps) {
               {/* CTA Button */}
               <div className="border-t border-gray-200 p-6">
                 <a
-                  href="/#contact"
+                  href="/#demo"
                   onClick={onClose}
                   className="block rounded-md bg-primary px-6 py-3 text-center text-base font-semibold text-white hover:bg-primary-dark"
                 >
-                  Request Demo
+                  See Demo
                 </a>
               </div>
             </div>

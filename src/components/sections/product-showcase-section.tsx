@@ -29,6 +29,7 @@ export function ProductShowcaseSection() {
 
   return (
     <section
+      id="demo"
       className="py-24 relative overflow-hidden"
       style={{
         background: "linear-gradient(180deg, #ffffff 0%, #f8f8fa 50%, #ffffff 100%)",

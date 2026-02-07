@@ -176,7 +176,7 @@ export function HeroSection() {
             initial={{ opacity: 0, x: 40 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.7, delay: 0.5 }}
-            className="relative"
+            className="relative hidden lg:block"
           >
             {/* Demo Card */}
             <div className="relative rounded-2xl overflow-hidden border border-white/10 bg-dark-card/80 backdrop-blur-xl shadow-2xl">
