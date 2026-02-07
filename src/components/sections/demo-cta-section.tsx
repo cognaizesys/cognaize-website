@@ -1,77 +1,39 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { cn } from "@/lib/utils";
+import { ArrowRight, Sparkles } from "lucide-react";
 
 export function DemoCTASection() {
   return (
     <section className="relative overflow-hidden">
-      {/* Purple Gradient Background */}
+      {/* Background */}
       <div
         className="absolute inset-0"
         style={{
-          background:
-            "linear-gradient(to bottom right, #846fbc 0%, #6d58a5 50%, #5a4591 100%)",
+          background: "linear-gradient(135deg, #0a0a0f 0%, #1a1028 50%, #0a0a0f 100%)",
         }}
       />
 
-      {/* Floating Decorative Elements */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <motion.div
-          animate={{
-            y: [0, -20, 0],
-            opacity: [0.2, 0.3, 0.2],
-          }}
-          transition={{
-            duration: 6,
-            repeat: Infinity,
-            ease: "easeInOut",
-          }}
-          className="absolute top-20 left-[10%] w-2 h-2 rounded-full bg-white/20"
-        />
-        <motion.div
-          animate={{
-            y: [0, 25, 0],
-            opacity: [0.15, 0.25, 0.15],
-          }}
-          transition={{
-            duration: 8,
-            repeat: Infinity,
-            ease: "easeInOut",
-            delay: 1,
-          }}
-          className="absolute top-40 right-[15%] w-2 h-2 rounded-full bg-white/20"
-        />
-        <motion.div
-          animate={{
-            y: [0, -30, 0],
-            opacity: [0.2, 0.3, 0.2],
-          }}
-          transition={{
-            duration: 7,
-            repeat: Infinity,
-            ease: "easeInOut",
-            delay: 2,
-          }}
-          className="absolute bottom-32 left-[20%] w-2 h-2 rounded-full bg-white/20"
-        />
-        <motion.div
-          animate={{
-            y: [0, 20, 0],
-            opacity: [0.15, 0.25, 0.15],
-          }}
-          transition={{
-            duration: 9,
-            repeat: Infinity,
-            ease: "easeInOut",
-            delay: 0.5,
-          }}
-          className="absolute bottom-20 right-[25%] w-2 h-2 rounded-full bg-white/20"
-        />
-      </div>
+      {/* Grid pattern */}
+      <div
+        className="absolute inset-0 opacity-15"
+        style={{
+          backgroundImage:
+            "linear-gradient(rgba(132, 111, 188, 0.15) 1px, transparent 1px), linear-gradient(90deg, rgba(132, 111, 188, 0.15) 1px, transparent 1px)",
+          backgroundSize: "60px 60px",
+        }}
+      />
+
+      {/* Radial glow */}
+      <div
+        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px]"
+        style={{
+          background: "radial-gradient(ellipse, rgba(132, 111, 188, 0.15) 0%, transparent 60%)",
+        }}
+      />
 
       {/* Content */}
-      <div className="relative z-10 py-20 px-4 sm:px-6 lg:px-8">
+      <div className="relative z-10 py-24 px-4 sm:px-6 lg:px-8">
         <div className="max-w-3xl mx-auto text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -79,31 +41,48 @@ export function DemoCTASection() {
             viewport={{ once: true }}
             transition={{ duration: 0.7 }}
           >
-            {/* Heading */}
-            <h2 className="text-4xl md:text-5xl font-heading font-bold text-white tracking-tight">
-              Ready to Transform Your Manufacturing?
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-primary/10 border border-primary/20 mb-8">
+              <Sparkles className="w-3 h-3 text-accent" />
+              <span className="text-xs font-medium text-primary-light uppercase tracking-wider">
+                Get Started
+              </span>
+            </div>
+
+            <h2 className="text-4xl md:text-5xl font-heading text-white tracking-tight leading-tight">
+              Ready to See What
+              <br />
+              <span className="text-primary-light">AI Can Do for You?</span>
             </h2>
 
-            {/* Subtitle */}
-            <p className="mt-4 text-xl text-white/80 leading-relaxed">
-              Join leading manufacturers who've eliminated costly errors and
-              accelerated their operations with Cognaize AI
+            <p className="mt-5 text-lg text-gray-400 leading-relaxed max-w-xl mx-auto">
+              Upload your first drawing and see Cognaize in action.
+              Setup takes less than a week. Results are immediate.
             </p>
 
             {/* CTA Buttons */}
-            <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4 flex-wrap">
+            <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
               <a
                 href="#contact"
-                className="inline-flex items-center justify-center px-8 py-4 rounded-lg bg-white text-[#846fbc] hover:bg-gray-100 font-bold text-lg shadow-lg transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-[#6d58a5]"
+                className="group inline-flex items-center gap-2 px-8 py-4 rounded-xl bg-primary hover:bg-primary-dark text-white font-bold text-lg transition-all duration-300 hover:shadow-lg hover:shadow-primary/25"
               >
                 Book a Demo
+                <ArrowRight className="w-5 h-5 group-hover:translate-x-0.5 transition-transform" />
               </a>
               <a
                 href="#contact"
-                className="inline-flex items-center justify-center px-8 py-4 rounded-lg border-2 border-white/40 hover:bg-white/10 text-white font-bold text-lg transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-white/50 focus:ring-offset-2 focus:ring-offset-[#6d58a5]"
+                className="inline-flex items-center gap-2 px-8 py-4 rounded-xl border border-white/15 hover:border-white/30 hover:bg-white/5 text-white font-bold text-lg transition-all duration-300"
               >
                 Start Free Trial
               </a>
+            </div>
+
+            {/* Trust signals */}
+            <div className="mt-10 flex flex-wrap items-center justify-center gap-6 text-xs text-gray-500">
+              <span>No credit card required</span>
+              <span className="w-1 h-1 rounded-full bg-gray-600" />
+              <span>Setup in &lt;1 week</span>
+              <span className="w-1 h-1 rounded-full bg-gray-600" />
+              <span>SOC 2 Compliant</span>
             </div>
           </motion.div>
         </div>

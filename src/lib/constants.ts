@@ -8,11 +8,10 @@ export const COMPANY = {
 };
 
 export const NAV_LINKS = [
-  { label: "About", href: "#about" },
-  { label: "Products", href: "#products" },
-  { label: "How It Works", href: "#how-it-works" },
-  { label: "Team", href: "#team" },
-  { label: "Contact", href: "#contact" },
+  { label: "Products", href: "/#products" },
+  { label: "Platform", href: "/#differentiators" },
+  { label: "Team", href: "/#team" },
+  { label: "Contact", href: "/#contact" },
 ] as const;
 
 export const PRODUCT_LINKS = [

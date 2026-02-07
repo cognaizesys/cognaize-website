@@ -1,25 +1,31 @@
 "use client";
 
 import Link from "next/link";
-import { Scan, Calculator } from "lucide-react";
+import { Scan, Calculator, ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
 
 const products = [
   {
     icon: Scan,
     title: "Design Intelligence",
-    tagline: "AI-powered engineering drawing review",
+    tagline: "Drawing Review AI",
     description:
-      "Automatically analyze engineering drawings to detect critical errors, missing specifications, and tolerance issues before they reach production.",
+      "Upload an engineering drawing and get instant AI-powered analysis. Detects critical errors, missing specs, and tolerance issues across 13+ categories.",
     href: "/products/design-intelligence",
+    color: "#846fbc",
+    highlights: ["Error detection across 13+ categories", "Tolerance & GD&T validation", "Automated findings report"],
+    stat: { value: "16x", label: "faster than manual review" },
   },
   {
     icon: Calculator,
     title: "Manufacturing Intelligence",
-    tagline: "AI-powered cost estimation from engineering drawings",
+    tagline: "Cost Estimation AI",
     description:
-      "Upload an engineering drawing and get instant AI-powered cost estimation — material analysis, feasibility, routing, job cards, and detailed costing.",
+      "From drawing to quote in minutes. AI extracts specs, checks feasibility, generates job cards, and produces detailed cost breakdowns automatically.",
     href: "/products/manufacturing-intelligence",
+    color: "#6ee7b7",
+    highlights: ["Spec extraction & feasibility check", "Auto-generated job cards & routing", "Detailed cost breakdowns"],
+    stat: { value: "10x", label: "faster cost estimation" },
   },
 ];
 
@@ -34,37 +40,71 @@ const containerVariants = {
 };
 
 const cardVariants = {
-  hidden: { opacity: 0, y: 20 },
+  hidden: { opacity: 0, y: 30 },
   visible: {
     opacity: 1,
     y: 0,
     transition: {
-      duration: 0.5,
+      duration: 0.6,
     },
   },
 };
 
 export function SolutionsSection() {
   return (
-    <section id="products" className="py-20 bg-[#f8f8fa]">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section
+      id="products"
+      className="py-32 relative overflow-hidden"
+      style={{
+        background: "linear-gradient(180deg, #0a0a0f 0%, #12121a 50%, #0a0a0f 100%)",
+      }}
+    >
+      {/* Grid background */}
+      <div
+        className="absolute inset-0 opacity-15"
+        style={{
+          backgroundImage:
+            "linear-gradient(rgba(132, 111, 188, 0.12) 1px, transparent 1px), linear-gradient(90deg, rgba(132, 111, 188, 0.12) 1px, transparent 1px)",
+          backgroundSize: "80px 80px",
+        }}
+      />
+
+      {/* Radial glow */}
+      <div
+        className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[400px] opacity-20"
+        style={{
+          background: "radial-gradient(ellipse, rgba(132, 111, 188, 0.4) 0%, transparent 70%)",
+        }}
+      />
+
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Heading */}
-        <div className="text-center max-w-3xl mx-auto">
-          <p className="text-sm font-semibold text-[#846fbc] uppercase tracking-wide">
-            Our Solutions
-          </p>
-          <h2 className="mt-2 text-3xl font-bold text-gray-900 sm:text-4xl">
-            Two Products. One Mission.
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+          className="text-center max-w-3xl mx-auto"
+        >
+          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-primary/15 border border-primary/25 mb-6">
+            <span className="text-xs font-medium text-primary-light uppercase tracking-wider">
+              Two Products &middot; One Platform
+            </span>
+          </div>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-heading text-white tracking-tight">
+            AI That Understands
+            <br />
+            Engineering Drawings
           </h2>
-          <p className="mt-4 text-lg text-gray-600">
-            Eliminate costly errors and accelerate manufacturing operations with
-            AI that understands engineering.
+          <p className="mt-4 text-lg text-gray-400 max-w-2xl mx-auto">
+            Purpose-built models trained on real manufacturing data.
+            Not generic OCR — actual engineering understanding.
           </p>
-        </div>
+        </motion.div>
 
         {/* Product cards */}
         <motion.div
-          className="mt-12 grid md:grid-cols-2 gap-8 max-w-5xl mx-auto"
+          className="mt-20 grid md:grid-cols-2 gap-8"
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
@@ -76,40 +116,96 @@ export function SolutionsSection() {
               <motion.div
                 key={product.title}
                 variants={cardVariants}
-                className="bg-white rounded-xl shadow-sm hover:shadow-lg transition-all border border-gray-100 overflow-hidden"
+                className="group relative rounded-2xl overflow-hidden"
               >
-                {/* Purple gradient accent bar */}
-                <div className="h-1 bg-gradient-to-r from-[#846fbc] to-[#9b89cc]" />
+                {/* Card glow on hover */}
+                <div
+                  className="absolute -inset-px rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+                  style={{
+                    background: `linear-gradient(135deg, ${product.color}30, transparent 50%, ${product.color}15)`,
+                  }}
+                />
 
-                <div className="p-8">
-                  {/* Icon */}
-                  <div className="mb-4">
-                    <Icon className="w-10 h-10 text-[#846fbc]" strokeWidth={1.5} />
+                {/* Entire card is a link */}
+                <Link
+                  href={product.href}
+                  className="relative block rounded-2xl border border-white/10 group-hover:border-white/20 bg-dark-card/80 backdrop-blur-sm transition-all duration-300"
+                >
+                  {/* Top accent bar */}
+                  <div
+                    className="h-[2px]"
+                    style={{
+                      background: `linear-gradient(90deg, ${product.color}, ${product.color}40, transparent)`,
+                    }}
+                  />
+
+                  <div className="p-8">
+                    {/* Icon + Title */}
+                    <div className="flex items-start gap-4 mb-6">
+                      <div
+                        className="w-14 h-14 rounded-xl flex items-center justify-center shrink-0 border"
+                        style={{
+                          backgroundColor: `${product.color}10`,
+                          borderColor: `${product.color}25`,
+                        }}
+                      >
+                        <Icon
+                          className="w-7 h-7"
+                          style={{ color: product.color }}
+                          strokeWidth={1.5}
+                        />
+                      </div>
+                      <div>
+                        <h3 className="text-xl font-bold text-white">
+                          {product.title}
+                        </h3>
+                        <p
+                          className="text-sm font-medium mt-1"
+                          style={{ color: product.color }}
+                        >
+                          {product.tagline}
+                        </p>
+                      </div>
+                    </div>
+
+                    {/* Description */}
+                    <p className="text-gray-400 leading-relaxed text-sm mb-6">
+                      {product.description}
+                    </p>
+
+                    {/* Highlights list */}
+                    <ul className="space-y-2.5 mb-8">
+                      {product.highlights.map((item) => (
+                        <li key={item} className="flex items-center gap-3">
+                          <div
+                            className="w-1.5 h-1.5 rounded-full shrink-0"
+                            style={{ backgroundColor: product.color }}
+                          />
+                          <span className="text-sm text-gray-300">{item}</span>
+                        </li>
+                      ))}
+                    </ul>
+
+                    {/* Bottom: Stat + CTA */}
+                    <div className="flex items-center justify-between pt-6 border-t border-white/5">
+                      <div className="flex items-baseline gap-2">
+                        <span
+                          className="text-3xl font-bold font-heading"
+                          style={{ color: product.color }}
+                        >
+                          {product.stat.value}
+                        </span>
+                        <span className="text-xs text-gray-500">
+                          {product.stat.label}
+                        </span>
+                      </div>
+                      <span className="inline-flex items-center gap-1.5 text-sm font-semibold text-white group-hover:text-primary-light transition-colors">
+                        Explore
+                        <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
+                      </span>
+                    </div>
                   </div>
-
-                  {/* Title */}
-                  <h3 className="text-2xl font-bold text-gray-900 mb-2">
-                    {product.title}
-                  </h3>
-
-                  {/* Tagline */}
-                  <p className="text-sm font-medium text-[#846fbc] mb-4">
-                    {product.tagline}
-                  </p>
-
-                  {/* Description */}
-                  <p className="text-gray-600 leading-relaxed mb-6">
-                    {product.description}
-                  </p>
-
-                  {/* Learn More Link */}
-                  <Link
-                    href={product.href}
-                    className="inline-flex items-center text-[#846fbc] hover:text-[#6d58a5] font-semibold transition-colors"
-                  >
-                    Learn More →
-                  </Link>
-                </div>
+                </Link>
               </motion.div>
             );
           })}

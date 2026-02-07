@@ -3,19 +3,14 @@
 import { motion, useInView, useMotionValue, useSpring } from "framer-motion";
 import { useEffect, useRef } from "react";
 import { heroMetrics } from "@/data/metrics";
-import { cn } from "@/lib/utils";
+import { TrendingUp } from "lucide-react";
 
 interface AnimatedCounterProps {
   value: number;
   suffix: string;
-  duration?: number;
 }
 
-function AnimatedCounter({
-  value,
-  suffix,
-  duration = 2,
-}: AnimatedCounterProps) {
+function AnimatedCounter({ value, suffix }: AnimatedCounterProps) {
   const ref = useRef<HTMLSpanElement>(null);
   const motionValue = useMotionValue(0);
   const springValue = useSpring(motionValue, {
@@ -43,64 +38,51 @@ function AnimatedCounter({
   return <span ref={ref}>0{suffix}</span>;
 }
 
-interface MetricCardProps {
-  metric: (typeof heroMetrics)[0];
-  index: number;
-}
-
-function MetricCard({ metric, index }: MetricCardProps) {
-  return (
-    <motion.div
-      initial={{ opacity: 0, y: 30 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-50px" }}
-      transition={{ duration: 0.6, delay: index * 0.1 }}
-      className="text-center"
-    >
-      <div className="text-4xl md:text-5xl font-bold text-primary font-heading">
-        <AnimatedCounter
-          value={metric.numericValue}
-          suffix={metric.suffix}
-        />
-      </div>
-      <p className="text-sm text-text-secondary mt-2">{metric.label}</p>
-      <p className="text-xs text-text-secondary/70 mt-1">
-        {metric.description}
-      </p>
-    </motion.div>
-  );
-}
-
 export function MetricsSection() {
   return (
     <section className="py-20 bg-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Heading */}
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-            className="text-sm font-semibold text-primary uppercase tracking-wider mb-3"
-          >
-            By The Numbers
-          </motion.p>
-          <motion.h2
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.1 }}
-            className="text-3xl md:text-4xl font-heading text-text-primary"
-          >
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+          className="text-center mb-14"
+        >
+          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-primary/10 border border-primary/15 mb-6">
+            <TrendingUp className="w-3 h-3 text-primary" />
+            <span className="text-xs font-medium text-primary uppercase tracking-wider">
+              Proven Results
+            </span>
+          </div>
+          <h2 className="text-3xl md:text-4xl font-heading text-gray-900 tracking-tight">
             Measurable Impact, Real Results
-          </motion.h2>
-        </div>
+          </h2>
+        </motion.div>
 
-        {/* Metrics Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
           {heroMetrics.map((metric, index) => (
-            <MetricCard key={metric.label} metric={metric} index={index} />
+            <motion.div
+              key={metric.label}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+              className="relative text-center p-6 rounded-2xl bg-gray-50/50 border border-gray-100"
+            >
+              <div className="text-4xl md:text-5xl font-bold text-primary font-heading">
+                <AnimatedCounter
+                  value={metric.numericValue}
+                  suffix={metric.suffix}
+                />
+              </div>
+              <p className="text-sm font-medium text-gray-900 mt-3">
+                {metric.label}
+              </p>
+              <p className="text-xs text-gray-400 mt-1">
+                {metric.description}
+              </p>
+            </motion.div>
           ))}
         </div>
       </div>

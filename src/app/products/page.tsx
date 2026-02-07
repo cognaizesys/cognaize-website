@@ -1,7 +1,6 @@
 import {
   SolutionsSection,
   ProductShowcaseSection,
-  HowItWorksSection,
 } from "@/components/sections";
 
 export default function ProductsPage() {
@@ -9,7 +8,6 @@ export default function ProductsPage() {
     <main>
       <SolutionsSection />
       <ProductShowcaseSection />
-      <HowItWorksSection />
     </main>
   );
 }

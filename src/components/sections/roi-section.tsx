@@ -61,11 +61,8 @@ export function ROISection() {
           transition={{ duration: 0.6 }}
           className="text-center"
         >
-          <p className="text-sm font-semibold uppercase tracking-wide text-[#9b89cc]">
-            The Impact
-          </p>
-          <h2 className="mt-3 text-3xl md:text-5xl font-heading font-bold text-white tracking-tight">
-            Before vs After Cognaize
+          <h2 className="text-3xl md:text-5xl font-heading font-bold text-white tracking-tight">
+            Measurable <span className="text-primary-light">Impact</span>
           </h2>
         </motion.div>
 

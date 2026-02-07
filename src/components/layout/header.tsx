@@ -75,7 +75,7 @@ export function Header({ onMobileMenuOpen }: HeaderProps) {
           {/* CTA Button - Desktop */}
           <div className="hidden md:block">
             <a
-              href="#contact"
+              href="/#contact"
               className={cn(
                 "inline-flex items-center rounded-md px-5 py-2.5 text-sm font-semibold transition-all duration-200",
                 isScrolled

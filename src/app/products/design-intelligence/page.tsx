@@ -8,6 +8,7 @@ import {
   FileDown,
   ArrowLeft,
   CheckCircle,
+  ArrowRight,
 } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
@@ -83,59 +84,116 @@ export default function DesignIntelligencePage() {
   return (
     <div>
       {/* Hero */}
-      <section className="bg-gradient-to-br from-dark-bg via-[#1a1028] to-dark-bg pt-32 pb-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <Link
-            href="/"
-            className="inline-flex items-center gap-2 text-gray-400 hover:text-white transition mb-8"
-          >
-            <ArrowLeft size={16} />
-            Back to Home
-          </Link>
+      <section
+        className="relative pt-32 pb-24 overflow-hidden"
+        style={{
+          background: "linear-gradient(135deg, #0a0a0f 0%, #1a1028 50%, #0a0a0f 100%)",
+        }}
+      >
+        {/* Grid bg */}
+        <div
+          className="absolute inset-0 opacity-15"
+          style={{
+            backgroundImage:
+              "linear-gradient(rgba(132, 111, 188, 0.12) 1px, transparent 1px), linear-gradient(90deg, rgba(132, 111, 188, 0.12) 1px, transparent 1px)",
+            backgroundSize: "80px 80px",
+          }}
+        />
+
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          {/* Text content - centered */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="max-w-3xl"
+            className="text-center max-w-3xl mx-auto"
           >
-            <span className="inline-block bg-primary/20 text-primary-light px-4 py-1.5 rounded-full text-sm font-medium mb-6">
-              Design Intelligence
-            </span>
-            <h1 className="text-4xl md:text-6xl font-heading text-white mb-6">
-              AI-Powered Engineering Drawing Review
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-primary/15 border border-primary/25 mb-8">
+              <Scan className="w-3.5 h-3.5 text-primary-light" />
+              <span className="text-xs font-medium text-primary-light uppercase tracking-wider">
+                Design Intelligence
+              </span>
+            </div>
+
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-heading text-white mb-6 leading-[1.1]">
+              AI-Powered <span className="text-primary-light">Drawing Review</span>
             </h1>
-            <p className="text-xl text-gray-300 mb-8">
-              Automatically analyze engineering drawings to detect critical
-              errors, missing specifications, and tolerance issues — reducing
-              review time from hours to minutes.
+
+            <p className="text-lg text-gray-400 mb-10 leading-relaxed max-w-2xl mx-auto">
+              Detect tolerance issues, missing specs, and GD&T errors across 13+ categories in seconds — catching what manual review misses.
             </p>
-            <div className="flex gap-4 flex-wrap">
+
+            <div className="flex items-center justify-center gap-8 mb-10">
+              {[
+                { value: "16x", label: "Faster Reviews" },
+                { value: "13+", label: "Error Categories" },
+                { value: "95%+", label: "Accuracy" },
+              ].map((stat) => (
+                <div key={stat.label}>
+                  <div className="text-2xl font-bold font-heading text-white">{stat.value}</div>
+                  <div className="text-xs text-gray-500">{stat.label}</div>
+                </div>
+              ))}
+            </div>
+
+            <div className="flex gap-4 flex-wrap justify-center">
               <Link
                 href="/#contact"
-                className="bg-primary hover:bg-primary-dark text-white px-8 py-3 rounded-lg font-semibold transition-colors"
+                className="inline-flex items-center gap-2 bg-primary hover:bg-primary-dark text-white px-7 py-3.5 rounded-lg font-semibold transition-colors"
               >
-                Request a Demo
+                Schedule a Demo
+                <ArrowRight className="w-4 h-4" />
               </Link>
-              <Link
-                href="/#products"
-                className="border-2 border-white/30 hover:bg-white/10 text-white px-8 py-3 rounded-lg font-semibold transition-colors"
+              <a
+                href="#product-tour"
+                className="inline-flex items-center gap-2 border border-white/20 hover:border-white/40 hover:bg-white/5 text-white px-7 py-3.5 rounded-lg font-semibold transition-all"
               >
-                See It In Action
-              </Link>
+                See Product Tour
+              </a>
+            </div>
+          </motion.div>
+
+          {/* Full-width screenshot below */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.3 }}
+            className="mt-16 max-w-5xl mx-auto"
+          >
+            <div className="rounded-xl overflow-hidden border border-white/10 shadow-2xl">
+              <div className="bg-dark-surface/80 h-9 flex items-center px-4 gap-2 border-b border-white/5">
+                <div className="flex gap-1.5">
+                  <div className="w-2.5 h-2.5 rounded-full bg-white/10" />
+                  <div className="w-2.5 h-2.5 rounded-full bg-white/10" />
+                  <div className="w-2.5 h-2.5 rounded-full bg-white/10" />
+                </div>
+                <div className="flex-1 mx-4">
+                  <div className="bg-white/5 rounded-md px-3 py-1 text-[10px] text-gray-500 text-center">
+                    app.cognaizesys.com/review
+                  </div>
+                </div>
+              </div>
+              <Image
+                src="/images/products/di/di-overview.png"
+                alt="Design Intelligence - AI Drawing Review"
+                width={1200}
+                height={800}
+                className="w-full"
+              />
             </div>
           </motion.div>
         </div>
       </section>
 
-      {/* Demo GIF */}
-      <section className="py-20 bg-light-bg">
+      {/* Demo Video */}
+      <section className="py-24 bg-light-bg">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <span className="text-primary text-sm font-semibold uppercase tracking-wider">
               Watch It Work
             </span>
             <h2 className="text-3xl md:text-4xl font-heading text-text-primary mt-2">
-              From Upload to AI Findings in Seconds
+              From Upload to Findings in Seconds
             </h2>
           </div>
           <motion.div
@@ -150,9 +208,7 @@ export default function DesignIntelligencePage() {
                 <div className="w-3 h-3 rounded-full bg-yellow-400" />
                 <div className="w-3 h-3 rounded-full bg-green-400" />
                 <div className="bg-gray-200 rounded-md h-6 flex-1 mx-4 flex items-center justify-center">
-                  <span className="text-xs text-gray-400">
-                    app.cognaizesys.com
-                  </span>
+                  <span className="text-xs text-gray-400">app.cognaizesys.com</span>
                 </div>
               </div>
               <video
@@ -169,17 +225,17 @@ export default function DesignIntelligencePage() {
       </section>
 
       {/* Features */}
-      <section className="py-20">
+      <section className="py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <span className="text-primary text-sm font-semibold uppercase tracking-wider">
-              Features
+              Capabilities
             </span>
             <h2 className="text-3xl md:text-4xl font-heading text-text-primary mt-2">
               What Design Intelligence Does
             </h2>
           </div>
-          <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+          <div className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
             {features.map((feature, i) => (
               <motion.div
                 key={feature.title}
@@ -187,16 +243,14 @@ export default function DesignIntelligencePage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.1, duration: 0.5 }}
-                className="flex gap-4 p-6 rounded-xl bg-light-bg"
+                className="flex gap-5 p-6 rounded-xl bg-light-bg border border-gray-100 hover:border-primary/20 hover:shadow-md transition-all"
               >
                 <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center shrink-0">
-                  <feature.icon className="text-primary" size={24} />
+                  <feature.icon className="text-primary" size={22} />
                 </div>
                 <div>
-                  <h3 className="font-semibold text-lg mb-1">
-                    {feature.title}
-                  </h3>
-                  <p className="text-text-secondary text-sm">
+                  <h3 className="font-semibold text-lg mb-2">{feature.title}</h3>
+                  <p className="text-text-secondary text-sm leading-relaxed">
                     {feature.description}
                   </p>
                 </div>
@@ -206,18 +260,18 @@ export default function DesignIntelligencePage() {
         </div>
       </section>
 
-      {/* Screenshots */}
-      <section className="py-20 bg-light-bg">
+      {/* Product Tour Screenshots */}
+      <section id="product-tour" className="py-24 bg-light-bg">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <span className="text-primary text-sm font-semibold uppercase tracking-wider">
               Product Tour
             </span>
             <h2 className="text-3xl md:text-4xl font-heading text-text-primary mt-2">
-              See Design Intelligence In Action
+              See Every Detail
             </h2>
           </div>
-          <div className="space-y-24">
+          <div className="space-y-28">
             {screenshots.map((screenshot, i) => (
               <motion.div
                 key={screenshot.title}
@@ -227,7 +281,7 @@ export default function DesignIntelligencePage() {
                 transition={{ duration: 0.6 }}
                 className={`flex flex-col ${
                   i % 2 === 1 ? "md:flex-row-reverse" : "md:flex-row"
-                } gap-8 md:gap-12 items-center`}
+                } gap-10 md:gap-14 items-center`}
               >
                 <div className="md:w-3/5">
                   <div className="rounded-xl overflow-hidden shadow-2xl border border-gray-200">
@@ -265,7 +319,7 @@ export default function DesignIntelligencePage() {
       </section>
 
       {/* Categories */}
-      <section className="py-20">
+      <section className="py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <span className="text-primary text-sm font-semibold uppercase tracking-wider">
             Coverage
@@ -291,9 +345,14 @@ export default function DesignIntelligencePage() {
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="py-20 bg-gradient-to-br from-primary via-primary-dark to-[#5a4591]">
-        <div className="max-w-3xl mx-auto px-4 text-center">
+      {/* Cross-sell + CTA */}
+      <section
+        className="py-24 relative overflow-hidden"
+        style={{
+          background: "linear-gradient(135deg, #0a0a0f 0%, #1a1028 50%, #0a0a0f 100%)",
+        }}
+      >
+        <div className="relative z-10 max-w-4xl mx-auto px-4 text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -303,16 +362,26 @@ export default function DesignIntelligencePage() {
             <h2 className="text-3xl md:text-4xl font-heading text-white mb-4">
               Stop Missing Critical Drawing Errors
             </h2>
-            <p className="text-xl text-white/80 mb-10">
+            <p className="text-lg text-gray-400 mb-10 max-w-2xl mx-auto">
               See how Design Intelligence can analyze your engineering drawings
               in minutes, not hours.
             </p>
-            <Link
-              href="/#contact"
-              className="inline-block bg-white text-primary hover:bg-gray-100 px-10 py-4 rounded-lg font-bold text-lg shadow-lg transition-colors"
-            >
-              Book a Demo
-            </Link>
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+              <Link
+                href="/#contact"
+                className="inline-flex items-center gap-2 bg-primary hover:bg-primary-dark text-white px-8 py-4 rounded-lg font-bold text-lg transition-colors"
+              >
+                Book a Demo
+                <ArrowRight className="w-5 h-5" />
+              </Link>
+              <Link
+                href="/products/manufacturing-intelligence"
+                className="inline-flex items-center gap-2 border border-white/20 hover:border-white/40 hover:bg-white/5 text-white px-8 py-4 rounded-lg font-semibold transition-all"
+              >
+                Explore Manufacturing Intelligence
+                <ArrowRight className="w-4 h-4" />
+              </Link>
+            </div>
           </motion.div>
         </div>
       </section>

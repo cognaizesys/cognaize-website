@@ -20,7 +20,7 @@ import { AnimatePresence } from "framer-motion";
 const features = [
   {
     icon: Upload,
-    title: "Drawing Upload & Analysis",
+    title: "Drawing Upload & Spec Extraction",
     description:
       "Upload PNG, JPG, or PDF engineering drawings. AI automatically extracts key specifications, dimensions, material, tolerances, and component type.",
   },
@@ -54,7 +54,7 @@ const workflowSteps = [
   },
   {
     step: 2,
-    title: "Review Specs",
+    title: "Review Extracted Specs",
     description:
       "AI extracts key specifications, dimensions, material, and component details",
     src: "/images/products/mi/mi-review.png",
@@ -86,27 +86,6 @@ const workflowSteps = [
   },
 ];
 
-const benefits = [
-  {
-    icon: Clock,
-    stat: "10x",
-    label: "Faster Quoting",
-    description: "From days to minutes per quote",
-  },
-  {
-    icon: DollarSign,
-    stat: "75%",
-    label: "Cost Reduction",
-    description: "In estimation process costs",
-  },
-  {
-    icon: Gauge,
-    stat: "95%+",
-    label: "Accuracy",
-    description: "AI-powered precision",
-  },
-];
-
 export default function ManufacturingIntelligencePage() {
   const [activeStep, setActiveStep] = useState(0);
 
@@ -120,73 +99,119 @@ export default function ManufacturingIntelligencePage() {
   return (
     <div>
       {/* Hero */}
-      <section className="bg-gradient-to-br from-dark-bg via-[#1a1028] to-dark-bg pt-32 pb-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <Link
-            href="/"
-            className="inline-flex items-center gap-2 text-gray-400 hover:text-white transition mb-8"
-          >
-            <ArrowLeft size={16} />
-            Back to Home
-          </Link>
+      <section
+        className="relative pt-32 pb-24 overflow-hidden"
+        style={{
+          background: "linear-gradient(135deg, #0a0a0f 0%, #1a1028 50%, #0a0a0f 100%)",
+        }}
+      >
+        {/* Grid bg */}
+        <div
+          className="absolute inset-0 opacity-15"
+          style={{
+            backgroundImage:
+              "linear-gradient(rgba(132, 111, 188, 0.12) 1px, transparent 1px), linear-gradient(90deg, rgba(132, 111, 188, 0.12) 1px, transparent 1px)",
+            backgroundSize: "80px 80px",
+          }}
+        />
+
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          {/* Text content - centered */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="max-w-3xl"
+            className="text-center max-w-3xl mx-auto"
           >
-            <span className="inline-block bg-primary/20 text-primary-light px-4 py-1.5 rounded-full text-sm font-medium mb-6">
-              Manufacturing Intelligence
-            </span>
-            <h1 className="text-4xl md:text-6xl font-heading text-white mb-6">
-              AI-Powered Cost Estimation from Drawings
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-accent/15 border border-accent/25 mb-8">
+              <Calculator className="w-3.5 h-3.5 text-accent" />
+              <span className="text-xs font-medium text-accent uppercase tracking-wider">
+                Manufacturing Intelligence
+              </span>
+            </div>
+
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-heading text-white mb-6 leading-[1.1]">
+              Drawing to <span className="text-accent">Quote in Minutes</span>
             </h1>
-            <p className="text-xl text-gray-300 mb-8">
-              Upload an engineering drawing and get instant AI-powered cost
-              estimation — from drawing to quote in minutes, not days.
+
+            <p className="text-lg text-gray-400 mb-10 leading-relaxed max-w-2xl mx-auto">
+              AI extracts specs, checks feasibility, generates job cards, and produces detailed cost breakdowns — turning days of estimation into minutes.
             </p>
-            <div className="flex gap-4 flex-wrap">
+
+            <div className="flex items-center justify-center gap-8 mb-10">
+              {[
+                { value: "10x", label: "Faster Quoting" },
+                { value: "75%", label: "Cost Reduction" },
+                { value: "95%+", label: "Accuracy" },
+              ].map((stat) => (
+                <div key={stat.label}>
+                  <div className="text-2xl font-bold font-heading text-white">{stat.value}</div>
+                  <div className="text-xs text-gray-500">{stat.label}</div>
+                </div>
+              ))}
+            </div>
+
+            <div className="flex gap-4 flex-wrap justify-center">
               <Link
                 href="/#contact"
-                className="bg-primary hover:bg-primary-dark text-white px-8 py-3 rounded-lg font-semibold transition-colors"
+                className="inline-flex items-center gap-2 bg-primary hover:bg-primary-dark text-white px-7 py-3.5 rounded-lg font-semibold transition-colors"
               >
-                Request a Demo
+                Schedule a Demo
+                <ArrowRight className="w-4 h-4" />
               </Link>
-              <Link
-                href="/#products"
-                className="border-2 border-white/30 hover:bg-white/10 text-white px-8 py-3 rounded-lg font-semibold transition-colors"
+              <a
+                href="#workflow"
+                className="inline-flex items-center gap-2 border border-white/20 hover:border-white/40 hover:bg-white/5 text-white px-7 py-3.5 rounded-lg font-semibold transition-all"
               >
-                See It In Action
-              </Link>
+                See the Workflow
+              </a>
+            </div>
+          </motion.div>
+
+          {/* Full-width screenshot below */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.3 }}
+            className="mt-16 max-w-5xl mx-auto"
+          >
+            <div className="rounded-xl overflow-hidden border border-white/10 shadow-2xl">
+              <div className="bg-dark-surface/80 h-9 flex items-center px-4 gap-2 border-b border-white/5">
+                <div className="flex gap-1.5">
+                  <div className="w-2.5 h-2.5 rounded-full bg-white/10" />
+                  <div className="w-2.5 h-2.5 rounded-full bg-white/10" />
+                  <div className="w-2.5 h-2.5 rounded-full bg-white/10" />
+                </div>
+                <div className="flex-1 mx-4">
+                  <div className="bg-white/5 rounded-md px-3 py-1 text-[10px] text-gray-500 text-center">
+                    app.cognaizesys.com/estimate
+                  </div>
+                </div>
+              </div>
+              <Image
+                src="/images/products/mi/mi-costing.png"
+                alt="Manufacturing Intelligence - Cost Breakdown"
+                width={1200}
+                height={800}
+                className="w-full"
+              />
             </div>
           </motion.div>
         </div>
       </section>
 
-      {/* Benefits Bar */}
-      <section className="bg-primary py-8">
-        <div className="max-w-5xl mx-auto px-4 grid grid-cols-3 gap-4">
-          {benefits.map((b) => (
-            <div key={b.label} className="text-center text-white">
-              <div className="text-3xl md:text-4xl font-bold">{b.stat}</div>
-              <div className="text-sm text-white/80 mt-1">{b.label}</div>
-            </div>
-          ))}
-        </div>
-      </section>
-
       {/* Features */}
-      <section className="py-20">
+      <section className="py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <span className="text-primary text-sm font-semibold uppercase tracking-wider">
               Capabilities
             </span>
             <h2 className="text-3xl md:text-4xl font-heading text-text-primary mt-2">
-              From Drawing to Quote, Automatically
+              End-to-End Cost Estimation Pipeline
             </h2>
           </div>
-          <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+          <div className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
             {features.map((feature, i) => (
               <motion.div
                 key={feature.title}
@@ -194,16 +219,14 @@ export default function ManufacturingIntelligencePage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.1, duration: 0.5 }}
-                className="flex gap-4 p-6 rounded-xl bg-light-bg"
+                className="flex gap-5 p-6 rounded-xl bg-light-bg border border-gray-100 hover:border-primary/20 hover:shadow-md transition-all"
               >
                 <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center shrink-0">
-                  <feature.icon className="text-primary" size={24} />
+                  <feature.icon className="text-primary" size={22} />
                 </div>
                 <div>
-                  <h3 className="font-semibold text-lg mb-1">
-                    {feature.title}
-                  </h3>
-                  <p className="text-text-secondary text-sm">
+                  <h3 className="font-semibold text-lg mb-2">{feature.title}</h3>
+                  <p className="text-text-secondary text-sm leading-relaxed">
                     {feature.description}
                   </p>
                 </div>
@@ -214,14 +237,14 @@ export default function ManufacturingIntelligencePage() {
       </section>
 
       {/* Workflow Walkthrough */}
-      <section className="py-20 bg-light-bg">
+      <section id="workflow" className="py-24 bg-light-bg">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <span className="text-primary text-sm font-semibold uppercase tracking-wider">
               Workflow
             </span>
             <h2 className="text-3xl md:text-4xl font-heading text-text-primary mt-2">
-              5-Step Intelligent Workflow
+              5-Step Intelligent Pipeline
             </h2>
           </div>
 
@@ -238,21 +261,15 @@ export default function ManufacturingIntelligencePage() {
                     i === activeStep
                       ? "bg-primary text-white scale-110"
                       : i < activeStep
-                        ? "bg-primary/20 text-primary"
+                        ? "bg-green-700/20 text-green-700"
                         : "bg-gray-200 text-gray-400"
                   }`}
                 >
-                  {i < activeStep ? (
-                    <CheckCircle size={18} />
-                  ) : (
-                    ws.step
-                  )}
+                  {i < activeStep ? <CheckCircle size={18} /> : ws.step}
                 </div>
                 <span
                   className={`hidden md:inline text-sm font-medium ${
-                    i === activeStep
-                      ? "text-primary"
-                      : "text-text-secondary"
+                    i === activeStep ? "text-primary" : "text-text-secondary"
                   }`}
                 >
                   {ws.title}
@@ -311,9 +328,14 @@ export default function ManufacturingIntelligencePage() {
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="py-20 bg-gradient-to-br from-primary via-primary-dark to-[#5a4591]">
-        <div className="max-w-3xl mx-auto px-4 text-center">
+      {/* Cross-sell + CTA */}
+      <section
+        className="py-24 relative overflow-hidden"
+        style={{
+          background: "linear-gradient(135deg, #0a0a0f 0%, #1a1028 50%, #0a0a0f 100%)",
+        }}
+      >
+        <div className="relative z-10 max-w-4xl mx-auto px-4 text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -323,16 +345,26 @@ export default function ManufacturingIntelligencePage() {
             <h2 className="text-3xl md:text-4xl font-heading text-white mb-4">
               Stop Quoting in the Dark
             </h2>
-            <p className="text-xl text-white/80 mb-10">
+            <p className="text-lg text-gray-400 mb-10 max-w-2xl mx-auto">
               See how Manufacturing Intelligence can generate accurate quotes
               from engineering drawings in minutes.
             </p>
-            <Link
-              href="/#contact"
-              className="inline-block bg-white text-primary hover:bg-gray-100 px-10 py-4 rounded-lg font-bold text-lg shadow-lg transition-colors"
-            >
-              Book a Demo
-            </Link>
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+              <Link
+                href="/#contact"
+                className="inline-flex items-center gap-2 bg-primary hover:bg-primary-dark text-white px-8 py-4 rounded-lg font-bold text-lg transition-colors"
+              >
+                Book a Demo
+                <ArrowRight className="w-5 h-5" />
+              </Link>
+              <Link
+                href="/products/design-intelligence"
+                className="inline-flex items-center gap-2 border border-white/20 hover:border-white/40 hover:bg-white/5 text-white px-8 py-4 rounded-lg font-semibold transition-all"
+              >
+                Explore Design Intelligence
+                <ArrowRight className="w-4 h-4" />
+              </Link>
+            </div>
           </motion.div>
         </div>
       </section>
