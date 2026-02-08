@@ -199,9 +199,15 @@ export function SolutionsSection() {
                           {product.stat.label}
                         </span>
                       </div>
-                      <span className="inline-flex items-center gap-1.5 text-sm font-semibold text-white group-hover:text-primary-light transition-colors">
+                      <span
+                        className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-semibold text-white transition-all duration-200 group-hover:scale-105"
+                        style={{
+                          backgroundColor: product.color,
+                          boxShadow: `0 4px 14px ${product.color}40`,
+                        }}
+                      >
                         Explore
-                        <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
+                        <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                       </span>
                     </div>
                   </div>

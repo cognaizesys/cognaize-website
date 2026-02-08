@@ -27,18 +27,12 @@ const steps = [
   },
   {
     step: 4,
-    label: "Routing",
-    src: "/images/products/mi/mi-feasibility.png",
-    alt: "Generate Routing",
-  },
-  {
-    step: 5,
     label: "Job Card",
     src: "/images/products/mi/mi-jobcard.png",
     alt: "Job Card",
   },
   {
-    step: 6,
+    step: 5,
     label: "Costing",
     src: "/images/products/mi/mi-costing.png",
     alt: "Cost Breakdown",
@@ -81,7 +75,7 @@ export function MiDemoViewer() {
                     activeStep === step.step
                       ? "bg-[#846fbc] text-white border-[#846fbc]"
                       : activeStep > step.step
-                        ? "bg-[#846fbc]/20 text-[#846fbc] border-[#846fbc]/20"
+                        ? "bg-green-100 text-green-600 border-green-200"
                         : "bg-gray-200 text-gray-400 border-gray-200"
                   )}
                 >
@@ -111,7 +105,7 @@ export function MiDemoViewer() {
                   className={cn(
                     "h-0.5 flex-1 mx-2 transition-all",
                     activeStep > step.step
-                      ? "bg-[#846fbc]"
+                      ? "bg-green-400"
                       : "bg-gray-200"
                   )}
                 />
