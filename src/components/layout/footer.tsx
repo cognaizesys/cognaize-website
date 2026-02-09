@@ -19,10 +19,10 @@ export function Footer() {
                   alt="Cognaize"
                   width={32}
                   height={32}
-                  className="h-8 w-auto brightness-0 invert"
+                  className="h-8 w-auto"
                 />
                 <span className="flex items-baseline gap-1">
-                  <span className="font-heading text-lg font-bold leading-tight text-white">
+                  <span className="font-heading text-lg font-bold leading-tight text-primary-light">
                     Cognaize
                   </span>
                   <span className="font-body text-lg font-normal leading-tight text-text-on-dark">

@@ -158,12 +158,13 @@ export function TeamSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-wrap items-center justify-center gap-12 md:gap-20"
+          className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12"
         >
           {[
-            { value: "100x", label: "Faster Reviews" },
-            { value: "95%+", label: "AI Detection Rate" },
-            { value: "10x", label: "Cost Savings" },
+            { value: "100x", label: "Faster Than Manual Review" },
+            { value: "95%+", label: "AI Detection Accuracy" },
+            { value: "10x", label: "Cost Reduction Per Review" },
+            { value: "<1 Week", label: "Time to Deploy" },
           ].map((stat) => (
             <div key={stat.label} className="text-center">
               <div className="text-3xl md:text-4xl font-heading text-gray-900">

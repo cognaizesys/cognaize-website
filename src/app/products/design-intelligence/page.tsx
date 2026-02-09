@@ -271,46 +271,25 @@ export default function DesignIntelligencePage() {
                 icon: Scan,
                 title: "Component Analysis",
                 description:
-                  "Dimensional accuracy, GD&T compliance, tolerancing, datum references, and manufacturing considerations. Validated against ASME Y14.5 standards.",
-                highlights: [
-                  { label: "ASME Y14.5", detail: "Standards compliance" },
-                  { label: "13+ Categories", detail: "Error detection coverage" },
-                  { label: "3-Tier Severity", detail: "Critical, Major, Minor" },
-                ],
-                pills: ["CastReview", "FabReview", "ForgeReview", "MachineReview", "SheetReview"],
+                  "Dimensional accuracy, GD&T compliance, tolerancing, datum references, and manufacturing considerations. Validated against ASME Y14.5 standards with 13+ error categories and 3-tier severity classification.",
               },
               {
                 icon: ArrowLeftRight,
                 title: "Comparative Analysis",
                 description:
                   "Compare two drawing versions side-by-side. Detects changes in dimensions, tolerances, GD&T, geometry, and materials with risk assessment and interchangeability analysis.",
-                highlights: [
-                  { label: "Version Diff", detail: "Side-by-side comparison" },
-                  { label: "Risk Assessment", detail: "Change impact scoring" },
-                  { label: "Interchangeability", detail: "Fit & function check" },
-                ],
               },
               {
                 icon: Layers,
                 title: "Assembly Analysis",
                 description:
                   "BOM completeness, component fit verification, stack-up tolerance analysis, assembly sequence feasibility, and interface compatibility checks.",
-                highlights: [
-                  { label: "BOM Check", detail: "Completeness validation" },
-                  { label: "Stack-Up", detail: "Tolerance accumulation" },
-                  { label: "Interface Fit", detail: "Component compatibility" },
-                ],
               },
               {
                 icon: Compass,
                 title: "Process Advisor",
                 description:
                   "Upload a drawing and let AI recommend the optimal manufacturing process — Cast, Forge, Fabricate, or Machine — based on geometry, material, and tolerances.",
-                highlights: [
-                  { label: "AI Recommendation", detail: "Optimal process selection" },
-                  { label: "4 Processes", detail: "Cast, Forge, Fab, Machine" },
-                  { label: "Cost Aware", detail: "Process-cost trade-offs" },
-                ],
               },
             ].map((mod, i) => (
               <motion.div
@@ -319,75 +298,17 @@ export default function DesignIntelligencePage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.1, duration: 0.5 }}
-                className="rounded-2xl border border-gray-200 bg-white p-8 shadow-sm hover:border-primary/20 hover:shadow-md transition-all"
+                className="rounded-2xl border border-gray-200 bg-white p-8 hover:border-primary/30 hover:shadow-lg transition-all group"
               >
-                <div className="flex items-start gap-5">
-                  <div className="w-14 h-14 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center shrink-0">
-                    <mod.icon className="w-7 h-7 text-primary" />
+                <div className="flex items-center gap-4 mb-4">
+                  <div className="w-11 h-11 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center shrink-0 group-hover:bg-primary/15 transition-colors">
+                    <mod.icon className="w-5 h-5 text-primary" />
                   </div>
-                  <div className="flex-1">
-                    <h3 className="text-xl font-bold mb-3">{mod.title}</h3>
-                    <p className="text-text-secondary leading-relaxed mb-6">
-                      {mod.description}
-                    </p>
-                    {mod.pills && (
-                      <div className="flex flex-wrap gap-2 mb-6">
-                        {mod.pills.map((pill) => (
-                          <span
-                            key={pill}
-                            className="inline-flex items-center px-3 py-1 rounded-full bg-primary/5 text-primary text-xs font-medium border border-primary/15"
-                          >
-                            {pill}
-                          </span>
-                        ))}
-                      </div>
-                    )}
-                    <div className="grid sm:grid-cols-3 gap-4">
-                      {mod.highlights.map((item) => (
-                        <div key={item.label} className="bg-light-bg rounded-lg p-4">
-                          <div className="font-semibold text-sm text-primary">{item.label}</div>
-                          <div className="text-xs text-text-secondary mt-1">{item.detail}</div>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
+                  <h3 className="text-xl font-bold">{mod.title}</h3>
                 </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Features */}
-      <section className="py-24 bg-light-bg">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <span className="text-primary text-sm font-semibold uppercase tracking-wider">
-              Capabilities
-            </span>
-            <h2 className="text-3xl md:text-4xl font-heading text-text-primary mt-2">
-              What Design Intelligence Does
-            </h2>
-          </div>
-          <div className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
-            {features.map((feature, i) => (
-              <motion.div
-                key={feature.title}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.1, duration: 0.5 }}
-                className="flex gap-5 p-6 rounded-xl bg-light-bg border border-gray-100 hover:border-primary/20 hover:shadow-md transition-all"
-              >
-                <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center shrink-0">
-                  <feature.icon className="text-primary" size={22} />
-                </div>
-                <div>
-                  <h3 className="font-semibold text-lg mb-2">{feature.title}</h3>
-                  <p className="text-text-secondary text-sm leading-relaxed">
-                    {feature.description}
-                  </p>
-                </div>
+                <p className="text-text-secondary leading-relaxed">
+                  {mod.description}
+                </p>
               </motion.div>
             ))}
           </div>

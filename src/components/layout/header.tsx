@@ -42,18 +42,10 @@ export function Header({ onMobileMenuOpen }: HeaderProps) {
               alt="Cognaize"
               width={36}
               height={36}
-              className={cn(
-                "h-9 w-auto transition-all duration-300",
-                isScrolled ? "" : "brightness-0 invert"
-              )}
+              className="h-9 w-auto"
             />
             <span className="flex items-baseline gap-1">
-              <span
-                className={cn(
-                  "font-heading text-xl font-bold leading-tight transition-colors duration-300",
-                  isScrolled ? "text-primary" : "text-white"
-                )}
-              >
+              <span className="font-heading text-xl font-bold leading-tight text-primary">
                 Cognaize
               </span>
               <span

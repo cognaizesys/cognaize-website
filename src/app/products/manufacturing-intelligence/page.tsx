@@ -7,8 +7,6 @@ import {
   ClipboardList,
   Calculator,
   ArrowRight,
-  Cog,
-  FileText,
   Gauge,
 } from "lucide-react";
 import Link from "next/link";
@@ -86,32 +84,32 @@ const workflowSteps = [
   },
 ];
 
-const modules = [
+const capabilities = [
   {
-    icon: Calculator,
-    title: "Costing Engine",
+    icon: Upload,
+    title: "Drawing Upload & Spec Extraction",
     description:
-      "AI-generated cost breakdowns with material, labor, machine time, and outsourcing costs per operation.",
-    pills: ["Casting", "Forging", "Machining", "Sheet Metal"],
+      "Upload PNG, JPG, or PDF engineering drawings. AI automatically extracts key specifications, dimensions, material, tolerances, and component type.",
+  },
+  {
+    icon: CheckCircle,
+    title: "Feasibility Assessment",
+    description:
+      "Pre-production checks for material availability, machine capability, and tolerance achievability against your shop's actual equipment and inventory.",
   },
   {
     icon: ClipboardList,
     title: "Routing & Job Cards",
     description:
-      "Automatic operation sequencing, machine assignments, setup/run times, and shop-floor-ready job cards.",
-    pills: ["Casting", "Forging", "Machining", "Sheet Metal"],
+      "Automatic operation sequencing, machine assignments, setup/run times, and shop-floor-ready job cards — ready for the shop floor.",
   },
   {
-    icon: Gauge,
-    title: "Feasibility Assessment",
+    icon: Calculator,
+    title: "Costing Engine",
     description:
-      "Pre-production checks for material availability, machine capability, and tolerance achievability.",
-    pills: ["Casting", "Forging", "Machining", "Sheet Metal"],
+      "AI-generated cost breakdowns with material, labor, machine time, outsourcing costs per operation, and final unit price.",
   },
 ];
-
-const activeTechnologies = ["Casting", "Forging", "Machining", "Sheet Metal & Fabrication"];
-const comingSoonTechnologies = ["Extrusion", "Molding", "Sintering"];
 
 export default function ManufacturingIntelligencePage() {
   const [activeStep, setActiveStep] = useState(0);
@@ -227,141 +225,6 @@ export default function ManufacturingIntelligencePage() {
         </div>
       </section>
 
-      {/* Modules Section */}
-      <section className="py-24">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <span className="text-primary text-sm font-semibold uppercase tracking-wider">
-              Modules
-            </span>
-            <h2 className="text-3xl md:text-4xl font-heading text-text-primary mt-2">
-              Three Integrated Modules
-            </h2>
-            <p className="mt-4 text-text-secondary max-w-2xl mx-auto">
-              Each module works standalone or together for end-to-end manufacturing intelligence.
-            </p>
-          </div>
-          <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
-            {modules.map((mod, i) => (
-              <motion.div
-                key={mod.title}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.1, duration: 0.5 }}
-                className="p-6 rounded-xl border border-gray-100 bg-light-bg hover:border-primary/20 hover:shadow-md transition-all"
-              >
-                <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
-                  <mod.icon className="text-primary" size={22} />
-                </div>
-                <h3 className="font-semibold text-lg mb-2">{mod.title}</h3>
-                <p className="text-text-secondary text-sm leading-relaxed mb-3">
-                  {mod.description}
-                </p>
-                {mod.pills && (
-                  <div className="flex flex-wrap gap-1.5">
-                    {mod.pills.map((pill) => (
-                      <span
-                        key={pill}
-                        className="inline-flex items-center px-2.5 py-0.5 rounded-full bg-primary/5 text-primary text-xs font-medium border border-primary/15"
-                      >
-                        {pill}
-                      </span>
-                    ))}
-                  </div>
-                )}
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Features */}
-      <section className="py-24 bg-light-bg">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <span className="text-primary text-sm font-semibold uppercase tracking-wider">
-              Capabilities
-            </span>
-            <h2 className="text-3xl md:text-4xl font-heading text-text-primary mt-2">
-              End-to-End Cost Estimation Pipeline
-            </h2>
-          </div>
-          <div className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
-            {features.map((feature, i) => (
-              <motion.div
-                key={feature.title}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.1, duration: 0.5 }}
-                className="flex gap-5 p-6 rounded-xl bg-white border border-gray-100 hover:border-primary/20 hover:shadow-md transition-all"
-              >
-                <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center shrink-0">
-                  <feature.icon className="text-primary" size={22} />
-                </div>
-                <div>
-                  <h3 className="font-semibold text-lg mb-2">{feature.title}</h3>
-                  <p className="text-text-secondary text-sm leading-relaxed">
-                    {feature.description}
-                  </p>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Supported Technologies Section */}
-      <section className="py-24">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <span className="text-primary text-sm font-semibold uppercase tracking-wider">
-              Manufacturing Processes
-            </span>
-            <h2 className="text-3xl md:text-4xl font-heading text-text-primary mt-2">
-              Supported Technologies
-            </h2>
-            <p className="mt-4 text-text-secondary max-w-2xl mx-auto">
-              30-minute setup, then &lt;5 minutes per drawing for ongoing analysis.
-            </p>
-          </div>
-          <div className="max-w-3xl mx-auto">
-            <div className="flex flex-wrap gap-3 justify-center mb-8">
-              {activeTechnologies.map((tech, i) => (
-                <motion.span
-                  key={tech}
-                  initial={{ opacity: 0, scale: 0.9 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: i * 0.08, duration: 0.3 }}
-                  className="inline-flex items-center gap-2 bg-primary/10 text-primary border border-primary/25 px-5 py-2.5 rounded-full text-sm font-medium"
-                >
-                  <Cog size={14} />
-                  {tech}
-                </motion.span>
-              ))}
-            </div>
-            <div className="flex flex-wrap gap-3 justify-center">
-              {comingSoonTechnologies.map((tech, i) => (
-                <motion.span
-                  key={tech}
-                  initial={{ opacity: 0, scale: 0.9 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: (activeTechnologies.length + i) * 0.08, duration: 0.3 }}
-                  className="inline-flex items-center gap-2 text-gray-400 border border-dashed border-gray-300 px-5 py-2.5 rounded-full text-sm"
-                >
-                  <FileText size={14} />
-                  {tech}
-                  <span className="text-xs text-gray-400">(Coming Soon)</span>
-                </motion.span>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* Workflow Walkthrough */}
       <section id="workflow" className="py-24 bg-light-bg">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -450,6 +313,55 @@ export default function ManufacturingIntelligencePage() {
                 </div>
               </motion.div>
             </AnimatePresence>
+          </div>
+        </div>
+      </section>
+
+      {/* Capabilities */}
+      <section className="py-24">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <span className="text-primary text-sm font-semibold uppercase tracking-wider">
+              Capabilities
+            </span>
+            <h2 className="text-3xl md:text-4xl font-heading text-text-primary mt-2">
+              End-to-End Cost Estimation Pipeline
+            </h2>
+            <p className="mt-4 text-text-secondary max-w-2xl mx-auto">
+              Four integrated modules that work standalone or together — from drawing upload to final quote.
+            </p>
+            <div className="flex flex-wrap gap-2 justify-center mt-6">
+              {["Casting", "Forging", "Machining", "Sheet Metal"].map((process) => (
+                <span
+                  key={process}
+                  className="inline-flex items-center px-3 py-1 rounded-full bg-primary/5 text-primary text-xs font-medium border border-primary/15"
+                >
+                  {process}
+                </span>
+              ))}
+            </div>
+          </div>
+          <div className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+            {capabilities.map((cap, i) => (
+              <motion.div
+                key={cap.title}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.1, duration: 0.5 }}
+                className="rounded-2xl border border-gray-200 bg-white p-8 hover:border-primary/30 hover:shadow-lg transition-all group"
+              >
+                <div className="flex items-center gap-4 mb-4">
+                  <div className="w-11 h-11 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center shrink-0 group-hover:bg-primary/15 transition-colors">
+                    <cap.icon className="w-5 h-5 text-primary" />
+                  </div>
+                  <h3 className="text-xl font-bold">{cap.title}</h3>
+                </div>
+                <p className="text-text-secondary leading-relaxed">
+                  {cap.description}
+                </p>
+              </motion.div>
+            ))}
           </div>
         </div>
       </section>
