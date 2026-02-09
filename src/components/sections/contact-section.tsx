@@ -2,8 +2,9 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { Mail, MapPin, Globe, CheckCircle, Check } from "lucide-react";
+import { Mail, MapPin, Globe, CheckCircle, Check, Loader2 } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { COMPANY } from "@/lib/constants";
 
 export function ContactSection() {
   const [formData, setFormData] = useState({
@@ -13,12 +14,13 @@ export function ContactSection() {
     message: "",
   });
   const [submitted, setSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [errors, setErrors] = useState<Record<string, string>>({});
+  const [submitError, setSubmitError] = useState("");
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    // Simple client-side validation
     const newErrors: Record<string, string> = {};
     if (!formData.name.trim()) newErrors.name = "Name is required";
     if (!formData.email.trim()) newErrors.email = "Email is required";
@@ -30,15 +32,32 @@ export function ContactSection() {
       return;
     }
 
-    // Clear errors and show success
     setErrors({});
-    setSubmitted(true);
+    setSubmitError("");
+    setIsSubmitting(true);
 
-    // Reset form after 3 seconds
-    setTimeout(() => {
-      setSubmitted(false);
-      setFormData({ name: "", email: "", company: "", message: "" });
-    }, 3000);
+    try {
+      const res = await fetch(
+        `https://formsubmit.co/ajax/${COMPANY.email}`,
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json", Accept: "application/json" },
+          body: JSON.stringify(formData),
+        }
+      );
+
+      if (!res.ok) throw new Error("Failed to send message");
+
+      setSubmitted(true);
+      setTimeout(() => {
+        setSubmitted(false);
+        setFormData({ name: "", email: "", company: "", message: "" });
+      }, 3000);
+    } catch {
+      setSubmitError("Something went wrong. Please try again or email us directly.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (
@@ -70,7 +89,7 @@ export function ContactSection() {
             <h2 className="font-heading text-3xl text-white">Get In Touch</h2>
             <p className="text-gray-400 mt-2">
               Ready to see how Cognaize can transform your operations? Fill out
-              the form and we'll get back to you within 24 hours.
+              the form and we&apos;ll get back to you within 24 hours.
             </p>
 
             {submitted ? (
@@ -81,7 +100,7 @@ export function ContactSection() {
               >
                 <Check className="w-6 h-6 text-green-400 flex-shrink-0" />
                 <p className="text-green-400 font-medium">
-                  Thank you! We'll be in touch soon.
+                  Thank you! We&apos;ll be in touch soon.
                 </p>
               </motion.div>
             ) : (
@@ -198,12 +217,24 @@ export function ContactSection() {
                   )}
                 </div>
 
+                {submitError && (
+                  <p className="text-sm text-red-400">{submitError}</p>
+                )}
+
                 {/* Submit Button */}
                 <button
                   type="submit"
-                  className="bg-primary hover:bg-primary-dark text-white w-full py-3 rounded-lg font-semibold mt-2 transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-dark-bg"
+                  disabled={isSubmitting}
+                  className="bg-primary hover:bg-primary-dark disabled:opacity-60 text-white w-full py-3 rounded-lg font-semibold mt-2 transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-dark-bg inline-flex items-center justify-center gap-2"
                 >
-                  Send Message
+                  {isSubmitting ? (
+                    <>
+                      <Loader2 className="w-4 h-4 animate-spin" />
+                      Sending...
+                    </>
+                  ) : (
+                    "Send Message"
+                  )}
                 </button>
               </form>
             )}
@@ -224,20 +255,20 @@ export function ContactSection() {
             {/* Contact Info Items */}
             <div className="space-y-6 mt-6">
               <a
-                href="mailto:info@cognaizesys.com"
+                href={`mailto:${COMPANY.email}`}
                 className="flex items-start gap-3 text-gray-300 hover:text-primary transition-colors"
               >
                 <Mail className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                <span>info@cognaizesys.com</span>
+                <span>{COMPANY.email}</span>
               </a>
 
               <div className="flex items-start gap-3 text-gray-300">
                 <MapPin className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                <span>Dubai, UAE</span>
+                <span>{COMPANY.location}</span>
               </div>
 
               <a
-                href="https://cognaizesys.com"
+                href={COMPANY.website}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-start gap-3 text-gray-300 hover:text-primary transition-colors"

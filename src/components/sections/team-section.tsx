@@ -161,9 +161,9 @@ export function TeamSection() {
           className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-wrap items-center justify-center gap-12 md:gap-20"
         >
           {[
-            { value: "200+", label: "Years Combined Experience" },
-            { value: "7", label: "Industry Experts" },
-            { value: "10+", label: "Industries Covered" },
+            { value: "100x", label: "Faster Reviews" },
+            { value: "95%+", label: "AI Detection Rate" },
+            { value: "10x", label: "Cost Savings" },
           ].map((stat) => (
             <div key={stat.label} className="text-center">
               <div className="text-3xl md:text-4xl font-heading text-gray-900">

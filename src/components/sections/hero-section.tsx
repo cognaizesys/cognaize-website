@@ -126,9 +126,9 @@ export function HeroSection() {
               transition={{ duration: 0.6, delay: 0.5 }}
               className="mt-8 text-lg text-gray-400 max-w-lg leading-relaxed"
             >
-              Cognaize instantly analyzes engineering drawings to catch errors,
-              estimate costs, and accelerate reviews — replacing hours of manual
-              work with AI precision.
+              Cognaize analyzes engineering drawings 100x faster with 95%+
+              accuracy — catching errors, estimating costs, and accelerating
+              reviews that used to take days.
             </motion.p>
 
             {/* Metrics row */}
@@ -312,7 +312,7 @@ export function HeroSection() {
             >
               <div className="flex items-center gap-2">
                 <Zap className="w-4 h-4 text-accent" />
-                <span className="text-xs font-semibold text-white">16x Faster</span>
+                <span className="text-xs font-semibold text-white">100x Faster</span>
               </div>
             </motion.div>
 

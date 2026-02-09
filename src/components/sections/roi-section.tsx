@@ -35,12 +35,6 @@ const roiData: ROIMetric[] = [
     after: "<1.5%",
     impact: "8-10x avoidance",
   },
-  {
-    metric: "Implementation Time",
-    before: "3-6 months",
-    after: "<1 week",
-    impact: ">10x faster",
-  },
 ];
 
 const keySummaryStats = [

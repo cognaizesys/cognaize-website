@@ -9,3 +9,6 @@ export { IndustriesSection } from "./industries-section";
 export { DemoCTASection } from "./demo-cta-section";
 export { TeamSection } from "./team-section";
 export { ContactSection } from "./contact-section";
+export { SecuritySection } from "./security-section";
+export { PricingSection } from "./pricing-section";
+export { PilotProcessSection } from "./pilot-process-section";

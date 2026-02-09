@@ -6,16 +6,16 @@ import {
   CheckCircle,
   ClipboardList,
   Calculator,
-  ArrowLeft,
   ArrowRight,
-  Clock,
-  DollarSign,
+  Cog,
+  FileText,
   Gauge,
 } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 import { useState, useEffect } from "react";
 import { AnimatePresence } from "framer-motion";
+import { SecuritySection } from "@/components/sections/security-section";
 
 const features = [
   {
@@ -85,6 +85,33 @@ const workflowSteps = [
     alt: "Detailed Cost Breakdown",
   },
 ];
+
+const modules = [
+  {
+    icon: Calculator,
+    title: "Costing Engine",
+    description:
+      "AI-generated cost breakdowns with material, labor, machine time, and outsourcing costs per operation.",
+    pills: ["Casting", "Forging", "Machining", "Sheet Metal"],
+  },
+  {
+    icon: ClipboardList,
+    title: "Routing & Job Cards",
+    description:
+      "Automatic operation sequencing, machine assignments, setup/run times, and shop-floor-ready job cards.",
+    pills: ["Casting", "Forging", "Machining", "Sheet Metal"],
+  },
+  {
+    icon: Gauge,
+    title: "Feasibility Assessment",
+    description:
+      "Pre-production checks for material availability, machine capability, and tolerance achievability.",
+    pills: ["Casting", "Forging", "Machining", "Sheet Metal"],
+  },
+];
+
+const activeTechnologies = ["Casting", "Forging", "Machining", "Sheet Metal & Fabrication"];
+const comingSoonTechnologies = ["Extrusion", "Molding", "Sintering"];
 
 export default function ManufacturingIntelligencePage() {
   const [activeStep, setActiveStep] = useState(0);
@@ -200,8 +227,57 @@ export default function ManufacturingIntelligencePage() {
         </div>
       </section>
 
-      {/* Features */}
+      {/* Modules Section */}
       <section className="py-24">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <span className="text-primary text-sm font-semibold uppercase tracking-wider">
+              Modules
+            </span>
+            <h2 className="text-3xl md:text-4xl font-heading text-text-primary mt-2">
+              Three Integrated Modules
+            </h2>
+            <p className="mt-4 text-text-secondary max-w-2xl mx-auto">
+              Each module works standalone or together for end-to-end manufacturing intelligence.
+            </p>
+          </div>
+          <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+            {modules.map((mod, i) => (
+              <motion.div
+                key={mod.title}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.1, duration: 0.5 }}
+                className="p-6 rounded-xl border border-gray-100 bg-light-bg hover:border-primary/20 hover:shadow-md transition-all"
+              >
+                <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
+                  <mod.icon className="text-primary" size={22} />
+                </div>
+                <h3 className="font-semibold text-lg mb-2">{mod.title}</h3>
+                <p className="text-text-secondary text-sm leading-relaxed mb-3">
+                  {mod.description}
+                </p>
+                {mod.pills && (
+                  <div className="flex flex-wrap gap-1.5">
+                    {mod.pills.map((pill) => (
+                      <span
+                        key={pill}
+                        className="inline-flex items-center px-2.5 py-0.5 rounded-full bg-primary/5 text-primary text-xs font-medium border border-primary/15"
+                      >
+                        {pill}
+                      </span>
+                    ))}
+                  </div>
+                )}
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Features */}
+      <section className="py-24 bg-light-bg">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <span className="text-primary text-sm font-semibold uppercase tracking-wider">
@@ -219,7 +295,7 @@ export default function ManufacturingIntelligencePage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.1, duration: 0.5 }}
-                className="flex gap-5 p-6 rounded-xl bg-light-bg border border-gray-100 hover:border-primary/20 hover:shadow-md transition-all"
+                className="flex gap-5 p-6 rounded-xl bg-white border border-gray-100 hover:border-primary/20 hover:shadow-md transition-all"
               >
                 <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center shrink-0">
                   <feature.icon className="text-primary" size={22} />
@@ -232,6 +308,56 @@ export default function ManufacturingIntelligencePage() {
                 </div>
               </motion.div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Supported Technologies Section */}
+      <section className="py-24">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <span className="text-primary text-sm font-semibold uppercase tracking-wider">
+              Manufacturing Processes
+            </span>
+            <h2 className="text-3xl md:text-4xl font-heading text-text-primary mt-2">
+              Supported Technologies
+            </h2>
+            <p className="mt-4 text-text-secondary max-w-2xl mx-auto">
+              30-minute setup, then &lt;5 minutes per drawing for ongoing analysis.
+            </p>
+          </div>
+          <div className="max-w-3xl mx-auto">
+            <div className="flex flex-wrap gap-3 justify-center mb-8">
+              {activeTechnologies.map((tech, i) => (
+                <motion.span
+                  key={tech}
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: i * 0.08, duration: 0.3 }}
+                  className="inline-flex items-center gap-2 bg-primary/10 text-primary border border-primary/25 px-5 py-2.5 rounded-full text-sm font-medium"
+                >
+                  <Cog size={14} />
+                  {tech}
+                </motion.span>
+              ))}
+            </div>
+            <div className="flex flex-wrap gap-3 justify-center">
+              {comingSoonTechnologies.map((tech, i) => (
+                <motion.span
+                  key={tech}
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: (activeTechnologies.length + i) * 0.08, duration: 0.3 }}
+                  className="inline-flex items-center gap-2 text-gray-400 border border-dashed border-gray-300 px-5 py-2.5 rounded-full text-sm"
+                >
+                  <FileText size={14} />
+                  {tech}
+                  <span className="text-xs text-gray-400">(Coming Soon)</span>
+                </motion.span>
+              ))}
+            </div>
           </div>
         </div>
       </section>
@@ -327,6 +453,9 @@ export default function ManufacturingIntelligencePage() {
           </div>
         </div>
       </section>
+
+      {/* Security & Trust */}
+      <SecuritySection />
 
       {/* Cross-sell + CTA */}
       <section

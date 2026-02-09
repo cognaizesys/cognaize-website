@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { COMPANY, PRODUCT_LINKS } from "@/lib/constants";
 import { Container } from "./container";
 
@@ -12,14 +13,23 @@ export function Footer() {
           <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
             {/* Company Info */}
             <div className="space-y-4">
-              <div className="flex flex-col items-start">
-                <span className="font-heading text-2xl leading-tight text-white">
-                  Cognaize
+              <Link href="/" className="flex items-center gap-2">
+                <Image
+                  src="/images/logo/cognaize-icon.png"
+                  alt="Cognaize"
+                  width={32}
+                  height={32}
+                  className="h-8 w-auto brightness-0 invert"
+                />
+                <span className="flex items-baseline gap-1">
+                  <span className="font-heading text-lg font-bold leading-tight text-white">
+                    Cognaize
+                  </span>
+                  <span className="font-body text-lg font-normal leading-tight text-text-on-dark">
+                    Systems
+                  </span>
                 </span>
-                <span className="font-body text-xs leading-tight text-text-on-dark">
-                  Systems
-                </span>
-              </div>
+              </Link>
               <p className="text-sm leading-relaxed text-text-on-dark">
                 {COMPANY.tagline}. Transforming manufacturing operations through intelligent automation and data-driven insights.
               </p>

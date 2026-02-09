@@ -14,7 +14,7 @@ const products = [
     href: "/products/design-intelligence",
     color: "#846fbc",
     highlights: ["Error detection across 13+ categories", "Tolerance & GD&T validation", "Automated findings report"],
-    stat: { value: "16x", label: "faster than manual review" },
+    stat: { value: "<15min", label: "review time per drawing" },
   },
   {
     icon: Calculator,
