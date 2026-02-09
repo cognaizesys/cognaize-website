@@ -70,7 +70,7 @@ export function MetricsSection() {
               transition={{ duration: 0.5, delay: index * 0.1 }}
               className="relative text-center p-6 rounded-2xl bg-gray-50/50 border border-gray-100"
             >
-              <div className="text-4xl md:text-5xl font-bold text-primary font-heading">
+              <div className="text-3xl md:text-4xl font-bold text-primary font-heading">
                 <AnimatedCounter
                   value={metric.numericValue}
                   suffix={metric.suffix}

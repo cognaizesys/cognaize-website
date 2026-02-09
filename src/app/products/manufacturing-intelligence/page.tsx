@@ -130,7 +130,7 @@ export default function ManufacturingIntelligencePage() {
               </span>
             </div>
 
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-heading text-white mb-6 leading-[1.1]">
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-heading text-white mb-6 leading-[1.1]">
               Drawing to <span className="text-accent">Quote in Minutes</span>
             </h1>
 

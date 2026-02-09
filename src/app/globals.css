@@ -1,44 +1,5 @@
 @import "tailwindcss";
 
-@font-face {
-  font-family: "Yeseva One";
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: url("/fonts/yeseva-one-latin.woff2") format("woff2");
-}
-
-@font-face {
-  font-family: "Lato";
-  font-style: normal;
-  font-weight: 300;
-  font-display: swap;
-  src: url("/fonts/lato-light.woff2") format("woff2");
-}
-
-@font-face {
-  font-family: "Lato";
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: url("/fonts/lato-regular.woff2") format("woff2");
-}
-
-@font-face {
-  font-family: "Lato";
-  font-style: normal;
-  font-weight: 700;
-  font-display: swap;
-  src: url("/fonts/lato-bold.woff2") format("woff2");
-}
-
-@font-face {
-  font-family: "Lato";
-  font-style: normal;
-  font-weight: 900;
-  font-display: swap;
-  src: url("/fonts/lato-black.woff2") format("woff2");
-}
 
 @theme inline {
   --color-primary: #846fbc;
@@ -59,8 +20,8 @@
   --color-success: #22c55e;
   --color-warning: #f59e0b;
   --color-error: #ef4444;
-  --font-heading: "Yeseva One", serif;
-  --font-body: "Lato", sans-serif;
+  --font-heading: var(--font-jakarta), sans-serif;
+  --font-body: var(--font-inter), sans-serif;
 }
 
 *,
@@ -88,6 +49,8 @@ h4,
 h5,
 h6 {
   font-family: var(--font-heading);
+  font-weight: 700;
+  letter-spacing: -0.025em;
 }
 
 /* AI Grid Background Pattern */

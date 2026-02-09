@@ -110,7 +110,7 @@ export function HeroSection() {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.3 }}
-              className="mt-10 text-4xl sm:text-5xl lg:text-6xl font-heading text-white tracking-tight leading-[1.1]"
+              className="mt-10 text-3xl sm:text-4xl lg:text-5xl font-heading font-bold text-white tracking-tight leading-[1.1]"
             >
               Upload a Drawing.
               <br />

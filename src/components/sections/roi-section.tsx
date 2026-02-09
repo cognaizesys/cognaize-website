@@ -61,7 +61,7 @@ export function ROISection() {
           transition={{ duration: 0.6 }}
           className="text-center"
         >
-          <h2 className="text-3xl md:text-5xl font-heading font-bold text-white tracking-tight">
+          <h2 className="text-2xl md:text-4xl font-heading text-white tracking-tight">
             Measurable <span className="text-primary-light">Impact</span>
           </h2>
         </motion.div>

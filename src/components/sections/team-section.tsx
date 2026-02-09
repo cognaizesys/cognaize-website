@@ -121,7 +121,7 @@ export function TeamSection() {
             transition={{ duration: 0.6 }}
             className="text-center max-w-2xl mx-auto mb-16"
           >
-            <h2 className="text-4xl md:text-5xl font-heading text-white tracking-tight">
+            <h2 className="text-3xl md:text-4xl font-heading text-white tracking-tight">
               Our
               <span className="text-primary-light"> Experts</span>
             </h2>
@@ -166,7 +166,7 @@ export function TeamSection() {
             { value: "10+", label: "Industries Covered" },
           ].map((stat) => (
             <div key={stat.label} className="text-center">
-              <div className="text-4xl md:text-5xl font-heading text-gray-900 font-bold">
+              <div className="text-3xl md:text-4xl font-heading text-gray-900">
                 {stat.value}
               </div>
               <div className="text-xs text-gray-500 mt-2 uppercase tracking-widest">

@@ -48,7 +48,7 @@ export function DemoCTASection() {
               </span>
             </div>
 
-            <h2 className="text-4xl md:text-5xl font-heading text-white tracking-tight leading-tight">
+            <h2 className="text-3xl md:text-4xl font-heading text-white tracking-tight leading-tight">
               Ready to See What
               <br />
               <span className="text-primary-light">AI Can Do for You?</span>

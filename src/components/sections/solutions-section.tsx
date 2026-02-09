@@ -91,7 +91,7 @@ export function SolutionsSection() {
               Two Products &middot; One Platform
             </span>
           </div>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-heading text-white tracking-tight">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-heading text-white tracking-tight">
             AI That Understands
             <br />
             Engineering Drawings

@@ -53,7 +53,7 @@ export function IndustriesSection() {
           <p className="text-sm font-semibold uppercase tracking-wide text-[#846fbc]">
             Industries We Serve
           </p>
-          <h2 className="mt-3 text-3xl md:text-5xl font-heading font-bold text-gray-900 tracking-tight">
+          <h2 className="mt-3 text-2xl md:text-4xl font-heading text-gray-900 tracking-tight">
             Built for Precision Manufacturing
           </h2>
         </motion.div>

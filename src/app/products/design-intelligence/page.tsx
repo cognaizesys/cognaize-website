@@ -115,7 +115,7 @@ export default function DesignIntelligencePage() {
               </span>
             </div>
 
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-heading text-white mb-6 leading-[1.1]">
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-heading text-white mb-6 leading-[1.1]">
               AI-Powered <span className="text-primary-light">Drawing Review</span>
             </h1>
 
