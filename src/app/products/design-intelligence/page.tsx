@@ -48,6 +48,13 @@ const features = [
 
 const screenshots = [
   {
+    src: "/images/hero/3-process-advisor.png",
+    alt: "AI Process Advisor recommendation",
+    title: "Process Advisor",
+    description:
+      "Upload a drawing and let AI recommend the optimal manufacturing process — Cast, Forge, Fabricate, or Machine — based on geometry, material, and tolerance requirements.",
+  },
+  {
     src: "/images/hero/1-design-review.png",
     alt: "AI Design Review with findings panel",
     title: "Design Review",
@@ -60,13 +67,6 @@ const screenshots = [
     title: "Drawing Version Comparison",
     description:
       "Compare two drawing revisions side-by-side. AI detects changes in dimensions, tolerances, GD&T, geometry, and materials — with risk assessment for each modification.",
-  },
-  {
-    src: "/images/hero/3-process-advisor.png",
-    alt: "AI Process Advisor recommendation",
-    title: "Process Advisor",
-    description:
-      "Upload a drawing and let AI recommend the optimal manufacturing process — Cast, Forge, Fabricate, or Machine — based on geometry, material, and tolerance requirements.",
   },
 ];
 
