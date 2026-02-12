@@ -46,6 +46,12 @@ const teamMembers = [
     bio: "40+ years in Automotive Design across Asia & NA",
     image: "/images/team/malaiappan.png",
   },
+  {
+    name: "Suneel Aiyer",
+    role: "SaaS Leader, Manufacturing & Supply Chain",
+    bio: "Ex-PwC, KPMG, EY | Co-founder, Worxogo",
+    image: "/images/team/suneel.png",
+  },
 ];
 
 const containerVariants = {

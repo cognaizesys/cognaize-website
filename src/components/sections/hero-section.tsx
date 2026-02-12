@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { CheckCircle, Zap, ArrowRight } from "lucide-react";
 import { heroMetrics } from "@/data/metrics";
+import { HeroShowcase } from "@/components/hero/hero-carousel";
 
 export function HeroSection() {
 
@@ -130,17 +131,7 @@ export function HeroSection() {
             transition={{ duration: 0.7, delay: 0.5 }}
             className="relative hidden lg:block"
           >
-            <div className="relative rounded-2xl overflow-hidden border border-white/10 shadow-2xl">
-              <video
-                autoPlay
-                loop
-                muted
-                playsInline
-                className="w-full h-auto rounded-2xl"
-              >
-                <source src="/videos/hero-scan-web.mp4" type="video/mp4" />
-              </video>
-            </div>
+            <HeroShowcase />
 
             {/* Floating accent cards */}
             <motion.div
@@ -166,6 +157,7 @@ export function HeroSection() {
             </motion.div>
           </motion.div>
         </div>
+
       </div>
 
     </section>
