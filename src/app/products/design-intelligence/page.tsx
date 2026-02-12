@@ -48,25 +48,25 @@ const features = [
 
 const screenshots = [
   {
-    src: "/images/products/di/di-overview.png",
-    alt: "AI Drawing Review showing detected issues",
-    title: "AI-Powered Drawing Review",
+    src: "/images/hero/1-design-review.png",
+    alt: "AI Design Review with findings panel",
+    title: "Design Review",
     description:
-      "Upload any engineering drawing and get instant AI analysis across 13+ error categories. Critical issues are highlighted directly on the drawing.",
+      "Upload any engineering drawing and get instant AI analysis across 13+ error categories. Issues are classified by severity — Critical, Major, and Minor — with confidence scores and grid references.",
   },
   {
-    src: "/images/products/di/di-finding-detail.png",
-    alt: "Detailed finding with tolerance analysis",
-    title: "Detailed Finding Analysis",
+    src: "/images/hero/2-version-comparison.png",
+    alt: "Side-by-side drawing version comparison",
+    title: "Drawing Version Comparison",
     description:
-      "Click any finding to see full details — error ID, category, severity, location, and specific current vs expected values with confidence scores.",
+      "Compare two drawing revisions side-by-side. AI detects changes in dimensions, tolerances, GD&T, geometry, and materials — with risk assessment for each modification.",
   },
   {
-    src: "/images/products/di/di-material-finding.png",
-    alt: "Material specification finding",
-    title: "Material Specification Review",
+    src: "/images/hero/3-process-advisor.png",
+    alt: "AI Process Advisor recommendation",
+    title: "Process Advisor",
     description:
-      "Identify missing or incomplete material specifications, ensuring every drawing meets manufacturing requirements before hitting the shop floor.",
+      "Upload a drawing and let AI recommend the optimal manufacturing process — Cast, Forge, Fabricate, or Machine — based on geometry, material, and tolerance requirements.",
   },
 ];
 
