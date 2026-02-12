@@ -38,7 +38,7 @@ const roiData: ROIMetric[] = [
 ];
 
 const keySummaryStats = [
-  { value: "75%", label: "cost reduction" },
+  { value: "90%+", label: "cost reduction" },
   { value: "16x", label: "faster reviews" },
   { value: "95%+", label: "detection rate" },
 ];

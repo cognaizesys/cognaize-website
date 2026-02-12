@@ -161,7 +161,7 @@ export function TeamSection() {
           className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12"
         >
           {[
-            { value: "100x", label: "Faster Than Manual Review" },
+            { value: "16x", label: "Faster Than Manual Review" },
             { value: "95%+", label: "AI Detection Accuracy" },
             { value: "10x", label: "Cost Reduction Per Review" },
             { value: "<1 Week", label: "Time to Deploy" },

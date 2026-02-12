@@ -77,6 +77,22 @@ export function Footer() {
                   </a>
                 </li>
                 <li>
+                  <Link
+                    href="/blog"
+                    className="text-sm text-text-on-dark hover:text-primary-light"
+                  >
+                    Blog
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/careers"
+                    className="text-sm text-text-on-dark hover:text-primary-light"
+                  >
+                    Careers
+                  </Link>
+                </li>
+                <li>
                   <a
                     href="#contact"
                     className="text-sm text-text-on-dark hover:text-primary-light"
