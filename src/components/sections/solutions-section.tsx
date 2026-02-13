@@ -56,12 +56,12 @@ export function SolutionsSection() {
       id="products"
       className="py-32 relative overflow-hidden"
       style={{
-        background: "linear-gradient(180deg, #0a0a0f 0%, #12121a 50%, #0a0a0f 100%)",
+        background: "linear-gradient(180deg, #0a0a0f 0%, #12121a 40%, #0c1a1a 70%, #0a0a0f 100%)",
       }}
     >
       {/* Grid background */}
       <div
-        className="absolute inset-0 opacity-15"
+        className="absolute inset-0 opacity-25"
         style={{
           backgroundImage:
             "linear-gradient(rgba(132, 111, 188, 0.12) 1px, transparent 1px), linear-gradient(90deg, rgba(132, 111, 188, 0.12) 1px, transparent 1px)",
@@ -71,9 +71,9 @@ export function SolutionsSection() {
 
       {/* Radial glow */}
       <div
-        className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[400px] opacity-20"
+        className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[400px] opacity-35"
         style={{
-          background: "radial-gradient(ellipse, rgba(132, 111, 188, 0.4) 0%, transparent 70%)",
+          background: "radial-gradient(ellipse, rgba(110, 231, 183, 0.4) 0%, rgba(132, 111, 188, 0.2) 50%, transparent 70%)",
         }}
       />
 
@@ -86,7 +86,7 @@ export function SolutionsSection() {
           transition={{ duration: 0.5 }}
           className="text-center max-w-3xl mx-auto"
         >
-          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-primary/15 border border-primary/25 mb-6">
+          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-primary/30 border border-primary/50 mb-6">
             <span className="text-xs font-medium text-primary-light uppercase tracking-wider">
               Two Products &middot; One Platform
             </span>
@@ -122,7 +122,7 @@ export function SolutionsSection() {
                 <div
                   className="absolute -inset-px rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"
                   style={{
-                    background: `linear-gradient(135deg, ${product.color}30, transparent 50%, ${product.color}15)`,
+                    background: `linear-gradient(135deg, ${product.color}70, transparent 50%, ${product.color}40)`,
                   }}
                 />
 
@@ -133,9 +133,9 @@ export function SolutionsSection() {
                 >
                   {/* Top accent bar */}
                   <div
-                    className="h-[2px]"
+                    className="h-[3px]"
                     style={{
-                      background: `linear-gradient(90deg, ${product.color}, ${product.color}40, transparent)`,
+                      background: `linear-gradient(90deg, ${product.color}, ${product.color}60, transparent)`,
                     }}
                   />
 
@@ -145,8 +145,8 @@ export function SolutionsSection() {
                       <div
                         className="w-14 h-14 rounded-xl flex items-center justify-center shrink-0 border"
                         style={{
-                          backgroundColor: `${product.color}10`,
-                          borderColor: `${product.color}25`,
+                          backgroundColor: `${product.color}30`,
+                          borderColor: `${product.color}35`,
                         }}
                       >
                         <Icon
@@ -217,6 +217,9 @@ export function SolutionsSection() {
           })}
         </motion.div>
       </div>
+
+      {/* Bottom section divider */}
+      <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-accent/35 to-transparent" />
     </section>
   );
 }

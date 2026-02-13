@@ -10,13 +10,13 @@ export function DemoCTASection() {
       <div
         className="absolute inset-0"
         style={{
-          background: "linear-gradient(135deg, #0a0a0f 0%, #1a1028 50%, #0a0a0f 100%)",
+          background: "linear-gradient(135deg, #0a0a0f 0%, #1a1028 40%, #0c1a1a 70%, #0a0a0f 100%)",
         }}
       />
 
       {/* Grid pattern */}
       <div
-        className="absolute inset-0 opacity-15"
+        className="absolute inset-0 opacity-25"
         style={{
           backgroundImage:
             "linear-gradient(rgba(132, 111, 188, 0.15) 1px, transparent 1px), linear-gradient(90deg, rgba(132, 111, 188, 0.15) 1px, transparent 1px)",
@@ -28,7 +28,7 @@ export function DemoCTASection() {
       <div
         className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px]"
         style={{
-          background: "radial-gradient(ellipse, rgba(132, 111, 188, 0.15) 0%, transparent 60%)",
+          background: "radial-gradient(ellipse, rgba(132, 111, 188, 0.40) 0%, rgba(110, 231, 183, 0.18) 50%, transparent 70%)",
         }}
       />
 
@@ -41,7 +41,7 @@ export function DemoCTASection() {
             viewport={{ once: true }}
             transition={{ duration: 0.7 }}
           >
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-primary/10 border border-primary/20 mb-8">
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-primary/25 border border-primary/45 mb-8">
               <Sparkles className="w-3 h-3 text-accent" />
               <span className="text-xs font-medium text-primary-light uppercase tracking-wider">
                 Get Started
@@ -63,14 +63,15 @@ export function DemoCTASection() {
             <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
               <a
                 href="#contact"
-                className="group inline-flex items-center gap-2 px-8 py-4 rounded-xl bg-primary hover:bg-primary-dark text-white font-bold text-lg transition-all duration-300 hover:shadow-lg hover:shadow-primary/25"
+                className="group inline-flex items-center gap-2 px-8 py-4 rounded-xl text-white font-bold text-lg transition-all duration-300 shadow-lg shadow-primary/40 hover:shadow-xl hover:shadow-primary/45"
+                style={{ background: "linear-gradient(135deg, #846fbc, #6ee7b7)" }}
               >
                 Book a Demo
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-0.5 transition-transform" />
               </a>
               <a
                 href="#contact"
-                className="inline-flex items-center gap-2 px-8 py-4 rounded-xl border border-white/15 hover:border-white/30 hover:bg-white/5 text-white font-bold text-lg transition-all duration-300"
+                className="inline-flex items-center gap-2 px-8 py-4 rounded-xl border border-accent/40 hover:border-accent/60 hover:bg-white/5 text-white font-bold text-lg transition-all duration-300"
               >
                 Start Free Trial
               </a>

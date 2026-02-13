@@ -12,24 +12,32 @@ export function HeroSection() {
       id="about"
       className="relative min-h-screen flex items-center overflow-hidden"
       style={{
-        background: "linear-gradient(135deg, #0a0a0f 0%, #12121a 40%, #1a1028 70%, #0a0a0f 100%)",
+        background: "linear-gradient(135deg, #0a0a0f 0%, #12121a 35%, #1a1028 60%, #0c1a1a 85%, #0a0a0f 100%)",
       }}
     >
       {/* Animated grid background */}
       <div
-        className="absolute inset-0 opacity-20"
+        className="absolute inset-0 opacity-30"
         style={{
           backgroundImage:
-            "linear-gradient(rgba(132, 111, 188, 0.15) 1px, transparent 1px), linear-gradient(90deg, rgba(132, 111, 188, 0.15) 1px, transparent 1px)",
+            "linear-gradient(rgba(132, 111, 188, 0.15) 1px, transparent 1px), linear-gradient(90deg, rgba(110, 231, 183, 0.08) 1px, transparent 1px)",
           backgroundSize: "80px 80px",
         }}
       />
 
       {/* Radial glow behind demo */}
       <div
-        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] opacity-20"
+        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[900px] opacity-30"
         style={{
-          background: "radial-gradient(circle, rgba(132, 111, 188, 0.3) 0%, transparent 60%)",
+          background: "radial-gradient(circle, rgba(132, 111, 188, 0.3) 0%, rgba(110, 231, 183, 0.05) 50%, transparent 70%)",
+        }}
+      />
+
+      {/* Secondary teal glow on right */}
+      <div
+        className="absolute top-1/3 right-0 w-[500px] h-[500px] opacity-15"
+        style={{
+          background: "radial-gradient(circle, rgba(110, 231, 183, 0.3) 0%, transparent 60%)",
         }}
       />
 
@@ -37,14 +45,15 @@ export function HeroSection() {
       {[...Array(6)].map((_, i) => (
         <motion.div
           key={i}
-          className="absolute w-1 h-1 rounded-full bg-primary-light/30"
+          className="absolute w-1.5 h-1.5 rounded-full"
           style={{
             left: `${15 + i * 15}%`,
             top: `${20 + (i % 3) * 25}%`,
+            backgroundColor: i % 2 === 0 ? "rgba(155, 137, 204, 0.5)" : "rgba(110, 231, 183, 0.4)",
           }}
           animate={{
             y: [0, -30, 0],
-            opacity: [0.2, 0.5, 0.2],
+            opacity: [0.3, 0.6, 0.3],
           }}
           transition={{
             duration: 4 + i,
@@ -110,14 +119,14 @@ export function HeroSection() {
             >
               <a
                 href="#contact"
-                className="group inline-flex items-center gap-2 px-7 py-3.5 rounded-lg bg-primary hover:bg-primary-dark text-white font-semibold transition-all duration-300 hover:shadow-lg hover:shadow-primary/25"
+                className="group inline-flex items-center gap-2 px-7 py-3.5 rounded-lg bg-primary hover:bg-primary-dark text-white font-semibold transition-all duration-300 shadow-md shadow-primary/20 hover:shadow-lg hover:shadow-primary/30"
               >
                 Schedule a Demo
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
               </a>
               <a
                 href="#products"
-                className="inline-flex items-center gap-2 px-7 py-3.5 rounded-lg border border-white/20 hover:border-white/40 hover:bg-white/5 text-white font-semibold transition-all duration-300"
+                className="inline-flex items-center gap-2 px-7 py-3.5 rounded-lg border border-primary/30 hover:border-primary/50 hover:bg-white/5 text-white font-semibold transition-all duration-300"
               >
                 Explore Products
               </a>
@@ -137,7 +146,8 @@ export function HeroSection() {
             <motion.div
               animate={{ y: [0, -8, 0] }}
               transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-              className="absolute -top-4 -right-4 px-4 py-2.5 rounded-lg bg-dark-card border border-white/10 shadow-xl backdrop-blur-sm"
+              className="absolute -top-4 -right-4 px-4 py-2.5 rounded-lg bg-dark-card border border-accent/25 backdrop-blur-sm"
+              style={{ boxShadow: "0 8px 20px rgba(0,0,0,0.4)" }}
             >
               <div className="flex items-center gap-2">
                 <Zap className="w-4 h-4 text-accent" />
@@ -148,7 +158,8 @@ export function HeroSection() {
             <motion.div
               animate={{ y: [0, 8, 0] }}
               transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-              className="absolute -bottom-4 -left-4 px-4 py-2.5 rounded-lg bg-dark-card border border-white/10 shadow-xl backdrop-blur-sm"
+              className="absolute bottom-12 -left-4 px-4 py-2.5 rounded-lg bg-dark-card border border-primary/25 backdrop-blur-sm"
+              style={{ boxShadow: "0 4px 12px rgba(0,0,0,0.3)" }}
             >
               <div className="flex items-center gap-2">
                 <CheckCircle className="w-4 h-4 text-accent" />

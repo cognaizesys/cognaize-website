@@ -32,9 +32,16 @@ export function ProductShowcaseSection() {
       id="demo"
       className="py-24 relative overflow-hidden"
       style={{
-        background: "linear-gradient(180deg, #ffffff 0%, #f8f8fa 50%, #ffffff 100%)",
+        background: "linear-gradient(180deg, #f3eeff 0%, #e5f2ff 50%, #f0e0ff 100%)",
       }}
     >
+      {/* Decorative blobs */}
+      <div className="absolute top-0 right-0 w-[400px] h-[400px] opacity-50 pointer-events-none" style={{ background: "radial-gradient(circle, rgba(132, 111, 188, 0.25) 0%, transparent 70%)" }} />
+      <div className="absolute bottom-0 left-0 w-[400px] h-[400px] opacity-50 pointer-events-none" style={{ background: "radial-gradient(circle, rgba(110, 231, 183, 0.20) 0%, transparent 70%)" }} />
+
+      {/* Section dividers */}
+      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent" />
+      <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-accent/30 to-transparent" />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Heading */}
         <motion.div
@@ -44,7 +51,7 @@ export function ProductShowcaseSection() {
           transition={{ duration: 0.5 }}
           className="text-center max-w-3xl mx-auto mb-12"
         >
-          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-primary/10 border border-primary/15 mb-6">
+          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-primary/25 border border-primary/40 mb-6">
             <Play className="w-3 h-3 text-primary" />
             <span className="text-xs font-medium text-primary uppercase tracking-wider">
               Live Product Demo
@@ -60,7 +67,7 @@ export function ProductShowcaseSection() {
 
         {/* Tab bar */}
         <div className="flex justify-center mb-12">
-          <div className="inline-flex bg-gray-100 rounded-full p-1 gap-1 border border-gray-200">
+          <div className="inline-flex bg-primary/10 rounded-full p-1 gap-1 border border-primary/25">
             {tabs.map((tab) => {
               const Icon = tab.icon;
               const isActive = activeTab === tab.id;

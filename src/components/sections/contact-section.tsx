@@ -75,8 +75,15 @@ export function ContactSection() {
   };
 
   return (
-    <section id="contact" className="py-20 bg-dark-bg">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="contact" className="py-20 relative overflow-hidden" style={{ background: "linear-gradient(135deg, #0a0a0f 0%, #1a150e 50%, #0a0a0f 100%)" }}>
+      {/* Warm amber glow */}
+      <div
+        className="absolute top-1/3 right-0 w-[500px] h-[500px] opacity-20 pointer-events-none"
+        style={{
+          background: "radial-gradient(circle, rgba(245, 158, 11, 0.5) 0%, transparent 60%)",
+        }}
+      />
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid md:grid-cols-5 gap-12">
           {/* Left Column - Contact Form */}
           <motion.div
@@ -123,7 +130,7 @@ export function ContactSection() {
                       "bg-white/10 border text-white rounded-lg px-4 py-3 w-full outline-none transition-colors placeholder:text-gray-500",
                       errors.name
                         ? "border-red-500 focus:border-red-500 focus:ring-1 focus:ring-red-500"
-                        : "border-white/20 focus:border-primary focus:ring-1 focus:ring-primary"
+                        : "border-white/20 focus:border-primary focus:ring-2 focus:ring-primary/30"
                     )}
                     placeholder="John Doe"
                   />
@@ -150,7 +157,7 @@ export function ContactSection() {
                       "bg-white/10 border text-white rounded-lg px-4 py-3 w-full outline-none transition-colors placeholder:text-gray-500",
                       errors.email
                         ? "border-red-500 focus:border-red-500 focus:ring-1 focus:ring-red-500"
-                        : "border-white/20 focus:border-primary focus:ring-1 focus:ring-primary"
+                        : "border-white/20 focus:border-primary focus:ring-2 focus:ring-primary/30"
                     )}
                     placeholder="john@company.com"
                   />
@@ -177,7 +184,7 @@ export function ContactSection() {
                       "bg-white/10 border text-white rounded-lg px-4 py-3 w-full outline-none transition-colors placeholder:text-gray-500",
                       errors.company
                         ? "border-red-500 focus:border-red-500 focus:ring-1 focus:ring-red-500"
-                        : "border-white/20 focus:border-primary focus:ring-1 focus:ring-primary"
+                        : "border-white/20 focus:border-primary focus:ring-2 focus:ring-primary/30"
                     )}
                     placeholder="Your Company Name"
                   />
@@ -206,7 +213,7 @@ export function ContactSection() {
                       "bg-white/10 border text-white rounded-lg px-4 py-3 w-full outline-none transition-colors placeholder:text-gray-500 resize-none",
                       errors.message
                         ? "border-red-500 focus:border-red-500 focus:ring-1 focus:ring-red-500"
-                        : "border-white/20 focus:border-primary focus:ring-1 focus:ring-primary"
+                        : "border-white/20 focus:border-primary focus:ring-2 focus:ring-primary/30"
                     )}
                     placeholder="Tell us about your needs..."
                   />
@@ -225,7 +232,7 @@ export function ContactSection() {
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="bg-primary hover:bg-primary-dark disabled:opacity-60 text-white w-full py-3 rounded-lg font-semibold mt-2 transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-dark-bg inline-flex items-center justify-center gap-2"
+                  className="bg-gradient-to-r from-primary to-primary-dark hover:from-primary-dark hover:to-primary disabled:opacity-60 text-white w-full py-3 rounded-lg font-semibold mt-2 transition-all shadow-md shadow-primary/35 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-dark-bg inline-flex items-center justify-center gap-2"
                 >
                   {isSubmitting ? (
                     <>
@@ -263,7 +270,7 @@ export function ContactSection() {
               </a>
 
               <div className="flex items-start gap-3 text-gray-300">
-                <MapPin className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
+                <MapPin className="w-5 h-5 text-accent flex-shrink-0 mt-0.5" />
                 <span>{COMPANY.location}</span>
               </div>
 
@@ -273,7 +280,7 @@ export function ContactSection() {
                 rel="noopener noreferrer"
                 className="flex items-start gap-3 text-gray-300 hover:text-primary transition-colors"
               >
-                <Globe className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
+                <Globe className="w-5 h-5 text-[#f59e0b] flex-shrink-0 mt-0.5" />
                 <span>cognaizesys.com</span>
               </a>
             </div>
@@ -294,7 +301,7 @@ export function ContactSection() {
                   "Up and running in under a week",
                 ].map((item) => (
                   <div key={item} className="flex items-center gap-2">
-                    <CheckCircle className="w-4 h-4 text-primary flex-shrink-0" />
+                    <CheckCircle className="w-4 h-4 text-accent flex-shrink-0" />
                     <span className="text-gray-300 text-sm">{item}</span>
                   </div>
                 ))}

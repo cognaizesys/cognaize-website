@@ -90,24 +90,28 @@ const capabilities = [
     title: "Drawing Upload & Spec Extraction",
     description:
       "Upload PNG, JPG, or PDF engineering drawings. AI automatically extracts key specifications, dimensions, material, tolerances, and component type.",
+    color: "#846fbc",
   },
   {
     icon: CheckCircle,
     title: "Feasibility Assessment",
     description:
       "Pre-production checks for material availability, machine capability, and tolerance achievability against your shop's actual equipment and inventory.",
+    color: "#6ee7b7",
   },
   {
     icon: ClipboardList,
     title: "Routing & Job Cards",
     description:
       "Automatic operation sequencing, machine assignments, setup/run times, and shop-floor-ready job cards — ready for the shop floor.",
+    color: "#f59e0b",
   },
   {
     icon: Calculator,
     title: "Costing Engine",
     description:
       "AI-generated cost breakdowns with material, labor, machine time, outsourcing costs per operation, and final unit price.",
+    color: "#846fbc",
   },
 ];
 
@@ -127,7 +131,7 @@ export default function ManufacturingIntelligencePage() {
       <section
         className="relative pt-32 pb-24 overflow-hidden"
         style={{
-          background: "linear-gradient(135deg, #0a0a0f 0%, #1a1028 50%, #0a0a0f 100%)",
+          background: "linear-gradient(135deg, #0a0a0f 0%, #0c1a1a 40%, #1a1028 70%, #0a0a0f 100%)",
         }}
       >
         {/* Grid bg */}
@@ -135,7 +139,7 @@ export default function ManufacturingIntelligencePage() {
           className="absolute inset-0 opacity-15"
           style={{
             backgroundImage:
-              "linear-gradient(rgba(132, 111, 188, 0.12) 1px, transparent 1px), linear-gradient(90deg, rgba(132, 111, 188, 0.12) 1px, transparent 1px)",
+              "linear-gradient(rgba(132, 111, 188, 0.12) 1px, transparent 1px), linear-gradient(90deg, rgba(110, 231, 183, 0.06) 1px, transparent 1px)",
             backgroundSize: "80px 80px",
           }}
         />
@@ -148,7 +152,7 @@ export default function ManufacturingIntelligencePage() {
             transition={{ duration: 0.6 }}
             className="text-center max-w-3xl mx-auto"
           >
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-accent/15 border border-accent/25 mb-8">
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-accent/20 border border-accent/35 mb-8">
               <Calculator className="w-3.5 h-3.5 text-accent" />
               <span className="text-xs font-medium text-accent uppercase tracking-wider">
                 Manufacturing Intelligence
@@ -179,14 +183,14 @@ export default function ManufacturingIntelligencePage() {
             <div className="flex gap-4 flex-wrap justify-center">
               <Link
                 href="/#contact"
-                className="inline-flex items-center gap-2 bg-primary hover:bg-primary-dark text-white px-7 py-3.5 rounded-lg font-semibold transition-colors"
+                className="inline-flex items-center gap-2 bg-primary hover:bg-primary-dark text-white px-7 py-3.5 rounded-lg font-semibold transition-colors shadow-md shadow-primary/20 hover:shadow-lg hover:shadow-primary/30"
               >
                 Schedule a Demo
                 <ArrowRight className="w-4 h-4" />
               </Link>
               <a
                 href="#workflow"
-                className="inline-flex items-center gap-2 border border-white/20 hover:border-white/40 hover:bg-white/5 text-white px-7 py-3.5 rounded-lg font-semibold transition-all"
+                className="inline-flex items-center gap-2 border border-accent/30 hover:border-accent/50 hover:bg-white/5 text-white px-7 py-3.5 rounded-lg font-semibold transition-all"
               >
                 See the Workflow
               </a>
@@ -226,7 +230,7 @@ export default function ManufacturingIntelligencePage() {
       </section>
 
       {/* Workflow Walkthrough */}
-      <section id="workflow" className="py-24 bg-light-bg">
+      <section id="workflow" className="py-24" style={{ background: "linear-gradient(135deg, #f0fdf8 0%, #f8f8fa 50%, #faf8ff 100%)" }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <span className="text-primary text-sm font-semibold uppercase tracking-wider">
@@ -250,7 +254,7 @@ export default function ManufacturingIntelligencePage() {
                     i === activeStep
                       ? "bg-primary text-white scale-110"
                       : i < activeStep
-                        ? "bg-green-700/20 text-green-700"
+                        ? "bg-accent/20 text-[#059669]"
                         : "bg-gray-200 text-gray-400"
                   }`}
                 >
@@ -266,7 +270,7 @@ export default function ManufacturingIntelligencePage() {
                 {i < workflowSteps.length - 1 && (
                   <ArrowRight
                     size={16}
-                    className="text-gray-300 hidden md:inline"
+                    className="text-primary/30 hidden md:inline"
                   />
                 )}
               </button>
@@ -334,7 +338,7 @@ export default function ManufacturingIntelligencePage() {
               {["Casting", "Forging", "Machining", "Sheet Metal"].map((process) => (
                 <span
                   key={process}
-                  className="inline-flex items-center px-3 py-1 rounded-full bg-primary/5 text-primary text-xs font-medium border border-primary/15"
+                  className="inline-flex items-center px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-medium border border-primary/25"
                 >
                   {process}
                 </span>
@@ -350,10 +354,14 @@ export default function ManufacturingIntelligencePage() {
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.1, duration: 0.5 }}
                 className="rounded-2xl border border-gray-200 bg-white p-8 hover:border-primary/30 hover:shadow-lg transition-all group"
+                style={{ borderLeftWidth: '3px', borderLeftColor: cap.color }}
               >
                 <div className="flex items-center gap-4 mb-4">
-                  <div className="w-11 h-11 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center shrink-0 group-hover:bg-primary/15 transition-colors">
-                    <cap.icon className="w-5 h-5 text-primary" />
+                  <div
+                    className="w-11 h-11 rounded-xl border border-primary/20 flex items-center justify-center shrink-0 transition-colors"
+                    style={{ backgroundColor: `${cap.color}15` }}
+                  >
+                    <cap.icon className="w-5 h-5" style={{ color: cap.color }} />
                   </div>
                   <h3 className="text-xl font-bold">{cap.title}</h3>
                 </div>
@@ -373,7 +381,7 @@ export default function ManufacturingIntelligencePage() {
       <section
         className="py-24 relative overflow-hidden"
         style={{
-          background: "linear-gradient(135deg, #0a0a0f 0%, #1a1028 50%, #0a0a0f 100%)",
+          background: "linear-gradient(135deg, #0a0a0f 0%, #0c1a1a 40%, #1a1028 70%, #0a0a0f 100%)",
         }}
       >
         <div className="relative z-10 max-w-4xl mx-auto px-4 text-center">
@@ -393,14 +401,14 @@ export default function ManufacturingIntelligencePage() {
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <Link
                 href="/#contact"
-                className="inline-flex items-center gap-2 bg-primary hover:bg-primary-dark text-white px-8 py-4 rounded-lg font-bold text-lg transition-colors"
+                className="inline-flex items-center gap-2 bg-primary hover:bg-primary-dark text-white px-8 py-4 rounded-lg font-bold text-lg transition-all shadow-lg shadow-primary/25"
               >
                 Book a Demo
                 <ArrowRight className="w-5 h-5" />
               </Link>
               <Link
                 href="/products/design-intelligence"
-                className="inline-flex items-center gap-2 border border-white/20 hover:border-white/40 hover:bg-white/5 text-white px-8 py-4 rounded-lg font-semibold transition-all"
+                className="inline-flex items-center gap-2 border border-primary/25 hover:border-primary/40 hover:bg-white/5 text-white px-8 py-4 rounded-lg font-semibold transition-all"
               >
                 Explore Design Intelligence
                 <ArrowRight className="w-4 h-4" />

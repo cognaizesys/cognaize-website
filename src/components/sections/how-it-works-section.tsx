@@ -130,11 +130,11 @@ function StepTimeline({ steps, title }: StepTimelineProps) {
             >
               {/* Connecting line */}
               {index < steps.length - 1 && (
-                <div className="hidden md:block absolute top-8 left-[calc(50%+2rem)] w-[calc(100%-4rem)] h-0.5 border-t-2 border-dashed border-gray-300" />
+                <div className="hidden md:block absolute top-8 left-[calc(50%+2rem)] w-[calc(100%-4rem)] h-0.5 border-t-2 border-dashed border-[#846fbc]/50" />
               )}
 
               {/* Icon circle */}
-              <div className="relative z-10 w-16 h-16 rounded-full bg-[#846fbc] text-white flex items-center justify-center mb-4 shadow-md">
+              <div className="relative z-10 w-16 h-16 rounded-full text-white flex items-center justify-center mb-4 shadow-lg shadow-[#846fbc]/40" style={{ background: "linear-gradient(135deg, #846fbc, #6d58a5)" }}>
                 <Icon className="w-7 h-7" strokeWidth={2} />
               </div>
 
@@ -157,7 +157,7 @@ function StepTimeline({ steps, title }: StepTimelineProps) {
 
 export function HowItWorksSection() {
   return (
-    <section id="how-it-works" className="py-20 bg-[#f8f8fa]">
+    <section id="how-it-works" className="py-20" style={{ background: "linear-gradient(135deg, #f3eeff 0%, #f8f8fa 50%, #e0fbf0 100%)" }}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Main heading */}
         <div className="text-center max-w-3xl mx-auto mb-16">

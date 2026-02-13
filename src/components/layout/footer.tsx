@@ -7,7 +7,9 @@ export function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="border-t border-dark-border bg-dark-bg">
+    <footer className="relative bg-dark-bg">
+      {/* Gradient top divider */}
+      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent" />
       <Container>
         <div className="py-12">
           <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
@@ -125,7 +127,9 @@ export function Footer() {
       </Container>
 
       {/* Bottom Bar */}
-      <div className="border-t border-dark-border">
+      <div className="relative">
+        {/* Gradient divider */}
+        <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-accent/20 to-transparent" />
         <Container>
           <div className="py-6 text-center text-sm text-text-on-dark">
             <p>© {currentYear} {COMPANY.name}. All rights reserved.</p>

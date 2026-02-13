@@ -95,18 +95,21 @@ const impactMetrics = [
     value: "16x",
     label: "Faster Reviews",
     detail: "2-4 hours → <15 minutes per drawing",
+    color: "#6ee7b7",
   },
   {
     icon: Target,
     value: ">95%",
     label: "Detection Rate",
     detail: "Up from ~70% with manual review",
+    color: "#846fbc",
   },
   {
     icon: TrendingDown,
     value: "8-10x",
     label: "Rework Avoidance",
     detail: "12.5% rework exposure → <1.5%",
+    color: "#f59e0b",
   },
 ];
 
@@ -117,7 +120,7 @@ export default function DesignIntelligencePage() {
       <section
         className="relative pt-32 pb-24 overflow-hidden"
         style={{
-          background: "linear-gradient(135deg, #0a0a0f 0%, #1a1028 50%, #0a0a0f 100%)",
+          background: "linear-gradient(135deg, #0a0a0f 0%, #1a1028 40%, #0c1a1a 70%, #0a0a0f 100%)",
         }}
       >
         {/* Grid bg */}
@@ -125,7 +128,7 @@ export default function DesignIntelligencePage() {
           className="absolute inset-0 opacity-15"
           style={{
             backgroundImage:
-              "linear-gradient(rgba(132, 111, 188, 0.12) 1px, transparent 1px), linear-gradient(90deg, rgba(132, 111, 188, 0.12) 1px, transparent 1px)",
+              "linear-gradient(rgba(132, 111, 188, 0.12) 1px, transparent 1px), linear-gradient(90deg, rgba(110, 231, 183, 0.06) 1px, transparent 1px)",
             backgroundSize: "80px 80px",
           }}
         />
@@ -138,7 +141,7 @@ export default function DesignIntelligencePage() {
             transition={{ duration: 0.6 }}
             className="text-center max-w-3xl mx-auto"
           >
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-primary/15 border border-primary/25 mb-8">
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-primary/20 border border-primary/35 mb-8">
               <Scan className="w-3.5 h-3.5 text-primary-light" />
               <span className="text-xs font-medium text-primary-light uppercase tracking-wider">
                 Design Intelligence
@@ -169,14 +172,14 @@ export default function DesignIntelligencePage() {
             <div className="flex gap-4 flex-wrap justify-center">
               <Link
                 href="/#contact"
-                className="inline-flex items-center gap-2 bg-primary hover:bg-primary-dark text-white px-7 py-3.5 rounded-lg font-semibold transition-colors"
+                className="inline-flex items-center gap-2 bg-primary hover:bg-primary-dark text-white px-7 py-3.5 rounded-lg font-semibold transition-all shadow-md shadow-primary/20 hover:shadow-lg hover:shadow-primary/30"
               >
                 Schedule a Demo
                 <ArrowRight className="w-4 h-4" />
               </Link>
               <a
                 href="#product-tour"
-                className="inline-flex items-center gap-2 border border-white/20 hover:border-white/40 hover:bg-white/5 text-white px-7 py-3.5 rounded-lg font-semibold transition-all"
+                className="inline-flex items-center gap-2 border border-primary/30 hover:border-primary/50 hover:bg-white/5 text-white px-7 py-3.5 rounded-lg font-semibold transition-all"
               >
                 See Product Tour
               </a>
@@ -216,7 +219,7 @@ export default function DesignIntelligencePage() {
       </section>
 
       {/* Demo Video */}
-      <section className="py-24 bg-light-bg">
+      <section className="py-24" style={{ background: "linear-gradient(180deg, #faf8ff 0%, #f8f8fa 50%, #f0fdf8 100%)" }}>
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <span className="text-primary text-sm font-semibold uppercase tracking-wider">
@@ -275,24 +278,28 @@ export default function DesignIntelligencePage() {
                 title: "Component Analysis",
                 description:
                   "Dimensional accuracy, GD&T compliance, tolerancing, datum references, and manufacturing considerations. Validated against ASME Y14.5 standards with 13+ error categories and 3-tier severity classification.",
+                color: "#846fbc",
               },
               {
                 icon: ArrowLeftRight,
                 title: "Comparative Analysis",
                 description:
                   "Compare two drawing versions side-by-side. Detects changes in dimensions, tolerances, GD&T, geometry, and materials with risk assessment and interchangeability analysis.",
+                color: "#6ee7b7",
               },
               {
                 icon: Layers,
                 title: "Assembly Analysis",
                 description:
                   "BOM completeness, component fit verification, stack-up tolerance analysis, assembly sequence feasibility, and interface compatibility checks.",
+                color: "#f59e0b",
               },
               {
                 icon: Compass,
                 title: "Process Advisor",
                 description:
                   "Upload a drawing and let AI recommend the optimal manufacturing process — Cast, Forge, Fabricate, or Machine — based on geometry, material, and tolerances.",
+                color: "#846fbc",
               },
             ].map((mod, i) => (
               <motion.div
@@ -301,11 +308,18 @@ export default function DesignIntelligencePage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.1, duration: 0.5 }}
-                className="rounded-2xl border border-gray-200 bg-white p-8 hover:border-primary/30 hover:shadow-lg transition-all group"
+                className="rounded-2xl border border-gray-200 bg-white p-8 hover:shadow-lg transition-all group"
+                style={{
+                  borderLeftWidth: '3px',
+                  borderLeftColor: mod.color
+                }}
               >
                 <div className="flex items-center gap-4 mb-4">
-                  <div className="w-11 h-11 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center shrink-0 group-hover:bg-primary/15 transition-colors">
-                    <mod.icon className="w-5 h-5 text-primary" />
+                  <div
+                    className="w-11 h-11 rounded-xl border border-primary/20 flex items-center justify-center shrink-0 transition-colors"
+                    style={{ backgroundColor: `${mod.color}15` }}
+                  >
+                    <mod.icon className="w-5 h-5" style={{ color: mod.color }} />
                   </div>
                   <h3 className="text-xl font-bold">{mod.title}</h3>
                 </div>
@@ -319,7 +333,7 @@ export default function DesignIntelligencePage() {
       </section>
 
       {/* Product Tour Screenshots */}
-      <section id="product-tour" className="py-24 bg-light-bg">
+      <section id="product-tour" className="py-24" style={{ background: "linear-gradient(135deg, #faf8ff 0%, #f8f8fa 50%, #f0fdf8 100%)" }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <span className="text-primary text-sm font-semibold uppercase tracking-wider">
@@ -393,7 +407,7 @@ export default function DesignIntelligencePage() {
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.05, duration: 0.3 }}
-                className="inline-flex items-center gap-2 bg-primary/5 text-text-primary border border-primary/20 px-4 py-2 rounded-full text-sm"
+                className="inline-flex items-center gap-2 bg-primary/10 text-text-primary border border-primary/25 px-4 py-2 rounded-full text-sm"
               >
                 <CheckCircle size={14} className="text-primary" />
                 {cat}
@@ -407,7 +421,7 @@ export default function DesignIntelligencePage() {
       <section
         className="py-24 relative overflow-hidden"
         style={{
-          background: "linear-gradient(135deg, #0a0a0f 0%, #1a1028 50%, #0a0a0f 100%)",
+          background: "linear-gradient(135deg, #0a0a0f 0%, #1a1028 40%, #0c1a1a 70%, #0a0a0f 100%)",
         }}
       >
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -429,10 +443,16 @@ export default function DesignIntelligencePage() {
                 transition={{ delay: i * 0.15, duration: 0.5 }}
                 className="text-center rounded-2xl border border-white/10 bg-dark-card/80 backdrop-blur-sm p-8"
               >
-                <div className="w-14 h-14 rounded-full bg-primary/20 flex items-center justify-center mx-auto mb-4">
-                  <metric.icon className="w-7 h-7 text-primary-light" />
+                <div
+                  className="w-14 h-14 rounded-full flex items-center justify-center mx-auto mb-4"
+                  style={{ backgroundColor: `${metric.color}33` }}
+                >
+                  <metric.icon className="w-7 h-7" style={{ color: metric.color }} />
                 </div>
-                <div className="text-4xl font-bold font-heading text-white mb-2">
+                <div
+                  className="text-4xl font-bold font-heading mb-2"
+                  style={{ color: metric.color }}
+                >
                   {metric.value}
                 </div>
                 <div className="text-lg font-semibold text-primary-light mb-2">
@@ -452,7 +472,7 @@ export default function DesignIntelligencePage() {
       <section
         className="py-24 relative overflow-hidden"
         style={{
-          background: "linear-gradient(135deg, #0a0a0f 0%, #1a1028 50%, #0a0a0f 100%)",
+          background: "linear-gradient(135deg, #0a0a0f 0%, #1a1028 40%, #0c1a1a 70%, #0a0a0f 100%)",
         }}
       >
         <div className="relative z-10 max-w-4xl mx-auto px-4 text-center">
@@ -472,14 +492,14 @@ export default function DesignIntelligencePage() {
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <Link
                 href="/#contact"
-                className="inline-flex items-center gap-2 bg-primary hover:bg-primary-dark text-white px-8 py-4 rounded-lg font-bold text-lg transition-colors"
+                className="inline-flex items-center gap-2 bg-primary hover:bg-primary-dark text-white px-8 py-4 rounded-lg font-bold text-lg transition-all shadow-lg shadow-primary/25"
               >
                 Book a Demo
                 <ArrowRight className="w-5 h-5" />
               </Link>
               <Link
                 href="/products/manufacturing-intelligence"
-                className="inline-flex items-center gap-2 border border-white/20 hover:border-white/40 hover:bg-white/5 text-white px-8 py-4 rounded-lg font-semibold transition-all"
+                className="inline-flex items-center gap-2 border border-accent/25 hover:border-accent/40 hover:bg-white/5 text-white px-8 py-4 rounded-lg font-semibold transition-all"
               >
                 Explore Manufacturing Intelligence
                 <ArrowRight className="w-4 h-4" />

@@ -112,10 +112,10 @@ export function Header({ onMobileMenuOpen }: HeaderProps) {
             <Link
               href="/#demo"
               className={cn(
-                "inline-flex items-center rounded-md px-5 py-2.5 text-sm font-semibold transition-all duration-200",
+                "inline-flex items-center rounded-lg px-7 py-3 text-base font-bold transition-all duration-200 shadow-md",
                 isScrolled
-                  ? "bg-primary text-white hover:bg-primary-dark"
-                  : "bg-white text-primary hover:bg-gray-50"
+                  ? "bg-primary text-white hover:bg-primary-dark shadow-primary/20 hover:shadow-lg hover:shadow-primary/30"
+                  : "bg-primary text-white hover:bg-primary-dark shadow-primary/30"
               )}
             >
               See Demo

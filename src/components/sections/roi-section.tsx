@@ -45,8 +45,15 @@ const keySummaryStats = [
 
 export function ROISection() {
   return (
-    <section className="bg-[#0f0f0f] py-20 text-white">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="py-20 text-white relative overflow-hidden" style={{ background: "linear-gradient(180deg, #0f0f0f 0%, #140e24 50%, #0f0f0f 100%)" }}>
+      {/* Radial glow */}
+      <div
+        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] opacity-30"
+        style={{
+          background: "radial-gradient(ellipse, rgba(132, 111, 188, 0.5) 0%, rgba(245, 158, 11, 0.12) 60%, transparent 80%)",
+        }}
+      />
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Heading */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -70,7 +77,7 @@ export function ROISection() {
         >
           <div className="border border-white/10 rounded-lg overflow-hidden">
             {/* Table Header */}
-            <div className="grid grid-cols-4 gap-4 bg-white/5 px-6 py-4">
+            <div className="grid grid-cols-4 gap-4 bg-[#846fbc]/20 px-6 py-4">
               <div className="text-xs font-semibold uppercase tracking-wider text-gray-400">
                 Metric
               </div>
@@ -104,7 +111,7 @@ export function ROISection() {
                     {row.after}
                   </div>
                   <div>
-                    <span className="inline-flex items-center px-3 py-1 rounded-full bg-[#846fbc]/20 text-[#9b89cc] text-sm font-medium">
+                    <span className="inline-flex items-center px-3 py-1 rounded-full bg-[#846fbc]/45 text-[#9b89cc] border border-[#846fbc]/35 text-sm font-medium">
                       {row.impact}
                     </span>
                   </div>
@@ -123,7 +130,7 @@ export function ROISection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.3 + index * 0.15 }}
-              className="bg-white/5 border border-white/10 rounded-lg p-5"
+              className="bg-white/5 border border-primary/30 rounded-lg p-5"
             >
               <h3 className="text-base font-semibold text-white">
                 {row.metric}
@@ -144,7 +151,7 @@ export function ROISection() {
                   </span>
                 </div>
                 <div className="pt-2 border-t border-white/10">
-                  <span className="inline-flex items-center px-3 py-1 rounded-full bg-[#846fbc]/20 text-[#9b89cc] text-sm font-medium">
+                  <span className="inline-flex items-center px-3 py-1 rounded-full bg-[#846fbc]/45 text-[#9b89cc] border border-[#846fbc]/35 text-sm font-medium">
                     {row.impact}
                   </span>
                 </div>
@@ -163,7 +170,7 @@ export function ROISection() {
         >
           {keySummaryStats.map((stat, index) => (
             <div key={index} className="text-center">
-              <div className="text-3xl md:text-4xl font-bold text-white font-heading">
+              <div className={cn("text-3xl md:text-4xl font-bold font-heading", index === 0 ? "text-accent" : index === 1 ? "text-primary-light" : "text-[#fbbf24]")}>
                 {stat.value}
               </div>
               <div className="mt-1 text-sm text-gray-400">{stat.label}</div>

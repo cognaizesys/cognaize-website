@@ -77,8 +77,8 @@ const itemVariants = {
 
 function MemberCard({ member }: { member: (typeof teamMembers)[number] }) {
   return (
-    <div className="group rounded-2xl border border-white/5 bg-white/[0.03] p-5 h-full flex flex-col items-center text-center hover:border-primary/20 transition-colors duration-300">
-      <div className="w-24 h-24 rounded-full overflow-hidden ring-2 ring-white/10 group-hover:ring-primary/30 transition-all duration-300 mb-4 shrink-0">
+    <div className="group rounded-2xl border border-white/15 bg-white/[0.03] p-5 h-full flex flex-col items-center text-center hover:border-primary/20 transition-colors duration-300">
+      <div className="w-24 h-24 rounded-full overflow-hidden ring-2 ring-primary/35 group-hover:ring-primary/70 transition-all duration-300 mb-4 shrink-0">
         <Image
           src={member.image}
           alt={member.name}
@@ -105,19 +105,8 @@ export function TeamSection() {
     <>
       <section
         id="team"
-        className="py-32 pb-20 relative overflow-hidden"
-        style={{
-          background: "linear-gradient(135deg, #0a0a0f 0%, #12121a 50%, #0a0a0f 100%)",
-        }}
+        className="py-32 pb-20 relative overflow-hidden bg-[#0a0a0f]"
       >
-        {/* Radial glow */}
-        <div
-          className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[500px]"
-          style={{
-            background: "radial-gradient(ellipse, rgba(132, 111, 188, 0.08) 0%, transparent 70%)",
-          }}
-        />
-
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Header */}
           <motion.div
@@ -157,30 +146,38 @@ export function TeamSection() {
         </div>
       </section>
 
-      {/* Stats section - white background */}
-      <section className="py-16 bg-white">
+      {/* Stats section */}
+      <section className="py-20 bg-white">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12"
+          className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8"
         >
-          {[
-            { value: "16x", label: "Faster Than Manual Review" },
-            { value: "95%+", label: "AI Detection Accuracy" },
-            { value: "10x", label: "Cost Reduction Per Review" },
-            { value: "<1 Week", label: "Time to Deploy" },
-          ].map((stat) => (
-            <div key={stat.label} className="text-center">
-              <div className="text-3xl md:text-4xl font-heading text-gray-900">
-                {stat.value}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-5 md:gap-8">
+            {[
+              { value: "16x", label: "Faster Than Manual Review", color: "#7c3aed" },
+              { value: "95%+", label: "AI Detection Accuracy", color: "#059669" },
+              { value: "10x", label: "Cost Reduction Per Review", color: "#d97706" },
+              { value: "<1 Wk", label: "Time to Deploy", color: "#059669" },
+            ].map((stat) => (
+              <div
+                key={stat.label}
+                className="text-center bg-gray-50 rounded-2xl px-5 py-10 border border-gray-200"
+              >
+                <div
+                  className="text-4xl md:text-5xl font-heading font-bold"
+                  style={{ color: stat.color }}
+                >
+                  {stat.value}
+                </div>
+                <div className="text-xs text-gray-500 mt-3 uppercase tracking-widest leading-tight font-medium">
+                  {stat.label}
+                </div>
               </div>
-              <div className="text-xs text-gray-500 mt-2 uppercase tracking-widest">
-                {stat.label}
-              </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </motion.div>
       </section>
     </>

@@ -8,27 +8,31 @@ const securityItems = [
     icon: Shield,
     title: "Pluggable Auth & SSO",
     description: "Enterprise-grade authentication with SAML/OIDC SSO support for seamless integration with your identity provider.",
+    color: "#846fbc",
   },
   {
     icon: Database,
     title: "Zero Data Persistence",
     description: "Drawings and extracted data are processed in-memory and never stored on our servers beyond the active session.",
+    color: "#6ee7b7",
   },
   {
     icon: Lock,
     title: "Encrypted at Rest & Transit",
     description: "All data is encrypted with AES-256 at rest and TLS 1.3 in transit, meeting SOC 2 and ISO 27001 standards.",
+    color: "#f59e0b",
   },
   {
     icon: Bot,
     title: "Zero-Retention AI",
     description: "Powered by Anthropic Claude with zero data retention — your drawings are never used to train AI models.",
+    color: "#846fbc",
   },
 ];
 
 export function SecuritySection() {
   return (
-    <section className="py-24 bg-light-bg">
+    <section className="py-24" style={{ background: "linear-gradient(135deg, #e0fbf0 0%, #f8f8fa 50%, #f3eeff 100%)" }}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <span className="text-primary text-sm font-semibold uppercase tracking-wider">
@@ -50,9 +54,10 @@ export function SecuritySection() {
               viewport={{ once: true }}
               transition={{ delay: i * 0.1, duration: 0.5 }}
               className="p-6 rounded-xl border border-gray-100 bg-white hover:shadow-md transition-shadow"
+              style={{ borderLeftWidth: '4px', borderLeftColor: item.color }}
             >
-              <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
-                <item.icon className="text-primary" size={22} />
+              <div className="w-12 h-12 rounded-lg flex items-center justify-center mb-4" style={{ backgroundColor: `${item.color}28` }}>
+                <item.icon style={{ color: item.color }} size={22} />
               </div>
               <h3 className="font-semibold text-lg mb-2">{item.title}</h3>
               <p className="text-text-secondary text-sm leading-relaxed">

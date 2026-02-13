@@ -7,10 +7,14 @@
   --color-primary-light: #9b89cc;
   --color-accent: #6ee7b7;
   --color-accent-dark: #34d399;
+  --color-warm: #f59e0b;
+  --color-warm-light: #fbbf24;
   --color-dark-bg: #0a0a0f;
   --color-dark-surface: #12121a;
   --color-dark-card: #1a1a28;
   --color-dark-border: #2a2a3a;
+  --color-dark-purple: #140e24;
+  --color-dark-teal: #0c1a1a;
   --color-light-bg: #f8f8fa;
   --color-light-surface: #ffffff;
   --color-text-primary: #1a1a2e;
@@ -56,18 +60,18 @@ h6 {
 /* AI Grid Background Pattern */
 .ai-grid-bg {
   background-image:
-    linear-gradient(rgba(132, 111, 188, 0.05) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(132, 111, 188, 0.05) 1px, transparent 1px);
+    linear-gradient(rgba(132, 111, 188, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(110, 231, 183, 0.05) 1px, transparent 1px);
   background-size: 60px 60px;
 }
 
 /* Glow effects */
 .glow-primary {
-  box-shadow: 0 0 20px rgba(132, 111, 188, 0.3), 0 0 60px rgba(132, 111, 188, 0.1);
+  box-shadow: 0 0 25px rgba(132, 111, 188, 0.4), 0 0 80px rgba(132, 111, 188, 0.15);
 }
 
 .glow-accent {
-  box-shadow: 0 0 20px rgba(110, 231, 183, 0.3), 0 0 60px rgba(110, 231, 183, 0.1);
+  box-shadow: 0 0 25px rgba(110, 231, 183, 0.4), 0 0 80px rgba(110, 231, 183, 0.15);
 }
 
 /* Animated gradient border */
@@ -91,11 +95,12 @@ h6 {
   padding: 1px;
   background: conic-gradient(
     from var(--gradient-angle),
-    rgba(132, 111, 188, 0.4),
-    rgba(110, 231, 183, 0.2),
-    rgba(132, 111, 188, 0.1),
-    rgba(110, 231, 183, 0.4),
-    rgba(132, 111, 188, 0.4)
+    rgba(132, 111, 188, 0.5),
+    rgba(110, 231, 183, 0.3),
+    rgba(245, 158, 11, 0.15),
+    rgba(132, 111, 188, 0.15),
+    rgba(110, 231, 183, 0.5),
+    rgba(132, 111, 188, 0.5)
   );
   mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
   mask-composite: exclude;
@@ -200,7 +205,8 @@ h6 {
   background: linear-gradient(
     90deg,
     transparent 0%,
-    rgba(132, 111, 188, 0.1) 50%,
+    rgba(132, 111, 188, 0.12) 40%,
+    rgba(110, 231, 183, 0.08) 60%,
     transparent 100%
   );
   background-size: 200% 100%;
