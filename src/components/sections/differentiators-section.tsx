@@ -9,7 +9,7 @@ const differentiators = [
     title: "Purpose-Built AI Models",
     description:
       "Trained specifically on engineering drawings and manufacturing data. Understands GD&T, tolerancing, material specs, and shop floor operations.",
-    highlight: "Not generic OCR",
+    highlight: "Manufacturing-native",
     color: "#846fbc",
   },
   {
@@ -75,7 +75,7 @@ export function DifferentiatorsSection() {
             transition={{ duration: 0.6, delay: 0.1 }}
             className="text-2xl md:text-4xl font-heading text-white tracking-tight"
           >
-            Not Another OCR Tool.
+            Built by Engineers.
             <br />
             <span className="text-primary-light">Real AI for Manufacturing.</span>
           </motion.h2>

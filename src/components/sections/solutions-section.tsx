@@ -98,7 +98,7 @@ export function SolutionsSection() {
           </h2>
           <p className="mt-4 text-lg text-gray-400 max-w-2xl mx-auto">
             Purpose-built models trained on real manufacturing data.
-            Not generic OCR — actual engineering understanding.
+            Analyzes drawings the way your best engineer would.
           </p>
         </motion.div>
 
