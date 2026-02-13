@@ -53,6 +53,7 @@ const screenshots = [
     title: "Process Advisor",
     description:
       "Upload a drawing and let AI recommend the optimal manufacturing process — Cast, Forge, Fabricate, or Machine — based on geometry, material, and tolerance requirements.",
+    wide: false,
   },
   {
     src: "/images/hero/1-design-review.png",
@@ -60,6 +61,7 @@ const screenshots = [
     title: "Design Review",
     description:
       "Upload any engineering drawing and get instant AI analysis across 13+ error categories. Issues are classified by severity — Critical, Major, and Minor — with confidence scores and grid references.",
+    wide: true,
   },
   {
     src: "/images/hero/2-version-comparison.png",
@@ -67,6 +69,7 @@ const screenshots = [
     title: "Drawing Version Comparison",
     description:
       "Compare two drawing revisions side-by-side. AI detects changes in dimensions, tolerances, GD&T, geometry, and materials — with risk assessment for each modification.",
+    wide: true,
   },
 ];
 
@@ -338,7 +341,7 @@ export default function DesignIntelligencePage() {
                   i % 2 === 1 ? "md:flex-row-reverse" : "md:flex-row"
                 } gap-10 md:gap-14 items-center`}
               >
-                <div className="md:w-3/5">
+                <div className={screenshot.wide ? "md:w-2/3" : "md:w-3/5"}>
                   <div className="rounded-xl overflow-hidden shadow-2xl border border-gray-200">
                     <div className="bg-gray-100 h-10 flex items-center px-4 gap-2">
                       <div className="w-3 h-3 rounded-full bg-red-400" />
@@ -359,7 +362,7 @@ export default function DesignIntelligencePage() {
                     />
                   </div>
                 </div>
-                <div className="md:w-2/5">
+                <div className={screenshot.wide ? "md:w-1/3" : "md:w-2/5"}>
                   <h3 className="text-2xl font-heading text-text-primary mb-4">
                     {screenshot.title}
                   </h3>

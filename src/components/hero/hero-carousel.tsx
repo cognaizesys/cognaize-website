@@ -4,11 +4,11 @@ import { useState, useEffect, useRef, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const products = [
-  { name: "Design Review", src: "/images/hero/1-design-review.png" },
-  { name: "Drawing Version Comparison", src: "/images/hero/2-version-comparison.png" },
-  { name: "Process Advisor", src: "/images/hero/3-process-advisor.png" },
-  { name: "Feasibility Analysis", src: "/images/hero/4-feasibility-analysis.png" },
-  { name: "Process Cost Estimate", src: "/images/hero/5-cost-estimation.png" },
+  { name: "Design Review", src: "/images/hero/1-design-review.png", wide: true },
+  { name: "Drawing Version Comparison", src: "/images/hero/2-version-comparison.png", wide: true },
+  { name: "Process Advisor", src: "/images/hero/3-process-advisor.png", wide: false },
+  { name: "Feasibility Analysis", src: "/images/hero/4-feasibility-analysis.png", wide: true },
+  { name: "Process Cost Estimate", src: "/images/hero/5-cost-estimation.png", wide: false },
 ];
 
 const SCREENSHOT_INTERVAL = 3000;
@@ -79,7 +79,11 @@ export function HeroShowcase() {
               <img
                 src={products[activeIndex].src}
                 alt={products[activeIndex].name}
-                className="max-w-full max-h-full object-contain"
+                className={
+                  products[activeIndex].wide
+                    ? "max-w-full max-h-full object-contain scale-[1.18] origin-center"
+                    : "max-w-full max-h-full object-contain"
+                }
               />
             </motion.div>
           )}
