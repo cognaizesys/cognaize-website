@@ -19,33 +19,6 @@ import Link from "next/link";
 import Image from "next/image";
 import { SecuritySection } from "@/components/sections/security-section";
 
-const features = [
-  {
-    icon: Scan,
-    title: "AI Drawing Analysis",
-    description:
-      "Automatically detect errors across 13+ categories including tolerancing, material specs, GD&T callouts, and surface finish requirements.",
-  },
-  {
-    icon: AlertTriangle,
-    title: "Severity Classification",
-    description:
-      "Every finding is classified as Critical, Major, or Minor with AI confidence scores, enabling prioritized review workflows.",
-  },
-  {
-    icon: PenTool,
-    title: "Built-in Annotation Tools",
-    description:
-      "Measure, annotate, and markup directly on drawings with built-in select, text, arrow, and measurement tools.",
-  },
-  {
-    icon: FileDown,
-    title: "PDF Export & Reporting",
-    description:
-      "Generate comprehensive findings reports with annotated drawings for stakeholder review and audit trails.",
-  },
-];
-
 const screenshots = [
   {
     src: "/images/hero/3-process-advisor.png",
