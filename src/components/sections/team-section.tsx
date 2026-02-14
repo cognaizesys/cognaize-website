@@ -87,7 +87,7 @@ function MemberCard({ member }: { member: (typeof teamMembers)[number] }) {
           className="w-full h-full object-cover"
         />
       </div>
-      <h3 className="text-sm font-bold text-white whitespace-nowrap">
+      <h3 className="text-sm font-bold text-white">
         {member.name}
       </h3>
       <p className="text-primary-light/80 text-xs mt-1.5 min-h-[2.5rem] flex items-center text-center">
@@ -105,7 +105,7 @@ export function TeamSection() {
     <>
       <section
         id="team"
-        className="py-32 pb-20 relative overflow-hidden bg-[#0a0a0f]"
+        className="py-20 md:py-32 md:pb-20 relative overflow-hidden bg-[#0a0a0f]"
       >
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Header */}
@@ -114,7 +114,7 @@ export function TeamSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="text-center max-w-2xl mx-auto mb-16"
+            className="text-center max-w-2xl mx-auto mb-10 md:mb-16"
           >
             <h2 className="text-3xl md:text-4xl font-heading text-white tracking-tight">
               Our

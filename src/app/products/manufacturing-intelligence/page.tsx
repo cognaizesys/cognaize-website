@@ -129,7 +129,7 @@ export default function ManufacturingIntelligencePage() {
     <div>
       {/* Hero */}
       <section
-        className="relative pt-32 pb-24 overflow-hidden"
+        className="relative pt-24 md:pt-32 pb-24 overflow-hidden"
         style={{
           background: "linear-gradient(135deg, #0a0a0f 0%, #0c1a1a 40%, #1a1028 70%, #0a0a0f 100%)",
         }}
@@ -167,7 +167,7 @@ export default function ManufacturingIntelligencePage() {
               AI extracts specs, checks feasibility, generates job cards, and produces detailed cost breakdowns — turning days of estimation into minutes.
             </p>
 
-            <div className="flex items-center justify-center gap-8 mb-10">
+            <div className="flex items-center justify-center gap-4 sm:gap-8 mb-10">
               {[
                 { value: "10x", label: "Faster Quoting" },
                 { value: "75%", label: "Cost Reduction" },
@@ -230,7 +230,7 @@ export default function ManufacturingIntelligencePage() {
       </section>
 
       {/* Workflow Walkthrough */}
-      <section id="workflow" className="py-24" style={{ background: "linear-gradient(135deg, #f0fdf8 0%, #f8f8fa 50%, #faf8ff 100%)" }}>
+      <section id="workflow" className="py-16 md:py-24" style={{ background: "linear-gradient(135deg, #f0fdf8 0%, #f8f8fa 50%, #faf8ff 100%)" }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <span className="text-primary text-sm font-semibold uppercase tracking-wider">
@@ -322,7 +322,7 @@ export default function ManufacturingIntelligencePage() {
       </section>
 
       {/* Capabilities */}
-      <section className="py-24">
+      <section className="py-16 md:py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <span className="text-primary text-sm font-semibold uppercase tracking-wider">
@@ -353,7 +353,7 @@ export default function ManufacturingIntelligencePage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.1, duration: 0.5 }}
-                className="rounded-2xl border border-gray-200 bg-white p-8 hover:border-primary/30 hover:shadow-lg transition-all group"
+                className="rounded-2xl border border-gray-200 bg-white p-5 sm:p-8 hover:border-primary/30 hover:shadow-lg transition-all group"
                 style={{ borderLeftWidth: '3px', borderLeftColor: cap.color }}
               >
                 <div className="flex items-center gap-4 mb-4">
@@ -379,7 +379,7 @@ export default function ManufacturingIntelligencePage() {
 
       {/* Cross-sell + CTA */}
       <section
-        className="py-24 relative overflow-hidden"
+        className="py-16 md:py-24 relative overflow-hidden"
         style={{
           background: "linear-gradient(135deg, #0a0a0f 0%, #0c1a1a 40%, #1a1028 70%, #0a0a0f 100%)",
         }}
@@ -401,14 +401,14 @@ export default function ManufacturingIntelligencePage() {
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <Link
                 href="/#contact"
-                className="inline-flex items-center gap-2 bg-primary hover:bg-primary-dark text-white px-8 py-4 rounded-lg font-bold text-lg transition-all shadow-lg shadow-primary/25"
+                className="inline-flex items-center gap-2 bg-primary hover:bg-primary-dark text-white px-6 py-3.5 text-base sm:px-8 sm:py-4 sm:text-lg rounded-lg font-bold transition-all shadow-lg shadow-primary/25"
               >
                 Book a Demo
                 <ArrowRight className="w-5 h-5" />
               </Link>
               <Link
                 href="/products/design-intelligence"
-                className="inline-flex items-center gap-2 border border-primary/25 hover:border-primary/40 hover:bg-white/5 text-white px-8 py-4 rounded-lg font-semibold transition-all"
+                className="inline-flex items-center gap-2 border border-primary/25 hover:border-primary/40 hover:bg-white/5 text-white px-6 py-3.5 text-base sm:px-8 sm:py-4 sm:text-lg rounded-lg font-semibold transition-all"
               >
                 Explore Design Intelligence
                 <ArrowRight className="w-4 h-4" />

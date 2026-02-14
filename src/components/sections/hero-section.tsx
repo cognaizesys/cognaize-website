@@ -63,7 +63,7 @@ export function HeroSection() {
         />
       ))}
 
-      <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32 md:py-40">
+      <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-40">
         <div className="grid lg:grid-cols-2 gap-16 lg:gap-20 items-center">
           {/* Left: Copy */}
           <div>
@@ -72,7 +72,7 @@ export function HeroSection() {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.3 }}
-              className="mt-10 text-3xl sm:text-4xl lg:text-5xl font-heading font-bold text-white tracking-tight leading-[1.1]"
+              className="mt-6 md:mt-10 text-3xl sm:text-4xl lg:text-5xl font-heading font-bold text-white tracking-tight leading-[1.1]"
             >
               Upload a Drawing.
               <br />
@@ -86,7 +86,7 @@ export function HeroSection() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.5 }}
-              className="mt-8 text-lg text-gray-400 max-w-lg leading-relaxed"
+              className="mt-6 md:mt-8 text-lg text-gray-400 max-w-lg leading-relaxed"
             >
               Cognaize analyzes engineering drawings 16x faster with 95%+
               accuracy — catching errors, estimating costs, and accelerating
@@ -98,7 +98,7 @@ export function HeroSection() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.7 }}
-              className="mt-10 flex flex-wrap gap-8"
+              className="mt-8 md:mt-10 flex flex-wrap gap-8"
             >
               {heroMetrics.slice(0, 3).map((metric) => (
                 <div key={metric.label} className="flex items-baseline gap-2">
@@ -115,7 +115,7 @@ export function HeroSection() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.9 }}
-              className="mt-12 flex flex-col sm:flex-row items-start gap-4"
+              className="mt-8 md:mt-12 flex flex-col sm:flex-row items-start gap-4"
             >
               <a
                 href="#contact"

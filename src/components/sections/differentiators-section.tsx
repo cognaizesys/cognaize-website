@@ -34,7 +34,7 @@ export function DifferentiatorsSection() {
   return (
     <section
       id="differentiators"
-      className="py-24 relative overflow-hidden"
+      className="py-16 md:py-24 relative overflow-hidden"
       style={{
         background: "linear-gradient(135deg, #0a0a0f 0%, #0c1a1a 50%, #0a0a0f 100%)",
       }}

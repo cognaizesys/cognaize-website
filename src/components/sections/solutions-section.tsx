@@ -54,7 +54,7 @@ export function SolutionsSection() {
   return (
     <section
       id="products"
-      className="py-32 relative overflow-hidden"
+      className="py-20 md:py-32 relative overflow-hidden"
       style={{
         background: "linear-gradient(180deg, #0a0a0f 0%, #12121a 40%, #0c1a1a 70%, #0a0a0f 100%)",
       }}
@@ -187,7 +187,7 @@ export function SolutionsSection() {
                     </ul>
 
                     {/* Bottom: Stat + CTA */}
-                    <div className="flex items-center justify-between pt-6 border-t border-white/5">
+                    <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 pt-6 border-t border-white/5">
                       <div className="flex items-baseline gap-2">
                         <span
                           className="text-3xl font-bold font-heading"

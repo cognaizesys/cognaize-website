@@ -118,7 +118,7 @@ export default function DesignIntelligencePage() {
     <div>
       {/* Hero */}
       <section
-        className="relative pt-32 pb-24 overflow-hidden"
+        className="relative pt-24 md:pt-32 pb-24 overflow-hidden"
         style={{
           background: "linear-gradient(135deg, #0a0a0f 0%, #1a1028 40%, #0c1a1a 70%, #0a0a0f 100%)",
         }}
@@ -156,7 +156,7 @@ export default function DesignIntelligencePage() {
               Detect tolerance issues, missing specs, and GD&T errors across 13+ categories in seconds — catching what manual review misses.
             </p>
 
-            <div className="flex items-center justify-center gap-8 mb-10">
+            <div className="flex items-center justify-center gap-4 sm:gap-8 mb-10">
               {[
                 { value: "<15min", label: "Review Time" },
                 { value: "13+", label: "Error Categories" },
@@ -219,7 +219,7 @@ export default function DesignIntelligencePage() {
       </section>
 
       {/* Demo Video */}
-      <section className="py-24" style={{ background: "linear-gradient(180deg, #faf8ff 0%, #f8f8fa 50%, #f0fdf8 100%)" }}>
+      <section className="py-16 md:py-24" style={{ background: "linear-gradient(180deg, #faf8ff 0%, #f8f8fa 50%, #f0fdf8 100%)" }}>
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <span className="text-primary text-sm font-semibold uppercase tracking-wider">
@@ -258,7 +258,7 @@ export default function DesignIntelligencePage() {
       </section>
 
       {/* Analysis Modules Section */}
-      <section className="py-24">
+      <section className="py-16 md:py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <span className="text-primary text-sm font-semibold uppercase tracking-wider">
@@ -308,7 +308,7 @@ export default function DesignIntelligencePage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.1, duration: 0.5 }}
-                className="rounded-2xl border border-gray-200 bg-white p-8 hover:shadow-lg transition-all group"
+                className="rounded-2xl border border-gray-200 bg-white p-5 sm:p-8 hover:shadow-lg transition-all group"
                 style={{
                   borderLeftWidth: '3px',
                   borderLeftColor: mod.color
@@ -333,7 +333,7 @@ export default function DesignIntelligencePage() {
       </section>
 
       {/* Product Tour Screenshots */}
-      <section id="product-tour" className="py-24" style={{ background: "linear-gradient(135deg, #faf8ff 0%, #f8f8fa 50%, #f0fdf8 100%)" }}>
+      <section id="product-tour" className="py-16 md:py-24" style={{ background: "linear-gradient(135deg, #faf8ff 0%, #f8f8fa 50%, #f0fdf8 100%)" }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <span className="text-primary text-sm font-semibold uppercase tracking-wider">
@@ -391,7 +391,7 @@ export default function DesignIntelligencePage() {
       </section>
 
       {/* Categories */}
-      <section className="py-24">
+      <section className="py-16 md:py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <span className="text-primary text-sm font-semibold uppercase tracking-wider">
             Coverage
@@ -419,7 +419,7 @@ export default function DesignIntelligencePage() {
 
       {/* Impact Metrics Section */}
       <section
-        className="py-24 relative overflow-hidden"
+        className="py-16 md:py-24 relative overflow-hidden"
         style={{
           background: "linear-gradient(135deg, #0a0a0f 0%, #1a1028 40%, #0c1a1a 70%, #0a0a0f 100%)",
         }}
@@ -441,7 +441,7 @@ export default function DesignIntelligencePage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.15, duration: 0.5 }}
-                className="text-center rounded-2xl border border-white/10 bg-dark-card/80 backdrop-blur-sm p-8"
+                className="text-center rounded-2xl border border-white/10 bg-dark-card/80 backdrop-blur-sm p-5 sm:p-8"
               >
                 <div
                   className="w-14 h-14 rounded-full flex items-center justify-center mx-auto mb-4"
@@ -450,7 +450,7 @@ export default function DesignIntelligencePage() {
                   <metric.icon className="w-7 h-7" style={{ color: metric.color }} />
                 </div>
                 <div
-                  className="text-4xl font-bold font-heading mb-2"
+                  className="text-3xl sm:text-4xl font-bold font-heading mb-2"
                   style={{ color: metric.color }}
                 >
                   {metric.value}
@@ -470,7 +470,7 @@ export default function DesignIntelligencePage() {
 
       {/* Cross-sell + CTA */}
       <section
-        className="py-24 relative overflow-hidden"
+        className="py-16 md:py-24 relative overflow-hidden"
         style={{
           background: "linear-gradient(135deg, #0a0a0f 0%, #1a1028 40%, #0c1a1a 70%, #0a0a0f 100%)",
         }}
@@ -492,14 +492,14 @@ export default function DesignIntelligencePage() {
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <Link
                 href="/#contact"
-                className="inline-flex items-center gap-2 bg-primary hover:bg-primary-dark text-white px-8 py-4 rounded-lg font-bold text-lg transition-all shadow-lg shadow-primary/25"
+                className="inline-flex items-center gap-2 bg-primary hover:bg-primary-dark text-white px-6 py-3.5 text-base sm:px-8 sm:py-4 sm:text-lg rounded-lg font-bold transition-all shadow-lg shadow-primary/25"
               >
                 Book a Demo
                 <ArrowRight className="w-5 h-5" />
               </Link>
               <Link
                 href="/products/manufacturing-intelligence"
-                className="inline-flex items-center gap-2 border border-accent/25 hover:border-accent/40 hover:bg-white/5 text-white px-8 py-4 rounded-lg font-semibold transition-all"
+                className="inline-flex items-center gap-2 border border-accent/25 hover:border-accent/40 hover:bg-white/5 text-white px-6 py-3.5 text-base sm:px-8 sm:py-4 sm:text-lg rounded-lg font-semibold transition-all"
               >
                 Explore Manufacturing Intelligence
                 <ArrowRight className="w-4 h-4" />
