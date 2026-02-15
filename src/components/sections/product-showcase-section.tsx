@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import { DiDemoViewer } from "@/components/product/di-demo-viewer";
 import { MiDemoViewer } from "@/components/product/mi-demo-viewer";
 import { Scan, Calculator, Play } from "lucide-react";
@@ -91,19 +91,24 @@ export function ProductShowcaseSection() {
           </div>
         </div>
 
-        {/* Content */}
-        <div className="relative">
-          <AnimatePresence initial={false}>
-            <motion.div
-              key={activeTab}
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0, position: "absolute", top: 0, left: 0, right: 0 }}
-              transition={{ duration: 0.3 }}
-            >
-              {activeTab === "di" ? <DiDemoViewer /> : <MiDemoViewer />}
-            </motion.div>
-          </AnimatePresence>
+        {/* Content - grid stacking keeps both in flow so height = max(DI, MI) */}
+        <div className="grid" style={{ gridTemplateAreas: "'stack'" }}>
+          <motion.div
+            style={{ gridArea: "stack" }}
+            animate={{ opacity: activeTab === "di" ? 1 : 0 }}
+            transition={{ duration: 0.3 }}
+            className={activeTab === "di" ? "" : "pointer-events-none"}
+          >
+            <DiDemoViewer />
+          </motion.div>
+          <motion.div
+            style={{ gridArea: "stack" }}
+            animate={{ opacity: activeTab === "mi" ? 1 : 0 }}
+            transition={{ duration: 0.3 }}
+            className={activeTab === "mi" ? "" : "pointer-events-none"}
+          >
+            <MiDemoViewer />
+          </motion.div>
         </div>
       </div>
     </section>
