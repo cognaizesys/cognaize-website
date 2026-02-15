@@ -116,22 +116,24 @@ export function MiDemoViewer() {
       </div>
 
       {/* Screenshot display */}
-      {currentScreenshot && (
-        <AnimatePresence mode="wait">
+      <div className="relative">
+        <AnimatePresence initial={false}>
           <motion.div
             key={activeStep}
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -10 }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0, position: "absolute", top: 0, left: 0, right: 0 }}
             transition={{ duration: 0.3 }}
           >
-            <ProductScreenshot
-              src={currentScreenshot.src}
-              alt={currentScreenshot.alt}
-            />
+            {currentScreenshot && (
+              <ProductScreenshot
+                src={currentScreenshot.src}
+                alt={currentScreenshot.alt}
+              />
+            )}
           </motion.div>
         </AnimatePresence>
-      )}
+      </div>
     </div>
   );
 }

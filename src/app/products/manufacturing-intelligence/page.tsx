@@ -279,44 +279,46 @@ export default function ManufacturingIntelligencePage() {
 
           {/* Screenshot */}
           <div className="max-w-5xl mx-auto">
-            <AnimatePresence mode="wait">
-              <motion.div
-                key={activeStep}
-                initial={{ opacity: 0, scale: 0.98 }}
-                animate={{ opacity: 1, scale: 1 }}
-                exit={{ opacity: 0, scale: 0.98 }}
-                transition={{ duration: 0.4 }}
-              >
-                <div className="mb-6 text-center">
-                  <h3 className="text-xl font-heading text-text-primary">
-                    Step {workflowSteps[activeStep].step}:{" "}
-                    {workflowSteps[activeStep].title}
-                  </h3>
-                  <p className="text-text-secondary mt-1">
-                    {workflowSteps[activeStep].description}
-                  </p>
-                </div>
-                <div className="rounded-xl overflow-hidden shadow-2xl border border-gray-200">
-                  <div className="bg-gray-100 h-10 flex items-center px-4 gap-2">
-                    <div className="w-3 h-3 rounded-full bg-red-400" />
-                    <div className="w-3 h-3 rounded-full bg-yellow-400" />
-                    <div className="w-3 h-3 rounded-full bg-green-400" />
-                    <div className="bg-gray-200 rounded-md h-6 flex-1 mx-4 flex items-center justify-center">
-                      <span className="text-xs text-gray-400">
-                        app.cognaizesys.com
-                      </span>
+            <div className="mb-6 text-center">
+              <h3 className="text-xl font-heading text-text-primary">
+                Step {workflowSteps[activeStep].step}:{" "}
+                {workflowSteps[activeStep].title}
+              </h3>
+              <p className="text-text-secondary mt-1">
+                {workflowSteps[activeStep].description}
+              </p>
+            </div>
+            <div className="relative">
+              <AnimatePresence initial={false}>
+                <motion.div
+                  key={activeStep}
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0, position: "absolute", top: 0, left: 0, right: 0 }}
+                  transition={{ duration: 0.3 }}
+                >
+                  <div className="rounded-xl overflow-hidden shadow-2xl border border-gray-200">
+                    <div className="bg-gray-100 h-10 flex items-center px-4 gap-2">
+                      <div className="w-3 h-3 rounded-full bg-red-400" />
+                      <div className="w-3 h-3 rounded-full bg-yellow-400" />
+                      <div className="w-3 h-3 rounded-full bg-green-400" />
+                      <div className="bg-gray-200 rounded-md h-6 flex-1 mx-4 flex items-center justify-center">
+                        <span className="text-xs text-gray-400">
+                          app.cognaizesys.com
+                        </span>
+                      </div>
                     </div>
+                    <Image
+                      src={workflowSteps[activeStep].src}
+                      alt={workflowSteps[activeStep].alt}
+                      width={1200}
+                      height={800}
+                      className="w-full"
+                    />
                   </div>
-                  <Image
-                    src={workflowSteps[activeStep].src}
-                    alt={workflowSteps[activeStep].alt}
-                    width={1200}
-                    height={800}
-                    className="w-full"
-                  />
-                </div>
-              </motion.div>
-            </AnimatePresence>
+                </motion.div>
+              </AnimatePresence>
+            </div>
           </div>
         </div>
       </section>
