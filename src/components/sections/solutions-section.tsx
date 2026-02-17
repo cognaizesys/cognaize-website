@@ -92,9 +92,9 @@ export function SolutionsSection() {
             </span>
           </div>
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-heading text-white tracking-tight">
-            AI That Understands
+            AI Trained on
             <br />
-            Engineering Drawings
+            Real Shop Floor Data
           </h2>
           <p className="mt-4 text-lg text-gray-400 max-w-2xl mx-auto">
             Purpose-built models trained on real manufacturing data.

@@ -33,7 +33,7 @@ export function Footer() {
                 </span>
               </Link>
               <p className="text-sm leading-relaxed text-text-on-dark">
-                {COMPANY.tagline}. Transforming manufacturing operations through intelligent automation and data-driven insights.
+                Purpose-built AI for engineering teams who design and make things.
               </p>
             </div>
 

@@ -118,7 +118,7 @@ export function TeamSection() {
           >
             <h2 className="text-3xl md:text-4xl font-heading text-white tracking-tight">
               Our
-              <span className="text-primary-light"> Experts</span>
+              <span className="text-primary-light"> Engineering & Manufacturing Leaders</span>
             </h2>
             <p className="mt-4 text-gray-400 text-lg leading-relaxed">
               Decades of experience across manufacturing, technology, consulting, and design — guiding our vision and strategy.

@@ -74,11 +74,11 @@ export function HeroSection() {
               transition={{ duration: 0.6, delay: 0.3 }}
               className="mt-6 md:mt-10 text-3xl sm:text-4xl lg:text-5xl font-heading font-bold text-white tracking-tight leading-[1.1]"
             >
-              Upload a Drawing.
+              Your Engineering Drawings.
               <br />
-              <span className="text-primary-light">Get AI Insights</span>
+              <span className="text-primary-light">Reviewed by AI.</span>
               <br />
-              in Seconds.
+              In Minutes, Not Hours.
             </motion.h1>
 
             {/* Subtitle */}
@@ -88,9 +88,9 @@ export function HeroSection() {
               transition={{ duration: 0.6, delay: 0.5 }}
               className="mt-6 md:mt-8 text-lg text-gray-400 max-w-lg leading-relaxed"
             >
-              Cognaize analyzes engineering drawings 16x faster with 95%+
-              accuracy — catching errors, estimating costs, and accelerating
-              reviews that used to take hours.
+              Cognaize Systems reviews GD&T, tolerances, and material specs
+              across your engineering drawings — catching errors your best
+              engineer would catch, 16x faster.
             </motion.p>
 
             {/* Metrics row */}

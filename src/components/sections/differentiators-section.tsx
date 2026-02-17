@@ -22,7 +22,7 @@ const differentiators = [
   },
   {
     icon: Shield,
-    title: "Enterprise Security",
+    title: "Your Drawings Stay Yours",
     description:
       "Your drawings are your competitive advantage. SOC 2 compliant, on-premises deployment options, and zero data retention policies.",
     highlight: "Your IP, protected",

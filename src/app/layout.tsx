@@ -59,10 +59,10 @@ const jakarta = Plus_Jakarta_Sans({
 });
 
 const siteDescription =
-  "Cognaize Systems (CognaizeSys) delivers AI-powered engineering drawing review, error detection, and cost estimation for manufacturing. From 14 days to 15 minutes — 95%+ accuracy, 10x cost savings.";
+  "Cognaize Systems builds AI for engineering design review and manufacturing cost estimation. Upload drawings, detect errors, estimate costs. 95%+ accuracy. Deploy in days. Chennai | Bangalore | Dubai.";
 
 export const metadata: Metadata = {
-  title: `${COMPANY.name} - ${COMPANY.tagline}`,
+  title: `${COMPANY.name} | AI Engineering Drawing Review & Cost Estimation`,
   description: siteDescription,
   keywords: [
     "Cognaize Systems",
@@ -80,7 +80,7 @@ export const metadata: Metadata = {
     canonical: "/",
   },
   openGraph: {
-    title: `${COMPANY.name} - ${COMPANY.tagline}`,
+    title: `${COMPANY.name} | AI Engineering Drawing Review & Cost Estimation`,
     description: siteDescription,
     url: COMPANY.website,
     siteName: COMPANY.name,
@@ -88,7 +88,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: `${COMPANY.name} - ${COMPANY.tagline}`,
+    title: `${COMPANY.name} | AI Engineering Drawing Review & Cost Estimation`,
     description: siteDescription,
   },
   robots: {
