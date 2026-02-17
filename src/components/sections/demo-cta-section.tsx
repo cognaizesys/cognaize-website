@@ -16,11 +16,11 @@ export function DemoCTASection() {
 
       {/* Grid pattern */}
       <div
-        className="absolute inset-0 opacity-25"
+        className="absolute inset-0"
         style={{
           backgroundImage:
-            "linear-gradient(rgba(132, 111, 188, 0.15) 1px, transparent 1px), linear-gradient(90deg, rgba(132, 111, 188, 0.15) 1px, transparent 1px)",
-          backgroundSize: "60px 60px",
+            "linear-gradient(rgba(100, 170, 240, 0.20) 1px, transparent 1px), linear-gradient(90deg, rgba(100, 170, 240, 0.20) 1px, transparent 1px), linear-gradient(rgba(100, 170, 240, 0.07) 1px, transparent 1px), linear-gradient(90deg, rgba(100, 170, 240, 0.07) 1px, transparent 1px)",
+          backgroundSize: "80px 80px, 80px 80px, 16px 16px, 16px 16px",
         }}
       />
 

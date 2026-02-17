@@ -76,6 +76,15 @@ export function ContactSection() {
 
   return (
     <section id="contact" className="py-20 relative overflow-hidden" style={{ background: "linear-gradient(135deg, #0a0a0f 0%, #1a150e 50%, #0a0a0f 100%)" }}>
+      {/* Blueprint grid */}
+      <div
+        className="absolute inset-0"
+        style={{
+          backgroundImage:
+            "linear-gradient(rgba(100, 170, 240, 0.20) 1px, transparent 1px), linear-gradient(90deg, rgba(100, 170, 240, 0.20) 1px, transparent 1px), linear-gradient(rgba(100, 170, 240, 0.07) 1px, transparent 1px), linear-gradient(90deg, rgba(100, 170, 240, 0.07) 1px, transparent 1px)",
+          backgroundSize: "80px 80px, 80px 80px, 16px 16px, 16px 16px",
+        }}
+      />
       {/* Warm amber glow */}
       <div
         className="absolute top-1/3 right-0 w-[500px] h-[500px] opacity-20 pointer-events-none"

@@ -32,7 +32,7 @@ export function ProductShowcaseSection() {
       id="demo"
       className="py-16 md:py-24 relative overflow-hidden"
       style={{
-        background: "linear-gradient(180deg, #f3eeff 0%, #e5f2ff 50%, #f0e0ff 100%)",
+        backgroundColor: "#f8f9fb", backgroundImage: "linear-gradient(rgba(70, 110, 170, 0.22) 1px, transparent 1px), linear-gradient(90deg, rgba(70, 110, 170, 0.22) 1px, transparent 1px), linear-gradient(rgba(70, 110, 170, 0.08) 1px, transparent 1px), linear-gradient(90deg, rgba(70, 110, 170, 0.08) 1px, transparent 1px)", backgroundSize: "80px 80px, 80px 80px, 16px 16px, 16px 16px",
       }}
     >
       {/* Decorative blobs */}

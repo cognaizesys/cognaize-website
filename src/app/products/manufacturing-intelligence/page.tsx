@@ -136,11 +136,11 @@ export default function ManufacturingIntelligencePage() {
       >
         {/* Grid bg */}
         <div
-          className="absolute inset-0 opacity-15"
+          className="absolute inset-0"
           style={{
             backgroundImage:
-              "linear-gradient(rgba(132, 111, 188, 0.12) 1px, transparent 1px), linear-gradient(90deg, rgba(110, 231, 183, 0.06) 1px, transparent 1px)",
-            backgroundSize: "80px 80px",
+              "linear-gradient(rgba(100, 170, 240, 0.20) 1px, transparent 1px), linear-gradient(90deg, rgba(100, 170, 240, 0.20) 1px, transparent 1px), linear-gradient(rgba(100, 170, 240, 0.07) 1px, transparent 1px), linear-gradient(90deg, rgba(100, 170, 240, 0.07) 1px, transparent 1px)",
+            backgroundSize: "80px 80px, 80px 80px, 16px 16px, 16px 16px",
           }}
         />
 
@@ -230,7 +230,7 @@ export default function ManufacturingIntelligencePage() {
       </section>
 
       {/* Workflow Walkthrough */}
-      <section id="workflow" className="py-16 md:py-24" style={{ background: "linear-gradient(135deg, #f0fdf8 0%, #f8f8fa 50%, #faf8ff 100%)" }}>
+      <section id="workflow" className="py-16 md:py-24" style={{ backgroundColor: "#f8f9fb", backgroundImage: "linear-gradient(rgba(70, 110, 170, 0.22) 1px, transparent 1px), linear-gradient(90deg, rgba(70, 110, 170, 0.22) 1px, transparent 1px), linear-gradient(rgba(70, 110, 170, 0.08) 1px, transparent 1px), linear-gradient(90deg, rgba(70, 110, 170, 0.08) 1px, transparent 1px)", backgroundSize: "80px 80px, 80px 80px, 16px 16px, 16px 16px" }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <span className="text-primary text-sm font-semibold uppercase tracking-wider">
@@ -324,7 +324,7 @@ export default function ManufacturingIntelligencePage() {
       </section>
 
       {/* Capabilities */}
-      <section className="py-16 md:py-24">
+      <section className="py-16 md:py-24" style={{ backgroundColor: "#f8f9fb", backgroundImage: "linear-gradient(rgba(70, 110, 170, 0.22) 1px, transparent 1px), linear-gradient(90deg, rgba(70, 110, 170, 0.22) 1px, transparent 1px), linear-gradient(rgba(70, 110, 170, 0.08) 1px, transparent 1px), linear-gradient(90deg, rgba(70, 110, 170, 0.08) 1px, transparent 1px)", backgroundSize: "80px 80px, 80px 80px, 16px 16px, 16px 16px" }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <span className="text-primary text-sm font-semibold uppercase tracking-wider">
@@ -386,6 +386,14 @@ export default function ManufacturingIntelligencePage() {
           background: "linear-gradient(135deg, #0a0a0f 0%, #0c1a1a 40%, #1a1028 70%, #0a0a0f 100%)",
         }}
       >
+        <div
+          className="absolute inset-0"
+          style={{
+            backgroundImage:
+              "linear-gradient(rgba(100, 170, 240, 0.20) 1px, transparent 1px), linear-gradient(90deg, rgba(100, 170, 240, 0.20) 1px, transparent 1px), linear-gradient(rgba(100, 170, 240, 0.07) 1px, transparent 1px), linear-gradient(90deg, rgba(100, 170, 240, 0.07) 1px, transparent 1px)",
+            backgroundSize: "80px 80px, 80px 80px, 16px 16px, 16px 16px",
+          }}
+        />
         <div className="relative z-10 max-w-4xl mx-auto px-4 text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}

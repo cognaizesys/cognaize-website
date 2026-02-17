@@ -157,7 +157,7 @@ function StepTimeline({ steps, title }: StepTimelineProps) {
 
 export function HowItWorksSection() {
   return (
-    <section id="how-it-works" className="py-20" style={{ background: "linear-gradient(135deg, #f3eeff 0%, #f8f8fa 50%, #e0fbf0 100%)" }}>
+    <section id="how-it-works" className="py-20" style={{ backgroundColor: "#f8f9fb", backgroundImage: "linear-gradient(rgba(70, 110, 170, 0.22) 1px, transparent 1px), linear-gradient(90deg, rgba(70, 110, 170, 0.22) 1px, transparent 1px), linear-gradient(rgba(70, 110, 170, 0.08) 1px, transparent 1px), linear-gradient(90deg, rgba(70, 110, 170, 0.08) 1px, transparent 1px)", backgroundSize: "80px 80px, 80px 80px, 16px 16px, 16px 16px" }}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Main heading */}
         <div className="text-center max-w-3xl mx-auto mb-16">
