@@ -16,21 +16,21 @@ const steps = [
     icon: ScanLine,
     title: "AI Analyzes the Drawing",
     description:
-      "Our AI reviews GD&T, tolerances, surface finish callouts, material specs, and 13+ other categories simultaneously.",
+      "Our AI reviews GD&T, tolerances, and material specs for design errors — and simultaneously extracts specs for feasibility and cost estimation.",
   },
   {
     step: 3,
     icon: ClipboardList,
     title: "Review the Findings",
     description:
-      "Get a structured findings report highlighting errors, missing specs, and risk areas — the way your best engineer would flag them.",
+      "Get a structured design review report with flagged errors and risk areas, alongside a feasibility assessment and detailed cost breakdown.",
   },
   {
     step: 4,
     icon: Zap,
     title: "Act on Insights",
     description:
-      "Export the report, share with your team, or feed into your cost estimation workflow using Manufacturing Intelligence.",
+      "Share the design review with your engineering team, and send the costing output directly to your customer as a quote — in minutes, not days.",
   },
 ];
 
