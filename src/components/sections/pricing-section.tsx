@@ -42,7 +42,7 @@ export function PricingSection() {
     <section className="py-24" style={{ backgroundColor: "#f8f9fb", backgroundImage: "linear-gradient(rgba(70, 110, 170, 0.22) 1px, transparent 1px), linear-gradient(90deg, rgba(70, 110, 170, 0.22) 1px, transparent 1px), linear-gradient(rgba(70, 110, 170, 0.08) 1px, transparent 1px), linear-gradient(90deg, rgba(70, 110, 170, 0.08) 1px, transparent 1px)", backgroundSize: "80px 80px, 80px 80px, 16px 16px, 16px 16px" }}>
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <span className="text-primary text-sm font-semibold uppercase tracking-wider">
+          <span className="text-[#E87B3A] text-sm font-semibold uppercase tracking-wider">
             Pricing
           </span>
           <h2 className="text-3xl md:text-4xl font-heading text-text-primary mt-2">

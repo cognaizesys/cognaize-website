@@ -99,7 +99,7 @@ export function SolutionsSection() {
           className="text-center max-w-3xl mx-auto"
         >
           <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-primary/30 border border-primary/50 mb-6">
-            <span className="text-xs font-medium text-primary-light uppercase tracking-wider">
+            <span className="text-xs font-medium text-[#E87B3A] uppercase tracking-wider">
               Two Products &middot; One Platform
             </span>
           </div>

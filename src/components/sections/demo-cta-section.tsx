@@ -43,7 +43,7 @@ export function DemoCTASection() {
           >
             <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-primary/25 border border-primary/45 mb-8">
               <Sparkles className="w-3 h-3 text-accent" />
-              <span className="text-xs font-medium text-primary-light uppercase tracking-wider">
+              <span className="text-xs font-medium text-[#E87B3A] uppercase tracking-wider">
                 Get Started
               </span>
             </div>

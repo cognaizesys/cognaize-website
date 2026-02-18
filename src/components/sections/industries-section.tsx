@@ -55,7 +55,7 @@ export function IndustriesSection() {
           transition={{ duration: 0.6 }}
           className="text-center"
         >
-          <p className="text-sm font-semibold uppercase tracking-wide text-[#846fbc]">
+          <p className="text-sm font-semibold uppercase tracking-wide text-[#E87B3A]">
             Industries We Serve
           </p>
           <h2 className="mt-3 text-2xl md:text-4xl font-heading text-gray-900 tracking-tight">

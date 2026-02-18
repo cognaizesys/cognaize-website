@@ -75,7 +75,7 @@ export function HomepageHowItWorksSection() {
           transition={{ duration: 0.5 }}
           className="text-center max-w-3xl mx-auto mb-16"
         >
-          <p className="text-sm font-semibold text-primary uppercase tracking-wider">
+          <p className="text-sm font-semibold text-[#E87B3A] uppercase tracking-wider">
             How It Works
           </p>
           <h2 className="mt-2 text-3xl md:text-4xl font-heading text-gray-900 tracking-tight">
@@ -118,7 +118,7 @@ export function HomepageHowItWorksSection() {
                 </div>
 
                 {/* Step label */}
-                <span className="text-xs font-bold text-primary uppercase tracking-widest mb-2">
+                <span className="text-xs font-bold text-[#E87B3A] uppercase tracking-widest mb-2">
                   Step {step.step}
                 </span>
 

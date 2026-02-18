@@ -53,7 +53,7 @@ export function ProductShowcaseSection() {
         >
           <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-primary/25 border border-primary/40 mb-6">
             <Play className="w-3 h-3 text-primary" />
-            <span className="text-xs font-medium text-primary uppercase tracking-wider">
+            <span className="text-xs font-medium text-[#E87B3A] uppercase tracking-wider">
               Live Product Demo
             </span>
           </div>

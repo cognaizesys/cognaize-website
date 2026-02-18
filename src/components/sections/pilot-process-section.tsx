@@ -60,7 +60,7 @@ export function PilotProcessSection() {
       />
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <span className="text-primary-light text-sm font-semibold uppercase tracking-wider">
+          <span className="text-[#E87B3A] text-sm font-semibold uppercase tracking-wider">
             Get Started
           </span>
           <h2 className="text-3xl md:text-4xl font-heading text-white mt-2">
