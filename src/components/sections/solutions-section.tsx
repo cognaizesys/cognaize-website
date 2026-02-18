@@ -188,9 +188,9 @@ export function SolutionsSection() {
                     {/* Highlights list */}
                     <ul className="space-y-2.5 mb-8">
                       {product.highlights.map((item) => (
-                        <li key={item} className="flex items-center gap-3">
+                        <li key={item} className="flex items-start gap-3">
                           <div
-                            className="w-1.5 h-1.5 rounded-full shrink-0"
+                            className="w-1.5 h-1.5 rounded-full shrink-0 mt-[7px]"
                             style={{ backgroundColor: product.color }}
                           />
                           <span className="text-sm text-gray-300">{item}</span>
