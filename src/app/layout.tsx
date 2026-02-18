@@ -8,35 +8,23 @@ const organizationJsonLd = {
   "@context": "https://schema.org",
   "@type": "Organization",
   name: "Cognaize Systems",
-  alternateName: [
-    "CognaizeSys",
-    "Cognaize",
-    "Cognaize System",
-    "Cognaize Systems Pvt Ltd",
-  ],
-  url: "https://cognaizesys.com",
-  logo: "https://cognaizesys.com/images/logo.png",
+  url: "https://www.cognaizesys.com",
+  logo: "https://www.cognaizesys.com/images/logo/cognaize-icon.png",
   description:
-    "Cognaize Systems is an AI-powered manufacturing intelligence company specializing in engineering drawing review, error detection, and cost estimation.",
+    "AI for Engineering Design Review and Manufacturing Costing. Purpose-built for automotive and industrial manufacturers.",
+  foundingLocation: "Chennai, India",
+  areaServed: ["India", "United Arab Emirates", "United States"],
+  address: {
+    "@type": "PostalAddress",
+    addressLocality: "Chennai",
+    addressCountry: "IN",
+  },
   contactPoint: {
     "@type": "ContactPoint",
     email: "info@cognaizesys.com",
     contactType: "sales",
   },
   sameAs: [],
-  foundingLocation: {
-    "@type": "Place",
-    name: "Chennai, India",
-  },
-  areaServed: ["IN", "AE"],
-  knowsAbout: [
-    "AI-powered manufacturing",
-    "engineering drawing review",
-    "manufacturing intelligence",
-    "design intelligence",
-    "cost estimation",
-    "error detection",
-  ],
 };
 
 const websiteJsonLd = {
@@ -107,7 +95,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${inter.variable} ${jakarta.variable}`}>
-      <body className="antialiased">
+      <head>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -120,6 +108,8 @@ export default function RootLayout({
             __html: JSON.stringify(websiteJsonLd),
           }}
         />
+      </head>
+      <body className="antialiased">
         <LayoutShell>{children}</LayoutShell>
       </body>
     </html>
