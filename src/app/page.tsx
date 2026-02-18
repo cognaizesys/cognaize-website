@@ -1,5 +1,6 @@
 import {
   HeroSection,
+  HomepageHowItWorksSection,
   DifferentiatorsSection,
   SolutionsSection,
   ProductShowcaseSection,
@@ -12,6 +13,7 @@ export default function Home() {
   return (
     <>
       <HeroSection />
+      <HomepageHowItWorksSection />
       <SolutionsSection />
       <ROISection />
       <DifferentiatorsSection />
