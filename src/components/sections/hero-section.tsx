@@ -118,7 +118,9 @@ export function HeroSection() {
               className="mt-8 md:mt-12 flex flex-col sm:flex-row items-start gap-4"
             >
               <a
-                href="#contact"
+                href="https://calendly.com/raghu-cognaizesys/30min"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="group inline-flex items-center gap-2 px-7 py-3.5 rounded-lg bg-primary hover:bg-primary-dark text-white font-semibold transition-all duration-300 shadow-md shadow-primary/20 hover:shadow-lg hover:shadow-primary/30"
               >
                 Schedule a Demo

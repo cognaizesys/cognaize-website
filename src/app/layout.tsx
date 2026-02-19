@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Inter, Plus_Jakarta_Sans } from "next/font/google";
+import Script from "next/script";
 import { COMPANY } from "@/lib/constants";
 import { LayoutShell } from "@/components/layout/layout-shell";
 import "./globals.css";
@@ -111,6 +112,14 @@ export default function RootLayout({
       </head>
       <body className="antialiased">
         <LayoutShell>{children}</LayoutShell>
+        <Script
+          src="//code.tidio.co/urfjtfh5waxp2mkmqfcjppvfoz83k9or.js"
+          strategy="lazyOnload"
+        />
+        <Script
+          src="https://assets.calendly.com/assets/external/widget.js"
+          strategy="lazyOnload"
+        />
       </body>
     </html>
   );

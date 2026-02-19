@@ -2,7 +2,6 @@
 
 import { motion } from "framer-motion";
 import { Check, ArrowRight } from "lucide-react";
-import Link from "next/link";
 
 const plans = [
   {
@@ -87,8 +86,10 @@ export function PricingSection() {
                   </li>
                 ))}
               </ul>
-              <Link
-                href="/#contact"
+              <a
+                href="https://calendly.com/raghu-cognaizesys/30min"
+                target="_blank"
+                rel="noopener noreferrer"
                 className={`mt-8 w-full inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg font-semibold transition-colors text-sm ${
                   plan.highlighted
                     ? "bg-primary text-white hover:bg-primary-dark"
@@ -97,7 +98,7 @@ export function PricingSection() {
               >
                 {plan.cta}
                 <ArrowRight className="w-4 h-4" />
-              </Link>
+              </a>
             </motion.div>
           ))}
         </div>

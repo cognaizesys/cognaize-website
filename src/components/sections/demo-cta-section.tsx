@@ -62,7 +62,9 @@ export function DemoCTASection() {
             {/* CTA Buttons */}
             <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
               <a
-                href="#contact"
+                href="https://calendly.com/raghu-cognaizesys/30min"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="group inline-flex items-center gap-2 px-8 py-4 rounded-xl text-white font-bold text-lg transition-all duration-300 shadow-lg shadow-primary/40 hover:shadow-xl hover:shadow-primary/45"
                 style={{ background: "linear-gradient(135deg, #846fbc, #6ee7b7)" }}
               >
@@ -70,7 +72,9 @@ export function DemoCTASection() {
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-0.5 transition-transform" />
               </a>
               <a
-                href="#contact"
+                href="https://calendly.com/raghu-cognaizesys/30min"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 px-8 py-4 rounded-xl border border-accent/40 hover:border-accent/60 hover:bg-white/5 text-white font-bold text-lg transition-all duration-300"
               >
                 Start Free Trial

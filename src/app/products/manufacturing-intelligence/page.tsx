@@ -181,13 +181,15 @@ export default function ManufacturingIntelligencePage() {
             </div>
 
             <div className="flex gap-4 flex-wrap justify-center">
-              <Link
-                href="/#contact"
+              <a
+                href="https://calendly.com/raghu-cognaizesys/30min"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 bg-primary hover:bg-primary-dark text-white px-7 py-3.5 rounded-lg font-semibold transition-colors shadow-md shadow-primary/20 hover:shadow-lg hover:shadow-primary/30"
               >
                 Schedule a Demo
                 <ArrowRight className="w-4 h-4" />
-              </Link>
+              </a>
               <a
                 href="#workflow"
                 className="inline-flex items-center gap-2 border border-accent/30 hover:border-accent/50 hover:bg-white/5 text-white px-7 py-3.5 rounded-lg font-semibold transition-all"
@@ -409,13 +411,15 @@ export default function ManufacturingIntelligencePage() {
               from engineering drawings in minutes.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <Link
-                href="/#contact"
+              <a
+                href="https://calendly.com/raghu-cognaizesys/30min"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 bg-primary hover:bg-primary-dark text-white px-6 py-3.5 text-base sm:px-8 sm:py-4 sm:text-lg rounded-lg font-bold transition-all shadow-lg shadow-primary/25"
               >
                 Book a Demo
                 <ArrowRight className="w-5 h-5" />
-              </Link>
+              </a>
               <Link
                 href="/products/design-intelligence"
                 className="inline-flex items-center gap-2 border border-primary/25 hover:border-primary/40 hover:bg-white/5 text-white px-6 py-3.5 text-base sm:px-8 sm:py-4 sm:text-lg rounded-lg font-semibold transition-all"
