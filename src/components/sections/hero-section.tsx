@@ -17,11 +17,11 @@ export function HeroSection() {
     >
       {/* Animated grid background */}
       <div
-        className="absolute inset-0 opacity-30"
+        className="absolute inset-0"
         style={{
           backgroundImage:
-            "linear-gradient(rgba(132, 111, 188, 0.15) 1px, transparent 1px), linear-gradient(90deg, rgba(110, 231, 183, 0.08) 1px, transparent 1px)",
-          backgroundSize: "80px 80px",
+            "linear-gradient(rgba(100, 170, 240, 0.20) 1px, transparent 1px), linear-gradient(90deg, rgba(100, 170, 240, 0.20) 1px, transparent 1px), linear-gradient(rgba(100, 170, 240, 0.07) 1px, transparent 1px), linear-gradient(90deg, rgba(100, 170, 240, 0.07) 1px, transparent 1px)",
+          backgroundSize: "80px 80px, 80px 80px, 16px 16px, 16px 16px",
         }}
       />
 
@@ -74,11 +74,11 @@ export function HeroSection() {
               transition={{ duration: 0.6, delay: 0.3 }}
               className="mt-6 md:mt-10 text-3xl sm:text-4xl lg:text-5xl font-heading font-bold text-white tracking-tight leading-[1.1]"
             >
-              Upload a Drawing.
+              Your Engineering Drawings.
               <br />
-              <span className="text-primary-light">Get AI Insights</span>
+              <span className="text-primary-light">Reviewed by AI.</span>
               <br />
-              in Seconds.
+              In Minutes, Not Hours.
             </motion.h1>
 
             {/* Subtitle */}
@@ -88,9 +88,9 @@ export function HeroSection() {
               transition={{ duration: 0.6, delay: 0.5 }}
               className="mt-6 md:mt-8 text-lg text-gray-400 max-w-lg leading-relaxed"
             >
-              Cognaize analyzes engineering drawings 16x faster with 95%+
-              accuracy — catching errors, estimating costs, and accelerating
-              reviews that used to take hours.
+              Cognaize Systems reviews GD&T, tolerances, and material specs
+              across your engineering drawings — catching errors your best
+              engineer would catch, 16x faster.
             </motion.p>
 
             {/* Metrics row */}
@@ -118,7 +118,9 @@ export function HeroSection() {
               className="mt-8 md:mt-12 flex flex-col sm:flex-row items-start gap-4"
             >
               <a
-                href="#contact"
+                href="https://calendly.com/raghu-cognaizesys/30min"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="group inline-flex items-center gap-2 px-7 py-3.5 rounded-lg bg-primary hover:bg-primary-dark text-white font-semibold transition-all duration-300 shadow-md shadow-primary/20 hover:shadow-lg hover:shadow-primary/30"
               >
                 Schedule a Demo

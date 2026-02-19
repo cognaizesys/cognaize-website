@@ -45,7 +45,7 @@ const industries: Industry[] = [
 
 export function IndustriesSection() {
   return (
-    <section className="py-20" style={{ background: "linear-gradient(180deg, #ffffff 0%, #f3eeff 50%, #ffffff 100%)" }}>
+    <section className="py-20" style={{ backgroundColor: "#f8f9fb", backgroundImage: "linear-gradient(rgba(70, 110, 170, 0.22) 1px, transparent 1px), linear-gradient(90deg, rgba(70, 110, 170, 0.22) 1px, transparent 1px), linear-gradient(rgba(70, 110, 170, 0.08) 1px, transparent 1px), linear-gradient(90deg, rgba(70, 110, 170, 0.08) 1px, transparent 1px)", backgroundSize: "80px 80px, 80px 80px, 16px 16px, 16px 16px" }}>
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Heading */}
         <motion.div
@@ -55,7 +55,7 @@ export function IndustriesSection() {
           transition={{ duration: 0.6 }}
           className="text-center"
         >
-          <p className="text-sm font-semibold uppercase tracking-wide text-[#846fbc]">
+          <p className="text-sm font-semibold uppercase tracking-wide text-[#E87B3A]">
             Industries We Serve
           </p>
           <h2 className="mt-3 text-2xl md:text-4xl font-heading text-gray-900 tracking-tight">

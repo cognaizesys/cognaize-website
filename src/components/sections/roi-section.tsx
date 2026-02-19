@@ -46,6 +46,15 @@ const keySummaryStats = [
 export function ROISection() {
   return (
     <section className="py-20 text-white relative overflow-hidden" style={{ background: "linear-gradient(180deg, #0f0f0f 0%, #140e24 50%, #0f0f0f 100%)" }}>
+      {/* Blueprint grid */}
+      <div
+        className="absolute inset-0"
+        style={{
+          backgroundImage:
+            "linear-gradient(rgba(100, 170, 240, 0.20) 1px, transparent 1px), linear-gradient(90deg, rgba(100, 170, 240, 0.20) 1px, transparent 1px), linear-gradient(rgba(100, 170, 240, 0.07) 1px, transparent 1px), linear-gradient(90deg, rgba(100, 170, 240, 0.07) 1px, transparent 1px)",
+          backgroundSize: "80px 80px, 80px 80px, 16px 16px, 16px 16px",
+        }}
+      />
       {/* Radial glow */}
       <div
         className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] opacity-30"

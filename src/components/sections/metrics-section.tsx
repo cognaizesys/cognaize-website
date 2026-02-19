@@ -40,7 +40,7 @@ function AnimatedCounter({ value, suffix }: AnimatedCounterProps) {
 
 export function MetricsSection() {
   return (
-    <section className="py-20 bg-white">
+    <section className="py-20" style={{ backgroundColor: "#f8f9fb", backgroundImage: "linear-gradient(rgba(70, 110, 170, 0.22) 1px, transparent 1px), linear-gradient(90deg, rgba(70, 110, 170, 0.22) 1px, transparent 1px), linear-gradient(rgba(70, 110, 170, 0.08) 1px, transparent 1px), linear-gradient(90deg, rgba(70, 110, 170, 0.08) 1px, transparent 1px)", backgroundSize: "80px 80px, 80px 80px, 16px 16px, 16px 16px" }}>
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -51,7 +51,7 @@ export function MetricsSection() {
         >
           <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-primary/10 border border-primary/15 mb-6">
             <TrendingUp className="w-3 h-3 text-primary" />
-            <span className="text-xs font-medium text-primary uppercase tracking-wider">
+            <span className="text-xs font-medium text-[#E87B3A] uppercase tracking-wider">
               Proven Results
             </span>
           </div>

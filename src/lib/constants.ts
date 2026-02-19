@@ -2,7 +2,7 @@ import type { NavLink } from "@/types";
 
 export const COMPANY = {
   name: "Cognaize Systems",
-  tagline: "AI-Powered Manufacturing Intelligence",
+  tagline: "AI for Engineering Design Review & Manufacturing Costing",
   email: "info@cognaizesys.com",
   website: "https://cognaizesys.com",
   location: "Chennai | Bangalore | Dubai",

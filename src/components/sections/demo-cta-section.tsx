@@ -16,11 +16,11 @@ export function DemoCTASection() {
 
       {/* Grid pattern */}
       <div
-        className="absolute inset-0 opacity-25"
+        className="absolute inset-0"
         style={{
           backgroundImage:
-            "linear-gradient(rgba(132, 111, 188, 0.15) 1px, transparent 1px), linear-gradient(90deg, rgba(132, 111, 188, 0.15) 1px, transparent 1px)",
-          backgroundSize: "60px 60px",
+            "linear-gradient(rgba(100, 170, 240, 0.20) 1px, transparent 1px), linear-gradient(90deg, rgba(100, 170, 240, 0.20) 1px, transparent 1px), linear-gradient(rgba(100, 170, 240, 0.07) 1px, transparent 1px), linear-gradient(90deg, rgba(100, 170, 240, 0.07) 1px, transparent 1px)",
+          backgroundSize: "80px 80px, 80px 80px, 16px 16px, 16px 16px",
         }}
       />
 
@@ -43,7 +43,7 @@ export function DemoCTASection() {
           >
             <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-primary/25 border border-primary/45 mb-8">
               <Sparkles className="w-3 h-3 text-accent" />
-              <span className="text-xs font-medium text-primary-light uppercase tracking-wider">
+              <span className="text-xs font-medium text-[#E87B3A] uppercase tracking-wider">
                 Get Started
               </span>
             </div>
@@ -62,7 +62,9 @@ export function DemoCTASection() {
             {/* CTA Buttons */}
             <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
               <a
-                href="#contact"
+                href="https://calendly.com/raghu-cognaizesys/30min"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="group inline-flex items-center gap-2 px-8 py-4 rounded-xl text-white font-bold text-lg transition-all duration-300 shadow-lg shadow-primary/40 hover:shadow-xl hover:shadow-primary/45"
                 style={{ background: "linear-gradient(135deg, #846fbc, #6ee7b7)" }}
               >
@@ -70,7 +72,9 @@ export function DemoCTASection() {
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-0.5 transition-transform" />
               </a>
               <a
-                href="#contact"
+                href="https://calendly.com/raghu-cognaizesys/30min"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 px-8 py-4 rounded-xl border border-accent/40 hover:border-accent/60 hover:bg-white/5 text-white font-bold text-lg transition-all duration-300"
               >
                 Start Free Trial

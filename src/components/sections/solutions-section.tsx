@@ -13,7 +13,13 @@ const products = [
       "Upload an engineering drawing and get instant AI-powered analysis. Detects critical errors, missing specs, and tolerance issues across 13+ categories.",
     href: "/products/design-intelligence",
     color: "#846fbc",
-    highlights: ["Error detection across 13+ categories", "Tolerance & GD&T validation", "Automated findings report"],
+    highlights: [
+      "Flags missing surface finish callouts and tolerance stack-ups — e.g., bore diameter tolerances on a piston skirt",
+      "Validates GD&T against drawing standards (ISO/ASME) — e.g., perpendicularity callouts on a crankshaft journal",
+      "Checks material specs and heat treatment callouts — e.g., case hardening depth on a camshaft",
+      "Analyzes tolerance stack-ups across mating parts in an assembly — e.g., clearance validation between bearing housing and shaft in a differential assembly",
+      "Generates structured findings report by severity — critical, major, and minor across all checks",
+    ],
     stat: { value: "<15min", label: "review time per drawing" },
   },
   {
@@ -24,7 +30,13 @@ const products = [
       "From drawing to quote in minutes. AI extracts specs, checks feasibility, generates job cards, and produces detailed cost breakdowns automatically.",
     href: "/products/manufacturing-intelligence",
     color: "#6ee7b7",
-    highlights: ["Spec extraction & feasibility check", "Auto-generated job cards & routing", "Detailed cost breakdowns"],
+    highlights: [
+      "Extracts dimensions, tolerances, and process requirements automatically — e.g., wall thickness and draft angles on a cast housing",
+      "Checks casting/forging/machining/fabrication feasibility against process limits — e.g., undercut detection on a forged connecting rod, or bend radius and weld joint specs on a fabricated exhaust manifold",
+      "Generates job cards and routing sheets per operation — e.g., turning, milling, and grinding sequences for a brake caliper assembly",
+      "Produces itemized cost breakdown by material, process, and overhead — e.g., per-piece cost for a machined brake caliper",
+      "Flags manufacturability risks before production — e.g., thin wall sections in a cast suspension knuckle that risk porosity or shrinkage defects",
+    ],
     stat: { value: "10x", label: "faster cost estimation" },
   },
 ];
@@ -61,11 +73,11 @@ export function SolutionsSection() {
     >
       {/* Grid background */}
       <div
-        className="absolute inset-0 opacity-25"
+        className="absolute inset-0"
         style={{
           backgroundImage:
-            "linear-gradient(rgba(132, 111, 188, 0.12) 1px, transparent 1px), linear-gradient(90deg, rgba(132, 111, 188, 0.12) 1px, transparent 1px)",
-          backgroundSize: "80px 80px",
+            "linear-gradient(rgba(100, 170, 240, 0.20) 1px, transparent 1px), linear-gradient(90deg, rgba(100, 170, 240, 0.20) 1px, transparent 1px), linear-gradient(rgba(100, 170, 240, 0.07) 1px, transparent 1px), linear-gradient(90deg, rgba(100, 170, 240, 0.07) 1px, transparent 1px)",
+          backgroundSize: "80px 80px, 80px 80px, 16px 16px, 16px 16px",
         }}
       />
 
@@ -87,14 +99,14 @@ export function SolutionsSection() {
           className="text-center max-w-3xl mx-auto"
         >
           <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-primary/30 border border-primary/50 mb-6">
-            <span className="text-xs font-medium text-primary-light uppercase tracking-wider">
+            <span className="text-xs font-medium text-[#E87B3A] uppercase tracking-wider">
               Two Products &middot; One Platform
             </span>
           </div>
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-heading text-white tracking-tight">
-            AI That Understands
+            AI Trained on
             <br />
-            Engineering Drawings
+            Real Shop Floor Data
           </h2>
           <p className="mt-4 text-lg text-gray-400 max-w-2xl mx-auto">
             Purpose-built models trained on real manufacturing data.
@@ -176,9 +188,9 @@ export function SolutionsSection() {
                     {/* Highlights list */}
                     <ul className="space-y-2.5 mb-8">
                       {product.highlights.map((item) => (
-                        <li key={item} className="flex items-center gap-3">
+                        <li key={item} className="flex items-start gap-3">
                           <div
-                            className="w-1.5 h-1.5 rounded-full shrink-0"
+                            className="w-1.5 h-1.5 rounded-full shrink-0 mt-[7px]"
                             style={{ backgroundColor: product.color }}
                           />
                           <span className="text-sm text-gray-300">{item}</span>

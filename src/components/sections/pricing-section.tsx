@@ -2,7 +2,6 @@
 
 import { motion } from "framer-motion";
 import { Check, ArrowRight } from "lucide-react";
-import Link from "next/link";
 
 const plans = [
   {
@@ -39,10 +38,10 @@ const plans = [
 
 export function PricingSection() {
   return (
-    <section className="py-24">
+    <section className="py-24" style={{ backgroundColor: "#f8f9fb", backgroundImage: "linear-gradient(rgba(70, 110, 170, 0.22) 1px, transparent 1px), linear-gradient(90deg, rgba(70, 110, 170, 0.22) 1px, transparent 1px), linear-gradient(rgba(70, 110, 170, 0.08) 1px, transparent 1px), linear-gradient(90deg, rgba(70, 110, 170, 0.08) 1px, transparent 1px)", backgroundSize: "80px 80px, 80px 80px, 16px 16px, 16px 16px" }}>
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <span className="text-primary text-sm font-semibold uppercase tracking-wider">
+          <span className="text-[#E87B3A] text-sm font-semibold uppercase tracking-wider">
             Pricing
           </span>
           <h2 className="text-3xl md:text-4xl font-heading text-text-primary mt-2">
@@ -87,8 +86,10 @@ export function PricingSection() {
                   </li>
                 ))}
               </ul>
-              <Link
-                href="/#contact"
+              <a
+                href="https://calendly.com/raghu-cognaizesys/30min"
+                target="_blank"
+                rel="noopener noreferrer"
                 className={`mt-8 w-full inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg font-semibold transition-colors text-sm ${
                   plan.highlighted
                     ? "bg-primary text-white hover:bg-primary-dark"
@@ -97,7 +98,7 @@ export function PricingSection() {
               >
                 {plan.cta}
                 <ArrowRight className="w-4 h-4" />
-              </Link>
+              </a>
             </motion.div>
           ))}
         </div>

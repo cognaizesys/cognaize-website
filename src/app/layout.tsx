@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Inter, Plus_Jakarta_Sans } from "next/font/google";
+import Script from "next/script";
 import { COMPANY } from "@/lib/constants";
 import { LayoutShell } from "@/components/layout/layout-shell";
 import "./globals.css";
@@ -8,35 +9,23 @@ const organizationJsonLd = {
   "@context": "https://schema.org",
   "@type": "Organization",
   name: "Cognaize Systems",
-  alternateName: [
-    "CognaizeSys",
-    "Cognaize",
-    "Cognaize System",
-    "Cognaize Systems Pvt Ltd",
-  ],
-  url: "https://cognaizesys.com",
-  logo: "https://cognaizesys.com/images/logo.png",
+  url: "https://www.cognaizesys.com",
+  logo: "https://www.cognaizesys.com/images/logo/cognaize-icon.png",
   description:
-    "Cognaize Systems is an AI-powered manufacturing intelligence company specializing in engineering drawing review, error detection, and cost estimation.",
+    "AI for Engineering Design Review and Manufacturing Costing. Purpose-built for automotive and industrial manufacturers.",
+  foundingLocation: "Chennai, India",
+  areaServed: ["India", "United Arab Emirates", "United States"],
+  address: {
+    "@type": "PostalAddress",
+    addressLocality: "Chennai",
+    addressCountry: "IN",
+  },
   contactPoint: {
     "@type": "ContactPoint",
     email: "info@cognaizesys.com",
     contactType: "sales",
   },
   sameAs: [],
-  foundingLocation: {
-    "@type": "Place",
-    name: "Chennai, India",
-  },
-  areaServed: ["IN", "AE"],
-  knowsAbout: [
-    "AI-powered manufacturing",
-    "engineering drawing review",
-    "manufacturing intelligence",
-    "design intelligence",
-    "cost estimation",
-    "error detection",
-  ],
 };
 
 const websiteJsonLd = {
@@ -59,10 +48,10 @@ const jakarta = Plus_Jakarta_Sans({
 });
 
 const siteDescription =
-  "Cognaize Systems (CognaizeSys) delivers AI-powered engineering drawing review, error detection, and cost estimation for manufacturing. From 14 days to 15 minutes — 95%+ accuracy, 10x cost savings.";
+  "Cognaize Systems builds AI for engineering design review and manufacturing cost estimation. Upload drawings, detect errors, estimate costs. 95%+ accuracy. Deploy in days. Chennai | Bangalore | Dubai.";
 
 export const metadata: Metadata = {
-  title: `${COMPANY.name} - ${COMPANY.tagline}`,
+  title: `${COMPANY.name} | AI Engineering Drawing Review & Cost Estimation`,
   description: siteDescription,
   keywords: [
     "Cognaize Systems",
@@ -80,7 +69,7 @@ export const metadata: Metadata = {
     canonical: "/",
   },
   openGraph: {
-    title: `${COMPANY.name} - ${COMPANY.tagline}`,
+    title: `${COMPANY.name} | AI Engineering Drawing Review & Cost Estimation`,
     description: siteDescription,
     url: COMPANY.website,
     siteName: COMPANY.name,
@@ -88,7 +77,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: `${COMPANY.name} - ${COMPANY.tagline}`,
+    title: `${COMPANY.name} | AI Engineering Drawing Review & Cost Estimation`,
     description: siteDescription,
   },
   robots: {
@@ -107,7 +96,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${inter.variable} ${jakarta.variable}`}>
-      <body className="antialiased">
+      <head>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -120,7 +109,17 @@ export default function RootLayout({
             __html: JSON.stringify(websiteJsonLd),
           }}
         />
+      </head>
+      <body className="antialiased">
         <LayoutShell>{children}</LayoutShell>
+        <Script
+          src="//code.tidio.co/urfjtfh5waxp2mkmqfcjppvfoz83k9or.js"
+          strategy="lazyOnload"
+        />
+        <Script
+          src="https://assets.calendly.com/assets/external/widget.js"
+          strategy="lazyOnload"
+        />
       </body>
     </html>
   );

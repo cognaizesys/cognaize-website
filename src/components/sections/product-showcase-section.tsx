@@ -32,7 +32,7 @@ export function ProductShowcaseSection() {
       id="demo"
       className="py-16 md:py-24 relative overflow-hidden"
       style={{
-        background: "linear-gradient(180deg, #f3eeff 0%, #e5f2ff 50%, #f0e0ff 100%)",
+        backgroundColor: "#f8f9fb", backgroundImage: "linear-gradient(rgba(70, 110, 170, 0.22) 1px, transparent 1px), linear-gradient(90deg, rgba(70, 110, 170, 0.22) 1px, transparent 1px), linear-gradient(rgba(70, 110, 170, 0.08) 1px, transparent 1px), linear-gradient(90deg, rgba(70, 110, 170, 0.08) 1px, transparent 1px)", backgroundSize: "80px 80px, 80px 80px, 16px 16px, 16px 16px",
       }}
     >
       {/* Decorative blobs */}
@@ -53,7 +53,7 @@ export function ProductShowcaseSection() {
         >
           <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-primary/25 border border-primary/40 mb-6">
             <Play className="w-3 h-3 text-primary" />
-            <span className="text-xs font-medium text-primary uppercase tracking-wider">
+            <span className="text-xs font-medium text-[#E87B3A] uppercase tracking-wider">
               Live Product Demo
             </span>
           </div>

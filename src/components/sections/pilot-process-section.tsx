@@ -42,6 +42,15 @@ export function PilotProcessSection() {
         background: "linear-gradient(135deg, #0a0a0f 0%, #0c1a1a 40%, #1a1028 70%, #0a0a0f 100%)",
       }}
     >
+      {/* Blueprint grid */}
+      <div
+        className="absolute inset-0"
+        style={{
+          backgroundImage:
+            "linear-gradient(rgba(100, 170, 240, 0.20) 1px, transparent 1px), linear-gradient(90deg, rgba(100, 170, 240, 0.20) 1px, transparent 1px), linear-gradient(rgba(100, 170, 240, 0.07) 1px, transparent 1px), linear-gradient(90deg, rgba(100, 170, 240, 0.07) 1px, transparent 1px)",
+          backgroundSize: "80px 80px, 80px 80px, 16px 16px, 16px 16px",
+        }}
+      />
       {/* Teal radial glow */}
       <div
         className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[400px] opacity-30 pointer-events-none"
@@ -51,7 +60,7 @@ export function PilotProcessSection() {
       />
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <span className="text-primary-light text-sm font-semibold uppercase tracking-wider">
+          <span className="text-[#E87B3A] text-sm font-semibold uppercase tracking-wider">
             Get Started
           </span>
           <h2 className="text-3xl md:text-4xl font-heading text-white mt-2">

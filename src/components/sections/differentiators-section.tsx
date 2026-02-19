@@ -22,7 +22,7 @@ const differentiators = [
   },
   {
     icon: Shield,
-    title: "Enterprise Security",
+    title: "Your Drawings Stay Yours",
     description:
       "Your drawings are your competitive advantage. SOC 2 compliant, on-premises deployment options, and zero data retention policies.",
     highlight: "Your IP, protected",
@@ -44,11 +44,11 @@ export function DifferentiatorsSection() {
 
       {/* Grid background */}
       <div
-        className="absolute inset-0 opacity-35"
+        className="absolute inset-0"
         style={{
           backgroundImage:
-            "linear-gradient(rgba(110, 231, 183, 0.15) 1px, transparent 1px), linear-gradient(90deg, rgba(110, 231, 183, 0.15) 1px, transparent 1px)",
-          backgroundSize: "80px 80px",
+            "linear-gradient(rgba(100, 170, 240, 0.20) 1px, transparent 1px), linear-gradient(90deg, rgba(100, 170, 240, 0.20) 1px, transparent 1px), linear-gradient(rgba(100, 170, 240, 0.07) 1px, transparent 1px), linear-gradient(90deg, rgba(100, 170, 240, 0.07) 1px, transparent 1px)",
+          backgroundSize: "80px 80px, 80px 80px, 16px 16px, 16px 16px",
         }}
       />
 
@@ -63,7 +63,7 @@ export function DifferentiatorsSection() {
           >
             <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-primary/25 border border-primary/45 mb-6">
               <Cpu className="w-3 h-3 text-accent" />
-              <span className="text-xs font-medium text-primary-light uppercase tracking-wider">
+              <span className="text-xs font-medium text-[#E87B3A] uppercase tracking-wider">
                 Why Cognaize
               </span>
             </div>
