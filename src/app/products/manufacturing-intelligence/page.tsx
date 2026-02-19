@@ -12,7 +12,6 @@ import {
 import Link from "next/link";
 import Image from "next/image";
 import { useState, useEffect } from "react";
-import { AnimatePresence } from "framer-motion";
 import { SecuritySection } from "@/components/sections/security-section";
 
 const features = [
@@ -290,14 +289,15 @@ export default function ManufacturingIntelligencePage() {
                 {workflowSteps[activeStep].description}
               </p>
             </div>
-            <div className="relative">
-              <AnimatePresence initial={false}>
+            {/* Grid stacking prevents layout shift during transitions */}
+            <div className="grid" style={{ gridTemplateAreas: "'stack'" }}>
+              {workflowSteps.map((ws, i) => (
                 <motion.div
-                  key={activeStep}
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  exit={{ opacity: 0, position: "absolute", top: 0, left: 0, right: 0 }}
+                  key={ws.step}
+                  style={{ gridArea: "stack" }}
+                  animate={{ opacity: activeStep === i ? 1 : 0 }}
                   transition={{ duration: 0.3 }}
+                  className={activeStep === i ? "" : "pointer-events-none"}
                 >
                   <div className="rounded-xl overflow-hidden shadow-2xl border border-gray-200">
                     <div className="bg-gray-100 h-10 flex items-center px-4 gap-2">
@@ -311,15 +311,15 @@ export default function ManufacturingIntelligencePage() {
                       </div>
                     </div>
                     <Image
-                      src={workflowSteps[activeStep].src}
-                      alt={workflowSteps[activeStep].alt}
+                      src={ws.src}
+                      alt={ws.alt}
                       width={1200}
                       height={800}
                       className="w-full"
                     />
                   </div>
                 </motion.div>
-              </AnimatePresence>
+              ))}
             </div>
           </div>
         </div>

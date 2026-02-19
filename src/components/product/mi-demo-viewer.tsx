@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import { Check } from "lucide-react";
 import { ProductScreenshot } from "@/components/product/product-screenshot";
 import { cn } from "@/lib/utils";
@@ -54,8 +54,6 @@ export function MiDemoViewer() {
   const handleStepClick = (step: number) => {
     setActiveStep(step);
   };
-
-  const currentScreenshot = steps.find((s) => s.step === activeStep);
 
   return (
     <div className="w-full max-w-5xl mx-auto">
@@ -115,24 +113,19 @@ export function MiDemoViewer() {
         </div>
       </div>
 
-      {/* Screenshot display */}
-      <div className="relative">
-        <AnimatePresence initial={false}>
+      {/* Screenshot display — grid stacking prevents layout shift during transitions */}
+      <div className="grid" style={{ gridTemplateAreas: "'stack'" }}>
+        {steps.map((step) => (
           <motion.div
-            key={activeStep}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0, position: "absolute", top: 0, left: 0, right: 0 }}
+            key={step.step}
+            style={{ gridArea: "stack" }}
+            animate={{ opacity: activeStep === step.step ? 1 : 0 }}
             transition={{ duration: 0.3 }}
+            className={activeStep === step.step ? "" : "pointer-events-none"}
           >
-            {currentScreenshot && (
-              <ProductScreenshot
-                src={currentScreenshot.src}
-                alt={currentScreenshot.alt}
-              />
-            )}
+            <ProductScreenshot src={step.src} alt={step.alt} />
           </motion.div>
-        </AnimatePresence>
+        ))}
       </div>
     </div>
   );
