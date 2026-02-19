@@ -104,8 +104,7 @@ export function ContactSection() {
           >
             <h2 className="font-heading text-3xl text-white">Get In Touch</h2>
             <p className="text-gray-400 mt-2">
-              Ready to see how Cognaize can transform your operations? Fill out
-              the form and we&apos;ll get back to you within 24 hours.
+              Ready to see how Cognaize can transform your operations?
             </p>
 
             {submitted ? (
