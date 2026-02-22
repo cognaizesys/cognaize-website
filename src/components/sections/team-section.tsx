@@ -3,13 +3,28 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 
-const teamMembers = [
+const founders = [
+  {
+    name: "Raghu Venkatnarayan",
+    role: "Business Head, Conglomerate",
+    bio: "Successful Business & Practice Builder, built frugal engineering teams across India and Japan to develop Electric Traction Drives and Electric Farm Equipment.",
+    image: "/images/team/raghu.png",
+  },
+  {
+    name: "Srihari Murthy",
+    role: "CEO & Founder, AI Platform Company",
+    bio: "Leader in Industry 4.0 and Adoption of Advanced Information Technology in Manufacturing.",
+    image: "/images/team/srihari.jpeg",
+  },
   {
     name: "Arvindh Balakrishnan",
     role: "GVP of a leading IT Company",
-    bio: "30+ years in Sales Strategy and Value Engineering",
+    bio: "Go To Market Leader in technology, led Global Firms in this role.",
     image: "/images/team/arvindh.png",
   },
+];
+
+const advisors = [
   {
     name: "C.V. Murali",
     role: "Management Consultant, Lead Auditor & Author",
@@ -17,22 +32,10 @@ const teamMembers = [
     image: "/images/team/murali.jpeg",
   },
   {
-    name: "Srihari Murthy",
-    role: "CEO & Founder, AI Platform Company",
-    bio: "20+ years in System Design and SaaS Technologies",
-    image: "/images/team/srihari.jpeg",
-  },
-  {
     name: "A.S. Narayan",
     role: "Ombudsman, Major NBFC",
     bio: "35+ years in Banking across Regions and Functions",
     image: "/images/team/narayan.jpg",
-  },
-  {
-    name: "Raghu Venkatnarayan",
-    role: "Business Head, Conglomerate",
-    bio: "30+ years in Consulting, Manufacturing & Retail",
-    image: "/images/team/raghu.png",
   },
   {
     name: "Britto Edward Victor",
@@ -75,7 +78,7 @@ const itemVariants = {
   },
 };
 
-function MemberCard({ member }: { member: (typeof teamMembers)[number] }) {
+function MemberCard({ member }: { member: (typeof founders)[number] }) {
   return (
     <div className="group rounded-2xl border border-white/15 bg-white/[0.03] p-5 h-full flex flex-col items-center text-center hover:border-primary/20 transition-colors duration-300">
       <div className="w-24 h-24 rounded-full overflow-hidden ring-2 ring-primary/35 group-hover:ring-primary/70 transition-all duration-300 mb-4 shrink-0">
@@ -134,7 +137,8 @@ export function TeamSection() {
             </p>
           </motion.div>
 
-          {/* All members */}
+          {/* Founders */}
+          <h3 className="text-xl md:text-2xl font-heading text-white text-center mb-6">Founders</h3>
           <motion.div
             variants={containerVariants}
             initial="hidden"
@@ -142,7 +146,27 @@ export function TeamSection() {
             viewport={{ once: true, margin: "-50px" }}
             className="flex flex-wrap justify-center gap-5 max-w-5xl mx-auto"
           >
-            {teamMembers.map((member) => (
+            {founders.map((member) => (
+              <motion.div
+                key={member.name}
+                variants={itemVariants}
+                className="w-[calc(50%-0.625rem)] md:w-[calc(25%-0.9375rem)]"
+              >
+                <MemberCard member={member} />
+              </motion.div>
+            ))}
+          </motion.div>
+
+          {/* Advisors */}
+          <h3 className="text-xl md:text-2xl font-heading text-white text-center mt-12 mb-6">Advisors</h3>
+          <motion.div
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-50px" }}
+            className="flex flex-wrap justify-center gap-5 max-w-5xl mx-auto"
+          >
+            {advisors.map((member) => (
               <motion.div
                 key={member.name}
                 variants={itemVariants}
