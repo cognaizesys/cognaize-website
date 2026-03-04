@@ -48,7 +48,7 @@ const jakarta = Plus_Jakarta_Sans({
 });
 
 const siteDescription =
-  "Cognaize Systems builds AI that predicts manufacturing consequences from engineering drawings. Design intelligence, cost estimation, and assembly validation — purpose-built for manufacturing. Chennai | Bangalore | Dubai.";
+  "Cognaize Systems builds AI that predicts manufacturing consequences from engineering drawings. Design intelligence, cost estimation, and assembly validation — purpose-built for manufacturing. Chennai | Bangalore | Dubai | Charlotte, NC.";
 
 export const metadata: Metadata = {
   title: `${COMPANY.name} | AI Engineering Intelligence for Manufacturing`,
