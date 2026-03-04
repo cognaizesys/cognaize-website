@@ -5,7 +5,7 @@ export const COMPANY = {
   tagline: "AI for Engineering Design Review & Manufacturing Costing",
   email: "info@cognaizesys.com",
   website: "https://cognaizesys.com",
-  location: "Chennai | Bangalore | Dubai",
+  location: "Chennai | Bangalore | Dubai | Charlotte, NC",
 };
 
 export const PRODUCT_LINKS = [
