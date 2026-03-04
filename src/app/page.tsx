@@ -1,6 +1,7 @@
 import {
   HeroSection,
   HomepageHowItWorksSection,
+  IntelligenceLayersSection,
   DifferentiatorsSection,
   SolutionsSection,
   ProductShowcaseSection,
@@ -14,6 +15,7 @@ export default function Home() {
     <>
       <HeroSection />
       <HomepageHowItWorksSection />
+      <IntelligenceLayersSection />
       <SolutionsSection />
       <ROISection />
       <DifferentiatorsSection />
