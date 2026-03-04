@@ -48,10 +48,10 @@ const jakarta = Plus_Jakarta_Sans({
 });
 
 const siteDescription =
-  "Cognaize Systems builds AI for engineering design review and manufacturing cost estimation. Upload drawings, detect errors, estimate costs. 95%+ accuracy. Deploy in days. Chennai | Bangalore | Dubai.";
+  "Cognaize Systems builds AI that predicts manufacturing consequences from engineering drawings. Design intelligence, cost estimation, and assembly validation — purpose-built for manufacturing. Chennai | Bangalore | Dubai | Charlotte, NC.";
 
 export const metadata: Metadata = {
-  title: `${COMPANY.name} | AI Engineering Drawing Review & Cost Estimation`,
+  title: `${COMPANY.name} | AI Engineering Intelligence for Manufacturing`,
   description: siteDescription,
   keywords: [
     "Cognaize Systems",
@@ -69,7 +69,7 @@ export const metadata: Metadata = {
     canonical: "/",
   },
   openGraph: {
-    title: `${COMPANY.name} | AI Engineering Drawing Review & Cost Estimation`,
+    title: `${COMPANY.name} | AI Engineering Intelligence for Manufacturing`,
     description: siteDescription,
     url: COMPANY.website,
     siteName: COMPANY.name,
@@ -77,7 +77,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: `${COMPANY.name} | AI Engineering Drawing Review & Cost Estimation`,
+    title: `${COMPANY.name} | AI Engineering Intelligence for Manufacturing`,
     description: siteDescription,
   },
   robots: {

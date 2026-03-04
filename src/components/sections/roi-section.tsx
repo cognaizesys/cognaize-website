@@ -12,35 +12,47 @@ interface ROIMetric {
 
 const roiData: ROIMetric[] = [
   {
-    metric: "Review Speed",
-    before: "2-4 hours",
-    after: "<15 minutes",
-    impact: "10-16x faster",
+    metric: "Drawing Review Time",
+    before: "8 hours per drawing",
+    after: "45 minutes",
+    impact: "91% reduction",
   },
   {
-    metric: "Cost per Review",
-    before: "$150-300",
-    after: "$5-10",
-    impact: "10x cheaper",
+    metric: "GD&T Error Detection",
+    before: "Manual, missed in ~30% of cases",
+    after: "Systematic, 92–96% precision",
+    impact: "3× catch rate",
   },
   {
-    metric: "Error Detection Rate",
-    before: "~70%",
-    after: ">95%",
-    impact: "3-5x fewer escapes",
+    metric: "Cost Estimation Cycle",
+    before: "2–3 days per part",
+    after: "Same day, structured output",
+    impact: "10× faster",
+  },
+  {
+    metric: "False Positives",
+    before: "High — engineers distrust AI output",
+    after: "80% fewer than baseline AI",
+    impact: "Trust-grade output",
+  },
+  {
+    metric: "Cross-Drawing Errors",
+    before: "Not caught until shop floor",
+    after: "Detected at drawing review stage",
+    impact: "Eliminates scrap loops",
   },
   {
     metric: "Rework Exposure",
-    before: "12.5% of value",
-    after: "<1.5%",
-    impact: "8-10x avoidance",
+    before: "12.5% of part value",
+    after: "<1.5% of part value",
+    impact: "8–10× avoidance",
   },
 ];
 
 const keySummaryStats = [
-  { value: "90%+", label: "cost reduction" },
-  { value: "16x", label: "faster reviews" },
-  { value: "95%+", label: "detection rate" },
+  { value: "91%", label: "Review Time Reduction" },
+  { value: "92–96%", label: "Detection Precision" },
+  { value: "8×", label: "Rework Avoidance" },
 ];
 
 export function ROISection() {

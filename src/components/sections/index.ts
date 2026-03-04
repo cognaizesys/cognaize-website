@@ -13,3 +13,5 @@ export { SecuritySection } from "./security-section";
 export { PricingSection } from "./pricing-section";
 export { PilotProcessSection } from "./pilot-process-section";
 export { HomepageHowItWorksSection } from "./homepage-how-it-works-section";
+export { IntelligenceLayersSection } from "./intelligence-layers-section";
+export { CaseStudiesPreviewSection } from "./case-studies-preview-section";

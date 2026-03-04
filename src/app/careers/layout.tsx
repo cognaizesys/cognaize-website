@@ -3,7 +3,7 @@ import { createMetadata } from "@/lib/metadata";
 export const metadata = createMetadata({
   title: "Careers",
   description:
-    "Join Cognaize Systems and build AI-powered manufacturing intelligence solutions. View open positions in Chennai, Bangalore, and Dubai.",
+    "Join Cognaize Systems and build AI-powered manufacturing intelligence solutions. View open positions in Chennai, Bangalore, Dubai, and Charlotte, NC.",
   path: "/careers",
 });
 
