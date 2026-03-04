@@ -74,11 +74,9 @@ export function HeroSection() {
               transition={{ duration: 0.6, delay: 0.3 }}
               className="mt-6 md:mt-10 text-3xl sm:text-4xl lg:text-5xl font-heading font-bold text-white tracking-tight leading-[1.1]"
             >
-              Your Engineering Drawings.
+              Engineering Intelligence That Sees What
               <br />
-              <span className="text-primary-light">Reviewed by AI.</span>
-              <br />
-              In Minutes, Not Hours.
+              <span className="text-primary-light">Your Best Engineer Can&apos;t.</span>
             </motion.h1>
 
             {/* Subtitle */}
@@ -88,9 +86,10 @@ export function HeroSection() {
               transition={{ duration: 0.6, delay: 0.5 }}
               className="mt-6 md:mt-8 text-lg text-gray-400 max-w-lg leading-relaxed"
             >
-              Cognaize Systems reviews GD&T, tolerances, and material specs
-              across your engineering drawings — catching errors your best
-              engineer would catch, 16x faster.
+              Cognaize Systems predicts manufacturing consequences from your
+              engineering drawings — layered AI that understands your technology,
+              your product family, and your shop floor. From design review to
+              cost estimation to assembly validation.
             </motion.p>
 
             {/* Metrics row */}
@@ -123,14 +122,14 @@ export function HeroSection() {
                 rel="noopener noreferrer"
                 className="group inline-flex items-center gap-2 px-7 py-3.5 rounded-lg bg-primary hover:bg-primary-dark text-white font-semibold transition-all duration-300 shadow-md shadow-primary/20 hover:shadow-lg hover:shadow-primary/30"
               >
-                Schedule a Demo
+                See It On Your Drawing
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
               </a>
               <a
                 href="#products"
                 className="inline-flex items-center gap-2 px-7 py-3.5 rounded-lg border border-primary/30 hover:border-primary/50 hover:bg-white/5 text-white font-semibold transition-all duration-300"
               >
-                Explore Products
+                Explore Intelligence Layers
               </a>
             </motion.div>
           </div>

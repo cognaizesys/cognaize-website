@@ -16,11 +16,11 @@ export const heroMetrics: Metric[] = [
     description: "AI detection rate",
   },
   {
-    value: "10x",
-    numericValue: 10,
-    suffix: "x",
-    label: "Savings",
-    description: "Cost avoidance on rework",
+    value: "8",
+    numericValue: 8,
+    suffix: "",
+    label: "Manufacturing Technologies",
+    description: "Manufacturing technologies supported",
   },
 ];
 
