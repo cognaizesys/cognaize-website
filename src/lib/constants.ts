@@ -22,6 +22,7 @@ export const PRODUCT_LINKS = [
 export const NAV_LINKS: NavLink[] = [
   { label: "Products", href: "/#products", children: PRODUCT_LINKS },
   { label: "Platform", href: "/#differentiators" },
+  { label: "Case Studies", href: "/case-studies" },
   { label: "Team", href: "/#team" },
   { label: "Blog", href: "/blog" },
   { label: "Careers", href: "/careers" },
