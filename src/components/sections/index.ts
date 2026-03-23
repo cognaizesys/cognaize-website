@@ -6,3 +6,6 @@ export { DemoCTASection } from "./demo-cta-section";
 export { TeamSection } from "./team-section";
 export { ContactSection } from "./contact-section";
 export { CaseStudiesPreviewSection } from "./case-studies-preview-section";
+export { ProblemSection } from "./problem-section";
+export { AboutSection } from "./about-section";
+export { WhyDesignSection } from "./why-design-section";

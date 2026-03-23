@@ -1,5 +1,8 @@
 import {
   HeroSection,
+  ProblemSection,
+  AboutSection,
+  WhyDesignSection,
   CaseStudiesPreviewSection,
   ProductShowcaseSection,
   ROISection,
@@ -11,6 +14,9 @@ export default function Home() {
   return (
     <>
       <HeroSection />
+      <ProblemSection />
+      <AboutSection />
+      <WhyDesignSection />
       <CaseStudiesPreviewSection />
       <ROISection />
       <ProductShowcaseSection />
