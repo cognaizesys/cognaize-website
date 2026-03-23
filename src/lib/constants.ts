@@ -17,12 +17,33 @@ export const PRODUCT_LINKS = [
     label: "Manufacturing Intelligence",
     href: "/products/manufacturing-intelligence",
   },
+  {
+    label: "SkyPlanner APS",
+    href: "https://skyplanner.ai",
+    external: true,
+  },
+  {
+    label: "DataWiz",
+    href: "https://factri.ai",
+    external: true,
+  },
+  {
+    label: "Line Stoppage Tracking",
+    href: "https://factri.ai",
+    external: true,
+  },
+  {
+    label: "Quality Check Sheets",
+    href: "https://factri.ai",
+    external: true,
+  },
 ];
 
 export const NAV_LINKS: NavLink[] = [
   { label: "Products", href: "/#products", children: PRODUCT_LINKS },
   { label: "Platform", href: "/#differentiators" },
   { label: "Case Studies", href: "/case-studies" },
+  { label: "About Us", href: "/about" },
   { label: "Team", href: "/#team" },
   { label: "Blog", href: "/blog" },
   { label: "Careers", href: "/careers" },

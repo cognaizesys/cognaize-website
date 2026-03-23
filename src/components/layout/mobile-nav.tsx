@@ -97,14 +97,26 @@ export function MobileNav({ isOpen, onClose }: MobileNavProps) {
                               className="overflow-hidden"
                             >
                               {link.children.map((child) => (
-                                <li key={child.href}>
-                                  <Link
-                                    href={child.href}
-                                    onClick={onClose}
-                                    className="block border-l-2 border-primary/30 py-2.5 pl-8 pr-4 text-sm text-gray-600 hover:border-primary hover:text-primary"
-                                  >
-                                    {child.label}
-                                  </Link>
+                                <li key={`${child.href}-${child.label}`}>
+                                  {child.external ? (
+                                    <a
+                                      href={child.href}
+                                      target="_blank"
+                                      rel="noopener noreferrer"
+                                      onClick={onClose}
+                                      className="block border-l-2 border-primary/30 py-2.5 pl-8 pr-4 text-sm text-gray-600 hover:border-primary hover:text-primary"
+                                    >
+                                      {child.label}
+                                    </a>
+                                  ) : (
+                                    <Link
+                                      href={child.href}
+                                      onClick={onClose}
+                                      className="block border-l-2 border-primary/30 py-2.5 pl-8 pr-4 text-sm text-gray-600 hover:border-primary hover:text-primary"
+                                    >
+                                      {child.label}
+                                    </Link>
+                                  )}
                                 </li>
                               ))}
                             </motion.ul>

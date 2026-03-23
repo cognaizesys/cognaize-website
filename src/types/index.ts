@@ -57,8 +57,14 @@ export interface WorkflowStep {
   screenshot?: string;
 }
 
+export interface NavChild {
+  label: string;
+  href: string;
+  external?: boolean;
+}
+
 export interface NavLink {
   label: string;
   href: string;
-  children?: { label: string; href: string }[];
+  children?: NavChild[];
 }

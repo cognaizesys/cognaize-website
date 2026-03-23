@@ -78,15 +78,27 @@ export function Header({ onMobileMenuOpen }: HeaderProps) {
                   </Link>
                   <div className="invisible absolute left-1/2 top-full z-50 pt-3 opacity-0 transition-all duration-200 group-hover:visible group-hover:opacity-100 -translate-x-1/2">
                     <div className="w-56 rounded-lg border border-gray-200 bg-white py-2 shadow-lg">
-                      {link.children.map((child) => (
-                        <Link
-                          key={child.href}
-                          href={child.href}
-                          className="block px-4 py-2.5 text-sm text-gray-700 hover:bg-gray-50 hover:text-primary"
-                        >
-                          {child.label}
-                        </Link>
-                      ))}
+                      {link.children.map((child) =>
+                        child.external ? (
+                          <a
+                            key={`${child.href}-${child.label}`}
+                            href={child.href}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="block px-4 py-2.5 text-sm text-gray-700 hover:bg-gray-50 hover:text-primary"
+                          >
+                            {child.label}
+                          </a>
+                        ) : (
+                          <Link
+                            key={child.href}
+                            href={child.href}
+                            className="block px-4 py-2.5 text-sm text-gray-700 hover:bg-gray-50 hover:text-primary"
+                          >
+                            {child.label}
+                          </Link>
+                        )
+                      )}
                     </div>
                   </div>
                 </div>
