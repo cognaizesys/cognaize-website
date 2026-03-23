@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { BarChart3 } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 interface ROIMetric {
@@ -18,7 +19,7 @@ const roiData: ROIMetric[] = [
     impact: "91% reduction",
   },
   {
-    metric: "GD&T Error Detection",
+    metric: "Error Detection",
     before: "Manual, missed in ~30% of cases",
     after: "Systematic, 92–96% precision",
     impact: "3× catch rate",
@@ -31,14 +32,14 @@ const roiData: ROIMetric[] = [
   },
   {
     metric: "False Positives",
-    before: "High — engineers distrust AI output",
-    after: "80% fewer than baseline AI",
+    before: "High — engineers distrust output",
+    after: "80% fewer than baseline",
     impact: "Trust-grade output",
   },
   {
     metric: "Cross-Drawing Errors",
     before: "Not caught until shop floor",
-    after: "Detected at drawing review stage",
+    after: "Detected at review stage",
     impact: "Eliminates scrap loops",
   },
   {
@@ -57,7 +58,7 @@ const keySummaryStats = [
 
 export function ROISection() {
   return (
-    <section className="py-20 text-white relative overflow-hidden" style={{ background: "linear-gradient(180deg, #0f0f0f 0%, #140e24 50%, #0f0f0f 100%)" }}>
+    <section id="impact" className="py-20 text-white relative overflow-hidden" style={{ background: "linear-gradient(180deg, #0f0f0f 0%, #140e24 50%, #0f0f0f 100%)" }}>
       {/* Blueprint grid */}
       <div
         className="absolute inset-0"
@@ -83,9 +84,18 @@ export function ROISection() {
           transition={{ duration: 0.6 }}
           className="text-center"
         >
-          <h2 className="text-2xl md:text-4xl font-heading text-white tracking-tight">
-            Measurable <span className="text-primary-light">Impact</span>
+          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-primary/25 border border-primary/45 mb-6">
+            <BarChart3 className="w-3 h-3 text-accent" />
+            <span className="text-xs font-medium text-[#E87B3A] uppercase tracking-wider">
+              Measurable Impact
+            </span>
+          </div>
+          <h2 className="text-2xl md:text-4xl font-heading font-bold text-white tracking-tight">
+            What Changes When Engineering Judgment Is Engineered
           </h2>
+          <p className="mt-4 text-gray-400 text-base md:text-lg leading-relaxed max-w-2xl mx-auto">
+            Outcomes from Design Intelligence and Manufacturing Intelligence deployments.
+          </p>
         </motion.div>
 
         {/* Desktop Table View */}

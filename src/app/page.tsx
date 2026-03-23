@@ -5,9 +5,11 @@ import {
   WhyDesignSection,
   IntelligenceLoopSection,
   IntelligenceLayersSection,
-  CaseStudiesPreviewSection,
+  ProductsSection,
   ProductShowcaseSection,
+  WhoWeServeSection,
   ROISection,
+  CaseStudiesPreviewSection,
   TeamSection,
   ContactSection,
 } from "@/components/sections";
@@ -21,9 +23,11 @@ export default function Home() {
       <WhyDesignSection />
       <IntelligenceLoopSection />
       <IntelligenceLayersSection />
-      <CaseStudiesPreviewSection />
-      <ROISection />
+      <ProductsSection />
       <ProductShowcaseSection />
+      <WhoWeServeSection />
+      <ROISection />
+      <CaseStudiesPreviewSection />
       <TeamSection />
       <ContactSection />
     </>

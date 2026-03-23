@@ -11,3 +11,5 @@ export { AboutSection } from "./about-section";
 export { WhyDesignSection } from "./why-design-section";
 export { IntelligenceLoopSection } from "./intelligence-loop-section";
 export { IntelligenceLayersSection } from "./intelligence-layers-section";
+export { ProductsSection } from "./products-section";
+export { WhoWeServeSection } from "./who-we-serve-section";
