@@ -5,6 +5,10 @@ import { BookOpen, Globe2, Building2 } from "lucide-react";
 import { AboutWhyDesignSection } from "@/components/sections/about-why-design-section";
 import { IntelligenceLoopSection } from "@/components/sections/intelligence-loop-section";
 import { ProductsSection } from "@/components/sections/products-section";
+import { WhoWeServeSection } from "@/components/sections/who-we-serve-section";
+import { HeritageSection } from "@/components/sections/heritage-section";
+import { AboutTeamSection } from "@/components/sections/about-team-section";
+import { AboutClosingCTASection } from "@/components/sections/about-closing-cta-section";
 
 /* ─────────────────────────────────────────────
    SECTION 1 — HERO
@@ -276,6 +280,10 @@ export default function AboutPage() {
       <AboutWhyDesignSection />
       <IntelligenceLoopSection />
       <ProductsSection />
+      <WhoWeServeSection />
+      <HeritageSection />
+      <AboutTeamSection />
+      <AboutClosingCTASection />
     </>
   );
 }
