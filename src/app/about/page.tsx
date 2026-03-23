@@ -2,6 +2,9 @@
 
 import { motion } from "framer-motion";
 import { BookOpen, Globe2, Building2 } from "lucide-react";
+import { AboutWhyDesignSection } from "@/components/sections/about-why-design-section";
+import { IntelligenceLoopSection } from "@/components/sections/intelligence-loop-section";
+import { ProductsSection } from "@/components/sections/products-section";
 
 /* ─────────────────────────────────────────────
    SECTION 1 — HERO
@@ -270,6 +273,9 @@ export default function AboutPage() {
       <AboutHero />
       <WorldviewSection />
       <WhoWeAreSection />
+      <AboutWhyDesignSection />
+      <IntelligenceLoopSection />
+      <ProductsSection />
     </>
   );
 }
