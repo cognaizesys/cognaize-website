@@ -2,52 +2,35 @@ import type { TeamMember } from "@/types";
 
 export const team: TeamMember[] = [
   {
-    name: "Arvindh Balakrishnan",
-    role: "Founder & CEO",
-    experience: "15+ years in manufacturing technology and AI",
-    initials: "AB",
+    name: "Raghu Venkatnarayan",
+    role: "CEO & Co-Founder",
+    experience:
+      "Serial entrepreneur with experience across electric drives, digitisation, costing, and pricing strategies. Built engineering teams across India and Japan.",
+    initials: "RV",
     color: "#846fbc",
   },
   {
-    name: "Pradeep Kumar",
-    role: "CTO",
-    experience: "12+ years in AI/ML and enterprise systems",
-    initials: "PK",
+    name: "Suneel Aiyer",
+    role: "COO & Co-Founder",
+    experience:
+      "SaaS and manufacturing industry leader. Background in strategy and operations consulting across PwC, KPMG, and EY. Co-founder of Worxogo.",
+    initials: "SA",
     color: "#6d58a5",
   },
   {
-    name: "Rajesh Venkataraman",
-    role: "VP Engineering",
-    experience: "18+ years in software architecture",
-    initials: "RV",
+    name: "Arvindh Balakrishnan",
+    role: "CRO & Co-Founder",
+    experience:
+      "Enterprise software and AI sales leader. Founded MetricStream. Held senior go-to-market roles at Oracle, Infor, o9 Solutions, and Symphony AI.",
+    initials: "AB",
     color: "#9b89cc",
   },
   {
-    name: "Syed Ahmed",
-    role: "Head of AI Research",
-    experience: "10+ years in computer vision and NLP",
-    initials: "SA",
+    name: "Srihari Murthy",
+    role: "CTO & Co-Founder",
+    experience:
+      "Digital transformation and smart manufacturing leader. Serial entrepreneur. Built and deployed manufacturing technology platforms across India and the UAE.",
+    initials: "SM",
     color: "#7c6bb0",
-  },
-  {
-    name: "Deepa Krishnan",
-    role: "Head of Product",
-    experience: "14+ years in manufacturing operations",
-    initials: "DK",
-    color: "#8b77c4",
-  },
-  {
-    name: "Mohammed Al Rashidi",
-    role: "Business Development Director",
-    experience: "12+ years in enterprise sales",
-    initials: "MR",
-    color: "#745fb3",
-  },
-  {
-    name: "Arun Nair",
-    role: "Lead Solutions Architect",
-    experience: "10+ years in enterprise integration",
-    initials: "AN",
-    color: "#9282c0",
   },
 ];

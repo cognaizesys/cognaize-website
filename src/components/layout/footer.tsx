@@ -33,7 +33,7 @@ export function Footer() {
                 </span>
               </Link>
               <p className="text-sm leading-relaxed text-text-on-dark">
-                Purpose-built AI for engineering teams who design and make things.
+                Engineered Intelligence for Manufacturing
               </p>
             </div>
 
@@ -44,13 +44,24 @@ export function Footer() {
               </h3>
               <ul className="space-y-2">
                 {PRODUCT_LINKS.map((link) => (
-                  <li key={link.href}>
-                    <Link
-                      href={link.href}
-                      className="text-sm text-text-on-dark hover:text-primary-light"
-                    >
-                      {link.label}
-                    </Link>
+                  <li key={`${link.href}-${link.label}`}>
+                    {link.external ? (
+                      <a
+                        href={link.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-sm text-text-on-dark hover:text-primary-light"
+                      >
+                        {link.label}
+                      </a>
+                    ) : (
+                      <Link
+                        href={link.href}
+                        className="text-sm text-text-on-dark hover:text-primary-light"
+                      >
+                        {link.label}
+                      </Link>
+                    )}
                   </li>
                 ))}
               </ul>
@@ -133,6 +144,7 @@ export function Footer() {
         <Container>
           <div className="py-6 text-center text-sm text-text-on-dark">
             <p>© {currentYear} {COMPANY.name}. All rights reserved.</p>
+            <p className="mt-1 text-xs text-gray-500">Powered by FactriAI</p>
           </div>
         </Container>
       </div>

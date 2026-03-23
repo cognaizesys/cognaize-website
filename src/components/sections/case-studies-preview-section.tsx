@@ -2,11 +2,26 @@
 
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { FileSearch, ArrowRight, Cpu } from "lucide-react";
-import CASE_STUDIES from "@/data/case-studies";
-import type { Finding } from "@/data/case-studies";
+import { FileSearch, ArrowRight } from "lucide-react";
 
-const featured = CASE_STUDIES.slice(-2).reverse();
+const featured = [
+  {
+    id: "forge-review-bevel-pinion",
+    moduleTag: "ForgeReview",
+    title: "Cold Formed Differential Bevel Pinion",
+    subtitle: "Gear Family · Complex Geometry",
+    body: "Three major findings caught at drawing stage — including a gear data block inconsistency that would have corrupted backlash and mating gear compatibility.",
+    href: "/case-studies/forge-review-bevel-pinion",
+  },
+  {
+    id: "shop-floor-tracking",
+    moduleTag: "DataWiz MES",
+    title: "Shop Floor Tracking & Visibility",
+    subtitle: "Major Trailer & Truck Body Manufacturer · Since April 2021",
+    body: "20% increase in production efficiency. 50% reduction in WIP. 75% reduction in data capture time.",
+    href: "/case-studies/shop-floor-tracking",
+  },
+];
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -20,20 +35,6 @@ const itemVariants = {
   hidden: { opacity: 0, y: 20 },
   visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
 };
-
-function SeverityBadge({ severity }: { severity: Finding["severity"] }) {
-  const styles =
-    severity === "CRITICAL"
-      ? "bg-red-500/20 text-red-400 border-red-500/30"
-      : "bg-amber-500/20 text-amber-400 border-amber-500/30";
-  return (
-    <span
-      className={`inline-flex items-center px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider border ${styles}`}
-    >
-      {severity}
-    </span>
-  );
-}
 
 export function CaseStudiesPreviewSection() {
   return (
@@ -70,7 +71,7 @@ export function CaseStudiesPreviewSection() {
             <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-primary/25 border border-primary/45 mb-6">
               <FileSearch className="w-3 h-3 text-accent" />
               <span className="text-xs font-medium text-[#E87B3A] uppercase tracking-wider">
-                Case Studies
+                In Practice
               </span>
             </div>
           </motion.div>
@@ -79,9 +80,9 @@ export function CaseStudiesPreviewSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="text-2xl md:text-4xl font-heading text-white tracking-tight"
+            className="text-2xl md:text-4xl font-heading font-bold text-white tracking-tight"
           >
-            Engineering Intelligence in Action
+            Engineered Intelligence in Action
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -90,8 +91,7 @@ export function CaseStudiesPreviewSection() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="mt-4 text-gray-400 text-base md:text-lg leading-relaxed"
           >
-            Real findings on real drawings from our design intelligence
-            platform.
+            Real findings on real drawings and real factory floors.
           </motion.p>
         </div>
 
@@ -109,55 +109,24 @@ export function CaseStudiesPreviewSection() {
               variants={itemVariants}
               className="group rounded-2xl border border-white/[0.06] bg-white/[0.02] hover:bg-white/[0.05] hover:border-primary/35 transition-all duration-300 overflow-hidden flex flex-col"
             >
-              {/* Card header */}
-              <div className="p-6 border-b border-white/[0.06]">
-                <span className="inline-flex items-center px-2.5 py-1 rounded-md bg-primary/20 border border-primary/30 text-[10px] font-bold text-primary-light uppercase tracking-wider mb-3">
+              <div className="p-6 flex flex-col flex-1">
+                <span className="inline-flex self-start items-center px-2.5 py-1 rounded-md bg-primary/20 border border-primary/30 text-[10px] font-bold text-primary-light uppercase tracking-wider mb-3">
                   {study.moduleTag}
                 </span>
                 <h3 className="text-lg font-bold text-white mb-1">
                   {study.title}
                 </h3>
-                <p className="text-xs text-gray-400">{study.subtitle}</p>
-                <p className="mt-2 text-[11px] text-gray-500 font-mono">
-                  {study.summary}
+                <p className="text-xs text-gray-400 mb-3">{study.subtitle}</p>
+                <p className="text-sm text-gray-400 leading-relaxed flex-1">
+                  {study.body}
                 </p>
-              </div>
-
-              {/* First 2 findings */}
-              <div className="px-6 py-4 flex-1">
-                <div className="flex flex-col gap-3">
-                  {study.findings.slice(0, 2).map((f) => (
-                    <div key={f.id} className="flex items-start gap-3">
-                      <span className="text-[10px] font-mono text-gray-500 mt-0.5 shrink-0 w-8">
-                        {f.id}
-                      </span>
-                      <div className="min-w-0">
-                        <div className="mb-1">
-                          <SeverityBadge severity={f.severity} />
-                        </div>
-                        <p className="text-sm text-gray-300 leading-relaxed">
-                          {f.finding}
-                        </p>
-                      </div>
-                    </div>
-                  ))}
-                  {study.findings.length > 2 && (
-                    <p className="text-xs text-gray-500 pl-11">
-                      +{study.findings.length - 2} more finding
-                      {study.findings.length - 2 > 1 ? "s" : ""}
-                    </p>
-                  )}
-                </div>
-              </div>
-
-              {/* Powered By */}
-              <div className="px-6 py-4 border-t border-white/[0.06] bg-white/[0.01]">
-                <div className="flex items-center gap-2">
-                  <Cpu className="w-3.5 h-3.5 text-primary-light shrink-0" />
-                  <span className="text-[11px] font-semibold text-primary-light">
-                    Powered by {study.poweredBy.name}
-                  </span>
-                </div>
+                <Link
+                  href={study.href}
+                  className="group/link inline-flex items-center gap-1.5 text-sm font-semibold text-primary-light hover:text-white transition-colors mt-4"
+                >
+                  Read case study
+                  <ArrowRight className="w-3.5 h-3.5 group-hover/link:translate-x-0.5 transition-transform" />
+                </Link>
               </div>
             </motion.div>
           ))}

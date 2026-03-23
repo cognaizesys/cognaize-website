@@ -2,25 +2,32 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
+import { Users2 } from "lucide-react";
 
 const founders = [
   {
     name: "Raghu Venkatnarayan",
-    role: "Business Head, Conglomerate",
-    bio: "Successful Business & Practice Builder, built frugal engineering teams across India and Japan to develop Electric Traction Drives and Electric Farm Equipment.",
+    role: "CEO & Co-Founder",
+    bio: "Serial entrepreneur with experience across electric drives, digitisation, costing, and pricing strategies. Built engineering teams across India and Japan.",
     image: "/images/team/raghu.png",
   },
   {
-    name: "Srihari Murthy",
-    role: "CEO & Founder, AI Platform Company",
-    bio: "Leader in Industry 4.0 and Adoption of Advanced Information Technology in Manufacturing.",
-    image: "/images/team/srihari.jpeg",
+    name: "Suneel Aiyer",
+    role: "COO & Co-Founder",
+    bio: "SaaS and manufacturing industry leader. Background in strategy and operations consulting across PwC, KPMG, and EY. Co-founder of Worxogo.",
+    image: "/images/team/suneel.png",
   },
   {
     name: "Arvindh Balakrishnan",
-    role: "GVP of a leading IT Company",
-    bio: "Go To Market Leader in technology, led Global Firms in this role.",
+    role: "CRO & Co-Founder",
+    bio: "Enterprise software and AI sales leader. Founded MetricStream. Held senior go-to-market roles at Oracle, Infor, o9 Solutions, and Symphony AI.",
     image: "/images/team/arvindh.png",
+  },
+  {
+    name: "Srihari Murthy",
+    role: "CTO & Co-Founder",
+    bio: "Digital transformation and smart manufacturing leader. Serial entrepreneur. Built and deployed manufacturing technology platforms across India and the UAE.",
+    image: "/images/team/srihari.jpeg",
   },
 ];
 
@@ -48,12 +55,6 @@ const advisors = [
     role: "Founder, Design & Prototyping Services",
     bio: "40+ years in Automotive Design across Asia & NA",
     image: "/images/team/malaiappan.png",
-  },
-  {
-    name: "Suneel Aiyer",
-    role: "SaaS Leader, Manufacturing & Supply Chain",
-    bio: "Ex-PwC, KPMG, EY | Co-founder, Worxogo",
-    image: "/images/team/suneel.png",
   },
 ];
 
@@ -105,114 +106,96 @@ function MemberCard({ member }: { member: (typeof founders)[number] }) {
 
 export function TeamSection() {
   return (
-    <>
-      <section
-        id="team"
-        className="py-20 md:py-32 md:pb-20 relative overflow-hidden bg-[#0a0a0f]"
-      >
-        {/* Blueprint grid */}
-        <div
-          className="absolute inset-0"
-          style={{
-            backgroundImage:
-              "linear-gradient(rgba(100, 170, 240, 0.20) 1px, transparent 1px), linear-gradient(90deg, rgba(100, 170, 240, 0.20) 1px, transparent 1px), linear-gradient(rgba(100, 170, 240, 0.07) 1px, transparent 1px), linear-gradient(90deg, rgba(100, 170, 240, 0.07) 1px, transparent 1px)",
-            backgroundSize: "80px 80px, 80px 80px, 16px 16px, 16px 16px",
-          }}
-        />
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          {/* Header */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="text-center max-w-2xl mx-auto mb-10 md:mb-16"
-          >
-            <h2 className="text-3xl md:text-4xl font-heading text-white tracking-tight">
-              Our
-              <span className="text-primary-light"> Engineering & Manufacturing Leaders</span>
-            </h2>
-            <p className="mt-4 text-gray-400 text-lg leading-relaxed">
-              Decades of experience across manufacturing, technology, consulting, and design — guiding our vision and strategy.
-            </p>
-          </motion.div>
-
-          {/* Founders */}
-          <h3 className="text-xl md:text-2xl font-heading text-white text-center mb-6">Founders</h3>
-          <motion.div
-            variants={containerVariants}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-50px" }}
-            className="flex flex-wrap justify-center gap-5 max-w-5xl mx-auto"
-          >
-            {founders.map((member) => (
-              <motion.div
-                key={member.name}
-                variants={itemVariants}
-                className="w-[calc(50%-0.625rem)] md:w-[calc(25%-0.9375rem)]"
-              >
-                <MemberCard member={member} />
-              </motion.div>
-            ))}
-          </motion.div>
-
-          {/* Advisors */}
-          <h3 className="text-xl md:text-2xl font-heading text-white text-center mt-12 mb-6">Advisors</h3>
-          <motion.div
-            variants={containerVariants}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-50px" }}
-            className="flex flex-wrap justify-center gap-5 max-w-5xl mx-auto"
-          >
-            {advisors.map((member) => (
-              <motion.div
-                key={member.name}
-                variants={itemVariants}
-                className="w-[calc(50%-0.625rem)] md:w-[calc(25%-0.9375rem)]"
-              >
-                <MemberCard member={member} />
-              </motion.div>
-            ))}
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Stats section */}
-      <section className="py-20" style={{ backgroundColor: "#f8f9fb", backgroundImage: "linear-gradient(rgba(70, 110, 170, 0.22) 1px, transparent 1px), linear-gradient(90deg, rgba(70, 110, 170, 0.22) 1px, transparent 1px), linear-gradient(rgba(70, 110, 170, 0.08) 1px, transparent 1px), linear-gradient(90deg, rgba(70, 110, 170, 0.08) 1px, transparent 1px)", backgroundSize: "80px 80px, 80px 80px, 16px 16px, 16px 16px" }}>
+    <section
+      id="team"
+      className="py-20 md:py-32 md:pb-20 relative overflow-hidden bg-[#0a0a0f]"
+    >
+      {/* Blueprint grid */}
+      <div
+        className="absolute inset-0"
+        style={{
+          backgroundImage:
+            "linear-gradient(rgba(100, 170, 240, 0.20) 1px, transparent 1px), linear-gradient(90deg, rgba(100, 170, 240, 0.20) 1px, transparent 1px), linear-gradient(rgba(100, 170, 240, 0.07) 1px, transparent 1px), linear-gradient(90deg, rgba(100, 170, 240, 0.07) 1px, transparent 1px)",
+          backgroundSize: "80px 80px, 80px 80px, 16px 16px, 16px 16px",
+        }}
+      />
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8"
+          className="text-center max-w-2xl mx-auto mb-10 md:mb-16"
         >
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-5 md:gap-8">
-            {[
-              { value: "16x", label: "Faster Than Manual Review", color: "#7c3aed" },
-              { value: "95%+", label: "AI Detection Accuracy", color: "#059669" },
-              { value: "10x", label: "Cost Reduction Per Review", color: "#d97706" },
-              { value: "<1 Wk", label: "Time to Deploy", color: "#059669" },
-            ].map((stat) => (
-              <div
-                key={stat.label}
-                className="text-center bg-gray-50 rounded-2xl px-5 py-10 border border-gray-200"
-              >
-                <div
-                  className="text-4xl md:text-5xl font-heading font-bold"
-                  style={{ color: stat.color }}
-                >
-                  {stat.value}
-                </div>
-                <div className="text-xs text-gray-500 mt-3 uppercase tracking-widest leading-tight font-medium">
-                  {stat.label}
-                </div>
-              </div>
-            ))}
+          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-primary/25 border border-primary/45 mb-6">
+            <Users2 className="w-3 h-3 text-accent" />
+            <span className="text-xs font-medium text-[#E87B3A] uppercase tracking-wider">
+              The Team
+            </span>
           </div>
+          <h2 className="text-3xl md:text-4xl font-heading font-bold text-white tracking-tight">
+            Built by People Who Have Done This
+          </h2>
+          <p className="mt-4 text-gray-400 text-lg leading-relaxed">
+            Our founders combine manufacturing domain expertise, enterprise
+            software experience, and operational technology capability.
+          </p>
         </motion.div>
-      </section>
-    </>
+
+        {/* Founders */}
+        <h3 className="text-xl md:text-2xl font-heading text-white text-center mb-6">Founders</h3>
+        <motion.div
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-50px" }}
+          className="flex flex-wrap justify-center gap-5 max-w-5xl mx-auto"
+        >
+          {founders.map((member) => (
+            <motion.div
+              key={member.name}
+              variants={itemVariants}
+              className="w-[calc(50%-0.625rem)] md:w-[calc(25%-0.9375rem)]"
+            >
+              <MemberCard member={member} />
+            </motion.div>
+          ))}
+        </motion.div>
+
+        {/* Advisors */}
+        <h3 className="text-xl md:text-2xl font-heading text-white text-center mt-12 mb-6">Advisors</h3>
+        <motion.div
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-50px" }}
+          className="flex flex-wrap justify-center gap-5 max-w-5xl mx-auto"
+        >
+          {advisors.map((member) => (
+            <motion.div
+              key={member.name}
+              variants={itemVariants}
+              className="w-[calc(50%-0.625rem)] md:w-[calc(25%-0.9375rem)]"
+            >
+              <MemberCard member={member} />
+            </motion.div>
+          ))}
+        </motion.div>
+
+        {/* Closing line */}
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.3 }}
+          className="mt-12 text-center text-gray-400 text-base md:text-lg leading-relaxed max-w-3xl mx-auto"
+        >
+          The company was built by people who have spent careers in
+          manufacturing — which is the only way to build manufacturing
+          intelligence that actually works.
+        </motion.p>
+      </div>
+    </section>
   );
 }

@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { Mail, MapPin, Globe, CheckCircle, Check, Loader2 } from "lucide-react";
+import { Mail, MapPin, Globe, CheckCircle, Check, Loader2, ArrowRight, Rocket } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { COMPANY } from "@/lib/constants";
 
@@ -102,11 +102,36 @@ export function ContactSection() {
             transition={{ duration: 0.6 }}
             className="md:col-span-3"
           >
-            <h2 className="font-heading text-3xl text-white">Get In Touch</h2>
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-primary/25 border border-primary/45 mb-6">
+              <Rocket className="w-3 h-3 text-accent" />
+              <span className="text-xs font-medium text-[#E87B3A] uppercase tracking-wider">
+                Get Started
+              </span>
+            </div>
+            <h2 className="font-heading text-3xl text-white">
+              See Engineered Intelligence on Your Own Drawings
+            </h2>
             <p className="text-gray-400 mt-2">
-              Ready to see how Cognaize can transform your operations? Fill out
-              the form and we&apos;ll get back to you within 24 hours.
+              Book a 30-minute demo. We&apos;ll run Cognaize Systems on a
+              drawing from your factory and show you exactly what it finds.
             </p>
+            <div className="mt-6 flex flex-col sm:flex-row items-start gap-3">
+              <a
+                href="https://calendly.com/raghu-cognaizesys/30min"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-primary hover:bg-primary-dark text-white font-semibold transition-all duration-300 shadow-md shadow-primary/20"
+              >
+                Book a Demo
+                <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
+              </a>
+              <a
+                href="#contact-form"
+                className="inline-flex items-center gap-2 px-6 py-3 rounded-lg border border-primary/30 hover:border-primary/50 hover:bg-white/5 text-white font-semibold transition-all duration-300"
+              >
+                Contact Us
+              </a>
+            </div>
 
             {submitted ? (
               <motion.div
@@ -120,7 +145,7 @@ export function ContactSection() {
                 </p>
               </motion.div>
             ) : (
-              <form onSubmit={handleSubmit} className="mt-8 space-y-6">
+              <form id="contact-form" onSubmit={handleSubmit} className="mt-8 space-y-6">
                 {/* Name Field */}
                 <div>
                   <label
