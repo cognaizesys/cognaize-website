@@ -1,17 +1,8 @@
 export { HeroSection } from "./hero-section";
 export { MetricsSection } from "./metrics-section";
-export { DifferentiatorsSection } from "./differentiators-section";
-export { SolutionsSection } from "./solutions-section";
 export { ProductShowcaseSection } from "./product-showcase-section";
-export { HowItWorksSection } from "./how-it-works-section";
 export { ROISection } from "./roi-section";
-export { IndustriesSection } from "./industries-section";
 export { DemoCTASection } from "./demo-cta-section";
 export { TeamSection } from "./team-section";
 export { ContactSection } from "./contact-section";
-export { SecuritySection } from "./security-section";
-export { PricingSection } from "./pricing-section";
-export { PilotProcessSection } from "./pilot-process-section";
-export { HomepageHowItWorksSection } from "./homepage-how-it-works-section";
-export { IntelligenceLayersSection } from "./intelligence-layers-section";
 export { CaseStudiesPreviewSection } from "./case-studies-preview-section";
