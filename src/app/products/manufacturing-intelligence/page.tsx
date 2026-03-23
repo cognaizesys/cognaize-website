@@ -2,155 +2,54 @@
 
 import { motion } from "framer-motion";
 import {
-  Upload,
-  CheckCircle,
-  ClipboardList,
   Calculator,
   ArrowRight,
-  Gauge,
+  Crosshair,
+  Brain,
+  Factory,
+  Shield,
+  Boxes,
+  BookOpen,
+  ClipboardList,
+  RefreshCw,
+  Rocket,
+  Scan,
 } from "lucide-react";
-import Link from "next/link";
 import Image from "next/image";
-import { useState, useEffect } from "react";
-import { AnimatePresence } from "framer-motion";
-import { SecuritySection } from "@/components/sections/security-section";
 
-const features = [
-  {
-    icon: Upload,
-    title: "Drawing Upload & Spec Extraction",
-    description:
-      "Upload PNG, JPG, or PDF engineering drawings. AI automatically extracts key specifications, dimensions, material, tolerances, and component type.",
-  },
-  {
-    icon: CheckCircle,
-    title: "Feasibility Assessment",
-    description:
-      "AI checks material availability, machine capability, and tolerance achievability against your shop's actual equipment and inventory.",
-  },
-  {
-    icon: ClipboardList,
-    title: "Auto Job Card Generation",
-    description:
-      "Generate complete job cards with operations, machine assignments, setup/run times, and instructions — ready for the shop floor.",
-  },
-  {
-    icon: Calculator,
-    title: "Detailed Cost Breakdown",
-    description:
-      "Get transparent cost breakdowns: material cost, process cost per operation, outsource costs, and final unit price.",
-  },
+/* ─── SECTION 1: HERO ────────────────────────────────── */
+
+const heroStats = [
+  { value: "10\u00d7", label: "Faster than manual estimation" },
+  { value: "75%+", label: "Reduction in estimation cost" },
+  { value: "Full", label: "Audit trail on every quote" },
 ];
 
-const workflowSteps = [
-  {
-    step: 1,
-    title: "Upload Drawing",
-    description: "Upload your engineering drawing in PNG, JPG, or PDF format",
-    src: "/images/products/mi/mi-upload.png",
-    alt: "Upload Drawing Interface",
-  },
-  {
-    step: 2,
-    title: "Review Extracted Specs",
-    description:
-      "AI extracts key specifications, dimensions, material, and component details",
-    src: "/images/products/mi/mi-review.png",
-    alt: "Key Specifications Review",
-  },
-  {
-    step: 3,
-    title: "Feasibility Check",
-    description:
-      "Automated feasibility analysis against your shop capabilities",
-    src: "/images/products/mi/mi-feasibility.png",
-    alt: "Feasibility Analysis",
-  },
-  {
-    step: 4,
-    title: "Job Card",
-    description:
-      "Auto-generated job card with all operations, machines, and timings",
-    src: "/images/products/mi/mi-jobcard.png",
-    alt: "Job Card Generation",
-  },
-  {
-    step: 5,
-    title: "Cost Breakdown",
-    description:
-      "Complete cost breakdown with material, process, and outsource costs",
-    src: "/images/products/mi/mi-costing.png",
-    alt: "Detailed Cost Breakdown",
-  },
-];
-
-const capabilities = [
-  {
-    icon: Upload,
-    title: "Drawing Upload & Spec Extraction",
-    description:
-      "Upload PNG, JPG, or PDF engineering drawings. AI automatically extracts key specifications, dimensions, material, tolerances, and component type.",
-    color: "#846fbc",
-  },
-  {
-    icon: CheckCircle,
-    title: "Feasibility Assessment",
-    description:
-      "Pre-production checks for material availability, machine capability, and tolerance achievability against your shop's actual equipment and inventory.",
-    color: "#6ee7b7",
-  },
-  {
-    icon: ClipboardList,
-    title: "Routing & Job Cards",
-    description:
-      "Automatic operation sequencing, machine assignments, setup/run times, and shop-floor-ready job cards — ready for the shop floor.",
-    color: "#f59e0b",
-  },
-  {
-    icon: Calculator,
-    title: "Costing Engine",
-    description:
-      "AI-generated cost breakdowns with material, labor, machine time, outsourcing costs per operation, and final unit price.",
-    color: "#846fbc",
-  },
-];
-
-export default function ManufacturingIntelligencePage() {
-  const [activeStep, setActiveStep] = useState(0);
-
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setActiveStep((prev) => (prev + 1) % workflowSteps.length);
-    }, 5000);
-    return () => clearInterval(timer);
-  }, []);
-
+function HeroSection() {
   return (
-    <div>
-      {/* Hero */}
-      <section
-        className="relative pt-24 md:pt-32 pb-24 overflow-hidden"
+    <section
+      className="relative pt-24 md:pt-32 pb-20 overflow-hidden"
+      style={{
+        background:
+          "linear-gradient(135deg, #0a0a0f 0%, #0c1a1a 40%, #1a1028 70%, #0a0a0f 100%)",
+      }}
+    >
+      <div
+        className="absolute inset-0"
         style={{
-          background: "linear-gradient(135deg, #0a0a0f 0%, #0c1a1a 40%, #1a1028 70%, #0a0a0f 100%)",
+          backgroundImage:
+            "linear-gradient(rgba(100, 170, 240, 0.20) 1px, transparent 1px), linear-gradient(90deg, rgba(100, 170, 240, 0.20) 1px, transparent 1px), linear-gradient(rgba(100, 170, 240, 0.07) 1px, transparent 1px), linear-gradient(90deg, rgba(100, 170, 240, 0.07) 1px, transparent 1px)",
+          backgroundSize: "80px 80px, 80px 80px, 16px 16px, 16px 16px",
         }}
-      >
-        {/* Grid bg */}
-        <div
-          className="absolute inset-0"
-          style={{
-            backgroundImage:
-              "linear-gradient(rgba(100, 170, 240, 0.20) 1px, transparent 1px), linear-gradient(90deg, rgba(100, 170, 240, 0.20) 1px, transparent 1px), linear-gradient(rgba(100, 170, 240, 0.07) 1px, transparent 1px), linear-gradient(90deg, rgba(100, 170, 240, 0.07) 1px, transparent 1px)",
-            backgroundSize: "80px 80px, 80px 80px, 16px 16px, 16px 16px",
-          }}
-        />
+      />
 
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          {/* Text content - centered */}
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid lg:grid-cols-2 gap-12 items-center">
+          {/* Left: text */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="text-center max-w-3xl mx-auto"
           >
             <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-accent/20 border border-accent/35 mb-8">
               <Calculator className="w-3.5 h-3.5 text-accent" />
@@ -160,51 +59,58 @@ export default function ManufacturingIntelligencePage() {
             </div>
 
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-heading text-white mb-6 leading-[1.1]">
-              Drawing to <span className="text-accent">Quote in Minutes</span>
+              From Drawing to Accurate Cost Sheet — in Minutes, Not Days
             </h1>
 
-            <p className="text-lg text-gray-400 mb-10 leading-relaxed max-w-2xl mx-auto">
-              AI extracts specs, checks feasibility, generates job cards, and produces detailed cost breakdowns — turning days of estimation into minutes.
+            <p className="text-base md:text-lg text-gray-400 mb-8 leading-relaxed max-w-xl">
+              Engineered Intelligence for Feasibility &amp; Cost Estimation —
+              structured feasibility validation, process routing, job card
+              generation, and cost breakdown directly from your engineering
+              drawings.
             </p>
 
-            <div className="flex items-center justify-center gap-4 sm:gap-8 mb-10">
-              {[
-                { value: "10x", label: "Faster Quoting" },
-                { value: "75%", label: "Cost Reduction" },
-                { value: "95%+", label: "Accuracy" },
-              ].map((stat) => (
-                <div key={stat.label}>
-                  <div className="text-2xl font-bold font-heading text-white">{stat.value}</div>
+            {/* Stats */}
+            <div className="flex items-center gap-6 sm:gap-8 mb-10">
+              {heroStats.map((stat) => (
+                <div
+                  key={stat.label}
+                  className="border-l-[3px] border-l-accent pl-3"
+                >
+                  <div className="text-xl md:text-2xl font-bold font-heading text-white">
+                    {stat.value}
+                  </div>
                   <div className="text-xs text-gray-500">{stat.label}</div>
                 </div>
               ))}
             </div>
 
-            <div className="flex gap-4 flex-wrap justify-center">
+            {/* CTAs */}
+            <div className="flex gap-4 flex-wrap">
               <a
                 href="https://calendly.com/raghu-cognaizesys/30min"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 bg-primary hover:bg-primary-dark text-white px-7 py-3.5 rounded-lg font-semibold transition-colors shadow-md shadow-primary/20 hover:shadow-lg hover:shadow-primary/30"
+                className="group inline-flex items-center gap-2 bg-primary hover:bg-primary-dark text-white px-7 py-3.5 rounded-lg font-semibold transition-all shadow-md shadow-primary/20 hover:shadow-lg hover:shadow-primary/30"
               >
-                Schedule a Demo
-                <ArrowRight className="w-4 h-4" />
+                Book a Demo
+                <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
               </a>
               <a
-                href="#workflow"
+                href="https://calendly.com/raghu-cognaizesys/30min"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 border border-accent/30 hover:border-accent/50 hover:bg-white/5 text-white px-7 py-3.5 rounded-lg font-semibold transition-all"
               >
-                See the Workflow
+                See It on Your Drawing
               </a>
             </div>
           </motion.div>
 
-          {/* Full-width screenshot below */}
+          {/* Right: screenshot */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.3 }}
-            className="mt-16 max-w-5xl mx-auto"
           >
             <div className="rounded-xl overflow-hidden border border-white/10 shadow-2xl">
               <div className="bg-dark-surface/80 h-9 flex items-center px-4 gap-2 border-b border-white/5">
@@ -221,7 +127,7 @@ export default function ManufacturingIntelligencePage() {
               </div>
               <Image
                 src="/images/products/mi/mi-costing.png"
-                alt="Manufacturing Intelligence - Cost Breakdown"
+                alt="Manufacturing Intelligence — Quotation Sheet"
                 width={1200}
                 height={800}
                 className="w-full"
@@ -229,208 +135,670 @@ export default function ManufacturingIntelligencePage() {
             </div>
           </motion.div>
         </div>
-      </section>
+      </div>
+    </section>
+  );
+}
 
-      {/* Workflow Walkthrough */}
-      <section id="workflow" className="py-16 md:py-24" style={{ backgroundColor: "#f8f9fb", backgroundImage: "linear-gradient(rgba(70, 110, 170, 0.22) 1px, transparent 1px), linear-gradient(90deg, rgba(70, 110, 170, 0.22) 1px, transparent 1px), linear-gradient(rgba(70, 110, 170, 0.08) 1px, transparent 1px), linear-gradient(90deg, rgba(70, 110, 170, 0.08) 1px, transparent 1px)", backgroundSize: "80px 80px, 80px 80px, 16px 16px, 16px 16px" }}>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <span className="text-primary text-sm font-semibold uppercase tracking-wider">
-              Workflow
+/* ─── SECTION 2: WHAT IT DOES ────────────────────────── */
+
+const whatItDoesPoints = [
+  "Extracts dimensions, tolerances, material specs, and process requirements directly from engineering drawings",
+  "Validates feasibility against process and machine limits — catches geometry conflicts, out-of-range tolerances, and missing process callouts before quoting",
+  "Generates process routing and job cards per operation — turning, milling, grinding, inspection, coating, and more",
+  "Produces itemised cost breakdown by material, process, and overhead — calibrated to your facility, your machines, your rates",
+];
+
+function WhatItDoesSection() {
+  return (
+    <section className="py-16 md:py-24 bg-white">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+          className="mb-10"
+        >
+          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-primary/10 border border-primary/25 mb-6">
+            <Crosshair className="w-3 h-3 text-primary" />
+            <span className="text-xs font-medium text-[#E87B3A] uppercase tracking-wider">
+              What It Does
             </span>
-            <h2 className="text-3xl md:text-4xl font-heading text-text-primary mt-2">
-              5-Step Intelligent Pipeline
-            </h2>
           </div>
+          <h2 className="text-2xl md:text-4xl font-heading font-bold text-gray-900 tracking-tight">
+            Drawing In. Accurate Cost Sheet Out.
+          </h2>
+          <p className="mt-4 text-gray-600 text-base md:text-lg leading-relaxed max-w-3xl">
+            Manufacturing Intelligence extracts drawing data, validates
+            manufacturing feasibility, routes processes to machines, generates
+            job cards, and calculates cost — deterministically and
+            automatically. It catches impossible combinations before the quote
+            goes out, and gets more accurate with every job completed.
+          </p>
+        </motion.div>
 
-          {/* Step indicator */}
-          <div className="flex items-center justify-center gap-2 md:gap-4 mb-12 flex-wrap">
-            {workflowSteps.map((ws, i) => (
-              <button
-                key={ws.step}
-                onClick={() => setActiveStep(i)}
-                className="flex items-center gap-2"
-              >
-                <div
-                  className={`w-10 h-10 rounded-full flex items-center justify-center text-sm font-bold transition-all ${
-                    i === activeStep
-                      ? "bg-primary text-white scale-110"
-                      : i < activeStep
-                        ? "bg-accent/20 text-[#059669]"
-                        : "bg-gray-200 text-gray-400"
-                  }`}
-                >
-                  {i < activeStep ? <CheckCircle size={18} /> : ws.step}
+        <div className="grid lg:grid-cols-2 gap-12 items-start">
+          {/* Left: capability list */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            className="space-y-5"
+          >
+            {whatItDoesPoints.map((point, i) => (
+              <div key={i} className="flex gap-3 items-start">
+                <div className="w-6 h-6 rounded-full bg-primary/10 flex items-center justify-center shrink-0 mt-0.5">
+                  <div className="w-2 h-2 rounded-full bg-primary" />
                 </div>
-                <span
-                  className={`hidden md:inline text-sm font-medium ${
-                    i === activeStep ? "text-primary" : "text-text-secondary"
-                  }`}
-                >
-                  {ws.title}
-                </span>
-                {i < workflowSteps.length - 1 && (
-                  <ArrowRight
-                    size={16}
-                    className="text-primary/30 hidden md:inline"
-                  />
-                )}
-              </button>
+                <p className="text-gray-700 leading-relaxed">{point}</p>
+              </div>
             ))}
-          </div>
+          </motion.div>
 
-          {/* Screenshot */}
-          <div className="max-w-5xl mx-auto">
-            <div className="mb-6 text-center">
-              <h3 className="text-xl font-heading text-text-primary">
-                Step {workflowSteps[activeStep].step}:{" "}
-                {workflowSteps[activeStep].title}
+          {/* Right: screenshot */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+          >
+            <div className="rounded-xl overflow-hidden border border-gray-200 shadow-xl">
+              <div className="bg-gray-100 h-9 flex items-center px-4 gap-2">
+                <div className="w-2.5 h-2.5 rounded-full bg-red-400" />
+                <div className="w-2.5 h-2.5 rounded-full bg-yellow-400" />
+                <div className="w-2.5 h-2.5 rounded-full bg-green-400" />
+                <div className="bg-gray-200 rounded-md h-5 flex-1 mx-4 flex items-center justify-center">
+                  <span className="text-[10px] text-gray-400">
+                    app.cognaizesys.com
+                  </span>
+                </div>
+              </div>
+              <Image
+                src="/images/products/mi/mi-costing.png"
+                alt="Manufacturing Intelligence quotation sheet"
+                width={1200}
+                height={800}
+                className="w-full"
+              />
+            </div>
+          </motion.div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ─── SECTION 3: KEY CAPABILITIES ────────────────────── */
+
+const capabilityCards = [
+  {
+    icon: Factory,
+    title: "Facility Calibration",
+    body: "Cost outputs are calibrated to your specific facility — your machines, your overhead rates, your labour costs. Not industry averages.",
+  },
+  {
+    icon: Shield,
+    title: "Pre-Feasibility Package",
+    body: "Catches expensive missing processes and geometry conflicts early — before the drawing is fully reviewed and before the quote is committed.",
+  },
+  {
+    icon: Boxes,
+    title: "Raw Material Analysis",
+    body: "Full material cost analysis including four scrap recovery streams — so material cost is accurate, not estimated.",
+  },
+  {
+    icon: Scan,
+    title: "Similar Parts Panel",
+    body: "Identifies previously costed parts with similar geometry and specifications — gets smarter with every job added to the system.",
+  },
+  {
+    icon: ClipboardList,
+    title: "Job Card Generation",
+    body: "Produces structured job cards and routing sheets per operation — ready for the shop floor directly from the cost estimation output.",
+  },
+  {
+    icon: RefreshCw,
+    title: "Learning Loop",
+    body: "Actual production times and costs feed back into the estimation system. Every completed job makes future quotes more accurate.",
+  },
+];
+
+function KeyCapabilitiesSection() {
+  return (
+    <section
+      className="py-16 md:py-24"
+      style={{
+        backgroundColor: "#f8f9fb",
+        backgroundImage:
+          "linear-gradient(rgba(70, 110, 170, 0.22) 1px, transparent 1px), linear-gradient(90deg, rgba(70, 110, 170, 0.22) 1px, transparent 1px), linear-gradient(rgba(70, 110, 170, 0.08) 1px, transparent 1px), linear-gradient(90deg, rgba(70, 110, 170, 0.08) 1px, transparent 1px)",
+        backgroundSize: "80px 80px, 80px 80px, 16px 16px, 16px 16px",
+      }}
+    >
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+          className="text-center mb-12"
+        >
+          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-primary/10 border border-primary/25 mb-6">
+            <Brain className="w-3 h-3 text-primary" />
+            <span className="text-xs font-medium text-[#E87B3A] uppercase tracking-wider">
+              Key Capabilities
+            </span>
+          </div>
+          <h2 className="text-2xl md:text-4xl font-heading font-bold text-gray-900 tracking-tight">
+            What Manufacturing Intelligence Delivers
+          </h2>
+        </motion.div>
+
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {capabilityCards.map((card, i) => (
+            <motion.div
+              key={card.title}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: i * 0.08, duration: 0.5 }}
+              className="bg-white rounded-xl border border-gray-200 p-6 border-t-[3px] border-t-primary hover:shadow-lg transition-shadow"
+            >
+              <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
+                <card.icon className="w-5 h-5 text-primary" />
+              </div>
+              <h3 className="text-lg font-bold text-gray-900 mb-2">
+                {card.title}
               </h3>
-              <p className="text-text-secondary mt-1">
-                {workflowSteps[activeStep].description}
+              <p className="text-gray-600 text-sm leading-relaxed">
+                {card.body}
               </p>
-            </div>
-            <div className="relative">
-              <AnimatePresence initial={false}>
-                <motion.div
-                  key={activeStep}
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  exit={{ opacity: 0, position: "absolute", top: 0, left: 0, right: 0 }}
-                  transition={{ duration: 0.3 }}
-                >
-                  <div className="rounded-xl overflow-hidden shadow-2xl border border-gray-200">
-                    <div className="bg-gray-100 h-10 flex items-center px-4 gap-2">
-                      <div className="w-3 h-3 rounded-full bg-red-400" />
-                      <div className="w-3 h-3 rounded-full bg-yellow-400" />
-                      <div className="w-3 h-3 rounded-full bg-green-400" />
-                      <div className="bg-gray-200 rounded-md h-6 flex-1 mx-4 flex items-center justify-center">
-                        <span className="text-xs text-gray-400">
-                          app.cognaizesys.com
-                        </span>
-                      </div>
-                    </div>
-                    <Image
-                      src={workflowSteps[activeStep].src}
-                      alt={workflowSteps[activeStep].alt}
-                      width={1200}
-                      height={800}
-                      className="w-full"
-                    />
-                  </div>
-                </motion.div>
-              </AnimatePresence>
-            </div>
-          </div>
+            </motion.div>
+          ))}
         </div>
-      </section>
+      </div>
+    </section>
+  );
+}
 
-      {/* Capabilities */}
-      <section className="py-16 md:py-24" style={{ backgroundColor: "#f8f9fb", backgroundImage: "linear-gradient(rgba(70, 110, 170, 0.22) 1px, transparent 1px), linear-gradient(90deg, rgba(70, 110, 170, 0.22) 1px, transparent 1px), linear-gradient(rgba(70, 110, 170, 0.08) 1px, transparent 1px), linear-gradient(90deg, rgba(70, 110, 170, 0.08) 1px, transparent 1px)", backgroundSize: "80px 80px, 80px 80px, 16px 16px, 16px 16px" }}>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <span className="text-primary text-sm font-semibold uppercase tracking-wider">
-              Capabilities
-            </span>
-            <h2 className="text-3xl md:text-4xl font-heading text-text-primary mt-2">
-              End-to-End Cost Estimation Pipeline
-            </h2>
-            <p className="mt-4 text-text-secondary max-w-2xl mx-auto">
-              Four integrated modules that work standalone or together — from drawing upload to final quote.
-            </p>
-            <div className="flex flex-wrap gap-2 justify-center mt-6">
-              {["Casting", "Forging", "Machining", "Sheet Metal"].map((process) => (
-                <span
-                  key={process}
-                  className="inline-flex items-center px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-medium border border-primary/25"
-                >
-                  {process}
-                </span>
-              ))}
-            </div>
-          </div>
-          <div className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
-            {capabilities.map((cap, i) => (
-              <motion.div
-                key={cap.title}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.1, duration: 0.5 }}
-                className="rounded-2xl border border-gray-200 bg-white p-5 sm:p-8 hover:border-primary/30 hover:shadow-lg transition-all group"
-                style={{ borderLeftWidth: '3px', borderLeftColor: cap.color }}
-              >
-                <div className="flex items-center gap-4 mb-4">
-                  <div
-                    className="w-11 h-11 rounded-xl border border-primary/20 flex items-center justify-center shrink-0 transition-colors"
-                    style={{ backgroundColor: `${cap.color}15` }}
-                  >
-                    <cap.icon className="w-5 h-5" style={{ color: cap.color }} />
-                  </div>
-                  <h3 className="text-xl font-bold">{cap.title}</h3>
-                </div>
-                <p className="text-text-secondary leading-relaxed">
-                  {cap.description}
-                </p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
+/* ─── SECTION 4: HOW IT FITS THE LOOP ────────────────── */
 
-      {/* Security & Trust */}
-      <SecuritySection />
-
-      {/* Cross-sell + CTA */}
-      <section
-        className="py-16 md:py-24 relative overflow-hidden"
+function IntelligenceLoopFitSection() {
+  return (
+    <section
+      className="py-16 md:py-24 relative overflow-hidden"
+      style={{
+        background:
+          "linear-gradient(180deg, #111118 0%, #16131f 50%, #111118 100%)",
+      }}
+    >
+      <div
+        className="absolute inset-0"
         style={{
-          background: "linear-gradient(135deg, #0a0a0f 0%, #0c1a1a 40%, #1a1028 70%, #0a0a0f 100%)",
+          backgroundImage:
+            "linear-gradient(rgba(100, 170, 240, 0.12) 1px, transparent 1px), linear-gradient(90deg, rgba(100, 170, 240, 0.12) 1px, transparent 1px), linear-gradient(rgba(100, 170, 240, 0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(100, 170, 240, 0.04) 1px, transparent 1px)",
+          backgroundSize: "80px 80px, 80px 80px, 16px 16px, 16px 16px",
         }}
-      >
-        <div
-          className="absolute inset-0"
-          style={{
-            backgroundImage:
-              "linear-gradient(rgba(100, 170, 240, 0.20) 1px, transparent 1px), linear-gradient(90deg, rgba(100, 170, 240, 0.20) 1px, transparent 1px), linear-gradient(rgba(100, 170, 240, 0.07) 1px, transparent 1px), linear-gradient(90deg, rgba(100, 170, 240, 0.07) 1px, transparent 1px)",
-            backgroundSize: "80px 80px, 80px 80px, 16px 16px, 16px 16px",
-          }}
-        />
-        <div className="relative z-10 max-w-4xl mx-auto px-4 text-center">
+      />
+
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid lg:grid-cols-2 gap-12 items-center">
+          {/* Left: text */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <h2 className="text-3xl md:text-4xl font-heading text-white mb-4">
-              Stop Quoting in the Dark
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-primary/25 border border-primary/45 mb-6">
+              <RefreshCw className="w-3 h-3 text-accent" />
+              <span className="text-xs font-medium text-[#E87B3A] uppercase tracking-wider">
+                The Intelligence Loop
+              </span>
+            </div>
+            <h2 className="text-2xl md:text-4xl font-heading font-bold text-white tracking-tight mb-6">
+              Every Job Makes the Next Quote More Accurate
             </h2>
-            <p className="text-lg text-gray-400 mb-10 max-w-2xl mx-auto">
-              See how Manufacturing Intelligence can generate accurate quotes
-              from engineering drawings in minutes.
+            <p className="text-gray-400 text-base md:text-lg leading-relaxed mb-4">
+              Manufacturing Intelligence sits at the centre of the Cognaize
+              Systems intelligence loop. Design Intelligence feeds it verified
+              drawing data upstream. DataWiz feeds it actual production times
+              and costs from the floor downstream. SkyPlanner feeds it real
+              scheduling outcomes and capacity realities. Every cycle, the
+              estimation gets tighter. Tribal knowledge is replaced by verified,
+              continuously updated intelligence.
             </p>
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <a
-                href="https://calendly.com/raghu-cognaizesys/30min"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 bg-primary hover:bg-primary-dark text-white px-6 py-3.5 text-base sm:px-8 sm:py-4 sm:text-lg rounded-lg font-bold transition-all shadow-lg shadow-primary/25"
+          </motion.div>
+
+          {/* Right: loop diagram SVG */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7, delay: 0.2 }}
+            className="flex justify-center"
+          >
+            <svg
+              viewBox="0 0 400 360"
+              className="w-full max-w-sm"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              {/* MI box (centre) */}
+              <rect
+                x="120"
+                y="140"
+                width="160"
+                height="60"
+                rx="12"
+                stroke="#846fbc"
+                strokeWidth="2.5"
+                fill="#846fbc20"
+              />
+              <text
+                x="200"
+                y="167"
+                textAnchor="middle"
+                fill="#c4b5fd"
+                fontSize="13"
+                fontWeight="700"
               >
-                Book a Demo
-                <ArrowRight className="w-5 h-5" />
-              </a>
-              <Link
-                href="/products/design-intelligence"
-                className="inline-flex items-center gap-2 border border-primary/25 hover:border-primary/40 hover:bg-white/5 text-white px-6 py-3.5 text-base sm:px-8 sm:py-4 sm:text-lg rounded-lg font-semibold transition-all"
+                Manufacturing
+              </text>
+              <text
+                x="200"
+                y="185"
+                textAnchor="middle"
+                fill="#c4b5fd"
+                fontSize="13"
+                fontWeight="700"
               >
-                Explore Design Intelligence
-                <ArrowRight className="w-4 h-4" />
-              </Link>
+                Intelligence
+              </text>
+
+              {/* DI box (top) */}
+              <rect
+                x="120"
+                y="20"
+                width="160"
+                height="50"
+                rx="10"
+                stroke="#846fbc"
+                strokeWidth="1.5"
+                fill="#846fbc10"
+              />
+              <text
+                x="200"
+                y="50"
+                textAnchor="middle"
+                fill="#a78bfa"
+                fontSize="12"
+                fontWeight="600"
+              >
+                Design Intelligence
+              </text>
+
+              {/* DataWiz box (bottom-left) */}
+              <rect
+                x="20"
+                y="280"
+                width="140"
+                height="50"
+                rx="10"
+                stroke="#E87B3A"
+                strokeWidth="1.5"
+                fill="#E87B3A10"
+              />
+              <text
+                x="90"
+                y="310"
+                textAnchor="middle"
+                fill="#fbbf7a"
+                fontSize="12"
+                fontWeight="600"
+              >
+                DataWiz
+              </text>
+
+              {/* SkyPlanner box (bottom-right) */}
+              <rect
+                x="240"
+                y="280"
+                width="140"
+                height="50"
+                rx="10"
+                stroke="#6ee7b7"
+                strokeWidth="1.5"
+                fill="#6ee7b710"
+              />
+              <text
+                x="310"
+                y="310"
+                textAnchor="middle"
+                fill="#6ee7b7"
+                fontSize="12"
+                fontWeight="600"
+              >
+                SkyPlanner
+              </text>
+
+              {/* DI → MI */}
+              <line
+                x1="200"
+                y1="70"
+                x2="200"
+                y2="140"
+                stroke="#846fbc"
+                strokeWidth="2"
+                markerEnd="url(#arrowPurple)"
+              />
+              <text
+                x="214"
+                y="110"
+                fill="#a78bfa"
+                fontSize="9"
+              >
+                Upstream
+              </text>
+
+              {/* DataWiz → MI */}
+              <path
+                d="M90 280 Q90 200 140 170"
+                stroke="#E87B3A"
+                strokeWidth="2"
+                fill="none"
+                strokeDasharray="6 3"
+                markerEnd="url(#arrowOrange)"
+              />
+              <text
+                x="60"
+                y="230"
+                fill="#fbbf7a"
+                fontSize="9"
+              >
+                Floor Actuals
+              </text>
+
+              {/* SkyPlanner → MI */}
+              <path
+                d="M310 280 Q310 200 260 170"
+                stroke="#6ee7b7"
+                strokeWidth="2"
+                fill="none"
+                strokeDasharray="6 3"
+                markerEnd="url(#arrowGreen)"
+              />
+              <text
+                x="305"
+                y="230"
+                fill="#6ee7b7"
+                fontSize="9"
+              >
+                Scheduling
+              </text>
+
+              {/* Arrow markers */}
+              <defs>
+                <marker
+                  id="arrowPurple"
+                  markerWidth="8"
+                  markerHeight="6"
+                  refX="7"
+                  refY="3"
+                  orient="auto"
+                >
+                  <path d="M0,0 L8,3 L0,6" fill="#846fbc" />
+                </marker>
+                <marker
+                  id="arrowOrange"
+                  markerWidth="8"
+                  markerHeight="6"
+                  refX="7"
+                  refY="3"
+                  orient="auto"
+                >
+                  <path d="M0,0 L8,3 L0,6" fill="#E87B3A" />
+                </marker>
+                <marker
+                  id="arrowGreen"
+                  markerWidth="8"
+                  markerHeight="6"
+                  refX="7"
+                  refY="3"
+                  orient="auto"
+                >
+                  <path d="M0,0 L8,3 L0,6" fill="#6ee7b7" />
+                </marker>
+              </defs>
+            </svg>
+          </motion.div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ─── SECTION 5: PROOF ───────────────────────────────── */
+
+const keyOutputs = [
+  {
+    label: "Material",
+    value: "AISI 4145 \u00b7 Weight: 0.18 kg \u00b7 Hardness: 110 KSI MIN",
+  },
+  {
+    label: "Feasibility",
+    value:
+      "95% \u00b7 Machine limits OK \u00b7 Constraints OK \u00b7 Process availability OK",
+  },
+  {
+    label: "Routing",
+    value:
+      "8 operations \u2014 Saw Cutting, Final Turning, Inspection, Final Milling, Phosphate Coating, Final Inspection, Packing",
+  },
+  { label: "Unit Price", value: "187.87 AED" },
+];
+
+function ProofSection() {
+  return (
+    <section className="py-16 md:py-24 bg-white">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+          className="mb-10"
+        >
+          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-primary/10 border border-primary/25 mb-6">
+            <Calculator className="w-3 h-3 text-primary" />
+            <span className="text-xs font-medium text-[#E87B3A] uppercase tracking-wider">
+              In Practice
+            </span>
+          </div>
+          <h2 className="text-2xl md:text-4xl font-heading font-bold text-gray-900 tracking-tight">
+            A Quote That Reflects Reality
+          </h2>
+          <p className="mt-3 text-gray-500 text-sm md:text-base">
+            Split Ring &middot; AISI 4145 &middot; Machined Component
+          </p>
+        </motion.div>
+
+        <div className="grid lg:grid-cols-2 gap-12 items-start">
+          {/* Left: key outputs + body */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            className="space-y-5"
+          >
+            {keyOutputs.map((out) => (
+              <div
+                key={out.label}
+                className="bg-gray-50 border border-gray-200 rounded-lg p-4"
+              >
+                <span className="text-xs font-bold uppercase tracking-wide text-primary">
+                  {out.label}
+                </span>
+                <p className="text-gray-800 text-sm mt-1 font-medium">
+                  {out.value}
+                </p>
+              </div>
+            ))}
+
+            <p className="text-gray-600 text-base leading-relaxed pt-2">
+              From drawing upload to a structured, approvable quotation sheet —
+              with full process routing, feasibility validation, and itemised
+              cost breakdown. In minutes.
+            </p>
+
+            <a
+              href="https://calendly.com/raghu-cognaizesys/30min"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 text-primary font-semibold text-sm hover:underline"
+            >
+              Book a Demo to See This on Your Parts
+              <ArrowRight className="w-3.5 h-3.5" />
+            </a>
+          </motion.div>
+
+          {/* Right: MI quotation sheet screenshot */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+          >
+            <div className="rounded-xl overflow-hidden border border-gray-200 shadow-xl">
+              <div className="bg-gray-100 h-9 flex items-center px-4 gap-2">
+                <div className="w-2.5 h-2.5 rounded-full bg-red-400" />
+                <div className="w-2.5 h-2.5 rounded-full bg-yellow-400" />
+                <div className="w-2.5 h-2.5 rounded-full bg-green-400" />
+                <div className="bg-gray-200 rounded-md h-5 flex-1 mx-4 flex items-center justify-center">
+                  <span className="text-[10px] text-gray-400">
+                    app.cognaizesys.com
+                  </span>
+                </div>
+              </div>
+              <Image
+                src="/images/products/mi/mi-costing.png"
+                alt="Manufacturing Intelligence quotation sheet output"
+                width={1200}
+                height={800}
+                className="w-full"
+              />
             </div>
           </motion.div>
         </div>
-      </section>
+      </div>
+    </section>
+  );
+}
+
+/* ─── SECTION 6: CLOSING CTA ────────────────────────── */
+
+function ClosingCTASection() {
+  return (
+    <section
+      className="py-16 md:py-24 relative overflow-hidden"
+      style={{
+        background:
+          "linear-gradient(135deg, #0a0a0f 0%, #1a1028 50%, #0a0a0f 100%)",
+      }}
+    >
+      <div
+        className="absolute inset-0"
+        style={{
+          backgroundImage:
+            "linear-gradient(rgba(100, 170, 240, 0.20) 1px, transparent 1px), linear-gradient(90deg, rgba(100, 170, 240, 0.20) 1px, transparent 1px), linear-gradient(rgba(100, 170, 240, 0.07) 1px, transparent 1px), linear-gradient(90deg, rgba(100, 170, 240, 0.07) 1px, transparent 1px)",
+          backgroundSize: "80px 80px, 80px 80px, 16px 16px, 16px 16px",
+        }}
+      />
+      <div
+        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] opacity-25"
+        style={{
+          background:
+            "radial-gradient(ellipse, rgba(132, 111, 188, 0.4) 0%, transparent 70%)",
+        }}
+      />
+
+      <div className="relative z-10 max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+        >
+          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-primary/25 border border-primary/45 mb-6">
+            <Rocket className="w-3 h-3 text-accent" />
+            <span className="text-xs font-medium text-[#E87B3A] uppercase tracking-wider">
+              Get Started
+            </span>
+          </div>
+        </motion.div>
+
+        <motion.h2
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.1 }}
+          className="text-2xl md:text-4xl font-heading font-bold text-white tracking-tight"
+        >
+          See Manufacturing Intelligence on Your Own Drawing
+        </motion.h2>
+
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          className="mt-4 text-gray-400 text-base md:text-lg leading-relaxed"
+        >
+          Book a 30-minute demo. We&apos;ll run Manufacturing Intelligence on a
+          drawing from your factory and produce a live cost estimate.
+        </motion.p>
+
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: 0.3 }}
+          className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4"
+        >
+          <a
+            href="https://calendly.com/raghu-cognaizesys/30min"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group inline-flex items-center gap-2 px-7 py-3.5 rounded-lg bg-primary hover:bg-primary-dark text-white font-semibold transition-all duration-300 shadow-md shadow-primary/20 hover:shadow-lg hover:shadow-primary/30"
+          >
+            Book a Demo
+            <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
+          </a>
+          <a
+            href="/#products"
+            className="inline-flex items-center gap-2 px-7 py-3.5 rounded-lg border border-primary/30 hover:border-primary/50 hover:bg-white/5 text-white font-semibold transition-all duration-300"
+          >
+            See All Products
+          </a>
+        </motion.div>
+      </div>
+    </section>
+  );
+}
+
+/* ─── PAGE ───────────────────────────────────────────── */
+
+export default function ManufacturingIntelligencePage() {
+  return (
+    <div>
+      <HeroSection />
+      <WhatItDoesSection />
+      <KeyCapabilitiesSection />
+      <IntelligenceLoopFitSection />
+      <ProofSection />
+      <ClosingCTASection />
     </div>
   );
 }
