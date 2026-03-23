@@ -5,7 +5,7 @@ export const COMPANY = {
   tagline: "Engineered Intelligence for Manufacturing",
   email: "info@cognaizesys.com",
   website: "https://cognaizesys.com",
-  location: "Chennai | Bangalore | Dubai | Charlotte, NC",
+  location: "Chennai | Bangalore | Dubai | Asheville, NC",
 };
 
 export const PRODUCT_LINKS = [
