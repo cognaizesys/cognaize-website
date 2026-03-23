@@ -74,9 +74,8 @@ export function HeroSection() {
               transition={{ duration: 0.6, delay: 0.3 }}
               className="mt-6 md:mt-10 text-3xl sm:text-4xl lg:text-5xl font-heading font-bold text-white tracking-tight leading-[1.1]"
             >
-              Engineering Intelligence That Sees What
-              <br />
-              <span className="text-primary-light">Your Best Engineer Can&apos;t.</span>
+              Making Engineering Judgment{" "}
+              <span className="text-primary-light">Scalable</span>
             </motion.h1>
 
             {/* Subtitle */}
@@ -86,10 +85,9 @@ export function HeroSection() {
               transition={{ duration: 0.6, delay: 0.5 }}
               className="mt-6 md:mt-8 text-lg text-gray-400 max-w-lg leading-relaxed"
             >
-              Cognaize Systems predicts manufacturing consequences from your
-              engineering drawings — layered AI that understands your technology,
-              your product family, and your shop floor. From design review to
-              cost estimation to assembly validation.
+              Cognaize Systems builds Engineered Intelligence for manufacturing
+              — expert judgment structured into systems that scale across your
+              organisation, and improve with every production cycle.
             </motion.p>
 
             {/* Metrics row */}
@@ -107,6 +105,9 @@ export function HeroSection() {
                   <span className="text-sm text-gray-500">{metric.label}</span>
                 </div>
               ))}
+              <p className="w-full mt-3 text-xs text-gray-500">
+                Powered by FactriAI
+              </p>
             </motion.div>
 
             {/* CTA Buttons */}
@@ -122,14 +123,14 @@ export function HeroSection() {
                 rel="noopener noreferrer"
                 className="group inline-flex items-center gap-2 px-7 py-3.5 rounded-lg bg-primary hover:bg-primary-dark text-white font-semibold transition-all duration-300 shadow-md shadow-primary/20 hover:shadow-lg hover:shadow-primary/30"
               >
-                See It On Your Drawing
+                Book a Demo
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
               </a>
               <a
                 href="#products"
                 className="inline-flex items-center gap-2 px-7 py-3.5 rounded-lg border border-primary/30 hover:border-primary/50 hover:bg-white/5 text-white font-semibold transition-all duration-300"
               >
-                Explore Intelligence Layers
+                Explore Products
               </a>
             </motion.div>
           </div>

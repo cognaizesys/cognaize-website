@@ -2,25 +2,25 @@ import type { Metric, ROIRow } from "@/types";
 
 export const heroMetrics: Metric[] = [
   {
-    value: "16x",
-    numericValue: 16,
-    suffix: "x",
-    label: "Faster",
-    description: "From hours to minutes per drawing",
+    value: "91%",
+    numericValue: 91,
+    suffix: "%",
+    label: "Reduction in Review Time",
+    description: "Reduction in review time",
   },
   {
     value: "95%+",
     numericValue: 95,
     suffix: "%+",
-    label: "Accuracy",
-    description: "AI detection rate",
+    label: "Detection Accuracy",
+    description: "AI detection accuracy",
   },
   {
-    value: "8",
-    numericValue: 8,
+    value: "6",
+    numericValue: 6,
     suffix: "",
-    label: "Manufacturing Technologies",
-    description: "Manufacturing technologies supported",
+    label: "Products. One Connected System.",
+    description: "6 products in one connected system",
   },
 ];
 
