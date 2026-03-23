@@ -9,3 +9,5 @@ export { CaseStudiesPreviewSection } from "./case-studies-preview-section";
 export { ProblemSection } from "./problem-section";
 export { AboutSection } from "./about-section";
 export { WhyDesignSection } from "./why-design-section";
+export { IntelligenceLoopSection } from "./intelligence-loop-section";
+export { IntelligenceLayersSection } from "./intelligence-layers-section";

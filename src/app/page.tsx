@@ -3,6 +3,8 @@ import {
   ProblemSection,
   AboutSection,
   WhyDesignSection,
+  IntelligenceLoopSection,
+  IntelligenceLayersSection,
   CaseStudiesPreviewSection,
   ProductShowcaseSection,
   ROISection,
@@ -17,6 +19,8 @@ export default function Home() {
       <ProblemSection />
       <AboutSection />
       <WhyDesignSection />
+      <IntelligenceLoopSection />
+      <IntelligenceLayersSection />
       <CaseStudiesPreviewSection />
       <ROISection />
       <ProductShowcaseSection />
