@@ -74,20 +74,20 @@ export function Footer() {
               </h3>
               <ul className="space-y-2">
                 <li>
-                  <a
-                    href="#about"
+                  <Link
+                    href="/about"
                     className="text-sm text-text-on-dark hover:text-primary-light"
                   >
-                    About
-                  </a>
+                    About Us
+                  </Link>
                 </li>
                 <li>
-                  <a
-                    href="#team"
+                  <Link
+                    href="/case-studies"
                     className="text-sm text-text-on-dark hover:text-primary-light"
                   >
-                    Team
-                  </a>
+                    Case Studies
+                  </Link>
                 </li>
                 <li>
                   <Link
@@ -104,14 +104,6 @@ export function Footer() {
                   >
                     Careers
                   </Link>
-                </li>
-                <li>
-                  <a
-                    href="#contact"
-                    className="text-sm text-text-on-dark hover:text-primary-light"
-                  >
-                    Contact
-                  </a>
                 </li>
               </ul>
             </div>

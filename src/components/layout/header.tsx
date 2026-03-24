@@ -60,7 +60,7 @@ export function Header({ onMobileMenuOpen }: HeaderProps) {
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden items-center gap-8 md:flex">
+          <nav className="hidden items-center gap-6 lg:flex">
             {NAV_LINKS.map((link) =>
               link.children ? (
                 <div key={link.href} className="group relative">
@@ -120,9 +120,11 @@ export function Header({ onMobileMenuOpen }: HeaderProps) {
           </nav>
 
           {/* CTA Button - Desktop */}
-          <div className="hidden md:block">
-            <Link
-              href="/#demo"
+          <div className="hidden lg:block">
+            <a
+              href="https://calendly.com/raghu-cognaizesys/30min"
+              target="_blank"
+              rel="noopener noreferrer"
               className={cn(
                 "inline-flex items-center rounded-lg px-7 py-3 text-base font-bold transition-all duration-200 shadow-md",
                 isScrolled
@@ -130,15 +132,15 @@ export function Header({ onMobileMenuOpen }: HeaderProps) {
                   : "bg-primary text-white hover:bg-primary-dark shadow-primary/30"
               )}
             >
-              See Demo
-            </Link>
+              Book a Demo
+            </a>
           </div>
 
           {/* Mobile Menu Button */}
           <button
             onClick={onMobileMenuOpen}
             className={cn(
-              "rounded-md p-2 transition-colors duration-300 md:hidden",
+              "rounded-md p-2 transition-colors duration-300 lg:hidden",
               isScrolled
                 ? "text-gray-700 hover:bg-gray-100"
                 : "text-white hover:bg-white/10"
