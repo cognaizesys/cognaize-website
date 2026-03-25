@@ -1,6 +1,6 @@
 import { createMetadata } from "@/lib/metadata";
 import {
-  SolutionsSection,
+  ProductsSection,
   ProductShowcaseSection,
 } from "@/components/sections";
 
@@ -14,7 +14,7 @@ export const metadata = createMetadata({
 export default function ProductsPage() {
   return (
     <main>
-      <SolutionsSection />
+      <ProductsSection />
       <ProductShowcaseSection />
     </main>
   );

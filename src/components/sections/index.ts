@@ -13,3 +13,5 @@ export { IntelligenceLoopSection } from "./intelligence-loop-section";
 export { IntelligenceLayersSection } from "./intelligence-layers-section";
 export { ProductsSection } from "./products-section";
 export { WhoWeServeSection } from "./who-we-serve-section";
+export { ChallengeDifferentiatorSection } from "./challenge-differentiator-section";
+export { WhyWeBuiltThisSection } from "./why-we-built-this-section";

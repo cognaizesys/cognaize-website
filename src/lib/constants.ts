@@ -18,29 +18,45 @@ export const PRODUCT_LINKS = [
     href: "/products/manufacturing-intelligence",
   },
   {
-    label: "SkyPlanner APS",
-    href: "https://skyplanner.ai",
-    external: true,
+    label: "Planning Intelligence",
+    href: "/products/planning-intelligence",
   },
   {
-    label: "DataWiz",
-    href: "https://factri.ai",
-    external: true,
+    label: "Execution Intelligence",
+    href: "/products/execution-intelligence",
   },
   {
-    label: "Line Stoppage Tracking",
-    href: "https://factri.ai",
-    external: true,
+    label: "Downtime Intelligence",
+    href: "/products/downtime-intelligence",
   },
   {
-    label: "Quality Check Sheets",
-    href: "https://factri.ai",
-    external: true,
+    label: "Quality Intelligence",
+    href: "/products/quality-intelligence",
+  },
+];
+
+export const INDUSTRY_LINKS = [
+  {
+    label: "Automotive Components",
+    href: "/industries/automotive-components",
+  },
+  {
+    label: "Forging & Casting",
+    href: "/industries/forging-and-casting",
+  },
+  {
+    label: "Precision Machining",
+    href: "/industries/precision-machining",
+  },
+  {
+    label: "Fabrication & Welding",
+    href: "/industries/fabrication-and-welding",
   },
 ];
 
 export const NAV_LINKS: NavLink[] = [
   { label: "Products", href: "/#products", children: PRODUCT_LINKS },
+  { label: "Industries", href: "/industries", children: INDUSTRY_LINKS },
   { label: "Case Studies", href: "/case-studies" },
   { label: "About Us", href: "/about" },
   { label: "Blog", href: "/blog" },

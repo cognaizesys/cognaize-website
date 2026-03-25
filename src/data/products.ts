@@ -1,4 +1,4 @@
-import type { Product } from "@/types";
+import type { Product, HeroProduct } from "@/types";
 
 export const products: Product[] = [
   {
@@ -32,7 +32,7 @@ export const products: Product[] = [
     ],
     screenshots: [
       {
-        src: "/images/products/di/di-overview.png",
+        src: "/images/products/di/di-hero-pptx.png",
         alt: "Design Intelligence - AI Drawing Review Overview",
         label: "AI Drawing Review",
       },
@@ -100,11 +100,50 @@ export const products: Product[] = [
         label: "Job Card",
       },
       {
-        src: "/images/products/mi/mi-costing.png",
+        src: "/images/products/mi/mi-hero-pptx.png",
         alt: "Manufacturing Intelligence - Cost Breakdown",
         label: "Cost Breakdown",
       },
     ],
     href: "/products/manufacturing-intelligence",
+  },
+];
+
+export const heroProducts: HeroProduct[] = [
+  {
+    name: "Design Intelligence",
+    stage: "Design",
+    image: "/images/products/di/di-hero-pptx.png",
+    accentColor: "#846fbc",
+  },
+  {
+    name: "Manufacturing Intelligence",
+    stage: "Estimate",
+    image: "/images/products/mi/mi-hero-pptx.png",
+    accentColor: "#6ee7b7",
+  },
+  {
+    name: "Planning Intelligence",
+    stage: "Plan",
+    image: "/images/products/pi/pi-hero.png",
+    accentColor: "#a78bfa",
+  },
+  {
+    name: "Execution Intelligence",
+    stage: "Execute",
+    image: "/images/products/ei/ei-hero.png",
+    accentColor: "#3b82f6",
+  },
+  {
+    name: "Downtime Intelligence",
+    stage: "Track",
+    image: "/images/products/dti/dti-hero.png",
+    accentColor: "#f97316",
+  },
+  {
+    name: "Quality Intelligence",
+    stage: "Improve",
+    image: "/images/products/qi/qi-hero.png",
+    accentColor: "#14b8a6",
   },
 ];

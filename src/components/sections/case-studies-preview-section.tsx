@@ -15,7 +15,7 @@ const featured = [
   },
   {
     id: "shop-floor-tracking",
-    moduleTag: "DataWiz MES",
+    moduleTag: "Execution Intelligence",
     title: "Shop Floor Tracking & Visibility",
     subtitle: "Major Trailer & Truck Body Manufacturer · Since April 2021",
     body: "20% increase in production efficiency. 50% reduction in WIP. 75% reduction in data capture time.",

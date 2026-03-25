@@ -25,8 +25,8 @@ const founders = [
   },
   {
     name: "Srihari Murthy",
-    role: "CTO & Co-Founder",
-    bio: "Digital transformation and smart manufacturing leader. Serial entrepreneur. Built and deployed manufacturing technology platforms across India and the UAE.",
+    role: "CPO & Co-Founder",
+    bio: "Smart manufacturing and product leader. Serial entrepreneur. Built and deployed manufacturing technology platforms across India and the UAE.",
     image: "/images/team/srihari.jpeg",
   },
 ];
@@ -81,7 +81,7 @@ const itemVariants = {
 
 function MemberCard({ member }: { member: (typeof founders)[number] }) {
   return (
-    <div className="group rounded-2xl border border-white/15 bg-white/[0.03] p-5 h-full flex flex-col items-center text-center hover:border-primary/20 transition-colors duration-300">
+    <div className="group rounded-2xl border border-white/15 bg-white/[0.06] p-5 h-full flex flex-col items-center text-center hover:border-primary/20 transition-colors duration-300">
       <div className="w-24 h-24 rounded-full overflow-hidden ring-2 ring-primary/35 group-hover:ring-primary/70 transition-all duration-300 mb-4 shrink-0">
         <Image
           src={member.image}
@@ -97,7 +97,7 @@ function MemberCard({ member }: { member: (typeof founders)[number] }) {
       <p className="text-primary-light/80 text-xs mt-1.5 min-h-[2.5rem] flex items-center text-center">
         {member.role}
       </p>
-      <p className="text-gray-500 text-xs mt-1">
+      <p className="text-gray-400 text-xs mt-1">
         {member.bio}
       </p>
     </div>
@@ -137,7 +137,7 @@ export function TeamSection() {
           <h2 className="text-3xl md:text-4xl font-heading font-bold text-white tracking-tight">
             Built by People Who Have Done This
           </h2>
-          <p className="mt-4 text-gray-400 text-lg leading-relaxed">
+          <p className="mt-4 text-gray-300 text-lg leading-relaxed">
             Our founders combine manufacturing domain expertise, enterprise
             software experience, and operational technology capability.
           </p>
@@ -150,7 +150,7 @@ export function TeamSection() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-50px" }}
-          className="flex flex-wrap justify-center gap-5 max-w-5xl mx-auto"
+          className="flex flex-wrap justify-center gap-5 max-w-6xl mx-auto"
         >
           {founders.map((member) => (
             <motion.div
@@ -170,7 +170,7 @@ export function TeamSection() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-50px" }}
-          className="flex flex-wrap justify-center gap-5 max-w-5xl mx-auto"
+          className="flex flex-wrap justify-center gap-5 max-w-6xl mx-auto"
         >
           {advisors.map((member) => (
             <motion.div
@@ -189,7 +189,7 @@ export function TeamSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.3 }}
-          className="mt-12 text-center text-gray-400 text-base md:text-lg leading-relaxed max-w-3xl mx-auto"
+          className="mt-12 text-center text-gray-300 text-base md:text-lg leading-relaxed max-w-3xl mx-auto"
         >
           The company was built by people who have spent careers in
           manufacturing — which is the only way to build manufacturing

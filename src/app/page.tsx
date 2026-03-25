@@ -1,15 +1,10 @@
 import {
   HeroSection,
-  ProblemSection,
-  AboutSection,
-  WhyDesignSection,
-  IntelligenceLoopSection,
-  IntelligenceLayersSection,
+  WhyWeBuiltThisSection,
   ProductsSection,
-  ProductShowcaseSection,
+  IntelligenceLoopSection,
   WhoWeServeSection,
   ROISection,
-  CaseStudiesPreviewSection,
   TeamSection,
   ContactSection,
 } from "@/components/sections";
@@ -18,16 +13,11 @@ export default function Home() {
   return (
     <>
       <HeroSection />
-      <ProblemSection />
-      <AboutSection />
-      <WhyDesignSection />
-      <IntelligenceLoopSection />
-      <IntelligenceLayersSection />
+      <WhyWeBuiltThisSection />
       <ProductsSection />
-      <ProductShowcaseSection />
+      <IntelligenceLoopSection />
       <WhoWeServeSection />
       <ROISection />
-      <CaseStudiesPreviewSection />
       <TeamSection />
       <ContactSection />
     </>

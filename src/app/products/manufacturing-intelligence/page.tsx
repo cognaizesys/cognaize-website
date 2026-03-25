@@ -87,12 +87,10 @@ function HeroSection() {
             {/* CTAs */}
             <div className="flex gap-4 flex-wrap">
               <a
-                href="https://calendly.com/raghu-cognaizesys/30min"
-                target="_blank"
-                rel="noopener noreferrer"
+                href="/#contact"
                 className="group inline-flex items-center gap-2 bg-primary hover:bg-primary-dark text-white px-7 py-3.5 rounded-lg font-semibold transition-all shadow-md shadow-primary/20 hover:shadow-lg hover:shadow-primary/30"
               >
-                Book a Demo
+                Learn More
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
               </a>
               <a
@@ -101,7 +99,7 @@ function HeroSection() {
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 border border-accent/30 hover:border-accent/50 hover:bg-white/5 text-white px-7 py-3.5 rounded-lg font-semibold transition-all"
               >
-                See It on Your Drawing
+                Book a Demo
               </a>
             </div>
           </motion.div>
@@ -126,7 +124,7 @@ function HeroSection() {
                 </div>
               </div>
               <Image
-                src="/images/products/mi/mi-costing.png"
+                src="/images/products/mi/mi-hero-pptx.png"
                 alt="Manufacturing Intelligence — Quotation Sheet"
                 width={1200}
                 height={800}
@@ -216,7 +214,7 @@ function WhatItDoesSection() {
                 </div>
               </div>
               <Image
-                src="/images/products/mi/mi-costing.png"
+                src="/images/products/mi/mi-hero-pptx.png"
                 alt="Manufacturing Intelligence quotation sheet"
                 width={1200}
                 height={800}
@@ -363,8 +361,8 @@ function IntelligenceLoopFitSection() {
             <p className="text-gray-400 text-base md:text-lg leading-relaxed mb-4">
               Manufacturing Intelligence sits at the centre of the Cognaize
               Systems intelligence loop. Design Intelligence feeds it verified
-              drawing data upstream. DataWiz feeds it actual production times
-              and costs from the floor downstream. SkyPlanner feeds it real
+              drawing data upstream. Execution Intelligence feeds it actual production times
+              and costs from the floor downstream. Planning Intelligence feeds it real
               scheduling outcomes and capacity realities. Every cycle, the
               estimation gets tighter. Tribal knowledge is replaced by verified,
               continuously updated intelligence.
@@ -380,25 +378,71 @@ function IntelligenceLoopFitSection() {
             className="flex justify-center"
           >
             <svg
-              viewBox="0 0 400 360"
-              className="w-full max-w-sm"
+              viewBox="0 0 400 300"
+              className="w-full max-w-md"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
             >
-              {/* MI box (centre) */}
+              <defs>
+                <marker
+                  id="arrowMIPurple"
+                  markerWidth="10"
+                  markerHeight="8"
+                  refX="9"
+                  refY="4"
+                  orient="auto"
+                >
+                  <path d="M0,0 L10,4 L0,8" fill="#a78bfa" />
+                </marker>
+                <marker
+                  id="arrowMIOrange"
+                  markerWidth="10"
+                  markerHeight="8"
+                  refX="9"
+                  refY="4"
+                  orient="auto"
+                >
+                  <path d="M0,0 L10,4 L0,8" fill="#fbbf7a" />
+                </marker>
+                <marker
+                  id="arrowMIGreen"
+                  markerWidth="10"
+                  markerHeight="8"
+                  refX="9"
+                  refY="4"
+                  orient="auto"
+                >
+                  <path d="M0,0 L10,4 L0,8" fill="#6ee7b7" />
+                </marker>
+                <radialGradient id="glowMI" cx="50%" cy="50%" r="50%">
+                  <stop offset="0%" stopColor="#846fbc" stopOpacity="0.2" />
+                  <stop offset="100%" stopColor="#846fbc" stopOpacity="0" />
+                </radialGradient>
+              </defs>
+
+              {/* Decorative dots */}
+              <circle cx="18" cy="18" r="2" fill="#846fbc" opacity="0.1" />
+              <circle cx="28" cy="12" r="1.5" fill="#846fbc" opacity="0.07" />
+              <circle cx="380" cy="280" r="2" fill="#6ee7b7" opacity="0.1" />
+              <circle cx="372" cy="288" r="1.5" fill="#6ee7b7" opacity="0.07" />
+
+              {/* Glow behind MI hub */}
+              <ellipse cx="200" cy="150" rx="110" ry="60" fill="url(#glowMI)" />
+
+              {/* ─── CENTRAL HUB — Manufacturing Intelligence ─── */}
               <rect
-                x="120"
-                y="140"
-                width="160"
-                height="60"
-                rx="12"
+                x="125"
+                y="118"
+                width="150"
+                height="64"
+                rx="14"
                 stroke="#846fbc"
                 strokeWidth="2.5"
-                fill="#846fbc20"
+                fill="#846fbc18"
               />
               <text
                 x="200"
-                y="167"
+                y="145"
                 textAnchor="middle"
                 fill="#c4b5fd"
                 fontSize="13"
@@ -408,7 +452,7 @@ function IntelligenceLoopFitSection() {
               </text>
               <text
                 x="200"
-                y="185"
+                y="163"
                 textAnchor="middle"
                 fill="#c4b5fd"
                 fontSize="13"
@@ -417,160 +461,174 @@ function IntelligenceLoopFitSection() {
                 Intelligence
               </text>
 
-              {/* DI box (top) */}
+              {/* ─── INPUT NODE: Design Intelligence (top-left) ─── */}
               <rect
-                x="120"
-                y="20"
-                width="160"
-                height="50"
-                rx="10"
+                x="10"
+                y="15"
+                width="145"
+                height="48"
+                rx="14"
                 stroke="#846fbc"
                 strokeWidth="1.5"
                 fill="#846fbc10"
               />
               <text
-                x="200"
-                y="50"
+                x="82"
+                y="44"
                 textAnchor="middle"
                 fill="#a78bfa"
-                fontSize="12"
-                fontWeight="600"
+                fontSize="11"
+                fontWeight="700"
               >
                 Design Intelligence
               </text>
 
-              {/* DataWiz box (bottom-left) */}
+              {/* Arrow: DI → MI (curving down-right) */}
+              <path
+                d="M130 63 Q170 90, 160 118"
+                stroke="#a78bfa"
+                strokeWidth="2"
+                strokeDasharray="6 4"
+                fill="none"
+                markerEnd="url(#arrowMIPurple)"
+              />
+              {/* Pill: Upstream */}
               <rect
-                x="20"
-                y="280"
-                width="140"
-                height="50"
-                rx="10"
+                x="115"
+                y="72"
+                width="65"
+                height="22"
+                rx="11"
+                fill="#846fbc20"
+                stroke="#846fbc"
+                strokeWidth="1"
+              />
+              <text
+                x="147"
+                y="87"
+                textAnchor="middle"
+                fill="#c4b5fd"
+                fontSize="10"
+                fontWeight="600"
+              >
+                Upstream
+              </text>
+
+              {/* ─── INPUT NODE: Execution Intelligence (bottom-left) ─── */}
+              <rect
+                x="10"
+                y="235"
+                width="145"
+                height="48"
+                rx="14"
                 stroke="#E87B3A"
                 strokeWidth="1.5"
                 fill="#E87B3A10"
               />
               <text
-                x="90"
-                y="310"
+                x="82"
+                y="264"
                 textAnchor="middle"
                 fill="#fbbf7a"
-                fontSize="12"
-                fontWeight="600"
+                fontSize="11"
+                fontWeight="700"
               >
-                DataWiz
+                Execution Intelligence
               </text>
 
-              {/* SkyPlanner box (bottom-right) */}
+              {/* Arrow: EI → MI (curving up-right) */}
+              <path
+                d="M130 235 Q170 210, 160 182"
+                stroke="#fbbf7a"
+                strokeWidth="2"
+                strokeDasharray="6 4"
+                fill="none"
+                markerEnd="url(#arrowMIOrange)"
+              />
+              {/* Pill: Floor Actuals */}
               <rect
-                x="240"
-                y="280"
-                width="140"
-                height="50"
-                rx="10"
+                x="110"
+                y="198"
+                width="75"
+                height="22"
+                rx="11"
+                fill="#E87B3A20"
+                stroke="#E87B3A"
+                strokeWidth="1"
+              />
+              <text
+                x="147"
+                y="213"
+                textAnchor="middle"
+                fill="#fbbf7a"
+                fontSize="10"
+                fontWeight="600"
+              >
+                Floor Actuals
+              </text>
+
+              {/* ─── INPUT NODE: Planning Intelligence (right) ─── */}
+              <rect
+                x="290"
+                y="35"
+                width="100"
+                height="48"
+                rx="14"
                 stroke="#6ee7b7"
                 strokeWidth="1.5"
                 fill="#6ee7b710"
               />
               <text
-                x="310"
-                y="310"
+                x="340"
+                y="55"
                 textAnchor="middle"
                 fill="#6ee7b7"
-                fontSize="12"
-                fontWeight="600"
+                fontSize="11"
+                fontWeight="700"
               >
-                SkyPlanner
+                Planning
               </text>
-
-              {/* DI → MI */}
-              <line
-                x1="200"
-                y1="70"
-                x2="200"
-                y2="140"
-                stroke="#846fbc"
-                strokeWidth="2"
-                markerEnd="url(#arrowPurple)"
-              />
               <text
-                x="214"
-                y="110"
-                fill="#a78bfa"
-                fontSize="9"
+                x="340"
+                y="70"
+                textAnchor="middle"
+                fill="#6ee7b7"
+                fontSize="11"
+                fontWeight="700"
               >
-                Upstream
+                Intelligence
               </text>
 
-              {/* DataWiz → MI */}
+              {/* Arrow: PI → MI (curving down-left) */}
               <path
-                d="M90 280 Q90 200 140 170"
-                stroke="#E87B3A"
-                strokeWidth="2"
-                fill="none"
-                strokeDasharray="6 3"
-                markerEnd="url(#arrowOrange)"
-              />
-              <text
-                x="60"
-                y="230"
-                fill="#fbbf7a"
-                fontSize="9"
-              >
-                Floor Actuals
-              </text>
-
-              {/* SkyPlanner → MI */}
-              <path
-                d="M310 280 Q310 200 260 170"
+                d="M310 83 Q285 105, 275 125"
                 stroke="#6ee7b7"
                 strokeWidth="2"
+                strokeDasharray="6 4"
                 fill="none"
-                strokeDasharray="6 3"
-                markerEnd="url(#arrowGreen)"
+                markerEnd="url(#arrowMIGreen)"
+              />
+              {/* Pill: Scheduling */}
+              <rect
+                x="268"
+                y="88"
+                width="68"
+                height="22"
+                rx="11"
+                fill="#6ee7b720"
+                stroke="#6ee7b7"
+                strokeWidth="1"
               />
               <text
-                x="305"
-                y="230"
+                x="302"
+                y="103"
+                textAnchor="middle"
                 fill="#6ee7b7"
-                fontSize="9"
+                fontSize="10"
+                fontWeight="600"
               >
                 Scheduling
               </text>
-
-              {/* Arrow markers */}
-              <defs>
-                <marker
-                  id="arrowPurple"
-                  markerWidth="8"
-                  markerHeight="6"
-                  refX="7"
-                  refY="3"
-                  orient="auto"
-                >
-                  <path d="M0,0 L8,3 L0,6" fill="#846fbc" />
-                </marker>
-                <marker
-                  id="arrowOrange"
-                  markerWidth="8"
-                  markerHeight="6"
-                  refX="7"
-                  refY="3"
-                  orient="auto"
-                >
-                  <path d="M0,0 L8,3 L0,6" fill="#E87B3A" />
-                </marker>
-                <marker
-                  id="arrowGreen"
-                  markerWidth="8"
-                  markerHeight="6"
-                  refX="7"
-                  refY="3"
-                  orient="auto"
-                >
-                  <path d="M0,0 L8,3 L0,6" fill="#6ee7b7" />
-                </marker>
-              </defs>
             </svg>
           </motion.div>
         </div>
@@ -683,7 +741,7 @@ function ProofSection() {
                 </div>
               </div>
               <Image
-                src="/images/products/mi/mi-costing.png"
+                src="/images/products/mi/mi-hero-pptx.png"
                 alt="Manufacturing Intelligence quotation sheet output"
                 width={1200}
                 height={800}
@@ -790,7 +848,7 @@ function ClosingCTASection() {
 
 /* ─── PAGE ───────────────────────────────────────────── */
 
-export default function ManufacturingIntelligencePage() {
+export default function EvaluationIntelligencePage() {
   return (
     <div>
       <HeroSection />

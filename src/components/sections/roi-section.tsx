@@ -75,7 +75,7 @@ export function ROISection() {
           background: "radial-gradient(ellipse, rgba(132, 111, 188, 0.5) 0%, rgba(245, 158, 11, 0.12) 60%, transparent 80%)",
         }}
       />
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Heading */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -93,7 +93,7 @@ export function ROISection() {
           <h2 className="text-2xl md:text-4xl font-heading font-bold text-white tracking-tight">
             What Changes When Engineering Judgment Is Engineered
           </h2>
-          <p className="mt-4 text-gray-400 text-base md:text-lg leading-relaxed max-w-2xl mx-auto">
+          <p className="mt-4 text-gray-300 text-base md:text-lg leading-relaxed max-w-2xl mx-auto">
             Outcomes from Design Intelligence and Manufacturing Intelligence deployments.
           </p>
         </motion.div>
@@ -104,21 +104,21 @@ export function ROISection() {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="mt-12 hidden md:block"
+          className="mt-12 hidden md:block max-w-6xl mx-auto"
         >
           <div className="border border-white/10 rounded-lg overflow-hidden">
             {/* Table Header */}
             <div className="grid grid-cols-4 gap-4 bg-[#846fbc]/20 px-6 py-4">
-              <div className="text-xs font-semibold uppercase tracking-wider text-gray-400">
+              <div className="text-xs font-semibold uppercase tracking-wider text-gray-300">
                 Metric
               </div>
-              <div className="text-xs font-semibold uppercase tracking-wider text-gray-400">
+              <div className="text-xs font-semibold uppercase tracking-wider text-gray-300">
                 Before
               </div>
-              <div className="text-xs font-semibold uppercase tracking-wider text-gray-400">
+              <div className="text-xs font-semibold uppercase tracking-wider text-gray-300">
                 After
               </div>
-              <div className="text-xs font-semibold uppercase tracking-wider text-gray-400">
+              <div className="text-xs font-semibold uppercase tracking-wider text-gray-300">
                 Impact
               </div>
             </div>
@@ -137,7 +137,7 @@ export function ROISection() {
                   <div className="text-sm font-medium text-white">
                     {row.metric}
                   </div>
-                  <div className="text-sm text-gray-400">{row.before}</div>
+                  <div className="text-sm text-gray-300">{row.before}</div>
                   <div className="text-sm font-semibold text-[#22c55e]">
                     {row.after}
                   </div>
@@ -153,7 +153,7 @@ export function ROISection() {
         </motion.div>
 
         {/* Mobile Card View */}
-        <div className="mt-12 md:hidden space-y-4">
+        <div className="mt-12 md:hidden space-y-4 max-w-6xl mx-auto">
           {roiData.map((row, index) => (
             <motion.div
               key={row.metric}
@@ -168,13 +168,13 @@ export function ROISection() {
               </h3>
               <div className="mt-3 space-y-2">
                 <div className="flex justify-between items-center">
-                  <span className="text-xs uppercase tracking-wide text-gray-400">
+                  <span className="text-xs uppercase tracking-wide text-gray-300">
                     Before
                   </span>
-                  <span className="text-sm text-gray-400">{row.before}</span>
+                  <span className="text-sm text-gray-300">{row.before}</span>
                 </div>
                 <div className="flex justify-between items-center">
-                  <span className="text-xs uppercase tracking-wide text-gray-400">
+                  <span className="text-xs uppercase tracking-wide text-gray-300">
                     After
                   </span>
                   <span className="text-sm font-semibold text-[#22c55e]">
@@ -204,7 +204,7 @@ export function ROISection() {
               <div className={cn("text-3xl md:text-4xl font-bold font-heading", index === 0 ? "text-accent" : index === 1 ? "text-primary-light" : "text-[#fbbf24]")}>
                 {stat.value}
               </div>
-              <div className="mt-1 text-sm text-gray-400">{stat.label}</div>
+              <div className="mt-1 text-sm text-gray-300">{stat.label}</div>
             </div>
           ))}
         </motion.div>

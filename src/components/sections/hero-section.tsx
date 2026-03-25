@@ -1,9 +1,9 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { CheckCircle, Zap, ArrowRight } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { heroMetrics } from "@/data/metrics";
-import { HeroShowcase } from "@/components/hero/hero-carousel";
+import { ProductCardCarousel } from "@/components/hero/hero-carousel";
 
 export function HeroSection() {
 
@@ -74,8 +74,9 @@ export function HeroSection() {
               transition={{ duration: 0.6, delay: 0.3 }}
               className="mt-6 md:mt-10 text-3xl sm:text-4xl lg:text-5xl font-heading font-bold text-white tracking-tight leading-[1.1]"
             >
-              Making Engineering Judgment{" "}
-              <span className="text-primary-light">Scalable</span>
+              <span className="text-primary-light">Engineered Intelligence</span>
+              <br />
+              for Manufacturing.
             </motion.h1>
 
             {/* Subtitle */}
@@ -83,11 +84,11 @@ export function HeroSection() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.5 }}
-              className="mt-6 md:mt-8 text-lg text-gray-400 max-w-lg leading-relaxed"
+              className="mt-6 md:mt-8 text-lg text-gray-300 max-w-lg leading-relaxed"
             >
-              Cognaize Systems builds Engineered Intelligence for manufacturing
-              — expert judgment structured into systems that scale across your
-              organisation, and improve with every production cycle.
+              The judgment that runs your factory shouldn&apos;t depend on who&apos;s
+              in the room. We structure decades of engineering expertise into AI
+              that&apos;s always available and gets better with every production cycle.
             </motion.p>
 
             {/* Metrics row */}
@@ -102,12 +103,9 @@ export function HeroSection() {
                   <span className="text-2xl font-bold text-white font-heading">
                     {metric.value}
                   </span>
-                  <span className="text-sm text-gray-500">{metric.label}</span>
+                  <span className="text-sm text-gray-400">{metric.label}</span>
                 </div>
               ))}
-              <p className="w-full mt-3 text-xs text-gray-500">
-                Powered by FactriAI
-              </p>
             </motion.div>
 
             {/* CTA Buttons */}
@@ -142,32 +140,7 @@ export function HeroSection() {
             transition={{ duration: 0.7, delay: 0.5 }}
             className="relative hidden lg:block"
           >
-            <HeroShowcase />
-
-            {/* Floating accent cards */}
-            <motion.div
-              animate={{ y: [0, -8, 0] }}
-              transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-              className="absolute -top-4 -right-4 px-4 py-2.5 rounded-lg bg-dark-card border border-accent/25 backdrop-blur-sm"
-              style={{ boxShadow: "0 8px 20px rgba(0,0,0,0.4)" }}
-            >
-              <div className="flex items-center gap-2">
-                <Zap className="w-4 h-4 text-accent" />
-                <span className="text-xs font-semibold text-white">16x Faster</span>
-              </div>
-            </motion.div>
-
-            <motion.div
-              animate={{ y: [0, 8, 0] }}
-              transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-              className="absolute bottom-12 -left-4 px-4 py-2.5 rounded-lg bg-dark-card border border-primary/25 backdrop-blur-sm"
-              style={{ boxShadow: "0 4px 12px rgba(0,0,0,0.3)" }}
-            >
-              <div className="flex items-center gap-2">
-                <CheckCircle className="w-4 h-4 text-accent" />
-                <span className="text-xs font-semibold text-white">95%+ Accuracy</span>
-              </div>
-            </motion.div>
+            <ProductCardCarousel />
           </motion.div>
         </div>
 

@@ -2,71 +2,67 @@
 
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { Package, ArrowRight, ExternalLink } from "lucide-react";
+import {
+  Package,
+  ArrowRight,
+  PenTool,
+  Calculator,
+  CalendarDays,
+  Settings,
+  BarChart3,
+  Lightbulb,
+} from "lucide-react";
 
 const products = [
   {
+    stage: "Design",
+    icon: PenTool,
     name: "Design Intelligence",
-    tagline: "Engineered Intelligence for Design Review",
     description:
-      "Structured review of engineering drawings against manufacturing standards and process knowledge — before issues reach the floor.",
+      "Catch drawing issues before they become problems on the shop floor",
     href: "/products/design-intelligence",
-    external: false,
   },
   {
+    stage: "Estimate",
+    icon: Calculator,
     name: "Manufacturing Intelligence",
-    tagline: "Engineered Intelligence for Feasibility & Cost Estimation",
     description:
-      "Feasibility validation, process routing, and cost estimation directly from engineering drawings — in minutes, not days.",
+      "Go from drawing to accurate cost sheet in minutes, not days",
     href: "/products/manufacturing-intelligence",
-    external: false,
   },
   {
-    name: "SkyPlanner APS",
-    tagline: "Engineered Intelligence for Production Planning",
+    stage: "Planning",
+    icon: CalendarDays,
+    name: "Planning Intelligence",
     description:
-      "AI-powered production scheduling that optimises job allocation and reschedules in seconds when priorities change. Delivered through SkyPlanner.AI.",
-    href: "https://skyplanner.ai",
-    external: true,
+      "Reschedule production in seconds when priorities change on the floor",
+    href: "/products/planning-intelligence",
   },
   {
-    name: "DataWiz",
-    tagline: "Engineered Intelligence for Shop Floor Visibility",
+    stage: "Shop Floor",
+    icon: Settings,
+    name: "Execution Intelligence",
     description:
-      "Real-time production tracking across job status, cycle times, and work-in-progress — connected to your estimation loop.",
-    href: "https://factri.ai",
-    external: true,
+      "See what\u2019s happening on your floor right now, not yesterday",
+    href: "/products/execution-intelligence",
   },
   {
-    name: "Line Stoppage Tracking",
-    tagline: "Engineered Intelligence for Line Continuity",
+    stage: "Monitor",
+    icon: BarChart3,
+    name: "Downtime Intelligence",
     description:
-      "Makes stoppages from equipment failures, quality holds, and supply gaps visible, traceable, and actionable.",
-    href: "https://factri.ai",
-    external: true,
+      "Make downtime visible, traceable, and actionable before it spreads",
+    href: "/products/downtime-intelligence",
   },
   {
-    name: "Quality Check Sheets",
-    tagline: "Engineered Intelligence for Quality",
+    stage: "Improve",
+    icon: Lightbulb,
+    name: "Quality Intelligence",
     description:
-      "Digital inspection tied directly to production orders — with quality outcomes feeding back into design review.",
-    href: "https://factri.ai",
-    external: true,
+      "Digitize quality data at source and link it back to production orders",
+    href: "/products/quality-intelligence",
   },
 ];
-
-const containerVariants = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: { staggerChildren: 0.1 },
-  },
-};
-
-const itemVariants = {
-  hidden: { opacity: 0, y: 20 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
-};
 
 export function ProductsSection() {
   return (
@@ -92,8 +88,8 @@ export function ProductsSection() {
       />
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Heading */}
-        <div className="text-center max-w-3xl mx-auto mb-16">
+        {/* Header */}
+        <div className="text-center max-w-3xl mx-auto mb-12">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -103,7 +99,7 @@ export function ProductsSection() {
             <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-primary/25 border border-primary/45 mb-6">
               <Package className="w-3 h-3 text-accent" />
               <span className="text-xs font-medium text-[#E87B3A] uppercase tracking-wider">
-                What We Build
+                The Cognaize Product Suite
               </span>
             </div>
           </motion.div>
@@ -123,60 +119,49 @@ export function ProductsSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="mt-4 text-gray-400 text-base md:text-lg leading-relaxed"
+            className="mt-4 text-gray-300 text-base md:text-lg leading-relaxed"
           >
-            Each product delivers Engineered Intelligence in its domain.
-            Together they form a system where every output informs the next.
+            Dedicated products for every stage of manufacturing, from drawing to
+            delivery.
           </motion.p>
         </div>
 
-        {/* Product cards grid */}
-        <motion.div
-          className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto"
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
-        >
-          {products.map((product) => (
+        {/* Product cards — 3x2 grid mirroring Section 2 */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 max-w-6xl mx-auto">
+          {products.map((product, index) => (
             <motion.div
               key={product.name}
-              variants={itemVariants}
-              className="group rounded-2xl border border-white/[0.06] bg-white/[0.02] hover:bg-white/[0.05] hover:border-primary/35 transition-all duration-300 p-6 flex flex-col"
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.1 * index }}
+              className="group rounded-xl border border-white/[0.08] bg-white/[0.06] p-6 border-t-2 border-t-accent/30 hover:border-primary/25 hover:bg-white/[0.05] transition-all duration-300 flex flex-col"
             >
-              <h3 className="text-lg font-bold text-white mb-1">
+              <div className="flex items-start justify-between mb-5">
+                <span className="inline-flex items-center px-3 py-1 rounded-full bg-accent/10 border border-accent/25 text-[11px] font-medium text-accent uppercase tracking-wider">
+                  {product.stage}
+                </span>
+                <product.icon className="w-5 h-5 text-gray-600" />
+              </div>
+              <h3 className="text-lg font-heading font-bold text-white mb-2">
                 {product.name}
               </h3>
-              <p className="text-sm font-medium text-primary-light mb-3">
-                {product.tagline}
-              </p>
-              <p className="text-sm text-gray-400 leading-relaxed flex-1">
+              <p className="text-sm text-gray-300 leading-relaxed flex-1">
                 {product.description}
               </p>
               <div className="mt-4 pt-4 border-t border-white/[0.06]">
-                {product.external ? (
-                  <a
-                    href={product.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="group/link inline-flex items-center gap-1.5 text-sm font-semibold text-primary-light hover:text-white transition-colors"
-                  >
-                    Learn more
-                    <ExternalLink className="w-3.5 h-3.5" />
-                  </a>
-                ) : (
-                  <Link
-                    href={product.href}
-                    className="group/link inline-flex items-center gap-1.5 text-sm font-semibold text-primary-light hover:text-white transition-colors"
-                  >
-                    Learn more
-                    <ArrowRight className="w-3.5 h-3.5 group-hover/link:translate-x-0.5 transition-transform" />
-                  </Link>
-                )}
+                <Link
+                  href={product.href}
+                  className="group/link inline-flex items-center gap-1.5 text-sm font-semibold text-primary-light hover:text-white transition-colors"
+                >
+                  Learn more
+                  <ArrowRight className="w-3.5 h-3.5 group-hover/link:translate-x-0.5 transition-transform" />
+                </Link>
               </div>
             </motion.div>
           ))}
-        </motion.div>
+        </div>
+
       </div>
     </section>
   );

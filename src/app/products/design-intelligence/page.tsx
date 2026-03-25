@@ -86,12 +86,10 @@ function HeroSection() {
             {/* CTAs */}
             <div className="flex gap-4 flex-wrap">
               <a
-                href="https://calendly.com/raghu-cognaizesys/30min"
-                target="_blank"
-                rel="noopener noreferrer"
+                href="/#contact"
                 className="group inline-flex items-center gap-2 bg-primary hover:bg-primary-dark text-white px-7 py-3.5 rounded-lg font-semibold transition-all shadow-md shadow-primary/20 hover:shadow-lg hover:shadow-primary/30"
               >
-                Book a Demo
+                Learn More
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
               </a>
               <a
@@ -100,7 +98,7 @@ function HeroSection() {
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 border border-primary/30 hover:border-primary/50 hover:bg-white/5 text-white px-7 py-3.5 rounded-lg font-semibold transition-all"
               >
-                See It on Your Drawing
+                Book a Demo
               </a>
             </div>
           </motion.div>
@@ -125,7 +123,7 @@ function HeroSection() {
                 </div>
               </div>
               <Image
-                src="/images/products/di/di-overview.png"
+                src="/images/products/di/di-hero-pptx.png"
                 alt="Design Intelligence — AI Drawing Review"
                 width={1200}
                 height={800}
@@ -362,7 +360,7 @@ function IntelligenceLoopFitSection() {
             <p className="text-gray-400 text-base md:text-lg leading-relaxed mb-4">
               Design Intelligence is the first product in the Cognaize Systems
               intelligence loop — and the one that benefits most from it.
-              Quality findings captured on the floor by Quality Check Sheets
+              Quality findings captured on the floor by Quality Intelligence
               feed back into Design Intelligence, so the review logic improves
               with every rejection resolved. The system learns what actually
               causes problems in production — and sharpens its checks
@@ -383,173 +381,216 @@ function IntelligenceLoopFitSection() {
             className="flex justify-center"
           >
             <svg
-              viewBox="0 0 400 320"
-              className="w-full max-w-sm"
+              viewBox="0 0 400 300"
+              className="w-full max-w-md"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
             >
-              {/* DI box */}
+              <defs>
+                <marker
+                  id="arrowDIPurple"
+                  markerWidth="10"
+                  markerHeight="8"
+                  refX="9"
+                  refY="4"
+                  orient="auto"
+                >
+                  <path d="M0,0 L10,4 L0,8" fill="#a78bfa" />
+                </marker>
+                <marker
+                  id="arrowDIOrange"
+                  markerWidth="10"
+                  markerHeight="8"
+                  refX="9"
+                  refY="4"
+                  orient="auto"
+                >
+                  <path d="M0,0 L10,4 L0,8" fill="#fbbf7a" />
+                </marker>
+                <radialGradient id="glowDICenter" cx="50%" cy="50%" r="50%">
+                  <stop offset="0%" stopColor="#846fbc" stopOpacity="0.12" />
+                  <stop offset="100%" stopColor="#846fbc" stopOpacity="0" />
+                </radialGradient>
+                <radialGradient id="glowDITop" cx="50%" cy="50%" r="50%">
+                  <stop offset="0%" stopColor="#846fbc" stopOpacity="0.18" />
+                  <stop offset="100%" stopColor="#846fbc" stopOpacity="0" />
+                </radialGradient>
+              </defs>
+
+              {/* Central ambient glow */}
+              <ellipse cx="195" cy="160" rx="130" ry="90" fill="url(#glowDICenter)" />
+
+              {/* Glow behind DI hero node */}
+              <ellipse cx="195" cy="42" rx="90" ry="40" fill="url(#glowDITop)" />
+
+              {/* Decorative dots */}
+              <circle cx="200" cy="155" r="2" fill="#846fbc" opacity="0.1" />
+              <circle cx="190" cy="165" r="1.5" fill="#846fbc" opacity="0.07" />
+              <circle cx="212" cy="148" r="1" fill="#846fbc" opacity="0.09" />
+
+              {/* ─── NODES ─── */}
+
+              {/* Top-center — Design Intelligence */}
               <rect
-                x="40"
-                y="40"
-                width="160"
-                height="60"
-                rx="12"
+                x="125"
+                y="15"
+                width="140"
+                height="55"
+                rx="14"
                 stroke="#846fbc"
                 strokeWidth="2"
-                fill="#846fbc15"
+                fill="#846fbc14"
               />
               <text
-                x="120"
-                y="67"
+                x="195"
+                y="38"
                 textAnchor="middle"
                 fill="#c4b5fd"
                 fontSize="13"
-                fontWeight="600"
+                fontWeight="700"
               >
                 Design
               </text>
               <text
-                x="120"
-                y="85"
+                x="195"
+                y="55"
                 textAnchor="middle"
                 fill="#c4b5fd"
                 fontSize="13"
-                fontWeight="600"
+                fontWeight="700"
               >
                 Intelligence
               </text>
 
-              {/* Shop Floor box */}
+              {/* Bottom-right — Shop Floor */}
               <rect
-                x="200"
-                y="220"
-                width="160"
-                height="60"
-                rx="12"
+                x="230"
+                y="215"
+                width="140"
+                height="55"
+                rx="14"
                 stroke="#846fbc"
                 strokeWidth="2"
-                fill="#846fbc15"
+                fill="#846fbc14"
               />
               <text
-                x="280"
-                y="255"
+                x="300"
+                y="248"
                 textAnchor="middle"
                 fill="#c4b5fd"
                 fontSize="13"
-                fontWeight="600"
+                fontWeight="700"
               >
                 Shop Floor
               </text>
 
-              {/* QCS box */}
+              {/* Bottom-left — Quality Intelligence */}
               <rect
-                x="40"
-                y="220"
-                width="160"
-                height="60"
-                rx="12"
-                stroke="#E87B3A"
+                x="20"
+                y="215"
+                width="140"
+                height="55"
+                rx="14"
+                stroke="#6ee7b7"
                 strokeWidth="2"
-                fill="#E87B3A15"
+                fill="#6ee7b714"
               />
               <text
-                x="120"
-                y="247"
+                x="90"
+                y="238"
                 textAnchor="middle"
-                fill="#fbbf7a"
+                fill="#6ee7b7"
                 fontSize="13"
-                fontWeight="600"
+                fontWeight="700"
               >
                 Quality
               </text>
               <text
-                x="120"
-                y="265"
+                x="90"
+                y="255"
                 textAnchor="middle"
-                fill="#fbbf7a"
+                fill="#6ee7b7"
                 fontSize="13"
-                fontWeight="600"
+                fontWeight="700"
               >
-                Check Sheets
+                Intelligence
               </text>
 
-              {/* DI → Shop Floor (forward) */}
+              {/* ─── ARROWS (clockwise) ─── */}
+
+              {/* 1. DI → Shop Floor (right edge, curving down-right) */}
               <path
-                d="M200 70 Q340 70 360 150 Q360 220 280 220"
-                stroke="#846fbc"
+                d="M265 60 Q335 135, 300 215"
+                stroke="#a78bfa"
                 strokeWidth="2"
+                strokeDasharray="6 4"
                 fill="none"
-                markerEnd="url(#arrowPurple)"
+                markerEnd="url(#arrowDIPurple)"
+              />
+
+              {/* Pill: Forward */}
+              <rect
+                x="290"
+                y="118"
+                width="62"
+                height="24"
+                rx="12"
+                fill="#846fbc20"
+                stroke="#846fbc"
+                strokeWidth="1"
               />
               <text
-                x="350"
-                y="148"
-                fill="#a78bfa"
+                x="321"
+                y="134"
+                textAnchor="middle"
+                fill="#c4b5fd"
                 fontSize="10"
-                textAnchor="end"
+                fontWeight="600"
               >
                 Forward
               </text>
 
-              {/* QCS → DI (feedback) */}
+              {/* 2. Shop Floor → Quality (bottom, curving slightly down) */}
               <path
-                d="M120 220 Q120 160 120 100"
-                stroke="#E87B3A"
+                d="M230 248 Q195 282, 160 248"
+                stroke="#a78bfa"
                 strokeWidth="2"
+                strokeDasharray="6 4"
                 fill="none"
-                strokeDasharray="6 3"
-                markerEnd="url(#arrowOrange)"
+                markerEnd="url(#arrowDIPurple)"
+              />
+
+              {/* 3. Quality → DI (left edge, curving up-left — Feedback) */}
+              <path
+                d="M90 215 Q55 135, 125 60"
+                stroke="#fbbf7a"
+                strokeWidth="2"
+                strokeDasharray="6 4"
+                fill="none"
+                markerEnd="url(#arrowDIOrange)"
+              />
+
+              {/* Pill: Feedback */}
+              <rect
+                x="38"
+                y="118"
+                width="72"
+                height="24"
+                rx="12"
+                fill="#E87B3A20"
+                stroke="#E87B3A"
+                strokeWidth="1"
               />
               <text
-                x="106"
-                y="165"
+                x="74"
+                y="134"
+                textAnchor="middle"
                 fill="#fbbf7a"
                 fontSize="10"
-                textAnchor="end"
+                fontWeight="600"
               >
                 Feedback
               </text>
-
-              {/* Shop Floor → QCS (horizontal) */}
-              <path
-                d="M200 250 L200 250"
-                stroke="#846fbc"
-                strokeWidth="1.5"
-                fill="none"
-              />
-              <line
-                x1="200"
-                y1="250"
-                x2="200"
-                y2="250"
-                stroke="#846fbc"
-                strokeWidth="1.5"
-              />
-
-              {/* Arrow markers */}
-              <defs>
-                <marker
-                  id="arrowPurple"
-                  markerWidth="8"
-                  markerHeight="6"
-                  refX="7"
-                  refY="3"
-                  orient="auto"
-                >
-                  <path d="M0,0 L8,3 L0,6" fill="#846fbc" />
-                </marker>
-                <marker
-                  id="arrowOrange"
-                  markerWidth="8"
-                  markerHeight="6"
-                  refX="7"
-                  refY="3"
-                  orient="auto"
-                >
-                  <path d="M0,0 L8,3 L0,6" fill="#E87B3A" />
-                </marker>
-              </defs>
             </svg>
           </motion.div>
         </div>

@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 import {
   ArrowRight,
   ClipboardCheck,
@@ -15,6 +16,7 @@ import {
   Link2,
   CheckCircle,
   Shield,
+  Settings,
 } from "lucide-react";
 
 /* ─── SECTION 1: HERO ────────────────────────────────── */
@@ -44,66 +46,94 @@ function HeroSection() {
       />
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="text-center max-w-3xl mx-auto"
-        >
-          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-accent/20 border border-accent/35 mb-8">
-            <ClipboardCheck className="w-3.5 h-3.5 text-accent" />
-            <span className="text-xs font-medium text-accent uppercase tracking-wider">
-              Quality Check Sheets
-            </span>
-          </div>
+        <div className="grid lg:grid-cols-2 gap-12 items-center">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+          >
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-accent/20 border border-accent/35 mb-8">
+              <ClipboardCheck className="w-3.5 h-3.5 text-accent" />
+              <span className="text-xs font-medium text-accent uppercase tracking-wider">
+                Quality Intelligence
+              </span>
+            </div>
 
-          <h1 className="text-3xl md:text-4xl lg:text-5xl font-heading text-white mb-6 leading-[1.1]">
-            Digital Inspection Tied to Your Production Orders
-          </h1>
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-heading text-white mb-6 leading-[1.1]">
+              Digital Inspection Tied to Your Production Orders
+            </h1>
 
-          <p className="text-base md:text-lg text-gray-400 mb-10 leading-relaxed max-w-2xl mx-auto">
-            Engineered Intelligence for Quality — the right inspection form
-            appears automatically when an order is scanned. Quality data
-            captured here feeds back into Design Intelligence, closing the loop
-            between floor outcomes and drawing review.
-          </p>
+            <p className="text-base md:text-lg text-gray-400 mb-8 leading-relaxed max-w-xl">
+              Engineered Intelligence for Quality — the right inspection form
+              appears automatically when an order is scanned. Quality data
+              captured here feeds back into Design Intelligence, closing the loop
+              between floor outcomes and drawing review.
+            </p>
 
-          {/* Stats */}
-          <div className="flex items-center justify-center gap-6 sm:gap-10 mb-10">
-            {heroStats.map((stat) => (
-              <div
-                key={stat.label}
-                className="border-l-[3px] border-l-accent pl-3 text-left"
-              >
-                <div className="text-xl md:text-2xl font-bold font-heading text-white">
-                  {stat.value}
+            {/* Stats */}
+            <div className="flex items-center gap-6 sm:gap-10 mb-10">
+              {heroStats.map((stat) => (
+                <div
+                  key={stat.label}
+                  className="border-l-[3px] border-l-accent pl-3 text-left"
+                >
+                  <div className="text-xl md:text-2xl font-bold font-heading text-white">
+                    {stat.value}
+                  </div>
+                  <div className="text-xs text-gray-500">{stat.label}</div>
                 </div>
-                <div className="text-xs text-gray-500">{stat.label}</div>
-              </div>
-            ))}
-          </div>
+              ))}
+            </div>
 
-          {/* CTAs */}
-          <div className="flex gap-4 flex-wrap justify-center">
-            <a
-              href="https://factri.ai"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group inline-flex items-center gap-2 bg-primary hover:bg-primary-dark text-white px-7 py-3.5 rounded-lg font-semibold transition-all shadow-md shadow-primary/20 hover:shadow-lg hover:shadow-primary/30"
-            >
-              Learn More
-              <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
-            </a>
-            <a
-              href="https://calendly.com/raghu-cognaizesys/30min"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 border border-accent/30 hover:border-accent/50 hover:bg-white/5 text-white px-7 py-3.5 rounded-lg font-semibold transition-all"
-            >
-              Book a Demo
-            </a>
-          </div>
-        </motion.div>
+            {/* CTAs */}
+            <div className="flex gap-4 flex-wrap">
+              <a
+                href="/#contact"
+                className="group inline-flex items-center gap-2 bg-primary hover:bg-primary-dark text-white px-7 py-3.5 rounded-lg font-semibold transition-all shadow-md shadow-primary/20 hover:shadow-lg hover:shadow-primary/30"
+              >
+                Learn More
+                <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
+              </a>
+              <a
+                href="https://calendly.com/raghu-cognaizesys/30min"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 border border-accent/30 hover:border-accent/50 hover:bg-white/5 text-white px-7 py-3.5 rounded-lg font-semibold transition-all"
+              >
+                Book a Demo
+              </a>
+            </div>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.3 }}
+            className="hidden lg:block"
+          >
+            <div className="rounded-xl overflow-hidden border border-white/10 shadow-2xl">
+              <div className="bg-dark-surface/80 h-9 flex items-center px-4 gap-2 border-b border-white/5">
+                <div className="flex gap-1.5">
+                  <div className="w-2.5 h-2.5 rounded-full bg-white/10" />
+                  <div className="w-2.5 h-2.5 rounded-full bg-white/10" />
+                  <div className="w-2.5 h-2.5 rounded-full bg-white/10" />
+                </div>
+                <div className="flex-1 mx-4">
+                  <div className="bg-white/5 rounded-md px-3 py-1 text-[10px] text-gray-500 text-center">
+                    app.cognaizesys.com/quality
+                  </div>
+                </div>
+              </div>
+              <Image
+                src="/images/products/qi/qi-hero.png"
+                alt="Quality Intelligence — Digital Inspection"
+                width={1200}
+                height={800}
+                className="w-full"
+              />
+            </div>
+          </motion.div>
+        </div>
       </div>
     </section>
   );
@@ -114,18 +144,22 @@ function HeroSection() {
 const whatItDoesPoints = [
   {
     icon: ScanLine,
+    title: "Scan to Inspect",
     text: "Scan a production order and the correct inspection form for that product type appears automatically",
   },
   {
     icon: FileCheck,
+    title: "Floor-Ready Forms",
     text: "Fill on the floor, save as draft, submit for approval — from any device, including mobile",
   },
   {
     icon: Users,
+    title: "Review Workflow",
     text: "Submitter and approver workflow — quality data is reviewed before it is committed",
   },
   {
     icon: RefreshCw,
+    title: "Closed-Loop Feedback",
     text: "Quality outcomes feed directly back into Design Intelligence — closing the loop between inspection results and drawing review",
   },
 ];
@@ -151,7 +185,7 @@ function WhatItDoesSection() {
             Scan the Order. The Right Form Appears. Fill. Submit.
           </h2>
           <p className="mt-4 text-gray-600 text-base md:text-lg leading-relaxed max-w-3xl">
-            Quality Check Sheets ties digital inspection directly to your
+            Quality Intelligence ties digital inspection directly to your
             production orders — eliminating paper, ensuring the right form is
             used every time, and capturing quality data in a structured,
             approvable format. Every quality outcome feeds back into Design
@@ -160,72 +194,27 @@ function WhatItDoesSection() {
           </p>
         </motion.div>
 
-        <div className="grid lg:grid-cols-2 gap-12 items-start">
-          {/* Left: capability list */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.1 }}
-            className="space-y-6"
-          >
-            {whatItDoesPoints.map((point, i) => (
-              <div key={i} className="flex gap-4 items-start">
-                <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center shrink-0 mt-0.5">
-                  <point.icon className="w-5 h-5 text-primary" />
-                </div>
-                <p className="text-gray-700 leading-relaxed">{point.text}</p>
+        <div className="grid md:grid-cols-2 gap-6">
+          {whatItDoesPoints.map((point, i) => (
+            <motion.div
+              key={i}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: i * 0.08 }}
+              className="bg-gray-50 rounded-xl p-6 border border-gray-100"
+            >
+              <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mb-4">
+                <point.icon className="w-7 h-7 text-primary" />
               </div>
-            ))}
-          </motion.div>
-
-          {/* Right: subtle background graphic */}
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="hidden lg:flex items-center justify-center"
-          >
-            <div className="w-full max-w-sm aspect-square rounded-2xl bg-gray-50 border border-gray-100 flex items-center justify-center">
-              <svg
-                viewBox="0 0 200 200"
-                className="w-48 h-48 opacity-30"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                {/* Stylised check sheet */}
-                <rect x="40" y="20" width="120" height="160" rx="8" stroke="#846fbc" strokeWidth="2" fill="#846fbc08" />
-                {/* Header bar */}
-                <rect x="50" y="30" width="100" height="14" rx="3" fill="#846fbc" opacity="0.2" />
-                {/* Check rows */}
-                <rect x="50" y="55" width="80" height="8" rx="2" fill="#846fbc" opacity="0.15" />
-                <circle cx="142" cy="59" r="5" stroke="#6ee7b7" strokeWidth="1.5" fill="none" />
-                <path d="M139 59 L141 61 L145 57" stroke="#6ee7b7" strokeWidth="1.5" fill="none" />
-
-                <rect x="50" y="75" width="80" height="8" rx="2" fill="#846fbc" opacity="0.15" />
-                <circle cx="142" cy="79" r="5" stroke="#6ee7b7" strokeWidth="1.5" fill="none" />
-                <path d="M139 79 L141 81 L145 77" stroke="#6ee7b7" strokeWidth="1.5" fill="none" />
-
-                <rect x="50" y="95" width="80" height="8" rx="2" fill="#846fbc" opacity="0.15" />
-                <circle cx="142" cy="99" r="5" stroke="#ef4444" strokeWidth="1.5" fill="none" />
-                <line x1="139" y1="96" x2="145" y2="102" stroke="#ef4444" strokeWidth="1.5" />
-                <line x1="145" y1="96" x2="139" y2="102" stroke="#ef4444" strokeWidth="1.5" />
-
-                <rect x="50" y="115" width="80" height="8" rx="2" fill="#846fbc" opacity="0.15" />
-                <circle cx="142" cy="119" r="5" stroke="#6ee7b7" strokeWidth="1.5" fill="none" />
-                <path d="M139 119 L141 121 L145 117" stroke="#6ee7b7" strokeWidth="1.5" fill="none" />
-
-                <rect x="50" y="135" width="80" height="8" rx="2" fill="#846fbc" opacity="0.15" />
-                <circle cx="142" cy="139" r="5" stroke="#6ee7b7" strokeWidth="1.5" fill="none" />
-                <path d="M139 139 L141 141 L145 137" stroke="#6ee7b7" strokeWidth="1.5" fill="none" />
-
-                {/* Approval stamp */}
-                <rect x="60" y="155" width="80" height="16" rx="4" stroke="#846fbc" strokeWidth="1.5" fill="#846fbc10" />
-                <text x="100" y="167" textAnchor="middle" fill="#846fbc" fontSize="8" fontWeight="600">APPROVED</text>
-              </svg>
-            </div>
-          </motion.div>
+              <h3 className="text-lg font-bold text-gray-900 mb-2">
+                {point.title}
+              </h3>
+              <p className="text-gray-600 text-sm leading-relaxed">
+                {point.text}
+              </p>
+            </motion.div>
+          ))}
         </div>
       </div>
     </section>
@@ -260,6 +249,11 @@ const capabilityCards = [
     title: "Design Intelligence Feedback",
     body: "Quality findings feed back into Design Intelligence — so rejection patterns inform future drawing reviews and the same issues do not recur unexamined.",
   },
+  {
+    icon: Settings,
+    title: "Configurable Check Sheets",
+    body: "Build inspection forms per product type with custom fields, tolerances, and pass/fail criteria — your quality team configures them directly, no development needed.",
+  },
 ];
 
 function KeyCapabilitiesSection() {
@@ -288,7 +282,7 @@ function KeyCapabilitiesSection() {
             </span>
           </div>
           <h2 className="text-2xl md:text-4xl font-heading font-bold text-gray-900 tracking-tight">
-            What Quality Check Sheets Delivers
+            What Quality Intelligence Delivers
           </h2>
         </motion.div>
 
@@ -358,7 +352,7 @@ function IntelligenceLoopFitSection() {
               Quality Data That Makes Every Future Drawing Review Sharper
             </h2>
             <p className="text-gray-400 text-base md:text-lg leading-relaxed">
-              Quality Check Sheets is the closing link in the Cognaize Systems
+              Quality Intelligence is the closing link in the Cognaize Systems
               intelligence loop. Every quality finding captured on the floor is
               linked to the drawing that originated it — and fed back into
               Design Intelligence. The review logic learns which findings
@@ -377,150 +371,162 @@ function IntelligenceLoopFitSection() {
             className="flex justify-center"
           >
             <svg
-              viewBox="0 0 380 260"
+              viewBox="0 0 400 300"
               className="w-full max-w-md"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
             >
-              {/* "Closing the Loop" label */}
-              <text
-                x="190"
-                y="22"
-                textAnchor="middle"
-                fill="#a78bfa"
-                fontSize="10"
-                fontWeight="600"
-                letterSpacing="1"
-              >
-                CLOSING THE LOOP
-              </text>
-
-              {/* Quality Check Sheets box (left) */}
-              <rect
-                x="10"
-                y="95"
-                width="150"
-                height="70"
-                rx="12"
-                stroke="#6ee7b7"
-                strokeWidth="2.5"
-                fill="#6ee7b715"
-              />
-              <text
-                x="85"
-                y="122"
-                textAnchor="middle"
-                fill="#6ee7b7"
-                fontSize="12"
-                fontWeight="700"
-              >
-                Quality Check
-              </text>
-              <text
-                x="85"
-                y="140"
-                textAnchor="middle"
-                fill="#6ee7b7"
-                fontSize="12"
-                fontWeight="700"
-              >
-                Sheets
-              </text>
-
-              {/* Design Intelligence box (right) */}
-              <rect
-                x="220"
-                y="95"
-                width="150"
-                height="70"
-                rx="12"
-                stroke="#846fbc"
-                strokeWidth="2.5"
-                fill="#846fbc20"
-              />
-              <text
-                x="295"
-                y="125"
-                textAnchor="middle"
-                fill="#c4b5fd"
-                fontSize="12"
-                fontWeight="700"
-              >
-                Design Intelligence
-              </text>
-
-              {/* Thick highlighted arrow: QCS → DI */}
-              <path
-                d="M160 130 C185 130, 195 130, 220 130"
-                stroke="#c4b5fd"
-                strokeWidth="4"
-                fill="none"
-                markerEnd="url(#arrowClosingLoop)"
-              />
-
-              {/* Glow effect on arrow */}
-              <path
-                d="M160 130 C185 130, 195 130, 220 130"
-                stroke="#846fbc"
-                strokeWidth="8"
-                fill="none"
-                opacity="0.15"
-              />
-
-              {/* Label on arrow */}
-              <rect
-                x="152"
-                y="100"
-                width="76"
-                height="20"
-                rx="4"
-                fill="#846fbc30"
-                stroke="#846fbc"
-                strokeWidth="1"
-              />
-              <text
-                x="190"
-                y="114"
-                textAnchor="middle"
-                fill="#c4b5fd"
-                fontSize="9"
-                fontWeight="600"
-              >
-                Quality Feedback
-              </text>
-
-              {/* Completion arc */}
-              <path
-                d="M295 165 C295 220, 85 220, 85 165"
-                stroke="#846fbc"
-                strokeWidth="1.5"
-                fill="none"
-                strokeDasharray="4 4"
-                opacity="0.4"
-              />
-              <text
-                x="190"
-                y="240"
-                textAnchor="middle"
-                fill="#a78bfa"
-                fontSize="9"
-                opacity="0.6"
-              >
-                Continuous improvement cycle
-              </text>
-
               <defs>
                 <marker
-                  id="arrowClosingLoop"
+                  id="arrowQI"
                   markerWidth="10"
                   markerHeight="8"
                   refX="9"
                   refY="4"
                   orient="auto"
                 >
-                  <path d="M0,0 L10,4 L0,8" fill="#c4b5fd" />
+                  <path d="M0,0 L10,4 L0,8" fill="#a78bfa" />
                 </marker>
+                <linearGradient id="arrowGradQI" x1="0%" y1="0%" x2="100%" y2="0%">
+                  <stop offset="0%" stopColor="#6ee7b7" stopOpacity="0.6" />
+                  <stop offset="100%" stopColor="#846fbc" stopOpacity="0.8" />
+                </linearGradient>
+                <radialGradient id="glowQI" cx="50%" cy="50%" r="50%">
+                  <stop offset="0%" stopColor="#6ee7b7" stopOpacity="0.15" />
+                  <stop offset="100%" stopColor="#6ee7b7" stopOpacity="0" />
+                </radialGradient>
+                <radialGradient id="glowTargetQI" cx="50%" cy="50%" r="50%">
+                  <stop offset="0%" stopColor="#846fbc" stopOpacity="0.12" />
+                  <stop offset="100%" stopColor="#846fbc" stopOpacity="0" />
+                </radialGradient>
               </defs>
+
+              {/* Decorative dots */}
+              <circle cx="30" cy="80" r="2" fill="#6ee7b7" opacity="0.12" />
+              <circle cx="22" cy="92" r="1.5" fill="#6ee7b7" opacity="0.08" />
+              <circle cx="375" cy="200" r="2" fill="#846fbc" opacity="0.12" />
+              <circle cx="368" cy="212" r="1.5" fill="#846fbc" opacity="0.08" />
+
+              {/* Faint return arc */}
+              <path
+                d="M310 205 C310 260, 90 260, 90 205"
+                stroke="#a78bfa"
+                strokeWidth="1"
+                strokeDasharray="4 6"
+                opacity="0.08"
+                fill="none"
+              />
+
+              {/* Glow behind left node */}
+              <ellipse cx="95" cy="145" rx="95" ry="48" fill="url(#glowQI)" />
+
+              {/* Left node — Quality Intelligence */}
+              <rect
+                x="15"
+                y="115"
+                width="160"
+                height="60"
+                rx="14"
+                stroke="#6ee7b7"
+                strokeWidth="2"
+                fill="#6ee7b714"
+              />
+              <text
+                x="95"
+                y="140"
+                textAnchor="middle"
+                fill="#6ee7b7"
+                fontSize="13"
+                fontWeight="700"
+              >
+                Quality
+              </text>
+              <text
+                x="95"
+                y="158"
+                textAnchor="middle"
+                fill="#6ee7b7"
+                fontSize="13"
+                fontWeight="700"
+              >
+                Intelligence
+              </text>
+
+              {/* Glow behind right node */}
+              <ellipse cx="305" cy="155" rx="95" ry="48" fill="url(#glowTargetQI)" />
+
+              {/* Right node — Design Intelligence */}
+              <rect
+                x="225"
+                y="125"
+                width="160"
+                height="60"
+                rx="14"
+                stroke="#846fbc"
+                strokeWidth="2"
+                fill="#846fbc14"
+              />
+              <text
+                x="305"
+                y="150"
+                textAnchor="middle"
+                fill="#c4b5fd"
+                fontSize="13"
+                fontWeight="700"
+              >
+                Design
+              </text>
+              <text
+                x="305"
+                y="168"
+                textAnchor="middle"
+                fill="#c4b5fd"
+                fontSize="13"
+                fontWeight="700"
+              >
+                Intelligence
+              </text>
+
+              {/* Glow behind arrow path */}
+              <path
+                d="M175 130 C195 70, 260 65, 225 125"
+                stroke="url(#arrowGradQI)"
+                strokeWidth="8"
+                fill="none"
+                opacity="0.12"
+              />
+
+              {/* S-curve arrow */}
+              <path
+                d="M175 130 C195 70, 260 65, 225 125"
+                stroke="#a78bfa"
+                strokeWidth="2"
+                strokeDasharray="6 4"
+                fill="none"
+                markerEnd="url(#arrowQI)"
+              />
+
+              {/* Arrow label pill */}
+              <rect
+                x="175"
+                y="62"
+                width="92"
+                height="24"
+                rx="12"
+                fill="#846fbc20"
+                stroke="#846fbc"
+                strokeWidth="1"
+              />
+              <text
+                x="221"
+                y="78"
+                textAnchor="middle"
+                fill="#c4b5fd"
+                fontSize="10"
+                fontWeight="600"
+              >
+                Quality Feedback
+              </text>
             </svg>
           </motion.div>
         </div>
@@ -598,7 +604,7 @@ function ProofSection() {
           className="text-center max-w-2xl mx-auto"
         >
           <p className="text-gray-600 text-base leading-relaxed mb-4">
-            Quality Check Sheets is live across manufacturing facilities in
+            Quality Intelligence is live across manufacturing facilities in
             India. For full deployment details, visit FactriAI.
           </p>
           <a
@@ -675,7 +681,7 @@ function ClosingCTASection() {
           transition={{ duration: 0.6, delay: 0.2 }}
           className="mt-4 text-gray-400 text-base md:text-lg leading-relaxed"
         >
-          Book a 30-minute demo to see how Quality Check Sheets connects floor
+          Book a 30-minute demo to see how Quality Intelligence connects floor
           inspection data back to your design review intelligence.
         </motion.p>
 
@@ -687,12 +693,10 @@ function ClosingCTASection() {
           className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4"
         >
           <a
-            href="https://factri.ai"
-            target="_blank"
-            rel="noopener noreferrer"
+            href="/#contact"
             className="group inline-flex items-center gap-2 px-7 py-3.5 rounded-lg bg-primary hover:bg-primary-dark text-white font-semibold transition-all duration-300 shadow-md shadow-primary/20 hover:shadow-lg hover:shadow-primary/30"
           >
-            Learn More at FactriAI
+            Learn More
             <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
           </a>
           <a
@@ -713,7 +717,7 @@ function ClosingCTASection() {
           transition={{ duration: 0.5, delay: 0.4 }}
           className="mt-6 text-xs text-gray-500"
         >
-          Quality Check Sheets is part of the FactriAI platform, offered
+          Quality Intelligence is part of the FactriAI platform, offered
           through Cognaize Systems.
         </motion.p>
       </div>
@@ -723,7 +727,7 @@ function ClosingCTASection() {
 
 /* ─── PAGE ───────────────────────────────────────────── */
 
-export default function QualityCheckSheetsPage() {
+export default function QualityIntelligencePage() {
   return (
     <div>
       <HeroSection />

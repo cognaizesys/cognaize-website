@@ -37,6 +37,13 @@ export interface Metric {
   description: string;
 }
 
+export interface HeroProduct {
+  name: string;
+  stage: string;
+  image: string;
+  accentColor: string;
+}
+
 export interface Industry {
   name: string;
   icon: string;

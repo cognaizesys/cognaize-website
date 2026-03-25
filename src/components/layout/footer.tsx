@@ -45,23 +45,12 @@ export function Footer() {
               <ul className="space-y-2">
                 {PRODUCT_LINKS.map((link) => (
                   <li key={`${link.href}-${link.label}`}>
-                    {link.external ? (
-                      <a
-                        href={link.href}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-sm text-text-on-dark hover:text-primary-light"
-                      >
-                        {link.label}
-                      </a>
-                    ) : (
-                      <Link
-                        href={link.href}
-                        className="text-sm text-text-on-dark hover:text-primary-light"
-                      >
-                        {link.label}
-                      </Link>
-                    )}
+                    <Link
+                      href={link.href}
+                      className="text-sm text-text-on-dark hover:text-primary-light"
+                    >
+                      {link.label}
+                    </Link>
                   </li>
                 ))}
               </ul>
@@ -79,6 +68,14 @@ export function Footer() {
                     className="text-sm text-text-on-dark hover:text-primary-light"
                   >
                     About Us
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/industries"
+                    className="text-sm text-text-on-dark hover:text-primary-light"
+                  >
+                    Industries
                   </Link>
                 </li>
                 <li>

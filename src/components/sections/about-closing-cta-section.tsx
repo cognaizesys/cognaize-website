@@ -54,7 +54,7 @@ export function AboutClosingCTASection() {
           transition={{ duration: 0.6, delay: 0.1 }}
           className="text-2xl md:text-4xl font-heading font-bold text-white tracking-tight"
         >
-          See Engineered Intelligence on Your Own Drawings
+          Ready to Make Your Engineering Judgment Permanent?
         </motion.h2>
 
         <motion.p
@@ -64,8 +64,9 @@ export function AboutClosingCTASection() {
           transition={{ duration: 0.6, delay: 0.2 }}
           className="mt-4 text-gray-400 text-base md:text-lg leading-relaxed"
         >
-          Book a 30-minute demo. We&apos;ll run Cognaize Systems on a drawing
-          from your factory and show you exactly what it finds.
+          Book a conversation with our team. We&apos;ll show you how Cognaize
+          Systems can structure and scale the expertise your organisation has
+          built.
         </motion.p>
 
         <motion.div
@@ -91,6 +92,16 @@ export function AboutClosingCTASection() {
             Contact Us
           </a>
         </motion.div>
+
+        <motion.p
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: 0.5 }}
+          className="mt-8 text-xs text-gray-600 tracking-wider"
+        >
+          Chennai &middot; Bangalore &middot; Dubai
+        </motion.p>
       </div>
     </section>
   );

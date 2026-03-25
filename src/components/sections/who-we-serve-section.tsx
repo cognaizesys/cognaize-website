@@ -12,7 +12,7 @@ const profiles = [
   },
   {
     label: "Make-to-Print Manufacturers",
-    body: "Companies that receive designs from OEMs, Tier 1 suppliers, or external design houses, and compete on feasibility, cost accuracy, and execution reliability. Entry point is feasibility and cost estimation — with shop floor and quality intelligence delivering compounding value over time.",
+    body: "Companies that receive designs from OEMs or external design houses, and compete on cost accuracy, feasibility, and delivery speed. Engineered Intelligence starts at estimation and compounds as shop floor and quality data feed back in.",
     examples:
       "Tier 2 automotive suppliers · Contract manufacturers · Specialist component makers",
   },
@@ -43,7 +43,7 @@ export function WhoWeServeSection() {
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Heading */}
-        <div className="max-w-3xl mx-auto mb-12">
+        <div className="text-center max-w-3xl mx-auto mb-12">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -75,7 +75,7 @@ export function WhoWeServeSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto"
+          className="grid md:grid-cols-2 gap-6 max-w-6xl mx-auto"
         >
           {profiles.map((profile) => (
             <div
@@ -85,10 +85,10 @@ export function WhoWeServeSection() {
               <h3 className="text-lg md:text-xl font-heading font-bold text-white mb-4">
                 {profile.label}
               </h3>
-              <p className="text-gray-400 text-base leading-relaxed mb-4">
+              <p className="text-gray-300 text-base leading-relaxed mb-4">
                 {profile.body}
               </p>
-              <p className="text-sm text-gray-500">
+              <p className="text-sm text-gray-400">
                 {profile.examples}
               </p>
             </div>

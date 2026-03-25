@@ -27,9 +27,9 @@ export const team: TeamMember[] = [
   },
   {
     name: "Srihari Murthy",
-    role: "CTO & Co-Founder",
+    role: "CPO & Co-Founder",
     experience:
-      "Digital transformation and smart manufacturing leader. Serial entrepreneur. Built and deployed manufacturing technology platforms across India and the UAE.",
+      "Smart manufacturing and product leader. Serial entrepreneur. Built and deployed manufacturing technology platforms across India and the UAE.",
     initials: "SM",
     color: "#7c6bb0",
   },

@@ -92,8 +92,8 @@ export function ContactSection() {
           background: "radial-gradient(circle, rgba(245, 158, 11, 0.5) 0%, transparent 60%)",
         }}
       />
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="grid md:grid-cols-5 gap-12">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="grid md:grid-cols-5 gap-12 max-w-6xl mx-auto">
           {/* Left Column - Contact Form */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -109,9 +109,9 @@ export function ContactSection() {
               </span>
             </div>
             <h2 className="font-heading text-3xl text-white">
-              See Engineered Intelligence on Your Own Drawings
+              See Engineering Intelligence on Your Own Drawings
             </h2>
-            <p className="text-gray-400 mt-2">
+            <p className="text-gray-300 mt-2">
               Book a 30-minute demo. We&apos;ll run Cognaize Systems on a
               drawing from your factory and show you exactly what it finds.
             </p>
@@ -329,7 +329,7 @@ export function ContactSection() {
               </h4>
               <div className="space-y-3">
                 {[
-                  "See AI analysis on your own drawings",
+                  "See it work on your own drawings",
                   "Get a custom ROI assessment",
                   "No commitment required",
                   "Up and running in under a week",
