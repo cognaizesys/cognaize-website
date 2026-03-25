@@ -35,21 +35,25 @@ const advisors = [
   {
     name: "C.V. Murali",
     role: "Management Consultant, Lead Auditor & Author",
+    experience: "30+ years in Quality Process Management",
     image: "/images/team/murali.jpeg",
   },
   {
     name: "A.S. Narayan",
-    role: "Ombudsman, Major NBFC",
+    role: "Ombudsman & Senior Banking Executive, Major NBFC",
+    experience: "35+ years in Banking across Regions and Functions",
     image: "/images/team/narayan.jpg",
   },
   {
     name: "Britto Edward Victor",
     role: "CEO, Electronics & Software Company",
+    experience: "20+ years in Hardware Design and Manufacturing",
     image: "/images/team/britto.jpg",
   },
   {
     name: "Malaiappan Vishwanathan",
     role: "Founder, Design & Prototyping Services",
+    experience: "40+ years in Automotive Design across Asia & NA",
     image: "/images/team/malaiappan.png",
   },
 ];
@@ -179,8 +183,11 @@ export function AboutTeamSection() {
                 />
               </div>
               <h4 className="text-sm font-bold text-white">{member.name}</h4>
-              <p className="text-gray-500 text-xs mt-1 leading-relaxed">
+              <p className="text-gray-500 text-xs mt-1 leading-relaxed text-balance">
                 {member.role}
+              </p>
+              <p className="text-gray-400 text-xs mt-1">
+                {member.experience}
               </p>
             </motion.div>
           ))}

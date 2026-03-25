@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { RefreshCw, ArrowRight } from "lucide-react";
+import { RefreshCw, ArrowRight, ChevronRight } from "lucide-react";
 
 const loops = [
   {
@@ -25,7 +25,7 @@ export function IntelligenceLoopSection() {
   return (
     <section
       id="intelligence-loop"
-      className="py-16 md:py-24 relative overflow-hidden"
+      className="py-16 md:py-20 relative overflow-hidden"
       style={{
         background:
           "linear-gradient(180deg, #0a0a0f 0%, #0f0f1a 30%, #1a1028 50%, #0f0f1a 70%, #0a0a0f 100%)",
@@ -43,15 +43,6 @@ export function IntelligenceLoopSection() {
         }}
       />
 
-      {/* Grid background */}
-      <div
-        className="absolute inset-0"
-        style={{
-          backgroundImage:
-            "linear-gradient(rgba(100, 170, 240, 0.20) 1px, transparent 1px), linear-gradient(90deg, rgba(100, 170, 240, 0.20) 1px, transparent 1px), linear-gradient(rgba(100, 170, 240, 0.07) 1px, transparent 1px), linear-gradient(90deg, rgba(100, 170, 240, 0.07) 1px, transparent 1px)",
-          backgroundSize: "80px 80px, 80px 80px, 16px 16px, 16px 16px",
-        }}
-      />
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
@@ -92,27 +83,40 @@ export function IntelligenceLoopSection() {
           </motion.p>
         </div>
 
-        {/* Loop cards — 1x3 horizontal row */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-5 max-w-6xl mx-auto">
+        {/* Loop cards — 1x3 horizontal row with connectors */}
+        <div className="flex flex-col md:flex-row items-stretch gap-0 max-w-6xl mx-auto">
           {loops.map((loop, index) => (
-            <motion.div
-              key={loop.label}
-              initial={{ opacity: 0, y: 24 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.15 * index }}
-              className="rounded-xl border-l-[3px] border-l-primary-light border border-white/[0.08] bg-white/[0.06] p-6"
-            >
-              <div className="flex items-center gap-2 mb-4">
-                <ArrowRight className="w-4 h-4 text-primary-light" />
-                <h3 className="text-base font-heading font-bold text-primary-light">
-                  {loop.label}
-                </h3>
-              </div>
-              <p className="text-sm text-gray-300 leading-relaxed">
-                {loop.description}
-              </p>
-            </motion.div>
+            <div key={loop.label} className="flex items-stretch flex-1">
+              <motion.div
+                initial={{ opacity: 0, y: 24 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 0.15 * index }}
+                className="rounded-xl border-l-[3px] border-l-primary-light border border-white/[0.10] bg-[#12121a]/60 p-6 flex-1"
+              >
+                <div className="flex items-center gap-2 mb-4">
+                  <div className="w-8 h-8 rounded-full bg-primary/15 flex items-center justify-center">
+                    <RefreshCw className="w-4 h-4 text-primary-light" />
+                  </div>
+                  <h3 className="text-base font-heading font-bold text-primary-light">
+                    {loop.label}
+                  </h3>
+                </div>
+                <p className="text-sm text-gray-300 leading-relaxed">
+                  {loop.description}
+                </p>
+              </motion.div>
+              {index < loops.length - 1 && (
+                <div className="hidden md:flex items-center px-3">
+                  <ChevronRight className="w-5 h-5 text-primary/40" />
+                </div>
+              )}
+              {index < loops.length - 1 && (
+                <div className="flex md:hidden justify-center py-2">
+                  <ChevronRight className="w-5 h-5 text-primary/40 rotate-90" />
+                </div>
+              )}
+            </div>
           ))}
         </div>
       </div>

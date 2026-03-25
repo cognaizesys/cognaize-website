@@ -21,6 +21,7 @@ const products = [
     description:
       "Catch drawing issues before they become problems on the shop floor",
     href: "/products/design-intelligence",
+    accent: "#6ee7b7",
   },
   {
     stage: "Estimate",
@@ -29,6 +30,7 @@ const products = [
     description:
       "Go from drawing to accurate cost sheet in minutes, not days",
     href: "/products/manufacturing-intelligence",
+    accent: "#9b89cc",
   },
   {
     stage: "Planning",
@@ -37,6 +39,7 @@ const products = [
     description:
       "Reschedule production in seconds when priorities change on the floor",
     href: "/products/planning-intelligence",
+    accent: "#60a5fa",
   },
   {
     stage: "Shop Floor",
@@ -45,6 +48,7 @@ const products = [
     description:
       "See what\u2019s happening on your floor right now, not yesterday",
     href: "/products/execution-intelligence",
+    accent: "#f59e0b",
   },
   {
     stage: "Monitor",
@@ -53,6 +57,7 @@ const products = [
     description:
       "Make downtime visible, traceable, and actionable before it spreads",
     href: "/products/downtime-intelligence",
+    accent: "#f87171",
   },
   {
     stage: "Improve",
@@ -61,6 +66,7 @@ const products = [
     description:
       "Digitize quality data at source and link it back to production orders",
     href: "/products/quality-intelligence",
+    accent: "#34d399",
   },
 ];
 
@@ -68,7 +74,7 @@ export function ProductsSection() {
   return (
     <section
       id="products"
-      className="py-16 md:py-24 relative overflow-hidden"
+      className="py-16 md:py-20 relative overflow-hidden"
       style={{
         background:
           "linear-gradient(180deg, #0a0a0f 0%, #12121a 40%, #0c1a1a 70%, #0a0a0f 100%)",
@@ -135,13 +141,21 @@ export function ProductsSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.1 * index }}
-              className="group rounded-xl border border-white/[0.08] bg-white/[0.06] p-6 border-t-2 border-t-accent/30 hover:border-primary/25 hover:bg-white/[0.05] transition-all duration-300 flex flex-col"
+              className="group rounded-xl border border-white/[0.10] bg-[#12121a]/80 p-6 hover:bg-[#1a1a28]/80 hover:border-white/[0.15] transition-all duration-300 flex flex-col"
+              style={{ borderTopWidth: "2px", borderTopColor: `${product.accent}40` }}
             >
               <div className="flex items-start justify-between mb-5">
-                <span className="inline-flex items-center px-3 py-1 rounded-full bg-accent/10 border border-accent/25 text-[11px] font-medium text-accent uppercase tracking-wider">
+                <span
+                  className="inline-flex items-center px-3 py-1 rounded-full text-[11px] font-medium uppercase tracking-wider border"
+                  style={{
+                    backgroundColor: `${product.accent}15`,
+                    borderColor: `${product.accent}30`,
+                    color: product.accent,
+                  }}
+                >
                   {product.stage}
                 </span>
-                <product.icon className="w-5 h-5 text-gray-600" />
+                <product.icon className="w-5 h-5 text-gray-500 group-hover:text-gray-400 transition-colors" />
               </div>
               <h3 className="text-lg font-heading font-bold text-white mb-2">
                 {product.name}

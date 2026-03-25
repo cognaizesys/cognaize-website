@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import { BarChart3 } from "lucide-react";
-import { cn } from "@/lib/utils";
+
 
 interface ROIMetric {
   metric: string;
@@ -58,7 +58,7 @@ const keySummaryStats = [
 
 export function ROISection() {
   return (
-    <section id="impact" className="py-20 text-white relative overflow-hidden" style={{ background: "linear-gradient(180deg, #0f0f0f 0%, #140e24 50%, #0f0f0f 100%)" }}>
+    <section id="impact" className="py-16 md:py-20 text-white relative overflow-hidden" style={{ background: "linear-gradient(180deg, #0f0f0f 0%, #140e24 50%, #0f0f0f 100%)" }}>
       {/* Blueprint grid */}
       <div
         className="absolute inset-0"
@@ -201,7 +201,7 @@ export function ROISection() {
         >
           {keySummaryStats.map((stat, index) => (
             <div key={index} className="text-center">
-              <div className={cn("text-3xl md:text-4xl font-bold font-heading", index === 0 ? "text-accent" : index === 1 ? "text-primary-light" : "text-[#fbbf24]")}>
+              <div className="text-3xl md:text-4xl font-bold font-heading text-primary-light">
                 {stat.value}
               </div>
               <div className="mt-1 text-sm text-gray-300">{stat.label}</div>

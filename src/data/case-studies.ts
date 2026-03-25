@@ -5,12 +5,22 @@ export interface Finding {
   implication: string;
 }
 
+export interface Outcome {
+  value: string;
+  label: string;
+}
+
 export interface CaseStudy {
   id: string;
   moduleTag: string;
+  moduleDisplay: string;
   title: string;
   subtitle: string;
   summary: string;
+  industry: string;
+  accent: string;
+  productLink: string;
+  outcomes: Outcome[];
   findings: Finding[];
   poweredBy: {
     name: string;
@@ -22,11 +32,20 @@ const CASE_STUDIES: CaseStudy[] = [
   {
     id: "assembly-pharma",
     moduleTag: "Assembly Review",
+    moduleDisplay: "Assembly Review",
     title: "GMP Pharmaceutical Filter Assembly",
     subtitle:
       "0.34m² Product Filter · SS316L · 15 parts · Design pressure 4 kg/cm²",
     summary:
       "J-clamp closure · SS316L primary · GMP + Pressure Vessel domain · EXTENDED Mode",
+    industry: "Pharmaceutical",
+    accent: "#6ee7b7",
+    productLink: "/products/design-intelligence",
+    outcomes: [
+      { value: "4", label: "Critical defects caught" },
+      { value: "600 kg", label: "Weight discrepancy flagged" },
+      { value: "100%", label: "Compliance gaps identified" },
+    ],
     findings: [
       {
         id: "F-1",
@@ -67,10 +86,19 @@ const CASE_STUDIES: CaseStudy[] = [
   {
     id: "assembly-autopump",
     moduleTag: "Assembly Review",
+    moduleDisplay: "Assembly Review",
     title: "Automotive Oil Pump Assembly",
     subtitle: "Gerotor Oil Pump · OEM Platform · 25+ parts",
     summary:
       "Chain-driven gerotor · ISO 16232 cleanliness · Assembly-only review · EXTENDED Mode",
+    industry: "Automotive",
+    accent: "#6ee7b7",
+    productLink: "/products/design-intelligence",
+    outcomes: [
+      { value: "4", label: "Major findings at drawing stage" },
+      { value: "Rev J", label: "Mature revision with gaps" },
+      { value: "20–40%", label: "Preload variance risk" },
+    ],
     findings: [
       {
         id: "P-1",
@@ -112,11 +140,20 @@ const CASE_STUDIES: CaseStudy[] = [
   },
   {
     id: "machine-piston",
-    moduleTag: "MachineReview",
+    moduleTag: "Machine Review",
+    moduleDisplay: "Machine Review",
     title: "Automotive Diesel Piston",
     subtitle:
       "DI Diesel Piston · 3-Ring Configuration · Complex geometry",
     summary: "Cam-turned oval skirt · DOP table present · STANDARD Mode",
+    industry: "Automotive",
+    accent: "#9b89cc",
+    productLink: "/products/design-intelligence",
+    outcomes: [
+      { value: "3", label: "Major findings identified" },
+      { value: "CNC", label: "Silent error risk flagged" },
+      { value: "CR", label: "Compression ratio at risk" },
+    ],
     findings: [
       {
         id: "P-1",
@@ -149,12 +186,21 @@ const CASE_STUDIES: CaseStudy[] = [
   },
   {
     id: "forge-bevel",
-    moduleTag: "ForgeReview",
+    moduleTag: "Forge Review",
+    moduleDisplay: "Forge Review",
     title: "Cold Formed Differential Bevel Pinion",
     subtitle:
       "Straight Bevel Pinion · Differential Application · Complex geometry",
     summary:
       "Net-formed teeth · Case carburised · Spline bore · Mating gear cross-check · STANDARD Mode",
+    industry: "Automotive / Drivetrain",
+    accent: "#60a5fa",
+    productLink: "/products/design-intelligence",
+    outcomes: [
+      { value: "3", label: "Major findings identified" },
+      { value: ">2%", label: "Pitch diameter error" },
+      { value: "Cross-dwg", label: "Mating gear mismatch caught" },
+    ],
     findings: [
       {
         id: "P-1",
@@ -190,11 +236,20 @@ const CASE_STUDIES: CaseStudy[] = [
   {
     id: "drawing-comparison",
     moduleTag: "Drawing Comparison",
+    moduleDisplay: "Drawing Comparison",
     title: "Steering System Flange — Revision Comparison",
     subtitle:
       "Safety-Critical Flange · V1 vs V2 · Manufacturer of Steering Components for Automotive OEMs",
     summary:
       "49 changes detected: 3 Critical, 16 Major, 30 Minor · NOT INTERCHANGEABLE · Safety-critical steering load path",
+    industry: "Automotive / Steering",
+    accent: "#f59e0b",
+    productLink: "/products/design-intelligence",
+    outcomes: [
+      { value: "49", label: "Changes detected" },
+      { value: "3", label: "Critical changes" },
+      { value: "NOT", label: "Interchangeable" },
+    ],
     findings: [
       {
         id: "C-1",

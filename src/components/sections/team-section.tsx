@@ -35,90 +35,36 @@ const advisors = [
   {
     name: "C.V. Murali",
     role: "Management Consultant, Lead Auditor & Author",
-    bio: "30+ years in Quality Process Management",
+    experience: "30+ years in Quality Process Management",
     image: "/images/team/murali.jpeg",
   },
   {
     name: "A.S. Narayan",
-    role: "Ombudsman, Major NBFC",
-    bio: "35+ years in Banking across Regions and Functions",
+    role: "Ombudsman & Senior Banking Executive, Major NBFC",
+    experience: "35+ years in Banking across Regions and Functions",
     image: "/images/team/narayan.jpg",
   },
   {
     name: "Britto Edward Victor",
     role: "CEO, Electronics & Software Company",
-    bio: "20+ years in Hardware Design and Manufacturing",
+    experience: "20+ years in Hardware Design and Manufacturing",
     image: "/images/team/britto.jpg",
   },
   {
     name: "Malaiappan Vishwanathan",
     role: "Founder, Design & Prototyping Services",
-    bio: "40+ years in Automotive Design across Asia & NA",
+    experience: "40+ years in Automotive Design across Asia & NA",
     image: "/images/team/malaiappan.png",
   },
 ];
-
-const containerVariants = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.1,
-    },
-  },
-};
-
-const itemVariants = {
-  hidden: { opacity: 0, y: 20 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      duration: 0.5,
-    },
-  },
-};
-
-function MemberCard({ member }: { member: (typeof founders)[number] }) {
-  return (
-    <div className="group rounded-2xl border border-white/15 bg-white/[0.06] p-5 h-full flex flex-col items-center text-center hover:border-primary/20 transition-colors duration-300">
-      <div className="w-24 h-24 rounded-full overflow-hidden ring-2 ring-primary/35 group-hover:ring-primary/70 transition-all duration-300 mb-4 shrink-0">
-        <Image
-          src={member.image}
-          alt={member.name}
-          width={96}
-          height={96}
-          className="w-full h-full object-cover"
-        />
-      </div>
-      <h3 className="text-sm font-bold text-white">
-        {member.name}
-      </h3>
-      <p className="text-primary-light/80 text-xs mt-1.5 min-h-[2.5rem] flex items-center text-center">
-        {member.role}
-      </p>
-      <p className="text-gray-400 text-xs mt-1">
-        {member.bio}
-      </p>
-    </div>
-  );
-}
 
 export function TeamSection() {
   return (
     <section
       id="team"
-      className="py-20 md:py-32 md:pb-20 relative overflow-hidden bg-[#0a0a0f]"
+      className="py-16 md:py-20 relative overflow-hidden"
+      style={{ background: "#0f0f17" }}
     >
-      {/* Blueprint grid */}
-      <div
-        className="absolute inset-0"
-        style={{
-          backgroundImage:
-            "linear-gradient(rgba(100, 170, 240, 0.20) 1px, transparent 1px), linear-gradient(90deg, rgba(100, 170, 240, 0.20) 1px, transparent 1px), linear-gradient(rgba(100, 170, 240, 0.07) 1px, transparent 1px), linear-gradient(90deg, rgba(100, 170, 240, 0.07) 1px, transparent 1px)",
-          backgroundSize: "80px 80px, 80px 80px, 16px 16px, 16px 16px",
-        }}
-      />
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <motion.div
@@ -126,7 +72,7 @@ export function TeamSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center max-w-2xl mx-auto mb-10 md:mb-16"
+          className="text-center max-w-3xl mx-auto mb-14"
         >
           <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-primary/25 border border-primary/45 mb-6">
             <Users2 className="w-3 h-3 text-accent" />
@@ -134,54 +80,95 @@ export function TeamSection() {
               The Team
             </span>
           </div>
-          <h2 className="text-3xl md:text-4xl font-heading font-bold text-white tracking-tight">
+          <h2 className="text-2xl md:text-4xl font-heading font-bold text-white tracking-tight">
             Built by People Who Have Done This
           </h2>
-          <p className="mt-4 text-gray-300 text-lg leading-relaxed">
+          <p className="mt-4 text-gray-400 text-base md:text-lg leading-relaxed">
             Our founders combine manufacturing domain expertise, enterprise
             software experience, and operational technology capability.
           </p>
         </motion.div>
 
-        {/* Founders */}
-        <h3 className="text-xl md:text-2xl font-heading text-white text-center mb-6">Founders</h3>
-        <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-50px" }}
-          className="flex flex-wrap justify-center gap-5 max-w-6xl mx-auto"
-        >
-          {founders.map((member) => (
+        {/* Founders — 2×2 horizontal card grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 max-w-4xl mx-auto">
+          {founders.map((member, i) => (
             <motion.div
               key={member.name}
-              variants={itemVariants}
-              className="w-[calc(50%-0.625rem)] md:w-[calc(25%-0.9375rem)]"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ duration: 0.5, delay: i * 0.1 }}
+              className="group rounded-xl border border-white/[0.08] bg-white/[0.03] p-5 hover:border-primary/30 hover:bg-white/[0.06] transition-all duration-300"
             >
-              <MemberCard member={member} />
+              <div className="flex gap-5">
+                <div className="flex-shrink-0">
+                  <div className="w-[120px] h-[120px] md:w-[140px] md:h-[140px] rounded-lg overflow-hidden ring-1 ring-white/10 group-hover:ring-primary/30 transition-all duration-300">
+                    <Image
+                      src={member.image}
+                      alt={member.name}
+                      width={140}
+                      height={140}
+                      className="w-full h-full object-cover"
+                      style={{ filter: "grayscale(15%) contrast(1.05)" }}
+                    />
+                  </div>
+                </div>
+                <div className="flex flex-col justify-center min-w-0">
+                  <h4 className="text-base md:text-lg font-bold text-white font-heading">
+                    {member.name}
+                  </h4>
+                  <p className="text-primary-light text-sm font-medium mt-1">
+                    {member.role}
+                  </p>
+                  <p className="text-gray-400 text-sm mt-2.5 leading-relaxed line-clamp-3">
+                    {member.bio}
+                  </p>
+                </div>
+              </div>
             </motion.div>
           ))}
-        </motion.div>
+        </div>
 
-        {/* Advisors */}
-        <h3 className="text-xl md:text-2xl font-heading text-white text-center mt-12 mb-6">Advisors</h3>
-        <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-50px" }}
-          className="flex flex-wrap justify-center gap-5 max-w-6xl mx-auto"
-        >
-          {advisors.map((member) => (
+        {/* Divider */}
+        <div className="my-14 flex items-center gap-6 max-w-4xl mx-auto">
+          <div className="flex-1 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
+          <h3 className="text-lg font-heading font-semibold text-gray-400 tracking-wide">
+            Advisors
+          </h3>
+          <div className="flex-1 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
+        </div>
+
+        {/* Advisors — 4-column compact row */}
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-5 max-w-4xl mx-auto">
+          {advisors.map((member, i) => (
             <motion.div
               key={member.name}
-              variants={itemVariants}
-              className="w-[calc(50%-0.625rem)] md:w-[calc(25%-0.9375rem)]"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ duration: 0.5, delay: i * 0.08 }}
+              className="text-center rounded-lg border border-white/[0.06] bg-white/[0.02] p-4 hover:border-white/[0.12] transition-all duration-300"
             >
-              <MemberCard member={member} />
+              <div className="w-20 h-20 mx-auto rounded-full overflow-hidden ring-1 ring-white/10 mb-3">
+                <Image
+                  src={member.image}
+                  alt={member.name}
+                  width={80}
+                  height={80}
+                  className="w-full h-full object-cover"
+                  style={{ filter: "grayscale(15%) contrast(1.05)" }}
+                />
+              </div>
+              <h4 className="text-sm font-bold text-white">{member.name}</h4>
+              <p className="text-gray-500 text-xs mt-1 leading-relaxed text-balance">
+                {member.role}
+              </p>
+              <p className="text-gray-400 text-xs mt-1">
+                {member.experience}
+              </p>
             </motion.div>
           ))}
-        </motion.div>
+        </div>
 
         {/* Closing line */}
         <motion.p
@@ -189,7 +176,7 @@ export function TeamSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.3 }}
-          className="mt-12 text-center text-gray-300 text-base md:text-lg leading-relaxed max-w-3xl mx-auto"
+          className="mt-14 text-center text-gray-500 text-base leading-relaxed max-w-2xl mx-auto"
         >
           The company was built by people who have spent careers in
           manufacturing — which is the only way to build manufacturing

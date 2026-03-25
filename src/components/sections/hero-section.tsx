@@ -96,14 +96,12 @@ export function HeroSection() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.7 }}
-              className="mt-8 md:mt-10 flex flex-wrap gap-8"
+              className="mt-8 md:mt-10 grid grid-cols-3 gap-6"
             >
               {heroMetrics.slice(0, 3).map((metric) => (
-                <div key={metric.label} className="flex items-baseline gap-2">
-                  <span className="text-2xl font-bold text-white font-heading">
-                    {metric.value}
-                  </span>
-                  <span className="text-sm text-gray-400">{metric.label}</span>
+                <div key={metric.label} className="border-l-[3px] border-l-primary pl-3">
+                  <p className="text-sm font-bold text-white">{metric.value}</p>
+                  <p className="text-xs text-gray-400 mt-0.5">{metric.label}</p>
                 </div>
               ))}
             </motion.div>

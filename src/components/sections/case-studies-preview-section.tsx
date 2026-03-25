@@ -7,19 +7,21 @@ import { FileSearch, ArrowRight } from "lucide-react";
 const featured = [
   {
     id: "forge-review-bevel-pinion",
-    moduleTag: "ForgeReview",
+    moduleTag: "Forge Review",
+    accent: "#60a5fa",
     title: "Cold Formed Differential Bevel Pinion",
     subtitle: "Gear Family · Complex Geometry",
     body: "Three major findings caught at drawing stage — including a gear data block inconsistency that would have corrupted backlash and mating gear compatibility.",
-    href: "/case-studies/forge-review-bevel-pinion",
+    href: "/case-studies",
   },
   {
     id: "shop-floor-tracking",
     moduleTag: "Execution Intelligence",
+    accent: "#f59e0b",
     title: "Shop Floor Tracking & Visibility",
     subtitle: "Major Trailer & Truck Body Manufacturer · Since April 2021",
     body: "20% increase in production efficiency. 50% reduction in WIP. 75% reduction in data capture time.",
-    href: "/case-studies/shop-floor-tracking",
+    href: "/case-studies",
   },
 ];
 
@@ -107,10 +109,18 @@ export function CaseStudiesPreviewSection() {
             <motion.div
               key={study.id}
               variants={itemVariants}
-              className="group rounded-2xl border border-white/[0.06] bg-white/[0.02] hover:bg-white/[0.05] hover:border-primary/35 transition-all duration-300 overflow-hidden flex flex-col"
+              className="group rounded-2xl border border-white/[0.06] bg-white/[0.02] hover:bg-white/[0.05] hover:border-white/[0.12] transition-all duration-300 overflow-hidden flex flex-col"
+              style={{ borderLeftWidth: "3px", borderLeftColor: study.accent }}
             >
               <div className="p-6 flex flex-col flex-1">
-                <span className="inline-flex self-start items-center px-2.5 py-1 rounded-md bg-primary/20 border border-primary/30 text-[10px] font-bold text-primary-light uppercase tracking-wider mb-3">
+                <span
+                  className="inline-flex self-start items-center px-2.5 py-1 rounded-md text-[10px] font-bold uppercase tracking-wider mb-3 border"
+                  style={{
+                    backgroundColor: `${study.accent}15`,
+                    borderColor: `${study.accent}30`,
+                    color: study.accent,
+                  }}
+                >
                   {study.moduleTag}
                 </span>
                 <h3 className="text-lg font-bold text-white mb-1">
