@@ -37,26 +37,34 @@ export const PRODUCT_LINKS = [
 
 export const INDUSTRY_LINKS = [
   {
-    label: "Automotive Components",
-    href: "/industries/automotive-components",
+    label: "Automotive",
+    href: "/industries/automotive",
   },
   {
-    label: "Forging & Casting",
-    href: "/industries/forging-and-casting",
+    label: "Auto Components",
+    href: "/industries/auto-components",
   },
   {
-    label: "Precision Machining",
-    href: "/industries/precision-machining",
+    label: "Oil & Gas",
+    href: "/industries/oil-and-gas",
   },
   {
-    label: "Fabrication & Welding",
-    href: "/industries/fabrication-and-welding",
+    label: "Chemical Processing Equipment",
+    href: "/industries/chemical-processing-equipment",
+  },
+  {
+    label: "Heavy Engineering",
+    href: "/industries/heavy-engineering",
+  },
+  {
+    label: "Industrial Equipment",
+    href: "/industries/industrial-equipment",
   },
 ];
 
 export const NAV_LINKS: NavLink[] = [
   { label: "Products", href: "/#products", children: PRODUCT_LINKS },
-  { label: "Industries", href: "/industries", children: INDUSTRY_LINKS },
+  { label: "Industries", href: "/#who-we-serve", children: INDUSTRY_LINKS },
   { label: "Case Studies", href: "/case-studies" },
   { label: "About Us", href: "/about" },
   { label: "Blog", href: "/blog" },

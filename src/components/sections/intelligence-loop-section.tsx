@@ -34,6 +34,16 @@ export function IntelligenceLoopSection() {
       {/* Top gradient divider */}
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/35 to-transparent" />
 
+      {/* Subtle grid background */}
+      <div
+        className="absolute inset-0"
+        style={{
+          backgroundImage:
+            "linear-gradient(rgba(100, 170, 240, 0.10) 1px, transparent 1px), linear-gradient(90deg, rgba(100, 170, 240, 0.10) 1px, transparent 1px), linear-gradient(rgba(100, 170, 240, 0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(100, 170, 240, 0.03) 1px, transparent 1px)",
+          backgroundSize: "80px 80px, 80px 80px, 16px 16px, 16px 16px",
+        }}
+      />
+
       {/* Subtle radial glow */}
       <div
         className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] opacity-20"

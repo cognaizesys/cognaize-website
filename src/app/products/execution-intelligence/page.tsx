@@ -582,12 +582,12 @@ function ProofSection() {
         >
           <blockquote className="border-l-4 border-primary pl-6 py-4 bg-gray-50 rounded-r-xl max-w-3xl">
             <p className="text-gray-800 text-lg md:text-xl leading-relaxed italic">
-              &ldquo;After implementing Execution Intelligence by FactriAI we have been able to
+              &ldquo;After implementing Execution Intelligence, we have been able to
               double our daily production output while reducing WIP by
               50%.&rdquo;
             </p>
             <footer className="mt-3 text-sm text-gray-500 font-medium">
-              — Raghuram Penukonda, Operations &amp; Business Head
+              — Operations &amp; Business Head
             </footer>
           </blockquote>
         </motion.div>
@@ -613,21 +613,6 @@ function ProofSection() {
           ))}
         </div>
 
-        {/* Link */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: 0.4 }}
-        >
-          <Link
-            href="/case-studies/shop-floor-tracking"
-            className="inline-flex items-center gap-1.5 text-primary font-semibold text-sm hover:underline"
-          >
-            View Full Case Study
-            <ArrowRight className="w-3.5 h-3.5" />
-          </Link>
-        </motion.div>
       </div>
     </section>
   );
@@ -728,8 +713,7 @@ function ClosingCTASection() {
           transition={{ duration: 0.5, delay: 0.4 }}
           className="mt-6 text-xs text-gray-500"
         >
-          Execution Intelligence is part of the FactriAI platform, offered through Cognaize
-          Systems.
+          Execution Intelligence is offered by Cognaize Systems.
         </motion.p>
       </div>
     </section>

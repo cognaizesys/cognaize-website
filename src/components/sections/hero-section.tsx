@@ -74,9 +74,10 @@ export function HeroSection() {
               transition={{ duration: 0.6, delay: 0.3 }}
               className="mt-6 md:mt-10 text-3xl sm:text-4xl lg:text-5xl font-heading font-bold text-white tracking-tight leading-[1.1]"
             >
-              <span className="text-primary-light">Engineered Intelligence</span>
+              Making Engineering
               <br />
-              for Manufacturing.
+              Judgment{" "}
+              <span className="text-primary-light">Scalable</span>
             </motion.h1>
 
             {/* Subtitle */}

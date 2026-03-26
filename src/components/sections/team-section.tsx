@@ -65,6 +65,16 @@ export function TeamSection() {
       className="py-16 md:py-20 relative overflow-hidden"
       style={{ background: "#0f0f17" }}
     >
+      {/* Subtle grid background */}
+      <div
+        className="absolute inset-0"
+        style={{
+          backgroundImage:
+            "linear-gradient(rgba(100, 170, 240, 0.10) 1px, transparent 1px), linear-gradient(90deg, rgba(100, 170, 240, 0.10) 1px, transparent 1px), linear-gradient(rgba(100, 170, 240, 0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(100, 170, 240, 0.03) 1px, transparent 1px)",
+          backgroundSize: "80px 80px, 80px 80px, 16px 16px, 16px 16px",
+        }}
+      />
+
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <motion.div

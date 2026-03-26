@@ -5,7 +5,7 @@ export interface Finding {
   implication: string;
 }
 
-export interface Outcome {
+interface Outcome {
   value: string;
   label: string;
 }

@@ -9,16 +9,16 @@ const profiles = [
   {
     label: "Design & Make Manufacturers",
     icon: Wrench,
-    body: "Companies that develop their own components and carry full responsibility for cost, quality, and delivery. Engineered Intelligence begins at drawing review and extends through every downstream stage.",
+    body: "Companies that develop their own products and carry full responsibility for cost, quality, and delivery. Engineered Intelligence begins at drawing review and extends through every downstream stage.",
     examples:
-      "Auto-component manufacturers · Precision engineering companies · Industrial equipment makers",
+      "Automotive OEMs · Auto-component manufacturers · Industrial equipment builders · Heavy engineering firms",
   },
   {
     label: "Make-to-Print Manufacturers",
     icon: FileInput,
-    body: "Companies that receive designs from OEMs or external design houses, and compete on cost accuracy and delivery speed. Engineered Intelligence starts at estimation and compounds as shop floor and quality data feed back.",
+    body: "Companies that receive designs from OEMs or external design houses and compete on cost accuracy and delivery speed. Intelligence starts at estimation and compounds as production and quality data feed back.",
     examples:
-      "Tier 2 automotive suppliers · Contract manufacturers · Specialist component makers",
+      "Oil & gas equipment fabricators · Chemical processing vessel manufacturers · Contract manufacturers",
   },
 ];
 
@@ -33,6 +33,16 @@ export function WhoWeServeSection() {
     >
       {/* Top gradient divider */}
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/35 to-transparent" />
+
+      {/* Subtle grid background */}
+      <div
+        className="absolute inset-0"
+        style={{
+          backgroundImage:
+            "linear-gradient(rgba(100, 170, 240, 0.10) 1px, transparent 1px), linear-gradient(90deg, rgba(100, 170, 240, 0.10) 1px, transparent 1px), linear-gradient(rgba(100, 170, 240, 0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(100, 170, 240, 0.03) 1px, transparent 1px)",
+          backgroundSize: "80px 80px, 80px 80px, 16px 16px, 16px 16px",
+        }}
+      />
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Heading */}

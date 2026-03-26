@@ -1,8 +1,10 @@
 import {
   Car,
-  Flame,
-  Target,
-  Wrench,
+  Cog,
+  Fuel,
+  FlaskConical,
+  Hammer,
+  Factory,
   PenTool,
   Calculator,
   CalendarDays,
@@ -16,12 +18,15 @@ import {
   Layers,
   Crosshair,
   Gauge,
+  Thermometer,
+  ShieldCheck,
+  Workflow,
   type LucideIcon,
 } from "lucide-react";
 
 // ── Industry card data (landing page) ──────────────────────────────
 
-export interface IndustryCard {
+interface IndustryCard {
   slug: string;
   name: string;
   oneLiner: string;
@@ -31,42 +36,58 @@ export interface IndustryCard {
 
 export const INDUSTRY_CARDS: IndustryCard[] = [
   {
-    slug: "automotive-components",
-    name: "Automotive Components",
+    slug: "automotive",
+    name: "Automotive",
     oneLiner:
-      "Pistons, gears, powertrain components. From drawing review to production tracking.",
+      "OEMs and Tier 1 suppliers. Design validation through assembly line tracking, all connected.",
     icon: Car,
-    href: "/industries/automotive-components",
+    href: "/industries/automotive",
   },
   {
-    slug: "forging-and-casting",
-    name: "Forging & Casting",
+    slug: "auto-components",
+    name: "Auto Components",
     oneLiner:
-      "Hot forging, cold forming, die casting, sand casting. Deep process knowledge built in.",
-    icon: Flame,
-    href: "/industries/forging-and-casting",
+      "Pistons, gears, powertrain parts. Drawing review through production tracking in one system.",
+    icon: Cog,
+    href: "/industries/auto-components",
   },
   {
-    slug: "precision-machining",
-    name: "Precision Machining",
+    slug: "oil-and-gas",
+    name: "Oil & Gas",
     oneLiner:
-      "CNC turning, milling, grinding, EDM. For job shops and make-to-print manufacturers.",
-    icon: Target,
-    href: "/industries/precision-machining",
+      "Upstream equipment, refinery components, pipeline assemblies. Safety-critical, code-governed work.",
+    icon: Fuel,
+    href: "/industries/oil-and-gas",
   },
   {
-    slug: "fabrication-and-welding",
-    name: "Fabrication & Welding",
+    slug: "chemical-processing-equipment",
+    name: "Chemical Processing Equipment",
     oneLiner:
-      "Welded structures, pressure vessels, pipe assemblies. Code-governed work (ASME, EN, IS).",
-    icon: Wrench,
-    href: "/industries/fabrication-and-welding",
+      "Reactors, heat exchangers, pressure vessels. Built around ASME, PED, and TEMA standards.",
+    icon: FlaskConical,
+    href: "/industries/chemical-processing-equipment",
+  },
+  {
+    slug: "heavy-engineering",
+    name: "Heavy Engineering",
+    oneLiner:
+      "Large-scale fabrication, structural steel, mining equipment. Tonnage meets tight tolerances.",
+    icon: Hammer,
+    href: "/industries/heavy-engineering",
+  },
+  {
+    slug: "industrial-equipment",
+    name: "Industrial Equipment",
+    oneLiner:
+      "Material handling, packaging lines, custom machinery. Engineered-to-order complexity made manageable.",
+    icon: Factory,
+    href: "/industries/industrial-equipment",
   },
 ];
 
 // ── Product reference (for "Products That Apply" sections) ─────────
 
-export interface ProductRef {
+interface ProductRef {
   stage: string;
   icon: LucideIcon;
   name: string;
@@ -127,18 +148,18 @@ export const ALL_PRODUCTS: ProductRef[] = [
 
 // ── Industry page data ─────────────────────────────────────────────
 
-export interface ChallengeCard {
+interface ChallengeCard {
   icon: LucideIcon;
   heading: string;
   description: string;
 }
 
-export interface ProofPoint {
+interface ProofPoint {
   heading: string;
   items: string[];
 }
 
-export interface IndustryPageData {
+interface IndustryPageData {
   slug: string;
   name: string;
   icon: LucideIcon;
@@ -149,30 +170,74 @@ export interface IndustryPageData {
 }
 
 export const INDUSTRY_PAGES: Record<string, IndustryPageData> = {
-  "automotive-components": {
-    slug: "automotive-components",
-    name: "Automotive Components",
+  automotive: {
+    slug: "automotive",
+    name: "Automotive",
     icon: Car,
     heroSubtitle:
-      "Cognaize handles the full chain for auto-component manufacturers, from drawing review through shop floor tracking, across pistons, gears, connecting rods, and powertrain parts.",
+      "Cognaize brings engineering intelligence to automotive OEMs and Tier 1 suppliers, covering design validation, cost estimation, production scheduling, shop floor tracking, and quality feedback loops.",
+    challenges: [
+      {
+        icon: Layers,
+        heading: "Multi-tier design complexity",
+        description:
+          "Vehicle programs involve thousands of drawings across sub-assemblies. Manual review slows down launches and lets tolerance conflicts slip through undetected.",
+      },
+      {
+        icon: Clock,
+        heading: "Shrinking program timelines",
+        description:
+          "SOP deadlines stay fixed while development cycles get shorter. Estimation, planning, and quality loops need to keep pace without sacrificing precision.",
+      },
+      {
+        icon: AlertTriangle,
+        heading: "Quality issues cascade across tiers",
+        description:
+          "A component-level defect surfaces as a line stoppage at the OEM. Without closed-loop traceability, the root cause stays buried across the supply chain.",
+      },
+    ],
+    applicableProductNames: [
+      "Design Intelligence",
+      "Manufacturing Intelligence",
+      "Planning Intelligence",
+      "Execution Intelligence",
+      "Downtime Intelligence",
+      "Quality Intelligence",
+    ],
+    proofPoints: {
+      heading: "Built for automotive scale",
+      items: [
+        "Handles multi-assembly drawing sets with cross-reference validation across sub-systems.",
+        "Estimation modules tuned for automotive production volumes and multi-process routing.",
+        "Closed-loop quality tracking that connects shop floor findings back to design, across all tiers.",
+      ],
+    },
+  },
+
+  "auto-components": {
+    slug: "auto-components",
+    name: "Auto Components",
+    icon: Cog,
+    heroSubtitle:
+      "Cognaize covers the full chain for auto-component manufacturers: drawing review, cost estimation, production planning, shop floor tracking, and quality feedback across pistons, gears, connecting rods, and powertrain parts.",
     challenges: [
       {
         icon: FileSearch,
         heading: "Drawing complexity at scale",
         description:
-          "Hundreds of drawings per month, each with tolerances and GD&T that need expert review. Manual review can't keep up.",
+          "Hundreds of drawings land every month, each packed with tolerances and GD&T that need expert review. Manual processes can't keep pace with the volume.",
       },
       {
         icon: Clock,
         heading: "Costing under pressure",
         description:
-          "RFQ turnaround times are shrinking. Estimates still depend on whoever happens to be available.",
+          "RFQ turnaround times keep shrinking. Estimates still depend on whoever happens to be available, and the backlog only grows.",
       },
       {
         icon: AlertTriangle,
         heading: "Quality traceability gaps",
         description:
-          "Rejection data stays in quality, never feeds back to the engineers who designed the part. The same issues repeat.",
+          "Rejection data stays locked in quality departments. It never reaches the engineers who designed the part, so the same problems keep recurring.",
       },
     ],
     applicableProductNames: [
@@ -193,113 +258,30 @@ export const INDUSTRY_PAGES: Record<string, IndustryPageData> = {
     },
   },
 
-  "forging-and-casting": {
-    slug: "forging-and-casting",
-    name: "Forging & Casting",
-    icon: Flame,
+  "oil-and-gas": {
+    slug: "oil-and-gas",
+    name: "Oil & Gas",
+    icon: Fuel,
     heroSubtitle:
-      "Purpose-built intelligence for foundries and forge shops. Cognaize understands the process constraints, material behaviors, and standards specific to cast and forged components.",
+      "Engineering intelligence for upstream equipment fabricators, refinery component manufacturers, and pipeline assembly shops where safety codes and material traceability are non-negotiable.",
     challenges: [
       {
-        icon: Layers,
-        heading: "Process-specific review gaps",
+        icon: ShieldCheck,
+        heading: "Strict code compliance requirements",
         description:
-          "Generic tools miss what matters in forging and casting: draft angles, parting lines, shrinkage allowances, gating design implications.",
+          "Every component must meet API, ASME, or NACE standards. One missed material spec or weld procedure error means costly rework or complete rejection.",
       },
       {
         icon: DollarSign,
-        heading: "Estimation is an art",
+        heading: "High-value, low-volume estimation",
         description:
-          "Costing forged and cast parts depends on years of tribal knowledge about material yield, die life, and process routing.",
-      },
-      {
-        icon: AlertTriangle,
-        heading: "Disconnected quality data",
-        description:
-          "Defect patterns in castings and forgings repeat because quality findings don't flow back to the design or process planning stage.",
-      },
-    ],
-    applicableProductNames: [
-      "Design Intelligence",
-      "Manufacturing Intelligence",
-      "Quality Intelligence",
-    ],
-    proofPoints: {
-      heading: "Deep process knowledge",
-      items: [
-        "DI includes ForgeReview and CastReview modules with alloy-aware review logic for casting processes.",
-        "MI includes ForgeCalc and CastCalc for process-specific cost estimation.",
-        "See the ForgeReview case study: Cold Formed Differential Bevel Pinion review with 3 critical findings.",
-      ],
-    },
-  },
-
-  "precision-machining": {
-    slug: "precision-machining",
-    name: "Precision Machining",
-    icon: Target,
-    heroSubtitle:
-      "For CNC job shops and precision manufacturers who compete on accuracy, speed, and cost. Cognaize turns drawing data into structured feasibility checks, routing, and cost estimates.",
-    challenges: [
-      {
-        icon: Layers,
-        heading: "Every job is different",
-        description:
-          "High-mix, low-volume work means every drawing needs fresh review and costing. There's no time for deep analysis on each one.",
-      },
-      {
-        icon: Gauge,
-        heading: "Quoting speed vs accuracy",
-        description:
-          "Faster quotes win jobs, but rushed estimates erode margin. The tension between speed and accuracy never goes away.",
-      },
-      {
-        icon: Crosshair,
-        heading: "Machine utilization guesswork",
-        description:
-          "Scheduling across multiple CNC machines with varying capabilities is done manually, and re-planning happens constantly.",
-      },
-    ],
-    applicableProductNames: [
-      "Design Intelligence",
-      "Manufacturing Intelligence",
-      "Planning Intelligence",
-      "Execution Intelligence",
-    ],
-    proofPoints: {
-      heading: "Speed without sacrificing accuracy",
-      items: [
-        "Go from drawing to accurate cost sheet in minutes, not days.",
-        "10x faster estimation with MI's MachineCalc module.",
-        "DI's MachineReview catches feasibility issues before they reach the shop floor.",
-      ],
-    },
-  },
-
-  "fabrication-and-welding": {
-    slug: "fabrication-and-welding",
-    name: "Fabrication & Welding",
-    icon: Wrench,
-    heroSubtitle:
-      "Engineering intelligence for fabricated structures, pressure vessels, and pipe assemblies. Built with awareness of ASME, EN, and IS code requirements.",
-    challenges: [
-      {
-        icon: AlertTriangle,
-        heading: "Code compliance is non-negotiable",
-        description:
-          "Fabricated components are governed by strict standards. Missing a weld specification or material requirement can mean rejection or worse.",
+          "Each job is different. Costing depends on exotic alloys, special welding procedures, and extensive NDE requirements that off-the-shelf tools miss entirely.",
       },
       {
         icon: Layers,
-        heading: "Multi-process complexity",
+        heading: "End-to-end traceability demands",
         description:
-          "A single fabricated assembly involves cutting, forming, welding, machining, and inspection. Coordinating across processes is where delays hide.",
-      },
-      {
-        icon: Clock,
-        heading: "Stoppage visibility",
-        description:
-          "Large fabrication lines have downtime that goes unreported. Without real-time tracking, root causes stay invisible.",
+          "Material test reports, weld maps, and inspection records must link back to every component. Paper-based systems leave gaps that audits quickly expose.",
       },
     ],
     applicableProductNames: [
@@ -307,13 +289,145 @@ export const INDUSTRY_PAGES: Record<string, IndustryPageData> = {
       "Manufacturing Intelligence",
       "Execution Intelligence",
       "Downtime Intelligence",
+      "Quality Intelligence",
     ],
     proofPoints: {
-      heading: "Proven in fabrication",
+      heading: "Purpose-built for oil & gas fabrication",
       items: [
-        "SATRAC (trailer and truck body manufacturer) uses Cognaize for shop floor tracking.",
-        "20% production efficiency increase with real-time execution visibility.",
-        "50% WIP reduction through better scheduling and tracking.",
+        "Drawing review modules that understand API, ASME Section VIII, and NACE material requirements.",
+        "Estimation logic that accounts for exotic alloys, post-weld heat treatment, and NDE coverage.",
+        "Quality Intelligence connects MTRs, weld records, and inspection data to production orders end-to-end.",
+      ],
+    },
+  },
+
+  "chemical-processing-equipment": {
+    slug: "chemical-processing-equipment",
+    name: "Chemical Processing Equipment",
+    icon: FlaskConical,
+    heroSubtitle:
+      "Cognaize supports manufacturers of reactors, heat exchangers, columns, and pressure vessels with intelligence tuned for ASME, PED, and TEMA code requirements across every stage of production.",
+    challenges: [
+      {
+        icon: Thermometer,
+        heading: "Design governed by process conditions",
+        description:
+          "Temperature, pressure, and corrosion dictate material selection and wall thickness. Review errors here only surface at hydro-test, or worse, in the field.",
+      },
+      {
+        icon: DollarSign,
+        heading: "Complex, multi-stage costing",
+        description:
+          "A single vessel involves plate rolling, welding, machining, NDE, heat treatment, and surface finishing. Accurate estimates demand deep process knowledge.",
+      },
+      {
+        icon: Clock,
+        heading: "Long lead times, hard milestones",
+        description:
+          "Delivery timelines stretch months, but every stage (procurement, fabrication, inspection) has firm gates. A delay at one stage compounds through the rest.",
+      },
+    ],
+    applicableProductNames: [
+      "Design Intelligence",
+      "Manufacturing Intelligence",
+      "Planning Intelligence",
+      "Execution Intelligence",
+      "Quality Intelligence",
+    ],
+    proofPoints: {
+      heading: "Engineered for process equipment",
+      items: [
+        "Drawing review that understands ASME Section VIII Div. 1 & 2, PED, and TEMA standards.",
+        "Estimation modules built for multi-stage fabrication routing across vessels and exchangers.",
+        "Planning Intelligence manages long-cycle production with stage-gate milestone tracking throughout.",
+      ],
+    },
+  },
+
+  "heavy-engineering": {
+    slug: "heavy-engineering",
+    name: "Heavy Engineering",
+    icon: Hammer,
+    heroSubtitle:
+      "Engineering intelligence for heavy fabrication shops, structural steel manufacturers, and mining equipment builders where scale, weight, and weld quality define every job.",
+    challenges: [
+      {
+        icon: Gauge,
+        heading: "Scale creates unique constraints",
+        description:
+          "Components weigh tons and tolerances stay tight despite the size. Handling logistics affect every step, from plate cutting through final assembly.",
+      },
+      {
+        icon: Crosshair,
+        heading: "Every job is a prototype",
+        description:
+          "Engineered-to-order work means little repetition. Each drawing set needs fresh review, new process routing, and a unique cost estimate from scratch.",
+      },
+      {
+        icon: Workflow,
+        heading: "Coordinating across large shop floors",
+        description:
+          "Multiple bays, cranes, and work centers need to stay in sync. Without real-time visibility, bottlenecks build up and go unnoticed for days at a time.",
+      },
+    ],
+    applicableProductNames: [
+      "Design Intelligence",
+      "Manufacturing Intelligence",
+      "Planning Intelligence",
+      "Execution Intelligence",
+      "Downtime Intelligence",
+      "Quality Intelligence",
+    ],
+    proofPoints: {
+      heading: "Proven in heavy fabrication",
+      items: [
+        "Drawing review handles large-format assembly drawings with weld joint and material callout validation.",
+        "Estimation tuned for heavy plate, structural sections, and multi-process fabrication routing.",
+        "Real-time shop floor tracking across multiple bays and work centers with crane and resource visibility.",
+      ],
+    },
+  },
+
+  "industrial-equipment": {
+    slug: "industrial-equipment",
+    name: "Industrial Equipment",
+    icon: Factory,
+    heroSubtitle:
+      "Cognaize powers intelligence for manufacturers of material handling systems, packaging lines, and custom machinery where engineered-to-order complexity meets tight delivery pressure.",
+    challenges: [
+      {
+        icon: Layers,
+        heading: "High mix, deep BOMs",
+        description:
+          "Every machine is a unique configuration with hundreds of parts. Drawing review and estimation effort multiplies with every variant and option combination.",
+      },
+      {
+        icon: DollarSign,
+        heading: "Margins depend on estimation accuracy",
+        description:
+          "Custom equipment pricing is built on process routing assumptions. Get the estimate wrong and the margin disappears by the time the machine ships out.",
+      },
+      {
+        icon: Clock,
+        heading: "Delivery dates drive everything",
+        description:
+          "Customers plan facility layouts and production starts around your delivery commitment. Late equipment means penalties, lost trust, and lost repeat business.",
+      },
+    ],
+    applicableProductNames: [
+      "Design Intelligence",
+      "Manufacturing Intelligence",
+      "Planning Intelligence",
+      "Execution Intelligence",
+      "Downtime Intelligence",
+      "Quality Intelligence",
+    ],
+    proofPoints: {
+      heading: "Built for equipment manufacturers",
+      items: [
+        "Drawing review handles complex assembly drawings with multi-level BOM validation built in.",
+        "Estimation logic for mixed-process routing: machining, fabrication, assembly, and testing stages.",
+        "Planning and execution intelligence manages parallel work streams across sub-assemblies to hit delivery dates.",
       ],
     },
   },

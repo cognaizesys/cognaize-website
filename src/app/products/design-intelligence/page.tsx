@@ -675,13 +675,6 @@ function ProofSection() {
               </div>
             ))}
 
-            <a
-              href="/case-studies/forge-review-bevel-pinion"
-              className="inline-flex items-center gap-1.5 text-primary font-semibold text-sm hover:underline mt-2"
-            >
-              View Full Case Study
-              <ArrowRight className="w-3.5 h-3.5" />
-            </a>
           </motion.div>
 
           {/* Right: drawing image */}

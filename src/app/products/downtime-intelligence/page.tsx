@@ -605,17 +605,8 @@ function ProofSection() {
         >
           <p className="text-gray-600 text-base leading-relaxed mb-4">
             Downtime Intelligence is live across manufacturing facilities in
-            India. For full deployment details, visit FactriAI.
+            India.
           </p>
-          <a
-            href="https://factri.ai"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-1.5 text-primary font-semibold text-sm hover:underline"
-          >
-            Learn More at FactriAI
-            <ArrowRight className="w-3.5 h-3.5" />
-          </a>
         </motion.div>
       </div>
     </section>
@@ -717,8 +708,7 @@ function ClosingCTASection() {
           transition={{ duration: 0.5, delay: 0.4 }}
           className="mt-6 text-xs text-gray-500"
         >
-          Downtime Intelligence is part of the FactriAI platform, offered
-          through Cognaize Systems.
+          Downtime Intelligence is offered by Cognaize Systems.
         </motion.p>
       </div>
     </section>

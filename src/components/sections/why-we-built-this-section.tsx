@@ -8,7 +8,7 @@ const reasons = [
     icon: BrainCircuit,
     heading: "Judgment Doesn\u2019t Scale",
     description:
-      "Your best engineers carry decades of expertise in their heads. When they\u2019re unavailable, that knowledge is gone.",
+      "Your best engineers carry decades of expertise in their heads. When they are no longer available, that knowledge is gone.",
   },
   {
     icon: Factory,
@@ -41,7 +41,15 @@ export function WhyWeBuiltThisSection() {
       {/* Top divider */}
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/35 to-transparent" />
 
-      {/* Subtle noise texture instead of grid */}
+      {/* Subtle grid background */}
+      <div
+        className="absolute inset-0"
+        style={{
+          backgroundImage:
+            "linear-gradient(rgba(100, 170, 240, 0.10) 1px, transparent 1px), linear-gradient(90deg, rgba(100, 170, 240, 0.10) 1px, transparent 1px), linear-gradient(rgba(100, 170, 240, 0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(100, 170, 240, 0.03) 1px, transparent 1px)",
+          backgroundSize: "80px 80px, 80px 80px, 16px 16px, 16px 16px",
+        }}
+      />
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}

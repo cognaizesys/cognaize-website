@@ -72,7 +72,7 @@ export function Footer() {
                 </li>
                 <li>
                   <Link
-                    href="/industries"
+                    href="/#who-we-serve"
                     className="text-sm text-text-on-dark hover:text-primary-light"
                   >
                     Industries
@@ -133,7 +133,6 @@ export function Footer() {
         <Container>
           <div className="py-6 text-center text-sm text-text-on-dark">
             <p>© {currentYear} {COMPANY.name}. All rights reserved.</p>
-            <p className="mt-1 text-xs text-gray-500">Powered by FactriAI</p>
           </div>
         </Container>
       </div>
