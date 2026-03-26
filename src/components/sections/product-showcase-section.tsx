@@ -54,14 +54,14 @@ export function ProductShowcaseSection() {
           <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-primary/25 border border-primary/40 mb-6">
             <Play className="w-3 h-3 text-primary" />
             <span className="text-xs font-medium text-[#E87B3A] uppercase tracking-wider">
-              Live Product Demo
+              See It in Action
             </span>
           </div>
           <h2 className="text-3xl sm:text-4xl font-heading text-gray-900 tracking-tight">
-            See the AI in Action
+            From Drawing to Intelligence in Under 15 Minutes
           </h2>
           <p className="mt-3 text-gray-500">
-            Watch how Cognaize processes engineering drawings end-to-end
+            Watch how Cognaize Systems processes engineering drawings end-to-end — from upload to structured findings, feasibility assessment, and cost output.
           </p>
         </motion.div>
 

@@ -1,34 +1,3 @@
-export interface TeamMember {
-  name: string;
-  role: string;
-  experience: string;
-  initials: string;
-  color: string;
-}
-
-export interface Product {
-  id: "di" | "mi";
-  name: string;
-  fullName: string;
-  tagline: string;
-  description: string;
-  features: ProductFeature[];
-  screenshots: ProductScreenshot[];
-  href: string;
-}
-
-export interface ProductFeature {
-  title: string;
-  description: string;
-  icon: string;
-}
-
-export interface ProductScreenshot {
-  src: string;
-  alt: string;
-  label: string;
-}
-
 export interface Metric {
   value: string;
   numericValue: number;
@@ -37,28 +6,21 @@ export interface Metric {
   description: string;
 }
 
-export interface Industry {
+export interface HeroProduct {
   name: string;
-  icon: string;
-  description: string;
+  stage: string;
+  image: string;
+  accentColor: string;
 }
 
-export interface ROIRow {
-  metric: string;
-  before: string;
-  after: string;
-  impact: string;
-}
-
-export interface WorkflowStep {
-  step: number;
-  title: string;
-  description: string;
-  screenshot?: string;
+interface NavChild {
+  label: string;
+  href: string;
+  external?: boolean;
 }
 
 export interface NavLink {
   label: string;
   href: string;
-  children?: { label: string; href: string }[];
+  children?: NavChild[];
 }

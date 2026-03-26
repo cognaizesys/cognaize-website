@@ -33,7 +33,7 @@ export function Footer() {
                 </span>
               </Link>
               <p className="text-sm leading-relaxed text-text-on-dark">
-                Purpose-built AI for engineering teams who design and make things.
+                Engineered Intelligence for Manufacturing
               </p>
             </div>
 
@@ -44,7 +44,7 @@ export function Footer() {
               </h3>
               <ul className="space-y-2">
                 {PRODUCT_LINKS.map((link) => (
-                  <li key={link.href}>
+                  <li key={`${link.href}-${link.label}`}>
                     <Link
                       href={link.href}
                       className="text-sm text-text-on-dark hover:text-primary-light"
@@ -63,20 +63,28 @@ export function Footer() {
               </h3>
               <ul className="space-y-2">
                 <li>
-                  <a
-                    href="#about"
+                  <Link
+                    href="/about"
                     className="text-sm text-text-on-dark hover:text-primary-light"
                   >
-                    About
-                  </a>
+                    About Us
+                  </Link>
                 </li>
                 <li>
-                  <a
-                    href="#team"
+                  <Link
+                    href="/#who-we-serve"
                     className="text-sm text-text-on-dark hover:text-primary-light"
                   >
-                    Team
-                  </a>
+                    Industries
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/case-studies"
+                    className="text-sm text-text-on-dark hover:text-primary-light"
+                  >
+                    Case Studies
+                  </Link>
                 </li>
                 <li>
                   <Link
@@ -93,14 +101,6 @@ export function Footer() {
                   >
                     Careers
                   </Link>
-                </li>
-                <li>
-                  <a
-                    href="#contact"
-                    className="text-sm text-text-on-dark hover:text-primary-light"
-                  >
-                    Contact
-                  </a>
                 </li>
               </ul>
             </div>

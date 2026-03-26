@@ -12,7 +12,7 @@ const organizationJsonLd = {
   url: "https://www.cognaizesys.com",
   logo: "https://www.cognaizesys.com/images/logo/cognaize-icon.png",
   description:
-    "AI for Engineering Design Review and Manufacturing Costing. Purpose-built for automotive and industrial manufacturers.",
+    "Cognaize Systems builds Engineered Intelligence for manufacturing — expert judgment structured into systems that scale across your organisation and improve with every production cycle.",
   foundingLocation: "Chennai, India",
   areaServed: ["India", "United Arab Emirates", "United States"],
   address: {
@@ -48,10 +48,10 @@ const jakarta = Plus_Jakarta_Sans({
 });
 
 const siteDescription =
-  "Cognaize Systems builds AI that predicts manufacturing consequences from engineering drawings. Design intelligence, cost estimation, and assembly validation — purpose-built for manufacturing. Chennai | Bangalore | Dubai | Charlotte, NC.";
+  "Cognaize Systems builds Engineered Intelligence for manufacturing — expert judgment structured into systems that scale across your organisation and improve with every production cycle.";
 
 export const metadata: Metadata = {
-  title: `${COMPANY.name} | AI Engineering Intelligence for Manufacturing`,
+  title: `${COMPANY.name} | ${COMPANY.tagline}`,
   description: siteDescription,
   keywords: [
     "Cognaize Systems",
@@ -69,7 +69,7 @@ export const metadata: Metadata = {
     canonical: "/",
   },
   openGraph: {
-    title: `${COMPANY.name} | AI Engineering Intelligence for Manufacturing`,
+    title: `${COMPANY.name} | ${COMPANY.tagline}`,
     description: siteDescription,
     url: COMPANY.website,
     siteName: COMPANY.name,
@@ -77,7 +77,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: `${COMPANY.name} | AI Engineering Intelligence for Manufacturing`,
+    title: `${COMPANY.name} | ${COMPANY.tagline}`,
     description: siteDescription,
   },
   robots: {

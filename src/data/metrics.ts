@@ -1,52 +1,25 @@
-import type { Metric, ROIRow } from "@/types";
+import type { Metric } from "@/types";
 
 export const heroMetrics: Metric[] = [
   {
-    value: "16x",
-    numericValue: 16,
-    suffix: "x",
-    label: "Faster",
-    description: "From hours to minutes per drawing",
+    value: "91%",
+    numericValue: 91,
+    suffix: "%",
+    label: "Faster Reviews",
+    description: "Drawing review time reduction",
   },
   {
-    value: "95%+",
-    numericValue: 95,
-    suffix: "%+",
-    label: "Accuracy",
-    description: "AI detection rate",
+    value: "50%",
+    numericValue: 50,
+    suffix: "%",
+    label: "Shorter Lead Times",
+    description: "Production lead time reduction",
   },
   {
-    value: "8",
+    value: "8×",
     numericValue: 8,
-    suffix: "",
-    label: "Manufacturing Technologies",
-    description: "Manufacturing technologies supported",
-  },
-];
-
-export const roiData: ROIRow[] = [
-  {
-    metric: "Review Speed",
-    before: "2-4 hours",
-    after: "<15 minutes",
-    impact: "10-16x faster",
-  },
-  {
-    metric: "Cost per Review",
-    before: "$150-300",
-    after: "$5-10",
-    impact: "10x cheaper",
-  },
-  {
-    metric: "Error Detection Rate",
-    before: "~70%",
-    after: ">95%",
-    impact: "3-5x fewer escapes",
-  },
-  {
-    metric: "Rework Exposure",
-    before: "12.5% of product value",
-    after: "<1.5%",
-    impact: "8-10x cost avoidance",
+    suffix: "×",
+    label: "Rework Avoidance",
+    description: "Reduction in rework exposure",
   },
 ];

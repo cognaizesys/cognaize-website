@@ -1,9 +1,9 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { CheckCircle, Zap, ArrowRight } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { heroMetrics } from "@/data/metrics";
-import { HeroShowcase } from "@/components/hero/hero-carousel";
+import { ProductCardCarousel } from "@/components/hero/hero-carousel";
 
 export function HeroSection() {
 
@@ -74,9 +74,10 @@ export function HeroSection() {
               transition={{ duration: 0.6, delay: 0.3 }}
               className="mt-6 md:mt-10 text-3xl sm:text-4xl lg:text-5xl font-heading font-bold text-white tracking-tight leading-[1.1]"
             >
-              Engineering Intelligence That Sees What
+              Making Engineering
               <br />
-              <span className="text-primary-light">Your Best Engineer Can&apos;t.</span>
+              Judgment{" "}
+              <span className="text-primary-light">Scalable</span>
             </motion.h1>
 
             {/* Subtitle */}
@@ -84,12 +85,11 @@ export function HeroSection() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.5 }}
-              className="mt-6 md:mt-8 text-lg text-gray-400 max-w-lg leading-relaxed"
+              className="mt-6 md:mt-8 text-lg text-gray-300 max-w-lg leading-relaxed"
             >
-              Cognaize Systems predicts manufacturing consequences from your
-              engineering drawings — layered AI that understands your technology,
-              your product family, and your shop floor. From design review to
-              cost estimation to assembly validation.
+              The judgment that runs your factory shouldn&apos;t depend on who&apos;s
+              in the room. We structure decades of engineering expertise into AI
+              that&apos;s always available and gets better with every production cycle.
             </motion.p>
 
             {/* Metrics row */}
@@ -97,14 +97,12 @@ export function HeroSection() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.7 }}
-              className="mt-8 md:mt-10 flex flex-wrap gap-8"
+              className="mt-8 md:mt-10 grid grid-cols-3 gap-6"
             >
               {heroMetrics.slice(0, 3).map((metric) => (
-                <div key={metric.label} className="flex items-baseline gap-2">
-                  <span className="text-2xl font-bold text-white font-heading">
-                    {metric.value}
-                  </span>
-                  <span className="text-sm text-gray-500">{metric.label}</span>
+                <div key={metric.label} className="border-l-[3px] border-l-primary pl-3">
+                  <p className="text-sm font-bold text-white">{metric.value}</p>
+                  <p className="text-xs text-gray-400 mt-0.5">{metric.label}</p>
                 </div>
               ))}
             </motion.div>
@@ -122,14 +120,14 @@ export function HeroSection() {
                 rel="noopener noreferrer"
                 className="group inline-flex items-center gap-2 px-7 py-3.5 rounded-lg bg-primary hover:bg-primary-dark text-white font-semibold transition-all duration-300 shadow-md shadow-primary/20 hover:shadow-lg hover:shadow-primary/30"
               >
-                See It On Your Drawing
+                Book a Demo
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
               </a>
               <a
                 href="#products"
                 className="inline-flex items-center gap-2 px-7 py-3.5 rounded-lg border border-primary/30 hover:border-primary/50 hover:bg-white/5 text-white font-semibold transition-all duration-300"
               >
-                Explore Intelligence Layers
+                Explore Products
               </a>
             </motion.div>
           </div>
@@ -141,32 +139,7 @@ export function HeroSection() {
             transition={{ duration: 0.7, delay: 0.5 }}
             className="relative hidden lg:block"
           >
-            <HeroShowcase />
-
-            {/* Floating accent cards */}
-            <motion.div
-              animate={{ y: [0, -8, 0] }}
-              transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-              className="absolute -top-4 -right-4 px-4 py-2.5 rounded-lg bg-dark-card border border-accent/25 backdrop-blur-sm"
-              style={{ boxShadow: "0 8px 20px rgba(0,0,0,0.4)" }}
-            >
-              <div className="flex items-center gap-2">
-                <Zap className="w-4 h-4 text-accent" />
-                <span className="text-xs font-semibold text-white">16x Faster</span>
-              </div>
-            </motion.div>
-
-            <motion.div
-              animate={{ y: [0, 8, 0] }}
-              transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-              className="absolute bottom-12 -left-4 px-4 py-2.5 rounded-lg bg-dark-card border border-primary/25 backdrop-blur-sm"
-              style={{ boxShadow: "0 4px 12px rgba(0,0,0,0.3)" }}
-            >
-              <div className="flex items-center gap-2">
-                <CheckCircle className="w-4 h-4 text-accent" />
-                <span className="text-xs font-semibold text-white">95%+ Accuracy</span>
-              </div>
-            </motion.div>
+            <ProductCardCarousel />
           </motion.div>
         </div>
 
