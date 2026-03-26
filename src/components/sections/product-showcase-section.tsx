@@ -91,21 +91,19 @@ export function ProductShowcaseSection() {
           </div>
         </div>
 
-        {/* Content - grid stacking keeps both in flow so height = max(DI, MI) */}
-        <div className="grid" style={{ gridTemplateAreas: "'stack'" }}>
+        {/* Content - active tab is in flow (sets height), inactive is absolute (hidden) */}
+        <div className="relative">
           <motion.div
-            style={{ gridArea: "stack" }}
             animate={{ opacity: activeTab === "di" ? 1 : 0 }}
             transition={{ duration: 0.3 }}
-            className={activeTab === "di" ? "" : "pointer-events-none"}
+            className={activeTab === "di" ? "relative" : "absolute top-0 left-0 right-0 pointer-events-none"}
           >
             <DiDemoViewer />
           </motion.div>
           <motion.div
-            style={{ gridArea: "stack" }}
             animate={{ opacity: activeTab === "mi" ? 1 : 0 }}
             transition={{ duration: 0.3 }}
-            className={activeTab === "mi" ? "" : "pointer-events-none"}
+            className={activeTab === "mi" ? "relative" : "absolute top-0 left-0 right-0 pointer-events-none"}
           >
             <MiDemoViewer />
           </motion.div>
