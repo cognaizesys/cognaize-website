@@ -5,7 +5,13 @@ export const COMPANY = {
   tagline: "Engineered Intelligence for Manufacturing",
   email: "info@cognaizesys.com",
   website: "https://cognaizesys.com",
-  location: "Chennai | Bangalore | Dubai | Asheville, NC",
+  offices: [
+    { city: "Chennai", country: "India" },
+    { city: "Bangalore", country: "India" },
+    { city: "Dubai", country: "UAE" },
+    { city: "Singapore", country: "Singapore" },
+    { city: "Asheville", country: "NC, USA" },
+  ],
 };
 
 export const PRODUCT_LINKS = [

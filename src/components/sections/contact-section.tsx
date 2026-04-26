@@ -1,10 +1,38 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import { motion } from "framer-motion";
-import { Mail, MapPin, Globe, CheckCircle, Check, Loader2, ArrowRight, Rocket } from "lucide-react";
+import { Mail, MapPin, Globe, CheckCircle, Check, Loader2, ArrowRight, Rocket, Users2 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { COMPANY } from "@/lib/constants";
+
+const regionalLeads = [
+  {
+    name: "Suneel Aiyar",
+    region: "Global",
+    email: "suneel@cognaizesys.com",
+    image: "/images/team/suneel.png",
+  },
+  {
+    name: "Arvindh Balakrishnan",
+    region: "North America",
+    email: "arvindh@cognaizesys.com",
+    image: "/images/team/arvindh.png",
+  },
+  {
+    name: "Ramalingam Lakshmanan",
+    region: "West Asia · EPC & Oil & Gas",
+    email: "ramalingam@cognaizesys.com",
+    image: "/images/team/ramalingam.png",
+  },
+  {
+    name: "Amit Sawarkar",
+    region: "ASEAN / APAC",
+    email: "amit@cognaizesys.com",
+    image: "/images/team/amit.jpeg",
+  },
+];
 
 export function ContactSection() {
   const [formData, setFormData] = useState({
@@ -118,7 +146,78 @@ export function ContactSection() {
           </div>
         </motion.div>
 
-        {/* Divider — "Or send us a message" */}
+        {/* Divider — intro to Regional Contacts */}
+        <div className="my-12 md:my-14 flex items-center gap-6 max-w-5xl mx-auto">
+          <div className="flex-1 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
+          <span className="text-sm text-gray-500 whitespace-nowrap">
+            Or talk to a regional lead
+          </span>
+          <div className="flex-1 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
+        </div>
+
+        {/* Zone 2 — Regional Contacts */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="text-center max-w-3xl mx-auto"
+        >
+          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-primary/25 border border-primary/45 mb-6">
+            <Users2 className="w-3 h-3 text-accent" />
+            <span className="text-xs font-medium text-[#E87B3A] uppercase tracking-wider">
+              Regional Leads
+            </span>
+          </div>
+          <h3 className="font-heading text-2xl md:text-3xl font-bold text-white tracking-tight">
+            Talk to a Regional Lead
+          </h3>
+          <p className="text-gray-400 mt-3 text-base leading-relaxed">
+            Reach the right person directly for your region.
+          </p>
+        </motion.div>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-5xl mx-auto mt-10">
+          {regionalLeads.map((lead, i) => (
+            <motion.div
+              key={lead.email}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: i * 0.1 }}
+              className="group rounded-xl border border-white/[0.08] bg-white/[0.03] p-6 flex items-center gap-5 hover:border-primary/30 hover:bg-white/[0.06] transition-all duration-300"
+            >
+              <div className="flex-shrink-0">
+                <div className="w-20 h-20 md:w-24 md:h-24 rounded-full overflow-hidden ring-1 ring-white/10 group-hover:ring-primary/30 transition-all duration-300">
+                  <Image
+                    src={lead.image}
+                    alt={lead.name}
+                    width={96}
+                    height={96}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+              </div>
+              <div className="flex flex-col min-w-0 text-left">
+                <span className="text-xs font-medium text-accent uppercase tracking-wider">
+                  {lead.region}
+                </span>
+                <h4 className="text-white font-heading font-semibold text-base md:text-lg mt-1.5 truncate">
+                  {lead.name}
+                </h4>
+                <a
+                  href={`mailto:${lead.email}`}
+                  className="mt-2 inline-flex items-center gap-2 text-sm text-gray-300 hover:text-primary transition-colors min-w-0"
+                >
+                  <Mail className="w-4 h-4 text-primary flex-shrink-0" />
+                  <span className="truncate">{lead.email}</span>
+                </a>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+
+        {/* Divider — intro to Form */}
         <div className="my-12 md:my-14 flex items-center gap-6 max-w-5xl mx-auto">
           <div className="flex-1 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
           <span className="text-sm text-gray-500 whitespace-nowrap">
@@ -127,7 +226,7 @@ export function ContactSection() {
           <div className="flex-1 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
         </div>
 
-        {/* Zone 2 — Form + Contact Info (two cards) */}
+        {/* Zone 3 — Form + Contact Info (two cards) */}
         <div className="grid md:grid-cols-5 gap-6 max-w-5xl mx-auto">
           {/* Form Card */}
           <motion.div
@@ -308,9 +407,20 @@ export function ContactSection() {
                 <span className="text-sm">{COMPANY.email}</span>
               </a>
 
-              <div className="flex items-center gap-3 text-gray-300">
-                <MapPin className="w-5 h-5 text-accent flex-shrink-0" />
-                <span className="text-sm">{COMPANY.location}</span>
+              <div className="flex items-start gap-3 text-gray-300">
+                <MapPin className="w-5 h-5 text-accent flex-shrink-0 mt-0.5" />
+                <div className="grid grid-cols-2 gap-x-6 gap-y-3 flex-1">
+                  {COMPANY.offices.map((office) => (
+                    <div key={office.city}>
+                      <div className="text-sm text-gray-200 leading-tight">
+                        {office.city}
+                      </div>
+                      <div className="text-xs text-gray-500 mt-0.5 tracking-wide">
+                        {office.country}
+                      </div>
+                    </div>
+                  ))}
+                </div>
               </div>
 
               <a

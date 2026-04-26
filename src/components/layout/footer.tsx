@@ -119,7 +119,20 @@ export function Footer() {
                     {COMPANY.email}
                   </a>
                 </li>
-                <li>{COMPANY.location}</li>
+                <li>
+                  <ul className="grid grid-cols-2 gap-x-4 gap-y-2">
+                    {COMPANY.offices.map((office) => (
+                      <li key={office.city}>
+                        <span className="block text-text-on-dark">
+                          {office.city}
+                        </span>
+                        <span className="block text-xs text-text-on-dark/60 tracking-wide">
+                          {office.country}
+                        </span>
+                      </li>
+                    ))}
+                  </ul>
+                </li>
               </ul>
             </div>
           </div>
