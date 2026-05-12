@@ -212,7 +212,7 @@ function WhatItDoesSection() {
                 </div>
               </div>
               <Image
-                src="/images/hero/1-design-review.png"
+                src="/images/products/di/di-hero-pptx.png"
                 alt="Design Intelligence review interface"
                 width={1200}
                 height={800}
