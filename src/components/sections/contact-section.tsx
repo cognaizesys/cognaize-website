@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { Mail, MapPin, Globe, CheckCircle, Check, Loader2, ArrowRight, Rocket, Users2 } from "lucide-react";
+import { Mail, MapPin, Globe, CheckCircle, Check, Loader2, ArrowRight, Rocket, Users2, Linkedin } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { COMPANY } from "@/lib/constants";
 
@@ -13,24 +13,28 @@ const regionalLeads = [
     region: "Global",
     email: "suneel@cognaizesys.com",
     image: "/images/team/suneel.png",
+    linkedin: "https://www.linkedin.com/in/suneel-aiyar-8b17b23/",
   },
   {
     name: "Arvindh Balakrishnan",
     region: "North America",
     email: "arvindh@cognaizesys.com",
     image: "/images/team/arvindh.png",
+    linkedin: "https://www.linkedin.com/in/arvindhbalakrishnan/",
   },
   {
     name: "Ramalingam Lakshmanan",
     region: "West Asia · EPC & Oil & Gas",
     email: "ramalingam@cognaizesys.com",
     image: "/images/team/ramalingam.png",
+    linkedin: null,
   },
   {
     name: "Amit Sawarkar",
     region: "ASEAN / APAC",
     email: "amit@cognaizesys.com",
     image: "/images/team/amit.jpeg",
+    linkedin: "https://www.linkedin.com/in/amitsawarkar/",
   },
 ];
 
@@ -187,7 +191,7 @@ export function ContactSection() {
               transition={{ duration: 0.5, delay: i * 0.1 }}
               className="group rounded-xl border border-white/[0.08] bg-white/[0.03] p-6 flex items-center gap-5 hover:border-primary/30 hover:bg-white/[0.06] transition-all duration-300"
             >
-              <div className="flex-shrink-0">
+              <div className="flex-shrink-0 relative self-start">
                 <div className="w-20 h-20 md:w-24 md:h-24 rounded-full overflow-hidden ring-1 ring-white/10 group-hover:ring-primary/30 transition-all duration-300">
                   <Image
                     src={lead.image}
@@ -197,6 +201,17 @@ export function ContactSection() {
                     className="w-full h-full object-cover"
                   />
                 </div>
+                {lead.linkedin && (
+                  <a
+                    href={lead.linkedin}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={`${lead.name} on LinkedIn`}
+                    className="absolute bottom-0 right-0 inline-flex items-center justify-center w-5 h-5 md:w-6 md:h-6 rounded bg-[#0A66C2] hover:bg-[#0a5db1] text-white ring-2 ring-[#0f0f17] shadow-md transition-colors"
+                  >
+                    <Linkedin className="w-2.5 h-2.5 md:w-3 md:h-3" fill="currentColor" />
+                  </a>
+                )}
               </div>
               <div className="flex flex-col min-w-0 text-left">
                 <span className="text-xs font-medium text-accent uppercase tracking-wider">
@@ -207,10 +222,10 @@ export function ContactSection() {
                 </h4>
                 <a
                   href={`mailto:${lead.email}`}
-                  className="mt-2 inline-flex items-center gap-2 text-sm text-gray-300 hover:text-primary transition-colors min-w-0"
+                  className="mt-2 inline-flex items-center gap-2 text-xs md:text-sm text-gray-300 hover:text-primary transition-colors min-w-0"
                 >
                   <Mail className="w-4 h-4 text-primary flex-shrink-0" />
-                  <span className="truncate">{lead.email}</span>
+                  <span className="break-all">{lead.email}</span>
                 </a>
               </div>
             </motion.div>

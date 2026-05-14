@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { RefreshCw, ArrowRight, ChevronRight } from "lucide-react";
+import { RefreshCw, ChevronRight } from "lucide-react";
 
 const loops = [
   {
@@ -94,7 +94,7 @@ export function IntelligenceLoopSection() {
         </div>
 
         {/* Loop cards — 1x3 horizontal row with connectors */}
-        <div className="flex flex-col md:flex-row items-stretch gap-0 max-w-6xl mx-auto">
+        <div className="flex flex-col md:flex-row items-stretch gap-4 md:gap-0 max-w-6xl mx-auto">
           {loops.map((loop, index) => (
             <div key={loop.label} className="flex items-stretch flex-1">
               <motion.div
@@ -119,11 +119,6 @@ export function IntelligenceLoopSection() {
               {index < loops.length - 1 && (
                 <div className="hidden md:flex items-center px-3">
                   <ChevronRight className="w-5 h-5 text-primary/40" />
-                </div>
-              )}
-              {index < loops.length - 1 && (
-                <div className="flex md:hidden justify-center py-2">
-                  <ChevronRight className="w-5 h-5 text-primary/40 rotate-90" />
                 </div>
               )}
             </div>
